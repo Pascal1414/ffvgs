@@ -1,0 +1,24 @@
+.nav {
+    font-size: xx-large;
+}
+
+.nav-item {
+    background-color: red;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    background-color: blueviolet;
+}
+
+.programm {
+    display: none;
+}
+
+.organe {
+    display: none;
+}
+
+.jugend {
+    display: none;
+}

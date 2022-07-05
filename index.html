@@ -5,15 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="navigation.js"></script>
     <title>FFVGS</title>
 </head>
 
-<body>
+<body onload="onLoad()">
     <header>
-
+        <nav class="nav">
+            <div class="nav-item" id="home" onclick="cathegoryClick(this.id)">
+                Home
+            </div>
+            <div class="nav-item" id="programm" onclick="cathegoryClick(this.id)">
+                Programm
+            </div>
+            <div class="nav-item" id="organe" onclick="cathegoryClick(this.id)">
+                Organe
+            </div>
+            <div class="nav-item" id="jugend" onclick="cathegoryClick(this.id)">
+                Jugend
+            </div>
+        </nav>
     </header>
     <main>
-
+        <section class="home">
+            Home
+        </section>
+        <section class="programm">
+            programm
+        </section>
+        <section class="organe">
+            organe
+        </section>
+        <section class="jugend">
+            jugend
+        </section>
     </main>
     <footer>
 
