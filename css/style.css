@@ -1,14 +1,37 @@
+body {
+    margin: 0;
+}
+
+header {
+    margin: 0;
+}
+
+main {
+    margin: 5px;
+}
+
+footer {}
+
 .nav {
     font-size: xx-large;
+    display: flex;
+    align-items: center;
+    background-color: black;
 }
 
 .nav-item {
-    background-color: red;
+    width: 25%;
+    display: inline;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    color: white;
 }
 
 .nav-item:hover {
     cursor: pointer;
-    background-color: blueviolet;
+    background-color: white;
+    color: black;
 }
 
 .programm {
