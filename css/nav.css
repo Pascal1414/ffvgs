@@ -50,6 +50,7 @@
         border-radius: 4px;
         align-content: center;
         color: black;
+        touch-action: manipulation;
     }
 }
 
