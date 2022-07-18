@@ -6,15 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
     <script type="text/javascript" src="navigation.js"></script>
+    <script type="text/javascript" src="nav.js"></script>
     <title>FFVGS</title>
 </head>
 
 <body onload="onLoad()">
     <header>
         <nav class="nav">
-            <div class="nav-item" id="home" onclick="cathegoryClick(this.id)">
-                Home
+            <div class="nav-top">
+                <div class="nav-item-home" id="home" onclick="cathegoryClick(this.id)">
+                    Home
+                </div>
+                <button class="nav-button" onclick="navButtonClick()">
+                    ☰
+                </button>
             </div>
             <div class="nav-item" id="programm" onclick="cathegoryClick(this.id)">
                 Programm

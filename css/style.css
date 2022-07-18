@@ -12,36 +12,8 @@ main {
 
 footer {}
 
-.nav {
-    font-size: xx-large;
-    display: flex;
-    align-items: center;
-    background-color: black;
-}
+@media (max-width: 700px) {}
 
-.nav-item {
-    width: 25%;
-    display: inline;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    color: white;
-}
+@media (min-width: 700px) and (max-width: 990px) {}
 
-.nav-item:hover {
-    cursor: pointer;
-    background-color: white;
-    color: black;
-}
-
-.programm {
-    display: none;
-}
-
-.organe {
-    display: none;
-}
-
-.jugend {
-    display: none;
-}
+@media (min-width: 990px) {}
