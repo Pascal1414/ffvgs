@@ -1,97 +1,127 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-:root {
-    --nav-height: 60px;
-}
-
-.programm {
-    display: none;
-}
-
-.organe {
-    display: none;
-}
-
-.jugend {
-    display: none;
-}
-
-@media (max-width: 700px) {
-    .nav {
-        display: flex;
-        flex-direction: column;
-    }
-    .nav-item {
-        background-color: #f8f9fa;
-    }
-    .nav-item-home {
-        font-size: 45px;
-        color: black;
-        cursor: default;
-        user-select: none;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-    .nav-item {
-        height: 30px;
-        color: black;
-        display: none;
-        padding-left: 5px;
-        padding-right: 5px;
-        font-size: 25px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        cursor: default;
-    }
-    .nav-item:hover {
-        background-color: lightgray;
-    }
-    .nav-top {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        height: 60px;
-        padding: 10px;
-        background-color: #f8f9fa;
-        border-bottom: 1px darkgray solid;
-    }
-    .nav-button {
-        background-color: white;
-        border: 1px darkgray solid;
-        font-size: 40px;
-        height: 100%;
-        border-radius: 4px;
-        align-content: center;
-        color: black;
-        touch-action: manipulation;
-        user-select: none;
-    }
-    .center-text {
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-}
-
-@media (min-width: 700px) and (max-width: 990px) {
-    .nav {}
-    .nav-item {
-        display: block !important;
-    }
-    .nav-item:hover {}
-    .nav-button {
-        display: none;
-    }
-}
-
-@media (min-width: 990px) {
-    .nav {}
-    .nav-item {
-        display: block !important;
-    }
-    .nav-item:hover {}
-    .nav-button {
-        display: none;
-    }
-}
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+         :root {
+            --nav-height: 60px;
+            --nav-height-tablet: 70px;
+        }
+        
+        .programm {
+            display: none;
+        }
+        
+        .organe {
+            display: none;
+        }
+        
+        .jugend {
+            display: none;
+        }
+        
+        @media (max-width: 700px) {
+            .nav {
+                display: flex;
+                flex-direction: column;
+            }
+            .nav-item {
+                background-color: #f8f9fa;
+            }
+            .nav-item-home {
+                font-size: 45px;
+                color: black;
+                cursor: default;
+                user-select: none;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            .nav-item {
+                height: 30px;
+                color: black;
+                display: none;
+                padding-left: 5px;
+                padding-right: 5px;
+                font-size: 25px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                cursor: default;
+            }
+            .nav-item:hover {
+                background-color: lightgray;
+            }
+            .nav-top {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                height: 60px;
+                padding: 10px;
+                background-color: #f8f9fa;
+                border-bottom: 1px darkgray solid;
+            }
+            .nav-button {
+                background-color: white;
+                border: 1px darkgray solid;
+                font-size: 40px;
+                height: 100%;
+                border-radius: 4px;
+                align-content: center;
+                color: black;
+                touch-action: manipulation;
+                user-select: none;
+            }
+            .center-text {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            .nav-img {
+                display: none;
+            }
+        }
+        
+        @media (min-width: 700px) {
+            .nav {
+                display: flex;
+                flex-direction: row;
+                height: var(--nav-height-tablet);
+                border-bottom: 1px darkgray solid;
+                padding: 10px;
+            }
+            .nav-item-home {
+                display: flex;
+                flex-direction: row;
+                height: var(--nav-height-tablet);
+            }
+            .nav-item {
+                display: block !important;
+                margin-top: auto;
+                margin-bottom: auto;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 25px;
+                user-select: none;
+            }
+            .nav-item-mobile-hidden {
+                display: block !important;
+                margin-top: auto;
+                margin-bottom: auto;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 30px;
+                user-select: none;
+            }
+            .nav-item:hover,
+            .nav-item-mobile-hidden:hover {
+                background-color: lightgray;
+                text-decoration: underline;
+            }
+            .nav-top {}
+            .nav-button {
+                display: none;
+            }
+            .center-text {}
+            .nav-img {
+                height: 100%;
+            }
+        }
+        
+        @media (min-width: 990px) {}
