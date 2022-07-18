@@ -1,4 +1,5 @@
 function navButtonClick() {
+
     var navItems = document.getElementsByClassName("nav-item");
     var i;
 
