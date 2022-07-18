@@ -43,6 +43,7 @@
         font-size: 25px;
         padding-top: 3px;
         padding-bottom: 3px;
+        cursor: default;
     }
     .nav-item:hover {
         background-color: lightgray;
