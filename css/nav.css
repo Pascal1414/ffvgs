@@ -31,6 +31,8 @@
         color: black;
         cursor: default;
         user-select: none;
+        margin-top: auto;
+        margin-bottom: auto;
     }
     .nav-item {
         height: 30px;
