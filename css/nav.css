@@ -45,7 +45,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        height: var(--nav-height);
+        height: 60px;
         padding: 10px;
         background-color: #f8f9fa;
         border-bottom: 1px darkgray solid;
