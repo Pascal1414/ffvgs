@@ -93,4 +93,6 @@ function cathegoryClick(clickID) {
         var url = location.href;
         window.location.href = "#" + "jugend";
     }
+
+    hideNavItems();
 }
