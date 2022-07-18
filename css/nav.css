@@ -35,6 +35,9 @@
                 margin-top: auto;
                 margin-bottom: auto;
                 cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                height: var(--nav-height);
             }
             .nav-item {
                 height: 30px;
@@ -75,7 +78,9 @@
                 margin-bottom: auto;
             }
             .nav-img {
-                display: none;
+                cursor: pointer;
+                height: 100%;
+                margin-right: 10px;
             }
         }
         
