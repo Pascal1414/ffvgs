@@ -1,3 +1,7 @@
+:root {
+    --nav-height: 60px;
+}
+
 .programm {
     display: none;
 }
@@ -19,7 +23,7 @@
         background-color: #f8f9fa;
     }
     .nav-item-home {
-        font-size: xx-large;
+        font-size: 45px;
         color: black;
         cursor: default;
         user-select: none;
@@ -38,16 +42,16 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        height: 40px;
-        padding: 5px;
+        height: var(--nav-height);
+        padding: 10px;
         background-color: #f8f9fa;
         border-bottom: 1px darkgray solid;
     }
     .nav-button {
         background-color: white;
         border: 1px darkgray solid;
-        font-size: 25px;
-        width: 50px;
+        font-size: 40px;
+        width: 70px;
         height: 100%;
         border-radius: 4px;
         align-content: center;
