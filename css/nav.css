@@ -29,11 +29,14 @@
         user-select: none;
     }
     .nav-item {
-        height: 25px;
+        height: 30px;
         color: black;
         display: none;
         padding-left: 5px;
         padding-right: 5px;
+        font-size: 25px;
+        padding-top: 3px;
+        padding-bottom: 3px;
     }
     .nav-item:hover {
         background-color: lightgray;
