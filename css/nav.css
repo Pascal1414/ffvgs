@@ -24,6 +24,10 @@
             margin-left: auto;
         }
         
+        .nav {
+            background-color: #f8f9fa;
+        }
+        
         @media (max-width: 810px) {
             .nav {
                 display: flex;
@@ -99,6 +103,10 @@
                 height: var(--nav-height-tablet);
                 border-bottom: 1px darkgray solid;
                 padding: 10px;
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
             }
             .nav-item-home {
                 display: flex;
@@ -144,6 +152,9 @@
                 margin-right: 7px;
             }
             .separator {}
+            main {
+                padding-top: calc(var(--nav-height-tablet) + 20px);
+            }
         }
         
         @media (min-width: 1120px) {

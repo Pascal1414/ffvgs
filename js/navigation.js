@@ -24,6 +24,8 @@ function onLoad() {
 
     } else if (hash == "boot") {
         cathegoryClick("boot");
+    } else {
+        cathegoryClick("home");
     }
 }
 
