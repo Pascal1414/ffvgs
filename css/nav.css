@@ -19,7 +19,7 @@
             display: none;
         }
         
-        @media (max-width: 830px) {
+        @media (max-width: 810px) {
             .nav {
                 display: flex;
                 flex-direction: column;
@@ -78,11 +78,11 @@
             .nav-img {
                 cursor: pointer;
                 height: 100%;
-                margin-right: 10px;
+                margin-right: 0;
             }
         }
         
-        @media (min-width: 830px) {
+        @media (min-width: 810px) {
             .nav {
                 display: flex;
                 flex-direction: row;
@@ -98,8 +98,8 @@
             .nav-item {
                 display: flex !important;
                 height: 100%;
-                padding-left: 10px;
-                padding-right: 10px;
+                padding-left: 9px;
+                padding-right: 8px;
                 width: 20%;
                 font-size: 22px;
                 user-select: none;
@@ -131,7 +131,7 @@
             .nav-img {
                 cursor: pointer;
                 height: 100%;
-                margin-right: 20px;
+                margin-right: 10px;
             }
         }
         
