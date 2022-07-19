@@ -46,6 +46,7 @@
                 font-size: 25px;
                 padding-top: 3px;
                 padding-bottom: 3px;
+                border-bottom: 1px solid darkgray;
                 cursor: pointer;
             }
             .nav-item:hover {
