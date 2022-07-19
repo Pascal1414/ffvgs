@@ -80,7 +80,7 @@
             .nav-img {
                 cursor: pointer;
                 height: 100%;
-                margin-right: 0;
+                margin-right: 10px;
             }
         }
         
@@ -133,7 +133,7 @@
             .nav-img {
                 cursor: pointer;
                 height: 100%;
-                margin-right: 10px;
+                margin-right: 7px;
             }
         }
         
