@@ -13,85 +13,36 @@ function onLoad() {
     } else if (hash == "jugend") {
         cathegoryClick("jugend");
 
+    } else if (hash == "berichte") {
+        cathegoryClick("berichte");
+
+    } else if (hash == "galerie") {
+        cathegoryClick("galerie");
+
+    } else if (hash == "kontakt") {
+        cathegoryClick("kontakt");
+
+    } else if (hash == "boot") {
+        cathegoryClick("boot");
+
     }
 }
 
 function cathegoryClick(clickID) {
 
-    if (clickID == "home") {
-        document.querySelectorAll(".home").forEach(element => {
-            element.style.display = "block";
-        });
-
-        document.querySelectorAll(".programm").forEach(element => {
-            element.style.display = "none";
-        });
-
-        document.querySelectorAll(".organe").forEach(element => {
-            element.style.display = "none";
-        });
-
-        document.querySelectorAll(".jugend").forEach(element => {
-            element.style.display = "none";
-        });
-        var url = location.href;
-        window.location.href = "#" + "home";
-
-    } else if (clickID == "programm") {
-
-        document.querySelectorAll(".home").forEach(element => {
-            element.style.display = "none";
-        });
-
-        document.querySelectorAll(".programm").forEach(element => {
-            element.style.display = "block";
-        });
-
-        document.querySelectorAll(".organe").forEach(element => {
-            element.style.display = "none";
-        });
-
-        document.querySelectorAll(".jugend").forEach(element => {
-            element.style.display = "none";
-        });
-        var url = location.href;
-        window.location.href = "#" + "programm";
-
-    } else if (clickID == "organe") {
-        document.querySelectorAll(".home").forEach(element => {
-            element.style.display = "none";
-        });
-        document.querySelectorAll(".programm").forEach(element => {
-            element.style.display = "none";
-        });
-
-        document.querySelectorAll(".organe").forEach(element => {
-            element.style.display = "block";
-        });
-
-        document.querySelectorAll(".jugend").forEach(element => {
-            element.style.display = "none";
-        });
-        var url = location.href;
-        window.location.href = "#" + "organe";
-
-    } else if (clickID == "jugend") {
-        document.querySelectorAll(".home").forEach(element => {
-            element.style.display = "none";
-        });
-        document.querySelectorAll(".programm").forEach(element => {
-            element.style.display = "none";
-        });
-
-        document.querySelectorAll(".organe").forEach(element => {
-            element.style.display = "none";
-        });
-
-        document.querySelectorAll(".jugend").forEach(element => {
-            element.style.display = "block";
-        });
-        var url = location.href;
-        window.location.href = "#" + "jugend";
+    var contentobjects = document.getElementsByClassName("content-item");
+    for (var obj of contentobjects) {
+        if (obj.classList.contains(clickID)) {
+            if (obj instanceof HTMLElement) {
+                obj.style.display = "block";
+            }
+            var url = location.href;
+            window.location.href = "#" + clickID;
+        } else {
+            if (obj instanceof HTMLElement) {
+                obj.style.display = "none";
+            }
+        }
     }
 
     hideNavItems();

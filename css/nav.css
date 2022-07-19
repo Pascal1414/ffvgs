@@ -98,14 +98,14 @@
                 height: var(--nav-height-tablet);
             }
             .nav-item {
-                display: block !important;
-                margin-top: auto;
-                margin-bottom: auto;
+                display: flex !important;
+                height: 100%;
                 padding-left: 20px;
                 padding-right: 20px;
                 font-size: 25px;
                 user-select: none;
                 cursor: pointer;
+                align-items: center;
             }
             .nav-item-mobile-hidden {
                 display: block !important;
