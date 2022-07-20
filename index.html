@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/slideshow.css">
     <script type="text/javascript" src="js/navigation.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/slideshow.js"></script>
     <title>FFVGS</title>
 </head>
 
@@ -108,6 +109,23 @@
         </section>
         <section class="galerie content-item">
             Galerie
+            <div class="slideshow">
+                <button class="slideshow-button slideshow-button-left" onclick="slideshowBack()">❮</button>
+                <div class="image-conntainer    ">
+                    <img class="slideshow-image " src="img/grid1.jpg">
+                </div>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/grid2.jpg">
+                </div>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/grid3.jpg">
+                </div>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/grid4.jpg">
+                </div>
+
+                <button class="slideshow-button slideshow-button-right" onclick="slideshowForwards()">❯</button>
+            </div>
         </section>
         <section class="kontakt content-item">
             Kontakt
