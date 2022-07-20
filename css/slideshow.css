@@ -4,6 +4,7 @@
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
+    height: auto;
 }
 
 .slideshow-button {
@@ -21,6 +22,7 @@
     z-index: 999;
     background-color: transparent;
     border: 0;
+    touch-action: manipulation;
 }
 
 .slideshow-button:hover {
