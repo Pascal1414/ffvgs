@@ -26,9 +26,10 @@
         
         .nav {
             background-color: #f8f9fa;
+            overflow: hidden;
         }
         
-        @media (max-width: 810px) {
+        @media (max-width: 820px) {
             .nav {
                 display: flex;
                 flex-direction: column;
@@ -50,7 +51,7 @@
                 height: 30px;
                 color: black;
                 display: none;
-                padding-left: 5px;
+                padding-left: 15px;
                 padding-right: 5px;
                 font-size: 25px;
                 padding-top: 3px;
@@ -96,7 +97,7 @@
             }
         }
         
-        @media (min-width: 810px) {
+        @media (min-width: 820px) {
             .nav {
                 display: flex;
                 flex-direction: row;
