@@ -1,8 +1,10 @@
 .slideshow {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .slideshow-button {
@@ -31,7 +33,9 @@
 
 .slideshow-button-left {}
 
-.image-conntainer {}
+.image-conntainer {
+    width: 100%;
+}
 
 .slideshow-image {
     width: 100%;
