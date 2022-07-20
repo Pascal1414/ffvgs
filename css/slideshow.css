@@ -2,7 +2,6 @@
     width: 80%;
     display: flex;
     flex-direction: row;
-    height: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -13,17 +12,20 @@
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
     z-index: 999;
+    background-color: transparent;
+    border: 0;
 }
 
 .slideshow-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    color: white;
 }
 
 .slideshow-button-right {
@@ -35,6 +37,7 @@
 
 .image-conntainer {
     width: 100%;
+    height: auto;
 }
 
 .slideshow-image {
@@ -55,3 +58,13 @@
         opacity: 1
     }
 }
+
+@media (max-width: 810px) {
+    .slideshow {
+        width: 100%;
+    }
+}
+
+@media (min-width: 810px) {}
+
+@media (min-width: 1120px) {}
