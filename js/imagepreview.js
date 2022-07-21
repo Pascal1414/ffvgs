@@ -32,6 +32,7 @@ function imageClick(image) {
     image.style.left = "10%";
     image.style.width = "80%";*/
 
+
     var imageprev = document.getElementsByClassName("image-preview");
     for (i = 0; i < imageprev.length; i++) {
         imageprev[i].appendChild(image);
@@ -49,4 +50,33 @@ function exit() {
         imageprev[i].removeChild(currentimage);
         imageprev[i].style.display = "none";
     }
+
+    var hash = window.location.href.substring(window.location.href.indexOf("#") + 1);
+
+    if (hash == "home") {
+        cathegoryClick("home");
+    } else if (hash == "programm") {
+        cathegoryClick("programm");
+
+    } else if (hash == "organe") {
+        cathegoryClick("organe");
+
+    } else if (hash == "jugend") {
+        cathegoryClick("jugend");
+
+    } else if (hash == "berichte") {
+        cathegoryClick("berichte");
+
+    } else if (hash == "galerie") {
+        cathegoryClick("galerie");
+
+    } else if (hash == "kontakt") {
+        cathegoryClick("kontakt");
+
+    } else if (hash == "boot") {
+        cathegoryClick("boot");
+    } else {
+        cathegoryClick("home");
+    }
+    currentimage.scrollIntoView();
 }
