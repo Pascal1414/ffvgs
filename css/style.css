@@ -43,6 +43,17 @@ p {
 
 .image-preview {
     display: none;
+    flex-direction: column;
+}
+
+.image-preview-exit {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    background-color: #333333;
+    color: white;
+    margin-right: 10px;
+    border-radius: 10px;
 }
 
 @media (max-width: 700px) {

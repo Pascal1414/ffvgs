@@ -27,15 +27,15 @@ function imageClick(image) {
     }
 
     image.style.display = "block";
-    image.style.position = "absolute";
+    /*image.style.position = "absolute";
     image.style.top = 0;
     image.style.left = "10%";
-    image.style.width = "80%";
+    image.style.width = "80%";*/
 
     var imageprev = document.getElementsByClassName("image-preview");
     for (i = 0; i < imageprev.length; i++) {
         imageprev[i].appendChild(image);
-        imageprev[i].style.display = "block";
+        imageprev[i].style.display = "flex";
     }
 
 }
