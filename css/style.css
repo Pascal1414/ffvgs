@@ -41,6 +41,10 @@ p {
     width: 100%;
 }
 
+.image-preview {
+    display: none;
+}
+
 @media (max-width: 700px) {
     p {
         font-size: 90%;
