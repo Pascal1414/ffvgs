@@ -140,7 +140,12 @@
             .nav-item:hover,
             .nav-item-mobile-hidden:hover {
                 background-color: lightgray;
+            }
+            .nav-item:hover {
                 text-decoration: underline;
+            }
+            .nav-item-home:hover {
+                background-color: lightgray;
             }
             .nav-top {}
             .nav-button {
@@ -163,8 +168,12 @@
                 padding-left: 15px;
                 padding-right: 15px;
                 font-size: 25px;
+                width: 20px;
             }
             .nav-item-mobile-hidden {
                 font-size: 30px;
+            }
+            .nav-item-home:hover {
+                background-color: lightgray;
             }
         }

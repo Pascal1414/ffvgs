@@ -11,6 +11,7 @@
     <script type="text/javascript" src="js/navigation.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
     <script src="js/slideshow.js"></script>
+    <script src="js/imagepreview.js"></script>
     <title>FFVGS</title>
 </head>
 
@@ -78,16 +79,16 @@
 
             <div class="image-grid">
                 <div class="image-grid-item">
-                    <img class="img-full-width" src="img/grid1.jpg">
+                    <img class="img img-full-width" onclick="imageClick(this)" src="img/grid1.jpg">
                 </div>
                 <div class="image-grid-item">
-                    <img class="img-full-width" src="img/grid2.jpg" class="">
+                    <img class="img img-full-width" onclick="imageClick(this)" src="img/grid2.jpg" class="">
                 </div>
                 <div class="image-grid-item">
-                    <img class="img-full-width" src="img/grid3.jpg" class="">
+                    <img class="img img-full-width" onclick="imageClick(this)" src="img/grid3.jpg" class="">
                 </div>
                 <div class="image-grid-item">
-                    <img class="img-full-width" src="img/grid4.jpg" class="">
+                    <img class="img img-full-width" onclick="imageClick(this)" src="img/grid4.jpg" class="">
                 </div>
             </div>
 
@@ -109,7 +110,7 @@
             <div class="slideshow">
                 <button class="slideshow-button slideshow-button-left" onclick="slideshowBack()">❮</button>
                 <div class="image-conntainer fade">
-                    <img class="slideshow-image " src="img/grid1.jpg">
+                    <img class="slideshow-image" src="img/grid1.jpg">
                 </div>
                 <div class="image-conntainer fade">
                     <img class="slideshow-image" src="img/grid2.jpg">
@@ -130,6 +131,9 @@
         <section class="boot content-item">
             Boot
         </section>
+        <div class="image-preview">
+
+        </div>
 
     </main>
     <footer>
