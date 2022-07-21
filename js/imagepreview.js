@@ -6,12 +6,14 @@
     }
 }, false);*/
 
+
 function imageClick(image) {
     var all = document.getElementsByTagName("section");
     for (i = 0; i < all.length; i++) {
 
         all[i].style.pointerEvents = "none";
         all[i].style.opacity = 0.4;
+
     }
     var nav = document.getElementsByTagName("nav");
     for (i = 0; i < nav.length; i++) {
