@@ -106,7 +106,14 @@ function next() {
 }
 
 function previous() {
-
+    currentImageId = getCurrentItemId(currentimage);
+    if (0 <= currentImageId - 1) {
+        exit();
+        updateToItem(imagelist[currentImageId - 1].firstElementChild);
+    } else {
+        exit();
+        updateToItem(imagelist[imagelist.length - 1].firstElementChild);
+    }
 }
 
 function getCurrentItemId(image) {
