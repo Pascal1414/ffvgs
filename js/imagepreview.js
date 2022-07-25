@@ -39,9 +39,11 @@ function imageClick(image) {
 
 
     var imageprev = document.getElementsByClassName("image-preview");
+
     for (i = 0; i < imageprev.length; i++) {
         imageprev[i].appendChild(imageClone);
         imageprev[i].style.display = "flex";
+        imageprev[i].style.height = window.innerHeight + "px";
     }
 
     scrollTo(document.body);
@@ -71,6 +73,7 @@ function exit() {
     for (i = 0; i < imageprev.length; i++) {
         imageprev[i].removeChild(imageClone);
         imageprev[i].style.display = "none";
+
     }
 
     document.body.style.backgroundColor = "#f9f9f9";
