@@ -104,7 +104,7 @@ function exit() {
         cathegoryClick("home");
     }
 
-    //imageClone.scrollIntoView();
+    currentimage.parentElement.parentElement.scrollIntoView();
 }
 
 function next() {
