@@ -35,7 +35,7 @@ function imageClick(image) {
         main[i].style.paddingTop = 0;
     }
 
-    image.style.display = "block";
+    imageClone.style.display = "block";
 
 
     var imageprev = document.getElementsByClassName("image-preview");
