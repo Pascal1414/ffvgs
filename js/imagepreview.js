@@ -8,6 +8,7 @@
 
 var all;
 var imageClone;
+var backgroundColor;
 
 function imageClick(image) {
     imageClone = image.cloneNode(true);;
@@ -25,6 +26,11 @@ function imageClick(image) {
 
         nav[i].style.display = "none";
     }
+
+
+
+    backgroundColor = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = "black";
 
     image.style.display = "block";
     /*image.style.position = "absolute";
@@ -58,6 +64,9 @@ function exit() {
         imageprev[i].removeChild(imageClone);
         imageprev[i].style.display = "none";
     }
+
+    document.body.style.backgroundColor = backgroundColor;
+
 
     var hash = window.location.href.substring(window.location.href.indexOf("#") + 1);
 
