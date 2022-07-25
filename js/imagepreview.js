@@ -14,12 +14,7 @@ function imageClick(image) {
     imageClone = image.cloneNode(true);;
     all = document.getElementsByTagName("section");
     for (i = 0; i < all.length; i++) {
-
-        /* all[i].style.pointerEvents = "none";
-        all[i].style.opacity = 0.4;
-*/
         all[i].style.display = "none";
-
     }
     var nav = document.getElementsByTagName("nav");
     for (i = 0; i < nav.length; i++) {
@@ -33,10 +28,6 @@ function imageClick(image) {
     document.body.style.backgroundColor = "black";
 
     image.style.display = "block";
-    /*image.style.position = "absolute";
-    image.style.top = 0;
-    image.style.left = "10%";
-    image.style.width = "80%";*/
 
 
 
@@ -45,7 +36,7 @@ function imageClick(image) {
         imageprev[i].appendChild(imageClone);
         imageprev[i].style.display = "flex";
     }
-
+    scrollTo(document.body);
 }
 
 function exit() {

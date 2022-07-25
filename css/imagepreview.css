@@ -10,15 +10,50 @@
 
 .image-preview-exit {
     position: absolute;
-    right: 20%;
+    top: 0;
+    right: 0;
     height: 50px;
     width: 50px;
     border: 0;
-    background-color: #333333;
+    background-color: black;
     color: white;
     margin-right: 10px;
     border-radius: 10px;
     font-size: 20px;
+    margin: 10px;
+}
+
+.image-preview-exit:hover {
+    background-color: #333333;
+}
+
+.image-preview-previous {
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.image-preview-navigation {
+    height: 50px;
+    width: 50px;
+    border: 0;
+    background-color: black;
+    color: white;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 10px;
+    font-weight: bolder;
+}
+
+.image-preview-navigation:hover {
+    background-color: #333333;
+}
+
+.image-preview-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
 }
 
 @media (max-width: 700px) {}
