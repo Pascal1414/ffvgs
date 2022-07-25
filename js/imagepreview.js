@@ -8,9 +8,11 @@
 
 var all;
 var imageClone;
-var backgroundColor;
+var imagelist;
+var currentimage;
 
 function imageClick(image) {
+    currentimage = image;
     imageClone = image.cloneNode(true);;
     all = document.getElementsByTagName("section");
     for (i = 0; i < all.length; i++) {
@@ -24,7 +26,6 @@ function imageClick(image) {
 
 
 
-    backgroundColor = document.body.style.backgroundColor;
     document.body.style.backgroundColor = "black";
 
     image.style.display = "block";
@@ -37,6 +38,9 @@ function imageClick(image) {
         imageprev[i].style.display = "flex";
     }
     scrollTo(document.body);
+
+
+    imagelist = getImageParent(image).children;
 }
 
 function exit() {
@@ -56,7 +60,7 @@ function exit() {
         imageprev[i].style.display = "none";
     }
 
-    document.body.style.backgroundColor = backgroundColor;
+    document.body.style.backgroundColor = "#f9f9f9";
 
 
     var hash = window.location.href.substring(window.location.href.indexOf("#") + 1);
@@ -88,4 +92,35 @@ function exit() {
     }
 
     //imageClone.scrollIntoView();
+}
+
+function next() {
+    currentImageId = getCurrentItemId(currentimage);
+    if (imagelist.length > currentImageId + 1) {
+        exit();
+        updateToItem(imagelist[currentImageId + 1].firstElementChild);
+    } else {
+        exit();
+        updateToItem(imagelist[0].firstElementChild);
+    }
+}
+
+function previous() {
+
+}
+
+function getCurrentItemId(image) {
+    for (i = 0; i < imagelist.length; i++) {
+        if (imagelist[i] == image.parentElement)
+            return i;
+    }
+
+}
+
+function updateToItem(updateimage) {
+    imageClick(updateimage);
+}
+
+function getImageParent(image) {
+    return image.parentElement.parentElement;
 }
