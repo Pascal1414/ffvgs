@@ -13,7 +13,10 @@ var currentimage;
 
 function imageClick(image) {
     currentimage = image;
-    imageClone = image.cloneNode(true);;
+    imageClone = image.cloneNode(true);
+    imageClone.onclick = function() {
+        return false;
+    }
     all = document.getElementsByTagName("section");
     for (i = 0; i < all.length; i++) {
         all[i].style.display = "none";
