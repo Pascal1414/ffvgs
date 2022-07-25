@@ -44,6 +44,7 @@
     font-size: 20px;
     margin: 10px;
     font-weight: bolder;
+    touch-action: manipulation;
 }
 
 .image-preview-navigation:hover {
