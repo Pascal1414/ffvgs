@@ -1,10 +1,11 @@
-/*window.addEventListener("load", function() {
-    let images = document.getElementsByClassName("img");
+window.onresize = function() {
+    var imageprev = document.getElementsByClassName("image-preview");
 
-    for (i = 0; i < images.length; i++) {
-        images[i].addEventListener("click", function() { imageClick(images[i].id) });
+    for (i = 0; i < imageprev.length; i++) {
+        imageprev[i].style.height = window.innerHeight - 40 + "px";
     }
-}, false);*/
+
+}
 
 var all;
 var imageClone;
@@ -43,7 +44,7 @@ function imageClick(image) {
     for (i = 0; i < imageprev.length; i++) {
         imageprev[i].appendChild(imageClone);
         imageprev[i].style.display = "flex";
-        imageprev[i].style.height = window.innerHeight + "px";
+        imageprev[i].style.height = window.innerHeight - 40 + "px";
     }
 
     scrollTo(document.body);
