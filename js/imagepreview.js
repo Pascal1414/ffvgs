@@ -7,10 +7,10 @@
 }, false);*/
 
 var all;
-var currentimage;
+var imageClone;
 
 function imageClick(image) {
-    currentimage = image;
+    imageClone = image.cloneNode(true);;
     all = document.getElementsByTagName("section");
     for (i = 0; i < all.length; i++) {
 
@@ -33,9 +33,10 @@ function imageClick(image) {
     image.style.width = "80%";*/
 
 
+
     var imageprev = document.getElementsByClassName("image-preview");
     for (i = 0; i < imageprev.length; i++) {
-        imageprev[i].appendChild(image);
+        imageprev[i].appendChild(imageClone);
         imageprev[i].style.display = "flex";
     }
 
@@ -45,9 +46,16 @@ function exit() {
     for (i = 0; i < all.length; i++) {
         all[i].style.display = "block";
     }
+
+    var nav = document.getElementsByTagName("nav");
+    for (i = 0; i < nav.length; i++) {
+        nav[i].style.display = "block";
+    }
+
+
     var imageprev = document.getElementsByClassName("image-preview");
     for (i = 0; i < imageprev.length; i++) {
-        imageprev[i].removeChild(currentimage);
+        imageprev[i].removeChild(imageClone);
         imageprev[i].style.display = "none";
     }
 
@@ -78,5 +86,6 @@ function exit() {
     } else {
         cathegoryClick("home");
     }
-    currentimage.scrollIntoView();
+
+    //imageClone.scrollIntoView();
 }
