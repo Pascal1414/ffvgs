@@ -30,9 +30,12 @@ function imageClick(image) {
 
 
     document.body.style.backgroundColor = "black";
+    var main = document.getElementsByTagName("main");
+    for (i = 0; i < main.length; i++) {
+        main[i].style.paddingTop = 0;
+    }
 
     image.style.display = "block";
-
 
 
     var imageprev = document.getElementsByClassName("image-preview");
@@ -40,6 +43,7 @@ function imageClick(image) {
         imageprev[i].appendChild(imageClone);
         imageprev[i].style.display = "flex";
     }
+
     scrollTo(document.body);
 
 
@@ -47,6 +51,12 @@ function imageClick(image) {
 }
 
 function exit() {
+
+    var main = document.getElementsByTagName("main");
+    for (i = 0; i < main.length; i++) {
+        main[i].style.paddingTop = "calc(var(--nav-height-tablet) + 20px)";
+    }
+
     for (i = 0; i < all.length; i++) {
         all[i].style.display = "block";
     }
@@ -98,28 +108,28 @@ function exit() {
 }
 
 function next() {
-    currentImageId = getCurrentItemId(currentimage);
+    currentImageId = getCurrentItemIdprev(currentimage);
     if (imagelist.length > currentImageId + 1) {
         exit();
-        updateToItem(imagelist[currentImageId + 1].firstElementChild);
+        updateToItemprev(imagelist[currentImageId + 1].firstElementChild);
     } else {
         exit();
-        updateToItem(imagelist[0].firstElementChild);
+        updateToItemprev(imagelist[0].firstElementChild);
     }
 }
 
 function previous() {
-    currentImageId = getCurrentItemId(currentimage);
+    currentImageId = getCurrentItemIdprev(currentimage);
     if (0 <= currentImageId - 1) {
         exit();
-        updateToItem(imagelist[currentImageId - 1].firstElementChild);
+        updateToItemprev(imagelist[currentImageId - 1].firstElementChild);
     } else {
         exit();
-        updateToItem(imagelist[imagelist.length - 1].firstElementChild);
+        updateToItemprev(imagelist[imagelist.length - 1].firstElementChild);
     }
 }
 
-function getCurrentItemId(image) {
+function getCurrentItemIdprev(image) {
     for (i = 0; i < imagelist.length; i++) {
         if (imagelist[i] == image.parentElement)
             return i;
@@ -127,7 +137,7 @@ function getCurrentItemId(image) {
 
 }
 
-function updateToItem(updateimage) {
+function updateToItemprev(updateimage) {
     imageClick(updateimage);
 }
 
