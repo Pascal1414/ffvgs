@@ -3,6 +3,7 @@ window.onresize = function() {
 
     for (i = 0; i < imageprev.length; i++) {
         imageprev[i].style.height = window.innerHeight - 40 + "px";
+
     }
 
 }
@@ -53,11 +54,24 @@ function imageClick(image) {
     imagelist = getImageParent(image).children;
 }
 
+function querryPaddingTop(x) {
+    var main = document.getElementsByTagName("main");
+    for (i = 0; i < main.length; i++) {
+        if (x.matches) {
+            main[i].style.paddingTop = 0;
+        } else {
+            main[i].style.paddingTop = "calc(var(--nav-height-tablet) + 20px)";
+        }
+    }
+}
+
 function exit() {
 
     var main = document.getElementsByTagName("main");
     for (i = 0; i < main.length; i++) {
-        main[i].style.paddingTop = "calc(var(--nav-height-tablet) + 20px)";
+        var x = window.matchMedia("(max-width: 820px)")
+        querryPaddingTop(x);
+        x.addListener(querryPaddingTop);
     }
 
     for (i = 0; i < all.length; i++) {
@@ -66,9 +80,8 @@ function exit() {
 
     var nav = document.getElementsByTagName("nav");
     for (i = 0; i < nav.length; i++) {
-        nav[i].style.display = "block";
+        nav[i].style.display = "flex";
     }
-
 
     var imageprev = document.getElementsByClassName("image-preview");
     for (i = 0; i < imageprev.length; i++) {
