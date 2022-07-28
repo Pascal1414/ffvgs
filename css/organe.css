@@ -1,0 +1,58 @@
+.person-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    width: 100%;
+}
+
+.person-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: min-content;
+}
+
+.person-text {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.person-img {
+    width: 130px;
+}
+
+.person-function {
+    font-size: 17px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.person-name {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.person-email {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.person-tel {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 740px) {
+    .person-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .person-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 990px) {}
+
+@media (min-width: 990px) {}
