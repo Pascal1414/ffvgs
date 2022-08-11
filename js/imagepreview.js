@@ -93,7 +93,7 @@ function exit() {
 
     }
 
-    document.body.style.backgroundColor = "#f9f9f9";
+    document.body.style.backgroundColor = "#0b0c10";
 
 
 
