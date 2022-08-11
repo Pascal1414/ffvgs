@@ -1,0 +1,35 @@
+.sort-button {
+    background-color: transparent;
+    border: 2px #66fcf1 solid;
+    height: 100%;
+    font-size: 25px;
+    color: #66fcf1;
+    width: min-content;
+    border-radius: 4px;
+    padding: 5px;
+    align-content: center;
+    touch-action: manipulation;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.sort-button:hover {
+    background-color: #66fcf1 !important;
+    color: black !important;
+    border-color: #66fcf1 !important;
+}
+
+.programm-table {
+    color: #66fcf1;
+}
+
+.rotated {
+    transform: rotate(270deg);
+    height: min-content;
+}
+
+.cross-field {
+    width: 20px;
+}
+
+.programm-date {}

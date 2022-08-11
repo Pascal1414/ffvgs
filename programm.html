@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programm</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/programm.css">
     <script src="js/nav.js"></script>
-
+    <script src="js/programm.js"></script>
 </head>
 
 <body>
@@ -20,7 +22,7 @@
                     <img class="nav-img" src="img/logo.png">
                     <div class="nav-item-mobile-hidden">FFVGS</div>
                 </a>
-                <button class="nav-button" onclick="navButtonClick()">
+                <button id="nav-button" class="nav-button" onclick="navButtonClick()">
                     <div class="center-text">
                         ☰
                     </div>
@@ -59,7 +61,127 @@
         </nav>
     </header>
     <main>
-        Programm
+        <h1>Programm</h1>
+        <div>
+            <button id="button-erwachsene" class="sort-button button-erwachsene" onclick="clickProgramm('erwachsene', this.id)">Erwachsene</button>
+            <button id="button-jugend" class="sort-button button-jugend" onclick="clickProgramm('p-jugend', this.id)">Jugend</button>
+            <button id="button-junioren" class="sort-button button-junioren" onclick="clickProgramm('junioren', this.id)">Junioren</button>
+        </div>
+        <p>E = Erwachsen, J = Junioren, JG = Jugendgruppe</p>
+        <table class="programm-table">
+            <tr class="erwachsene p-jugend junioren">
+                <th class="cross-field">E</th>
+                <th class="cross-field">J</th>
+                <th class="cross-field">JG</th>
+                <th class="programm-date">Datum</th>
+                <th>Beschreibung</th>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>02.01.2022</td>
+                <td>Apero Garnhänki Greifensee</td>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>08.01.2022</td>
+                <td>Neujahrsapero Uster</td>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>08.04.2022</td>
+                <td>Ehren- und Freimitgliederanlass Greifensee</td>
+            </tr>
+            <tr class="p-jugend junioren">
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+                <td>09.04.2022</td>
+                <td>Theorie und Ruten</td>
+            </tr>
+            <tr class="p-jugend erwachsene">
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+                <td>23.04.2022</td>
+                <td>45. Generalversammlung Greifensee</td>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>02.01.2022</td>
+                <td>Apero Garnhänki Greifensee</td>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>08.01.2022</td>
+                <td>Neujahrsapero Uster</td>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>08.04.2022</td>
+                <td>Ehren- und Freimitgliederanlass Greifensee</td>
+            </tr>
+            <tr class="p-jugend junioren">
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+                <td>09.04.2022</td>
+                <td>Theorie und Ruten</td>
+            </tr>
+            <tr class="p-jugend erwachsene">
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+                <td>23.04.2022</td>
+                <td>45. Generalversammlung Greifensee</td>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>02.01.2022</td>
+                <td>Apero Garnhänki Greifensee</td>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>08.01.2022</td>
+                <td>Neujahrsapero Uster</td>
+            </tr>
+            <tr class="erwachsene">
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td>08.04.2022</td>
+                <td>Ehren- und Freimitgliederanlass Greifensee</td>
+            </tr>
+            <tr class="p-jugend junioren">
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+                <td>09.04.2022</td>
+                <td>Theorie und Ruten</td>
+            </tr>
+            <tr class="p-jugend erwachsene">
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+                <td>23.04.2022</td>
+                <td>45. Generalversammlung Greifensee</td>
+            </tr>
+        </table>
     </main>
     <footer>
         <div class="footer">
