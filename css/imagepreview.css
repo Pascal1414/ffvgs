@@ -63,13 +63,13 @@
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         margin: 0;
-        margin-right: 20px;
+        margin-right: 0;
     }
     .image-preview-previous {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         margin: 0;
-        margin-left: 20px;
+        margin-left: 0;
     }
 }
 

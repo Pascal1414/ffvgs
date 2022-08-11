@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/slideshow.css">
-    <link rel="stylesheet" href="css/imagepreview.css">
-    <link rel="stylesheet" href="css/organe.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <title>Organe</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/organe.css">
     <script src="js/slideshow.js"></script>
     <script src="js/imagepreview.js"></script>
-    <title>FFVGS</title>
+    <link rel="stylesheet" href="css/imagepreview.css">
+
 </head>
 
-<body onload="onLoad()">
+<body>
     <header>
         <nav class="nav">
             <div class="nav-top">
@@ -63,30 +63,58 @@
         </nav>
     </header>
     <main>
-        <h1>Fisch des Jahres 2022 – die Felche</h1>
-        <img class="img-full-width" src="img/Felche.jpg">
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero corrupti atque amet doloribus earum quas obcaecati rem ab voluptatum distinctio quam eos ducimus necessitatibus quaerat, harum porro. Dolor illo, voluptatem recusandae quibusdam
-            officiis ipsam, ea molestias dignissimos enim, rem itaque!</p>
-        <hr/>
-        <h1> Glattwehr – eine unverständliche Massnahme </h1>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, debitis iusto! Fugit unde qui explicabo fugiat saepe optio cum quisquam quam iusto molestiae adipisci corrupti, ex fuga rerum delectus odit ad nostrum enim inventore consequuntur distinctio,
-            molestias amet, architecto nulla! Possimus dolore libero, porro dignissimos rerum voluptas adipisci error omnis!
-            <div class="image-grid">
-                <div class="image-grid-item">
-                    <img class="img img-full-width" onclick="imageClick(this)" src="img/grid1.jpg">
+        <!--div class="slideshow">
+                <button class="slideshow-button slideshow-button-left" onclick="slideshowBack()">❮</button>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/grid1.jpg">
                 </div>
-                <div class="image-grid-item">
-                    <img class="img img-full-width" onclick="imageClick(this)" src="img/grid2.jpg" class="">
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/grid2.jpg">
                 </div>
-                <div class="image-grid-item">
-                    <img class="img img-full-width" onclick="imageClick(this)" src="img/grid3.jpg" class="">
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/grid3.jpg">
                 </div>
-                <div class="image-grid-item">
-                    <img class="img img-full-width" onclick="imageClick(this)" src="img/grid4.jpg" class="">
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/grid4.jpg">
                 </div>
-            </div>
-    </main>
 
+                <button class="slideshow-button slideshow-button-right" onclick="slideshowForwards(-1)">❯</button>
+            </div-->
+        <h1>Trüschenfischen (2.11.2019)</h1>
+
+        <div class="image-grid">
+            <div class="image-grid-item">
+                <img class="img img-full-width" onclick="imageClick(this)" src="img/trüschen1.jpg">
+            </div>
+            <div class="image-grid-item">
+                <img class="img img-full-width" onclick="imageClick(this)" src="img/trüschen2.jpg" class="">
+            </div>
+            <div class="image-grid-item">
+                <img class="img img-full-width" onclick="imageClick(this)" src="img/trüschen3.jpg" class="">
+            </div>
+            <div class="image-grid-item">
+                <img class="img img-full-width" onclick="imageClick(this)" src="img/trüschen4.jpg" class="">
+            </div>
+        </div>
+
+        <h1>Fondufischen (26.10.2019)</h1>
+
+        <div class="image-grid">
+            <div class="image-grid-item">
+                <img class="img img-full-width" onclick="imageClick(this)" src="img/fondue1.jpg">
+            </div>
+            <div class="image-grid-item">
+                <img class="img img-full-width" onclick="imageClick(this)" src="img/fondue2.jpg" class="">
+            </div>
+            <div class="image-grid-item">
+                <img class="img img-full-width" onclick="imageClick(this)" src="img/fondue3.jpg" class="">
+            </div>
+            <div class="image-grid-item">
+                <img class="img img-full-width" onclick="imageClick(this)" src="img/fondue4.jpg" class="">
+            </div>
+        </div>
+
+    </main>
     <footer>
         <div class="footer">
             <div class="footer-container">
