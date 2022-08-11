@@ -39,10 +39,6 @@
     text-decoration: none;
 }
 
-.nav-item:hover {
-    text-decoration: underline;
-}
-
 @media (max-width: 820px) {
     .nav {
         display: flex;
@@ -142,6 +138,9 @@
         user-select: none;
         cursor: pointer;
         align-items: center;
+    }
+    .nav-item:hover {
+        text-decoration: underline;
     }
     /* .nav-item:hover,
     .nav-item-mobile-hidden:hover {
