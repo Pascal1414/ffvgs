@@ -1,0 +1,57 @@
+.form-button {
+    background-color: transparent;
+    border: 2px #66fcf1 solid;
+    font-size: 20px;
+    padding: 10px;
+    height: 100%;
+    width: min-content;
+    border-radius: 4px;
+    align-content: center;
+    color: #C5c6c7;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.form-imput {
+    background-color: transparent;
+    border: 2px #66fcf1 solid;
+    font-size: 20px;
+    padding: 10px;
+    width: min-content;
+    border-radius: 4px;
+    color: #C5c6c7;
+    outline: none;
+    transition: 0.3s;
+    width: -moz-available;
+}
+
+.form-textarea {
+    background-color: transparent;
+    border: 2px #66fcf1 solid;
+    font-size: 20px;
+    padding: 10px;
+    width: min-content;
+    border-radius: 4px;
+    color: #C5c6c7;
+    outline: none;
+    width: 100%;
+    height: 200px;
+}
+
+.form-imput:focus {
+    background-color: #45a29e;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sub-form-container {
+    padding: 10px;
+}

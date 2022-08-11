@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/kontakt.css">
+
     <script src="js/nav.js"></script>
 
 </head>
@@ -60,26 +62,43 @@
         </nav>
     </header>
     <main>
-        Kontakt
-        <form name="contact" method="POST" data-netlify="true">
-            <p>
-                <label>Your Name: <input type="text" name="name" /></label>
-            </p>
-            <p>
-                <label>Your Email: <input type="email" name="email" /></label>
-            </p>
-            <p>
-                <label>Your Role: <select name="role[]" multiple>
-                <option value="leader">Leader</option>
-                <option value="follower">Follower</option>
-              </select></label>
-            </p>
-            <p>
-                <label>Message: <textarea name="message"></textarea></label>
-            </p>
-            <p>
-                <button type="submit">Send</button>
-            </p>
+        <h1>Kontakt</h1>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+            <div class="sub-form">
+                <div class="">
+                    <p>Vorname</p>
+                    <input class="form-imput" type="text" name="name" required/></div>
+                <div>
+                    <p>Nachname</p>
+                    <input class="form-imput" type="text" name="name" required/>
+                </div>
+            </div>
+            <div class="sub-form">
+                <div>
+                    <p>Geb.Datum </p>
+                    <input class="form-imput" type="date" name="name" required/>
+                </div>
+                <div>
+                    <p>Strasse</p>
+                    <input class="form-imput" type="text" name="name" required/>
+                </div>
+            </div>
+            <div class="sub-form">
+                <div>
+                    <p>PLZ</p>
+                    <input class="form-imput" type="number" name="name" required/>
+                </div>
+                <div>
+                    <p>Ort</p>
+                    <input class="form-imput" type="text" name="name" required/>
+                </div>
+            </div>
+
+            <p>Email</p>
+            <input class="form-imput" type="email" name="name" required/>
+            <p>Nachricht</p>
+            <textarea class="form-textarea"></textarea>
+            <button class="form-button">Submit</button>
         </form>
 
     </main>
