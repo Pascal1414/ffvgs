@@ -1,11 +1,7 @@
 body {
     margin: 0;
-    background: #f9f9f9;
-}
-
-.img {
-    transform: translateY();
-    transition: all 0.6s ease-out;
+    /*background: #f9f9f9;3*/
+    background-color: #0b0c10;
 }
 
 header {
@@ -14,15 +10,19 @@ header {
 
 main {
     margin-top: 0;
+    padding-bottom: 20px;
 }
 
 h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #66FCF1;
 }
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333333;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 375;
+    font-size: 17px;
+    color: #C5C6C7;
 }
 
 .img-full-width {
@@ -66,6 +66,8 @@ p {
         margin-left: auto;
         margin-right: auto;
         width: 80%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .image-grid {
         width: 100%;
@@ -80,6 +82,8 @@ p {
         margin-left: auto;
         margin-right: auto;
         width: 70%;
+        padding-left: 20px;
+        padding-right: 20px;
         max-width: 1000px;
     }
     .image-grid {
