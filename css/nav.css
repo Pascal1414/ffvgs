@@ -54,6 +54,7 @@
         display: flex;
         flex-direction: row;
         height: var(--nav-height);
+        align-items: center;
     }
     .nav-item {
         display: none;

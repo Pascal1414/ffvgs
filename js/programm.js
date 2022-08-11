@@ -1,21 +1,30 @@
-setAllVisible();
+/*setAllVisible();
 
 
 function clickProgramm(type, clickId) {
+    if (type == 'alle') {
+        deactivateButtons(document.getElementsByClassName("sort-button"));
 
-    deactivateButtons(document.getElementsByClassName("sort-button"));
-
-    var tablerows = document.getElementsByTagName("tr");
-    for (i = 0; i < tablerows.length; i++) {
-        if (!tablerows[i].classList.contains(type)) {
-            tablerows[i].style.display = "none";
-        } else {
+        var tablerows = document.getElementsByTagName("tr");
+        for (i = 0; i < tablerows.length; i++) {
             tablerows[i].style.display = "block";
         }
-    }
-    activateButton(document.getElementById(clickId));
-    activated = document.getElementById(clickId);
+        activateButton(document.getElementById(clickId));
+        activated = document.getElementById(clickId);
+    } else {
+        deactivateButtons(document.getElementsByClassName("sort-button"));
 
+        var tablerows = document.getElementsByTagName("tr");
+        for (i = 0; i < tablerows.length; i++) {
+            if (!tablerows[i].classList.contains(type)) {
+                tablerows[i].style.display = "none";
+            } else {
+                tablerows[i].style.display = "block";
+            }
+        }
+        activateButton(document.getElementById(clickId));
+        activated = document.getElementById(clickId);
+    }
 }
 
 function setAllVisible() {
@@ -35,4 +44,4 @@ function deactivateButtons(list) {
 function activateButton(button) {
     button.style.backgroundColor = "#66fcf1";
     button.style.color = "black";
-}
+}/*

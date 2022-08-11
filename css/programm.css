@@ -20,16 +20,7 @@
 }
 
 .programm-table {
-    color: #66fcf1;
-}
-
-.rotated {
-    transform: rotate(270deg);
-    height: min-content;
-}
-
-.cross-field {
-    width: 20px;
+    color: #C5C6C7;
 }
 
 .programm-date {}
