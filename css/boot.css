@@ -1,0 +1,72 @@
+/*#zhcal-root {
+    background-color: transparent;
+    color: #66fcf1;
+}
+
+.zhcal_intervall {
+    background-color: #66FCF1 !important;
+    color: black !important;
+}
+
+.zhcal_header {
+    background-color: #45a29e !important;
+}
+
+.zhcal_btn {
+    background-color: transparent !important;
+    border: 2px #66fcf1 solid !important;
+    font-size: 20px !important;
+    padding: 10px !important;
+    height: 100% !important;
+    width: min-content !important;
+    border-radius: 4px !important;
+    align-content: center !important;
+    color: #C5c6c7 !important;
+    touch-action: manipulation !important;
+    user-select: none !important;
+    margin-top: 20px !important;
+}
+
+.zhcal_open {
+    background-color: transparent !important;
+    transition: none;
+}
+
+label {
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-weight: 375 !important;
+    font-size: 17px !important;
+    color: #C5C6C7 !important;
+}
+
+input,
+select {
+    background-color: transparent !important;
+    border: 2px #66fcf1 solid !important;
+    font-size: 20px !important;
+    padding: 10px !important;
+    width: min-content !important;
+    border-radius: 4px !important;
+    color: #C5c6c7 !important;
+    outline: none !important;
+    transition: 0.3s !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#zhcal-root select {
+    padding: 10px !important;
+}
+
+textarea {
+    background-color: transparent !important;
+    border: 2px #66fcf1 solid !important;
+    font-size: 20px !important;
+    padding: 10px !important;
+    border-radius: 4px !important;
+    color: #C5c6c7 !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+}*/
