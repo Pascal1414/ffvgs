@@ -13,4 +13,25 @@ footer {
 .footer-container {
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    width: min-content;
+}
+
+.footer-link {
+    color: #C5C6C7;
+    text-decoration: none;
+    transition: 0.2s;
+    font-family: "Segoe UI", Arial, sans-serif;
+    width: min-content;
+}
+
+.footer-link:hover {
+    color: blue;
 }
