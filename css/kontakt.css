@@ -10,6 +10,7 @@
     color: #C5c6c7;
     touch-action: manipulation;
     user-select: none;
+    margin-top: 20px;
 }
 
 .form-imput {
@@ -22,7 +23,8 @@
     color: #C5c6c7;
     outline: none;
     transition: 0.3s;
-    width: -moz-available;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-textarea {
@@ -36,6 +38,7 @@
     outline: none;
     width: 100%;
     height: 200px;
+    box-sizing: border-box;
 }
 
 .form-imput:focus {
@@ -52,6 +55,41 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
-.sub-form-container {
-    padding: 10px;
+.sub-sub-form {
+    width: 100%;
+}
+
+.input-left {
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+
+.input-right {
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+@media (max-width: 700px) {
+    .sub-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .input-left {
+        box-sizing: border-box;
+        padding-right: 0;
+    }
+    .input-right {
+        box-sizing: border-box;
+        padding-left: 0;
+    }
+    .mobile-static {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .mobile-static-right {
+        padding-left: 10px;
+    }
+    .mobile-static-left {
+        padding-right: 10px;
+    }
 }
