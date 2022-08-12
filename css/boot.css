@@ -39,9 +39,21 @@ label {
     color: #C5C6C7 !important;
 }
 
-input,
-select {
+input {
     background-color: transparent !important;
+    border: 2px #66fcf1 solid !important;
+    font-size: 20px !important;
+    padding: 10px !important;
+    border-radius: 4px !important;
+    color: #C5c6c7 !important;
+    outline: none !important;
+    transition: 0.3s !important;
+    width: 100% !important;
+    height: min-content;
+    box-sizing: border-box !important;
+}
+select {
+    background-color: black !important;
     border: 2px #66fcf1 solid !important;
     font-size: 20px !important;
     padding: 10px !important;
@@ -74,4 +86,10 @@ textarea {
 h3 {
     font-family: "Segoe UI", Arial, sans-serif !important;
     color: #66FCF1 !important;
-}*/
+}
+
+.zhcal_submit {
+    margin-top: 10px !important;
+}
+
+*/
