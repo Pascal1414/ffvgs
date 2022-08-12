@@ -45,12 +45,12 @@ select {
     border: 2px #66fcf1 solid !important;
     font-size: 20px !important;
     padding: 10px !important;
-    width: min-content !important;
     border-radius: 4px !important;
     color: #C5c6c7 !important;
     outline: none !important;
     transition: 0.3s !important;
     width: 100% !important;
+    height: min-content;
     box-sizing: border-box !important;
 }
 
@@ -69,4 +69,9 @@ textarea {
     box-sizing: border-box !important;
     width: 100% !important;
     margin-bottom: 0 !important;
+}
+
+h3 {
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    color: #66FCF1 !important;
 }*/
