@@ -25,7 +25,8 @@
 }
 
 .nav {
-    background-color: #0b0c10;
+    /*background-color: #0b0c10;*/
+    background-color: #24282f;
     overflow: hidden;
     z-index: 100;
 }
