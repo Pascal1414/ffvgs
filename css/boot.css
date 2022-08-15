@@ -91,7 +91,9 @@ h3 {
 .zhcal_submit {
     margin-top: 10px !important;
 }
-
+#zhcal-root div.zhcal_buchunglink div.zhcal_buchungcont{
+    background-color: transparent !important;
+}
 */
 
 h4 {
