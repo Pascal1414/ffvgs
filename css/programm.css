@@ -10,17 +10,30 @@
     align-content: center;
     touch-action: manipulation;
     user-select: none;
-    transition: 0.3s;
+    transition: 0.2s;
+    z-index: 1;
 }
 
-.sort-button:hover {
+
+/*.sort-button:hover {
     background-color: #66fcf1 !important;
     color: black !important;
     border-color: #66fcf1 !important;
-}
+}*/
 
 .programm-table {
     color: #C5C6C7;
+    display: grid;
+    grid-template-columns: repeat(3, 0.2fr) 0.7fr 1fr;
 }
 
-.programm-date {}
+.top-item {
+    font-size: x-large;
+    color: #66fcf1;
+}
+
+.table-item {
+    max-height: auto;
+    transition: 1s ease height;
+    overflow: hidden;
+}

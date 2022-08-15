@@ -1,47 +1,102 @@
-/*setAllVisible();
+function clickAll(clickID) {
+    showAll();
+    resetButtons();
+    if (window.getZIndex(document.getElementById(clickID)) == 2) {
 
+        deavtivateButton(document.getElementById(clickID));
 
-function clickProgramm(type, clickId) {
-    if (type == 'alle') {
-        deactivateButtons(document.getElementsByClassName("sort-button"));
-
-        var tablerows = document.getElementsByTagName("tr");
-        for (i = 0; i < tablerows.length; i++) {
-            tablerows[i].style.display = "block";
-        }
-        activateButton(document.getElementById(clickId));
-        activated = document.getElementById(clickId);
     } else {
-        deactivateButtons(document.getElementsByClassName("sort-button"));
+        hideAll();
 
-        var tablerows = document.getElementsByTagName("tr");
-        for (i = 0; i < tablerows.length; i++) {
-            if (!tablerows[i].classList.contains(type)) {
-                tablerows[i].style.display = "none";
-            } else {
-                tablerows[i].style.display = "block";
-            }
+        var allList = document.getElementsByClassName("all");
+        for (var i = 0; i < allList.length; i++) {
+            allList[i].style.maxHeight = "none";
         }
-        activateButton(document.getElementById(clickId));
-        activated = document.getElementById(clickId);
+        activateButton(document.getElementById(clickID));
+
     }
 }
 
-function setAllVisible() {
-    document.querySelectorAll("tr").forEach(element => {
-        element.style.display = "block";
-    });
+function clickJunioren(clickID) {
+
+    showAll();
+    resetButtons();
+    if (window.getZIndex(document.getElementById(clickID)) == 2) {
+
+        deavtivateButton(document.getElementById(clickID));
+
+    } else {
+        hideAll();
+
+        var allList = document.getElementsByClassName("j");
+        for (var i = 0; i < allList.length; i++) {
+            allList[i].style.maxHeight = "none";
+        }
+        activateButton(document.getElementById(clickID));
+
+    }
 }
 
-function deactivateButtons(list) {
-    for (i = 0; i < list.length; i++) {
-        list[i].style.backgroundColor = "black";
-        list[i].style.color = "#66fcf1";
+function clickJugendGruppe(clickID) {
 
+    showAll();
+    resetButtons();
+
+    if (window.getZIndex(document.getElementById(clickID)) == 2) {
+
+        deavtivateButton(document.getElementById(clickID));
+
+    } else {
+        hideAll();
+
+        var allList = document.getElementsByClassName("jg");
+        for (var i = 0; i < allList.length; i++) {
+            allList[i].style.maxHeight = "none";
+        }
+        activateButton(document.getElementById(clickID));
+
+    }
+}
+
+function hideAll() {
+    var all = document.getElementsByClassName("table-item");
+    for (var i = 0; i < all.length; i++) {
+        all[i].style.maxHeight = 0;
+    }
+}
+
+function showAll() {
+    var all = document.getElementsByClassName("table-item");
+    for (var i = 0; i < all.length; i++) {
+        all[i].style.maxHeight = "none";
     }
 }
 
 function activateButton(button) {
-    button.style.backgroundColor = "#66fcf1";
-    button.style.color = "black";
-}/*
+    button.style.zIndex = 2;
+    button.style.backgroundColor = "#66fcf1"
+    button.style.color = "black"
+
+}
+
+function deavtivateButton(button) {
+    button.style.zIndex = 1;
+    button.style.backgroundColor = "transparent"
+    button.style.color = "black"
+    button.style.color = "#66fcf1"
+
+}
+
+function resetButtons() {
+    var all = document.getElementsByClassName("sort-button");
+    for (var i = 0; i < all.length; i++) {
+        deavtivateButton(all[i]);
+    }
+}
+
+
+window.getZIndex = function(e) {
+    var z = window.document.defaultView.getComputedStyle(e).getPropertyValue('z-index');
+    if (isNaN(z)) return window.getZIndex(e.parentNode);
+    return z;
+};

@@ -62,127 +62,63 @@
     </header>
     <main>
         <h1>Programm</h1>
-        <!--div>
-            <button id="button-erwachsene" class="sort-button button-erwachsene" onclick="clickProgramm('alle', this.id)">Alle</button>
-            <button id="button-erwachsene" class="sort-button button-erwachsene" onclick="clickProgramm('erwachsene', this.id)">Erwachsene</button>
-            <button id="button-jugend" class="sort-button button-jugend" onclick="clickProgramm('p-jugend', this.id)">Jugend</button>
-            <button id="button-junioren" class="sort-button button-junioren" onclick="clickProgramm('junioren', this.id)">Jugendgruppe</button>
-        </div-->
-        <p>E = Erwachsen, J = Junioren, JG = Jugendgruppe</p>
-        <table class="programm-table">
-            <tr class="erwachsene p-jugend junioren">
-                <th class="cross-field">E</th>
-                <th class="cross-field">J</th>
-                <th class="cross-field">JG</th>
-                <th class="programm-date">Datum</th>
-                <th>Beschreibung</th>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>02.01.2022</td>
-                <td>Apero Garnhänki Greifensee</td>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>08.01.2022</td>
-                <td>Neujahrsapero Uster</td>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>08.04.2022</td>
-                <td>Ehren- und Freimitgliederanlass Greifensee</td>
-            </tr>
-            <tr class="p-jugend junioren">
-                <td></td>
-                <td>X</td>
-                <td>X</td>
-                <td>09.04.2022</td>
-                <td>Theorie und Ruten</td>
-            </tr>
-            <tr class="p-jugend erwachsene">
-                <td>X</td>
-                <td>X</td>
-                <td></td>
-                <td>23.04.2022</td>
-                <td>45. Generalversammlung Greifensee</td>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>02.01.2022</td>
-                <td>Apero Garnhänki Greifensee</td>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>08.01.2022</td>
-                <td>Neujahrsapero Uster</td>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>08.04.2022</td>
-                <td>Ehren- und Freimitgliederanlass Greifensee</td>
-            </tr>
-            <tr class="p-jugend junioren">
-                <td></td>
-                <td>X</td>
-                <td>X</td>
-                <td>09.04.2022</td>
-                <td>Theorie und Ruten</td>
-            </tr>
-            <tr class="p-jugend erwachsene">
-                <td>X</td>
-                <td>X</td>
-                <td></td>
-                <td>23.04.2022</td>
-                <td>45. Generalversammlung Greifensee</td>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>02.01.2022</td>
-                <td>Apero Garnhänki Greifensee</td>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>08.01.2022</td>
-                <td>Neujahrsapero Uster</td>
-            </tr>
-            <tr class="erwachsene">
-                <td>X</td>
-                <td></td>
-                <td></td>
-                <td>08.04.2022</td>
-                <td>Ehren- und Freimitgliederanlass Greifensee</td>
-            </tr>
-            <tr class="p-jugend junioren">
-                <td></td>
-                <td>X</td>
-                <td>X</td>
-                <td>09.04.2022</td>
-                <td>Theorie und Ruten</td>
-            </tr>
-            <tr class="p-jugend erwachsene">
-                <td>X</td>
-                <td>X</td>
-                <td></td>
-                <td>23.04.2022</td>
-                <td>45. Generalversammlung Greifensee</td>
-            </tr>
-        </table>
+        <div>
+            <button id="button-erwachsene" class="sort-button button-erwachsene" onclick="clickAll(this.id)">Erwachsene</button>
+            <button id="button-jugend" class="sort-button button-jugend" onclick="clickJunioren(this.id)">Jugend</button>
+            <button id="button-junioren" class="sort-button button-junioren" onclick="clickJugendGruppe(this.id)">Jugendgruppe</button>
+        </div>
+        <p>A = Alle Mitglieder, J = Junioren, JG = Jugendgruppe</p>
+        <div class="programm-table">
+            <div class="top-item">A</div>
+            <div class="top-item">J</div>
+            <div class="top-item">JG</div>
+            <div class="top-item">Datum</div>
+            <div class="top-item">Beschreibung</div>
+
+
+            <div class="table-item all">X</div>
+            <div class="table-item all"> </div>
+            <div class="table-item all"> </div>
+            <div class="table-item all">02.01.2022</div>
+            <div class="table-item all">Apero Garnhänki Greifensee</div>
+
+
+            <div class="table-item j"></div>
+            <div class="table-item j">X </div>
+            <div class="table-item j"> </div>
+            <div class="table-item j">08.01.2022</div>
+            <div class="table-item j">Neujahrsapero Uster</div>
+
+
+            <div class="table-item jg"></div>
+            <div class="table-item jg"> </div>
+            <div class="table-item jg">X </div>
+            <div class="table-item jg">02.01.2022</div>
+            <div class="table-item jg">Apero Garnhänki Greifensee</div>
+
+
+            <div class="table-item all">X</div>
+            <div class="table-item all"> </div>
+            <div class="table-item all"> </div>
+            <div class="table-item all">08.01.2022</div>
+            <div class="table-item all">Neujahrsapero Uster</div>
+
+
+            <div class="table-item j"></div>
+            <div class="table-item j">X </div>
+            <div class="table-item j"> </div>
+            <div class="table-item j">02.01.2022</div>
+            <div class="table-item j">Apero Garnhänki Greifensee</div>
+
+
+            <div class="table-item jg"></div>
+            <div class="table-item jg"> </div>
+            <div class="table-item jg">X </div>
+            <div class="table-item jg">08.01.2022</div>
+            <div class="table-item jg">Neujahrsapero Uster</div>
+
+
+        </div>
         <p>Zudem können spontane Anlässe dazukommen. Diese werden per Mail oder im Internet angekündigt.</p>
     </main>
     <footer>
