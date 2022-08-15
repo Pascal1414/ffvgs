@@ -34,6 +34,5 @@
 
 .table-item {
     max-height: auto;
-    transition: 1s ease height;
     overflow: hidden;
 }

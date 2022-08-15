@@ -81,8 +81,8 @@ function activateButton(button) {
 
 function deavtivateButton(button) {
     button.style.zIndex = 1;
-    button.style.backgroundColor = "transparent"
-    button.style.color = "black"
+    button.style.backgroundColor = "transparent";
+    button.style.color = "black";
     button.style.color = "#66fcf1"
 
 }
