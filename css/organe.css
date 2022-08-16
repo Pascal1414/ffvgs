@@ -9,7 +9,7 @@
 .person-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: min-content;
+    width: 320px;
 }
 
 .person-text {
@@ -44,6 +44,16 @@
     margin-bottom: 12px;
 }
 
+.person-container-shortened {}
+
+.person-grid-shortened {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
 @media (max-width: 740px) {
     .person-grid {
         grid-template-columns: repeat(1, 1fr);
@@ -52,8 +62,19 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .person-container-shortened {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .person-grid-shortened {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (min-width: 740px) and (max-width: 990px) {}
+@media (min-width: 740px) and (max-width: 990px) {
+    .person-grid-shortened {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
 @media (min-width: 990px) {}
