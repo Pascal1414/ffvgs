@@ -19,6 +19,7 @@
 
 .person-img {
     width: 130px;
+    box-shadow: 0 0 0.6em black;
 }
 
 .person-function {
