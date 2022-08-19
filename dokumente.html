@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jugend</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/slideshow.css">
+    <link rel="stylesheet" href="css/imagepreview.css">
+    <link rel="stylesheet" href="css/organe.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/slideshow.js"></script>
+    <script src="js/imagepreview.js"></script>
     <script src="js/nav.js"></script>
-
+    <title>FFVGS</title>
 </head>
 
-<body>
+<body onload="onLoad()">
     <header>
         <nav class="nav">
             <div class="nav-top">
@@ -60,8 +64,9 @@
         </nav>
     </header>
     <main>
-        Jugend
+
     </main>
+
     <footer>
         <div class="footer-container">
             <h3 class="footer-title" class="footer-link">Links</h3>
@@ -77,6 +82,11 @@
             <a href="dokumente.html" class="footer-link">Dokumente</a>
         </div>
     </footer>
+    <div id="screen-height" class="image-preview">
+        <button class="image-preview-next image-preview-navigation" onclick="next()">❯</button>
+        <button class="image-preview-previous image-preview-navigation" onclick="previous()">❮</button>
+        <button class="image-preview-exit" onclick="exit()">&#10006;</button>
+    </div>
 </body>
 
 </html>
