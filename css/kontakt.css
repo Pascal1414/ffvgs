@@ -75,6 +75,19 @@
     margin-top: 0;
 }
 
+select {
+    background-color: #24282f;
+    border: 2px #66fcf1 solid;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    color: #C5c6c7;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 @media (max-width: 700px) {
     .sub-form {
         display: flex;

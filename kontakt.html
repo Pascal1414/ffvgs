@@ -72,6 +72,8 @@
             <button class="form-button">Absenden</button>
         </form>
         <h1>Beitrittserklärung</h1>
+        <p>Sehr gerne wollen wir sie in unseren Verein aufnehmen. Es gibt folgende Mitgliedschaften: Die Jugendgruppe ist für die jungen Fischer bis 13. Ab 13 werden sie zu Junioren. ...
+        </p>
         <form class="contact-form" name="new-member" method="POST" data-netlify="true">
             <div class="sub-form mobile-static">
                 <div class="sub-sub-form input-left mobile-static-left">
@@ -102,9 +104,23 @@
                     <input class="form-imput" type="text" name="Ort" required/>
                 </div>
             </div>
+            <div class="sub-form">
+                <div class="sub-sub-form input-left">
+                    <p>Mitgliedschaft </p>
+                    <select name="Mitgliedschaft" id="role" required>
+                        <option value="jugendgruppe">Jugendgruppe</option>
+                        <option value="junior">Junior</option>
+                        <option value="aktivmitglied">Aktivmitglied</option>
+                        <option value="passivmitglied">Passivmitglied</option>
+                        <option value="veteran">Veteran</option>
+                      </select>
+                </div>
+                <div class="sub-sub-form input-right">
+                    <p>Email</p>
+                    <input class="form-imput" type="email" name="Email" required/>
+                </div>
+            </div>
 
-            <p>Email</p>
-            <input class="form-imput" type="email" name="Email" required/>
             <p>Nachricht</p>
             <textarea class="form-textarea" type="text" name="Nachricht"></textarea>
             <button class="form-button">Absenden</button>
