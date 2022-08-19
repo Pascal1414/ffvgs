@@ -2,14 +2,13 @@ footer {
     /* background-color: #1F2833;*/
     background-color: black;
     display: block;
-}
-
-.footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
     padding: 100px;
 }
+
+.footer {}
 
 .footer-container {
     color: white;
@@ -36,3 +35,14 @@ footer {
 .footer-link:hover {
     color: blue;
 }
+
+@media (max-width: 700px) {
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 990px) {}
+
+@media (min-width: 990px) {}
