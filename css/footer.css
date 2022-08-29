@@ -45,4 +45,10 @@ footer {
 
 @media (min-width: 700px) and (max-width: 990px) {}
 
-@media (min-width: 990px) {}
+@media (min-width: 990px) {
+    .footer-container {
+        margin-right: auto;
+        margin-left: auto;
+        width: 150px;
+    }
+}
