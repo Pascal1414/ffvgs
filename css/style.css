@@ -26,6 +26,15 @@ p {
     color: #C5C6C7;
 }
 
+.link {
+    transition: 0.4s;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.link:hover {
+    color: red;
+}
+
 .img-full-width {
     width: 100%;
 }
