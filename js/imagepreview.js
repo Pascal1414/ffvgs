@@ -83,7 +83,7 @@ function exit() {
 
     var footer = document.getElementsByTagName("footer");
     for (i = 0; i < nav.length; i++) {
-        footer[i].style.display = "block";
+        footer[i].style.display = "grid";
     }
 
     var imageprev = document.getElementsByClassName("image-preview");
