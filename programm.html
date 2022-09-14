@@ -63,11 +63,11 @@
     <main>
         <h1>Programm</h1>
         <div>
-            <button id="button-erwachsene" class="sort-button button-erwachsene" onclick="clickAll(this.id)">Erwachsene</button>
-            <button id="button-jugend" class="sort-button button-jugend" onclick="clickJunioren(this.id)">Jugend</button>
+            <button id="button-erwachsene" class="sort-button button-erwachsene" onclick="clickAll(this.id)">Alle</button>
+            <button id="button-jugend" class="sort-button button-jugend" onclick="clickJunioren(this.id)">Junioren</button>
             <button id="button-junioren" class="sort-button button-junioren" onclick="clickJugendGruppe(this.id)">Jugendgruppe</button>
         </div>
-        <p>A = Alle Mitglieder, J = Jugend, JG = Jugendgruppe</p>
+        <p>A = Alle Mitglieder, J = Junioren, JG = Jugendgruppe</p>
         <div class="programm-table">
             <div class="top-item">A</div>
             <div class="top-item">J</div>
@@ -82,41 +82,149 @@
             <div class="table-item all">02.01.2022</div>
             <div class="table-item all">Apero Garnhänki Greifensee</div>
 
+            <div class="table-item all">X</div>
+            <div class="table-item all"> </div>
+            <div class="table-item all"> </div>
+            <div class="table-item all">08.04.2022 </div>
+            <div class="table-item all">Ehren- und Freimitgliederanlass Greifensee</div>
 
-            <div class="table-item j"></div>
-            <div class="table-item j">X </div>
-            <div class="table-item j"> </div>
-            <div class="table-item j">08.01.2022</div>
-            <div class="table-item j">Neujahrsapero Uster</div>
+            <div class="table-item j jg"> </div>
+            <div class="table-item j jg"> X </div>
+            <div class="table-item j jg"> X</div>
+            <div class="table-item j jg">09.04.2022</div>
+            <div class="table-item j jg">Theorie und Ruten</div>
 
+            <div class="table-item all j">X</div>
+            <div class="table-item all j">X </div>
+            <div class="table-item all j"> </div>
+            <div class="table-item all j">23.04.2022 </div>
+            <div class="table-item all j">45. Generalversammlung Greifensee</div>
 
-            <div class="table-item jg"></div>
-            <div class="table-item jg"> </div>
-            <div class="table-item jg">X </div>
-            <div class="table-item jg">02.01.2022</div>
-            <div class="table-item jg">Apero Garnhänki Greifensee</div>
-
+            <div class="table-item j jg"></div>
+            <div class="table-item j jg">X </div>
+            <div class="table-item j jg"> X</div>
+            <div class="table-item j jg"> 29.04.2022</div>
+            <div class="table-item j jg">Treffen mit Eltern (Fischerstübli)</div>
 
             <div class="table-item all">X</div>
             <div class="table-item all"> </div>
             <div class="table-item all"> </div>
-            <div class="table-item all">08.01.2022</div>
-            <div class="table-item all">Neujahrsapero Uster</div>
+            <div class="table-item all"> 30.04.2022 </div>
+            <div class="table-item all"> Neumitgliederanlass</div>
 
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">01.05.2022 </div>
+            <div class="table-item all j jg">1. Vereinsfischen (J und JG ungeführt)</div>
 
-            <div class="table-item j"></div>
-            <div class="table-item j">X </div>
-            <div class="table-item j"> </div>
-            <div class="table-item j">02.01.2022</div>
-            <div class="table-item j">Apero Garnhänki Greifensee</div>
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">07. - 08.05.2022</div>
+            <div class="table-item all j jg"> Jugendfischen</div>
 
+            <div class="table-item j jg"></div>
+            <div class="table-item j jg"> X</div>
+            <div class="table-item j jg"> X</div>
+            <div class="table-item j jg">21.05.2022 </div>
+            <div class="table-item j jg">Bootsfischen</div>
+
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">24. - 25.06.2022</div>
+            <div class="table-item all j jg">Städtlifest Greifensee</div>
+
+            <div class="table-item j jg"></div>
+            <div class="table-item j jg">X </div>
+            <div class="table-item j jg">X </div>
+            <div class="table-item j jg"> 11.06.2022</div>
+            <div class="table-item j jg">Teichfischen</div>
+
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">02.07.2022</div>
+            <div class="table-item all j jg">2. Vereinsfischen, Greifensee (J und JG geführt)</div>
+
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">13. - 14.08.2022</div>
+            <div class="table-item all j jg">Sommernachtsfest</div>
+
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">27.08.2022</div>
+            <div class="table-item all j jg">Plauschfischen</div>
+
+            <div class="table-item j jg"></div>
+            <div class="table-item j jg">X </div>
+            <div class="table-item j jg">X </div>
+            <div class="table-item j jg">10.09.2022</div>
+            <div class="table-item j jg"> Flussfischen</div>
+
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg"> X</div>
+            <div class="table-item all j jg"> 17.09.2022</div>
+            <div class="table-item all j jg">Helferausflug</div>
+
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg"> 15.10.2022</div>
+            <div class="table-item all j jg">3. Vereinsfischen Greifensee (J und JG ungeführt)</div>
+
+            <div class="table-item all j jg">X</div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">X </div>
+            <div class="table-item all j jg">22.10.2022 </div>
+            <div class="table-item all j jg">Silchsammelaktion Greifensee</div>
+
+            <div class="table-item j jg"></div>
+            <div class="table-item j jg"> X</div>
+            <div class="table-item j jg">X </div>
+            <div class="table-item j jg">??.11.2022</div>
+            <div class="table-item j jg"> Trüschenfischen</div>
+
+            <div class="table-item all j">X</div>
+            <div class="table-item all j"> X</div>
+            <div class="table-item all j"> </div>
+            <div class="table-item all j">19.11.2022 </div>
+            <div class="table-item all j">Absenden Greifensee</div>
 
             <div class="table-item jg"></div>
             <div class="table-item jg"> </div>
             <div class="table-item jg">X </div>
-            <div class="table-item jg">08.01.2022</div>
-            <div class="table-item jg">Neujahrsapero Uster</div>
+            <div class="table-item jg">03.12.2022 </div>
+            <div class="table-item jg">Absenden JG Greifensee</div>
 
+            <div class="table-item all">X</div>
+            <div class="table-item all"> </div>
+            <div class="table-item all"> </div>
+            <div class="table-item all">02.01.2023 </div>
+            <div class="table-item all">Apero Garnhänki Greifensee</div>
+
+            <div class="table-item all">X</div>
+            <div class="table-item all"> </div>
+            <div class="table-item all"> </div>
+            <div class="table-item all">07.01.2023 </div>
+            <div class="table-item all"> Neujahrsapero Greifensee</div>
+
+            <div class="table-item "></div>
+            <div class="table-item "> </div>
+            <div class="table-item "> </div>
+            <div class="table-item "> 20.01.2023 </div>
+            <div class="table-item ">Ehren- und Freimitgliederanlass Greifensee</div>
+
+            <div class="table-item all j">X</div>
+            <div class="table-item all j">X </div>
+            <div class="table-item all j"> </div>
+            <div class="table-item all j"> 11.02.2023 </div>
+            <div class="table-item all j">46. Generalversammlung Greifensee</div>
 
         </div>
         <p>Zudem können spontane Anlässe dazukommen. Diese werden per Mail oder im Internet angekündigt.</p>
