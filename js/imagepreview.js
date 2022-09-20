@@ -48,7 +48,6 @@ function imageClick(image) {
         imageprev[i].style.height = window.innerHeight - 40 + "px";
     }
 
-
     imagelist = getImageParent(image).children;
 }
 

@@ -40,11 +40,7 @@ p {
 }
 
 .half {
-    width: 50%;
-}
-
-.image-grid-item {
-    width: 100%;
+    width: 50% !important;
 }
 
 @media (max-width: 700px) {
@@ -56,12 +52,6 @@ p {
     }
     .sidebar {
         display: none;
-    }
-    .image-grid {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-column-gap: 5px;
     }
     .galerie {
         width: 100%;
@@ -79,12 +69,6 @@ p {
         padding-left: 20px;
         padding-right: 20px;
     }
-    .image-grid {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 5px;
-    }
 }
 
 @media (min-width: 990px) {
@@ -95,11 +79,5 @@ p {
         padding-left: 20px;
         padding-right: 20px;
         max-width: 1000px;
-    }
-    .image-grid {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 5px;
     }
 }
