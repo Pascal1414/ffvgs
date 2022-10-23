@@ -27,6 +27,7 @@ p {
 }
 
 .link {
+    color: #5688B7;
     transition: 0.4s;
     font-family: "Segoe UI", Arial, sans-serif;
 }
