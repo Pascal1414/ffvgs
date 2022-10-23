@@ -1,13 +1,15 @@
 .slideshow {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
     height: auto;
+    position: relative;
+
 }
 
-.slideshow-button {
+/*.slideshow-button {
     cursor: pointer;
     top: 50%;
     width: auto;
@@ -23,6 +25,23 @@
     background-color: transparent;
     border: 0;
     touch-action: manipulation;
+}*/
+.slideshow-button{
+    position: absolute;
+    top: calc(50% - 20px);
+    height: 40px;
+    width: 40px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 999;
+    background-color: transparent;
+    border: 0;
+    touch-action: manipulation;
+
 }
 
 .slideshow-button:hover {

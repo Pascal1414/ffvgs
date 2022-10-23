@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <script src="js/nav.js"></script>
+    <link rel="stylesheet" href="../css/slideshow.css">
+
+    <script src="index.html"></script>
+    <script src="js/slideshow.js"></script>
 
 </head>
 
@@ -66,6 +69,20 @@
             Im Jungfischerkurs lernen die Kinder in der Theorie alles über Fischereivorschriften, Anatomie der Fische, Angeltechnik und nicht zuletzt den richtigen Umgang mit dem Lebewesen Fisch.<br>
             Am Jugendfischen wird das theoretisch Gelernte in der Praxis getestet und hoffentlich mit einem schönen Fang belohnt.
             </p>
+
+            <div class="slideshow">
+                <button class="slideshow-button slideshow-button-left" onclick="slideshowBack()">❮</button>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/jugend/jugenfischenknoten.jpg">
+                </div>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/jugend/jugendfischen.jpg">
+                </div>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/jugend/jugendfischensteg.jpg">
+                </div>
+                <button class="slideshow-button slideshow-button-right" onclick="slideshowForwards(-1)">❯</button>
+            </div>
     </main>
     <footer>
         <div class="footer-container">
