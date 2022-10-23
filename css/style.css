@@ -26,7 +26,7 @@ p {
     color: #C5C6C7;
 }
 
-.link {
+a {
     color: #5688B7;
     transition: 0.4s;
     font-family: "Segoe UI", Arial, sans-serif;
@@ -42,6 +42,14 @@ p {
 
 .half {
     width: 50% !important;
+}
+
+ul{
+    margin-top: 0;
+}
+ul li{
+    color: #C5C6C7;
+    font-size: 90%;
 }
 
 @media (max-width: 700px) {
