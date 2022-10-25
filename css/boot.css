@@ -97,6 +97,11 @@ h3 {
 }
 */
 
+h3 {
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    color: #66FCF1 !important;
+}
+
 h4 {
     color: #66FCF1;
     font-family: "Segoe UI", Arial, sans-serif;
