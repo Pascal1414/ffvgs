@@ -1,17 +1,13 @@
-window.onresize = function() {
-    var imageprev = document.getElementsByClassName("image-preview");
-
-    for (i = 0; i < imageprev.length; i++) {
-        imageprev[i].style.height = window.innerHeight - 40 + "px";
-
-    }
-
-}
-
 var all;
 var imageClone;
 var imagelist;
 var currentimage;
+
+
+window.onresize = function() {
+    imageClone.style.maxHeight = window.innerHeight + "px";
+    imageClone.style.maxWidth = window.innerWidth + "px";
+}
 
 function imageClick(image) {
     currentimage = image;
@@ -33,11 +29,11 @@ function imageClick(image) {
     }
 
 
-
     document.body.style.backgroundColor = "black";
-
-
     imageClone.style.display = "block";
+    imageClone.style.maxHeight = window.innerHeight + "px";
+    imageClone.style.maxWidth = window.innerWidth + "px";
+
 
 
     var imageprev = document.getElementsByClassName("image-preview");
