@@ -39,7 +39,13 @@
     right: 10px;
 }
 
-.preview-image {}
+.preview-image {
+    z-index: -1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 
 /*
