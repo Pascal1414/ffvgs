@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav class="nav">
             <div class="nav-top">
                 <a class="nav-item-home" id="home" href="/">
@@ -65,7 +65,7 @@
             </a>
         </nav>
     </header>
-    <main>
+    <main id="main">
         <!--div class="slideshow">
                 <button class="slideshow-button slideshow-button-left" onclick="slideshowBack()">❮</button>
                 <div class="image-conntainer fade">
@@ -93,54 +93,37 @@
         <h1>Silchsammelaktion (22.10.2022)</h1>
 
         <div class="image-grid">
-            <div class="image-grid-item half padding-right">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_142359small.jpg">
+            <div class="container-double">
+                <img class="image-double" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_142359small.jpg">
+                <img class="image-double" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_142717small.jpg">
             </div>
-            <div class="image-grid-item half padding-left">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_142717small.jpg">
+            <div class="container-third">
+                <img class="image-third" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_134846small.jpg">
+                <img class="image-third" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_141214small.jpg">
+                <img class="image-third" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_142011small.jpg">
             </div>
-
-            <div class="image-grid-item third padding-right">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_134846small.jpg">
+            <div class="container-double">
+                <img class="image-double" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_133154small.jpg">
+                <img class="image-double" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_142203small.jpg">
             </div>
-            <div class="image-grid-item third padding-left padding-right">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_141214small.jpg">
-            </div>
-            <div class="image-grid-item third padding-left">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_142011small.jpg">
-            </div>
-
-            <div class="image-grid-item half padding-right">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_133154small.jpg">
-            </div>
-            <div class="image-grid-item half padding-left">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Silchsammelaktion22/20221022_142203small.jpg">
-            </div>
-
 
         </div>
 
         <h1>Helferausflug Brauerei Wädenswil (17.09.2022)</h1>
 
         <div class="image-grid">
-            <div class="image-grid-item third padding-right">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Helferausflug22/IMG_0868small.jpg">
-            </div>
-            <div class="image-grid-item third padding-left padding-right">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Helferausflug22/IMG_0883small.jpg">
-            </div>
-            <div class="image-grid-item third padding-left">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Helferausflug22/IMG_0885small.jpg">
+            <div class="container-third">
+                <img class="image-third" onclick="imageClick(this)" src="img/galerie/Helferausflug22/IMG_0868small.jpg">
+                <img class="image-third" onclick="imageClick(this)" src="img/galerie/Helferausflug22/IMG_0883small.jpg">
+                <img class="image-third" onclick="imageClick(this)" src="img/galerie/Helferausflug22/IMG_0885small.jpg">
             </div>
         </div>
         <h1>Glattfischen (10.09.2022)</h1>
 
         <div class="image-grid">
-            <div class="image-grid-item half padding-right">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Glattfischen22/IMG_5240small.jpg">
-            </div>
-            <div class="image-grid-item half padding-left">
-                <img class="img img-full-width" onclick="imageClick(this)" src="img/galerie/Glattfischen22/IMG_5243small.jpg">
+            <div class="container-double">
+                <img class="image-double" onclick="imageClick(this)" src="img/galerie/Glattfischen22/IMG_5240small.jpg">
+                <img class="image-double" onclick="imageClick(this)" src="img/galerie/Glattfischen22/IMG_5243small.jpg">
             </div>
         </div>
 
@@ -184,7 +167,7 @@
         </div-->
 
     </main>
-    <footer>
+    <footer id="footer">
         <div class="footer-container">
             <h3 class="footer-title" class="footer-link">Links</h3>
             <a href="Impressum.html" class="footer-link">Impressum</a>
@@ -199,11 +182,7 @@
             <a href="dokumente.html" class="footer-link">Dokumente</a>
         </div>
     </footer>
-    <div id="screen-height" class="image-preview">
-        <button class="image-preview-next image-preview-navigation" onclick="next()">❯</button>
-        <button class="image-preview-previous image-preview-navigation" onclick="previous()">❮</button>
-        <button class="image-preview-exit" onclick="exit()">&#10006;</button>
-    </div>
+
 </body>
 
 </html>

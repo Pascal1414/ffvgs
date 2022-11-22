@@ -1,134 +1,124 @@
-var all;
-var imageClone;
-var imagelist;
-var currentimage;
+let imageList = [];
 
-
-window.onresize = function() {
-    imageClone.style.maxHeight = window.innerHeight + "px";
-    imageClone.style.maxWidth = window.innerWidth + "px";
-}
+let currentImage;
 
 function imageClick(image) {
-    currentimage = image;
-    imageClone = image.cloneNode(true);
-    imageClone.onclick = function() {
-        return false;
-    }
-    all = document.getElementsByTagName("main");
-    for (i = 0; i < all.length; i++) {
-        all[i].style.display = "none";
-    }
-    var nav = document.getElementsByTagName("nav");
-    for (i = 0; i < nav.length; i++) {
-        nav[i].style.display = "none";
-    }
-    var footer = document.getElementsByTagName("footer");
-    for (i = 0; i < nav.length; i++) {
-        footer[i].style.display = "none";
-    }
+    currentImage = image;
+    hideContent();
+    document.body.appendChild(createNavigation());
 
+    displayImage(image);
 
-    document.body.style.backgroundColor = "black";
-    imageClone.style.display = "block";
-    imageClone.style.maxHeight = window.innerHeight + "px";
-    imageClone.style.maxWidth = window.innerWidth + "px";
-
-
-
-    var imageprev = document.getElementsByClassName("image-preview");
-
-    for (i = 0; i < imageprev.length; i++) {
-        imageprev[i].appendChild(imageClone);
-        imageprev[i].style.display = "flex";
-        imageprev[i].style.height = window.innerHeight - 40 + "px";
-    }
-
-    imagelist = getImageParent(image).children;
+    imageList = getOtherImages(image);
 }
 
-function querryPaddingTop(x) {
-    var main = document.getElementsByTagName("main");
-    for (i = 0; i < main.length; i++) {
-        if (x.matches) {
-            main[i].style.paddingTop = 0;
-        } else {
-            main[i].style.paddingTop = "calc(var(--nav-height-tablet) + 20px)";
-        }
-    }
+function getOtherImages(image) {;
+    let returnList = [];
+    const subcontainers = Array.from(image.parentElement.parentElement.children);
+
+    subcontainers.forEach(subcontainer => {
+        Array.from(subcontainer.children).forEach(child => {
+            returnList.push(child);
+        });
+    });
+    return returnList;
+}
+
+function hideContent() {
+    const main = document.getElementById("main");
+    main.style.display = "none";
+
+    const footer = document.getElementById("footer");
+    footer.style.display = "none";
+
+    const header = document.getElementById("header");
+    header.style.display = "none";
+}
+
+function showContent() {
+    const main = document.getElementById("main");
+    main.style.display = "block";
+
+    const footer = document.getElementById("footer");
+    footer.style.display = "grid";
+
+    const header = document.getElementById("header");
+    header.style.display = "block";
+}
+
+function createNavigation() {
+    const container = document.createElement("div");
+    container.id = "image-prev-container"
+
+    const buttonExit = document.createElement("button");
+    buttonExit.classList.add("button-exit");
+    buttonExit.classList.add("btn");
+    buttonExit.innerHTML = "✖";
+    buttonExit.addEventListener("click", exit);
+    container.appendChild(buttonExit);
+
+    const buttonNext = document.createElement("button");
+    buttonNext.classList.add("button-next");
+    buttonNext.classList.add("btn");
+    buttonNext.innerHTML = "❯";
+    buttonNext.addEventListener("click", next);
+    container.appendChild(buttonNext);
+
+    const buttonPrevious = document.createElement("button");
+    buttonPrevious.classList.add("button-previous");
+    buttonPrevious.classList.add("btn");
+    buttonPrevious.addEventListener("click", previous);
+    buttonPrevious.innerHTML = "❮";
+    container.appendChild(buttonPrevious);
+
+    return container;
+}
+
+function displayImage(image) {
+    clearImages();
+    const newImage = image.cloneNode(true);
+    newImage.classList.add("preview-image");
+    newImage.removeAttribute("onclick");
+    const container = document.getElementById("image-prev-container");
+    container.appendChild(newImage);
+}
+
+function clearImages() {
+    const children = Array.from(document.getElementById("image-prev-container").children);
+    children.forEach(child => {
+        if (child.nodeName == "IMG")
+            child.remove();
+    });
+}
+
+function hideNavigation() {
+    document.getElementById("image-prev-container").remove();
 }
 
 function exit() {
-
-    var main = document.getElementsByTagName("main");
-    for (i = 0; i < main.length; i++) {
-        var x = window.matchMedia("(max-width: 820px)")
-        querryPaddingTop(x);
-        x.addListener(querryPaddingTop);
-    }
-
-    for (i = 0; i < all.length; i++) {
-        all[i].style.display = "block";
-    }
-
-    var nav = document.getElementsByTagName("nav");
-    for (i = 0; i < nav.length; i++) {
-        nav[i].style.display = "flex";
-    }
-
-    var footer = document.getElementsByTagName("footer");
-    for (i = 0; i < nav.length; i++) {
-        footer[i].style.display = "grid";
-    }
-
-    var imageprev = document.getElementsByClassName("image-preview");
-    for (i = 0; i < imageprev.length; i++) {
-        imageprev[i].removeChild(imageClone);
-        imageprev[i].style.display = "none";
-
-    }
-
-    document.body.style.backgroundColor = "#24282f";
-
-
-
-    currentimage.parentElement.parentElement.scrollIntoView();
+    showContent();
+    hideNavigation();
 }
 
 function next() {
-    currentImageId = getCurrentItemIdprev(currentimage);
-    if (imagelist.length > currentImageId + 1) {
-        exit();
-        updateToItemprev(imagelist[currentImageId + 1].firstElementChild);
+    const index = imageList.indexOf(currentImage);
+
+    if (index + 1 < imageList.length) {
+        displayImage(imageList[index + 1]);
+        currentImage = imageList[index + 1];
     } else {
-        exit();
-        updateToItemprev(imagelist[0].firstElementChild);
+        displayImage(imageList[0]);
+        currentImage = imageList[0];
     }
 }
 
 function previous() {
-    currentImageId = getCurrentItemIdprev(currentimage);
-    if (0 <= currentImageId - 1) {
-        exit();
-        updateToItemprev(imagelist[currentImageId - 1].firstElementChild);
+    const index = imageList.indexOf(currentImage);
+    if (index - 1 >= 0) {
+        displayImage(imageList[index - 1]);
+        currentImage = imageList[index - 1];
     } else {
-        exit();
-        updateToItemprev(imagelist[imagelist.length - 1].firstElementChild);
+        displayImage(imageList[imageList.length - 1]);
+        currentImage = imageList[imageList.length - 1];
     }
-}
-
-function getCurrentItemIdprev(image) {
-    for (i = 0; i < imagelist.length; i++) {
-        if (imagelist[i] == image.parentElement)
-            return i;
-    }
-
-}
-
-function updateToItemprev(updateimage) {
-    imageClick(updateimage);
-}
-
-function getImageParent(image) {
-    return image.parentElement.parentElement;
 }
