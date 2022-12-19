@@ -35,4 +35,19 @@
 .table-item {
     max-height: auto;
     overflow: hidden;
+    font-size: 17px;
 }
+
+@media (max-width: 740px) {
+    .table-item {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 740px) {
+    .table-item {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 990px) {}
