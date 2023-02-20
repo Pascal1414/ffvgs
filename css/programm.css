@@ -15,8 +15,7 @@
 } */
 
 .programm-item {
-  background-color: transparent;
-  border: #66fcf1 solid 2px;
+  background-color: #66fcf1;
   display: flex;
   border-radius: 11px;
   margin-top: 10px;
@@ -27,11 +26,10 @@
 
 .programm-title {
   margin: 0;
-  color: #66fcf1;
-  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }
 
 .programm-date {
-  color: #66fcf1;
+  color: black;
   margin: 0;
 }
