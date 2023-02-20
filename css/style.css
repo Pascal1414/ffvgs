@@ -16,18 +16,18 @@ main {
 
 h1 {
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #66FCF1;
+    color: #66fcf1;
 }
 
 h2 {
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #66FCF1;
+    color: #66fcf1;
     margin-bottom: 5px;
 }
 
 h3 {
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #66FCF1;
+    color: #66fcf1;
     margin-bottom: 0px;
     margin-top: 5px;
 }
@@ -36,13 +36,26 @@ p {
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 375;
     font-size: 17px;
-    color: #C5C6C7;
+    color: #c5c6c7;
 }
 
 a {
-    color: #5688B7;
+    color: #5688b7;
     transition: 0.4s;
     font-family: "Segoe UI", Arial, sans-serif;
+}
+
+select {
+    background-color: #24282f;
+    border: 2px #66fcf1 solid;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    color: #c5c6c7;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .link:hover {
@@ -62,7 +75,7 @@ ul {
 }
 
 ul li {
-    color: #C5C6C7;
+    color: #c5c6c7;
     font-size: 90%;
 }
 
