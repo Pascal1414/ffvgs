@@ -1,4 +1,4 @@
-.form-button {
+button {
     background-color: transparent;
     border: 2px #66fcf1 solid;
     font-size: 20px;
@@ -13,7 +13,7 @@
     margin-top: 20px;
 }
 
-.form-imput {
+input {
     background-color: transparent;
     border: 2px #66fcf1 solid;
     font-size: 20px;
@@ -27,7 +27,7 @@
     box-sizing: border-box;
 }
 
-.form-textarea {
+textarea {
     background-color: transparent;
     border: 2px #66fcf1 solid;
     font-size: 20px;
@@ -41,12 +41,12 @@
     box-sizing: border-box;
 }
 
-.form-imput:focus {
+input:focus {
     background-color: #45a29e;
     color: #24282f;
 }
 
-.contact-form {
+form {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
