@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { defineComponent } from 'vue';
 import Footer from './components/Footer.vue';
+import NavMenu from './components/NavMenu.vue';
 </script>
 
 <template>
   <header>
-
+    <NavMenu />
   </header>
 
   <main>
@@ -18,7 +19,7 @@ import Footer from './components/Footer.vue';
 </template>
 
 <style scoped>
-main{
+main {
   margin: 6px;
-} 
+}
 </style>
