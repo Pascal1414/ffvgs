@@ -2,7 +2,7 @@
     <h1>Programm</h1>
 
     <label for="role">Programm nach Mitgliedschaft anzeigen:</label>
-    <select name="mitgliedschaft" id="role">
+    <select name="mitgliedschaft" id="role" @change="selectionChanged($event)">
         <option value="none">Alles anzeigen</option>
         <option value="alle">Alle Mitglieder</option>
         <option value="junioren">Junioren</option>
@@ -34,6 +34,29 @@ export default defineComponent({
         this.currentList = this.json;
     },
     methods: {
+        selectionChanged(event) {
+            console.log(event.target.value);
+
+            switch (event.target.value) {
+                case "junioren":
+                    this.currentList = this.json.filter(i => i.forJunior);
+                    break;
+                case "alle":
+                    this.currentList = this.json.filter(i => i.forAll);
+                    break;
+                case "jugendgruppe":
+                    this.currentList = this.json.filter(i => i.forJugendGroup);
+                    break;
+
+                default:
+                    this.currentList = this.json;
+
+                    break;
+            }
+
+            console.log(this.currentList);
+
+        }
     }
 });
 
