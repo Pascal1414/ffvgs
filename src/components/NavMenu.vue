@@ -10,7 +10,7 @@
             <div class="menu-btn-burger"></div>
         </div>
 
-        <a class="nav-item" href="/">Programm</a>
+        <a class="nav-item" href="/programm">Programm</a>
         <a class="nav-item" href="/">Organe</a>
         <a class="nav-item" href="/">Jugend</a>
         <a class="nav-item" href="/">Berichte</a>

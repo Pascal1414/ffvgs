@@ -3,6 +3,7 @@
 #app {
 }
 
+/* Text */
 h1 , h2, h3 , h4 , h5 , h6 {
   color: #66fcf1;
 }
@@ -17,4 +18,17 @@ p {
 a {
   color: #5688b7;
   transition: 0.4s;
+}
+
+/* Forms */
+select {
+  background-color: var(--color-background);
+  border: 2px var(--color-titles) solid;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  color: var(--color-titles);
+  outline: none;
+  transition: 0.3s;
+  width: 100%;
 }
