@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/imagepreview.css">
     <link rel="stylesheet" href="css/organe.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="../css/form.css">
+
     <script src="js/slideshow.js"></script>
     <script src="js/imagepreview.js"></script>
     <script src="js/nav.js"></script>
@@ -66,7 +68,54 @@
     <main>
         <div id="Jungfischerkurs">
             <h1>Jungfischerkurs</h1>
+            <h2>Anmeldung Jungfischerkurs</h2>
+            <form id="anmelden" class="contact-form" name="anmeldung-jugendfischen" method="POST" data-netlify="true">
+                <div class="sub-form">
+                    <div class="sub-sub-form input-left">
+    
+                        <h3>Jugendliche oder Jugendlicher</h3>
+    
+                        <p class="top-paragraph">Vorname</p>
+                        <input type="text" name="firstname" placeholder="Vorname" required>
+    
+                        <p class="">Nachname</p>
+                        <input type="text" name="lastname" placeholder="Nachname" required>
+    
+                        <p class="">Adresse</p>
+                        <input type="text" name="address" placeholder="Adresse" required>
+    
+                        <p class="">Geburtsdatum</p>
+                        <input type="date" name="birthday" placeholder="Geburtsdatum" required>
+                    </div>
+                    <div class="sub-sub-form input-right">
+    
+                        <h3>Gesetzliche Vertretung</h3>
+    
+                        <p class="top-paragraph">Vorname</p>
+                        <input type="text" name="firstname" placeholder="Vorname" required>
+    
+                        <p class="">Nachname</p>
+                        <input type="text" name="lastname" placeholder="Nachname" required>
+    
+                        <p>Erreichbar wärend des Anlasses</p>
+                        <select name="erreichbar" id="erreichbar" required>
+                            <option value="">--auswählen--</option>
+                            <option value="ja">Ja</option>
+                            <option value="nein">Nein</option>
+                        </select>
 
+    
+                        <p>Ich habe schon mal gefischt</p>
+                        <select name="schon-gefischt" id="schon-gefischt" required>
+                            <option value="">--auswählen--</option>
+                            <option value="ja">Ja</option>
+                            <option value="nein">Nein</option>
+                        </select>
+                    </div>
+                </div>
+                <p> Bemerkung: Versicherung ist Sache des Teilnehmers!</p>
+                <button class="form-button" type="submit">Absenden</button>
+            </form>
         </div>
         <div id="Sommernachtsfest">
             <h1>Sommernachtsfest</h1>
