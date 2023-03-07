@@ -46,6 +46,7 @@
         display: flex;
         flex-direction: column;
     }
+
     .nav-item-home {
         font-size: 45px;
         cursor: default;
@@ -58,6 +59,7 @@
         height: var(--nav-height);
         align-items: center;
     }
+
     .nav-item {
         display: none;
         padding-left: 15px;
@@ -68,6 +70,7 @@
         border-bottom: 1px solid darkgray;
         cursor: pointer;
     }
+
     .nav-top {
         display: flex;
         flex-direction: row;
@@ -76,11 +79,14 @@
         padding: 10px;
         border-bottom: 1px darkgray solid;
     }
+
     .nav-button {
         background-color: transparent;
         border: 2px #45A29E solid;
         font-size: 40px;
         height: 100%;
+        margin-top: 0;
+        padding: 0 4px;
         width: min-content;
         border-radius: 4px;
         align-content: center;
@@ -88,15 +94,18 @@
         touch-action: manipulation;
         user-select: none;
     }
+
     .center-text {
         margin-top: auto;
         margin-bottom: auto;
     }
+
     .nav-img {
         cursor: pointer;
         height: 100%;
         margin-right: 10px;
     }
+
     .separator {
         display: none;
     }
@@ -114,11 +123,13 @@
         right: 0;
         top: 0;
     }
+
     .nav-item-home {
         display: flex;
         flex-direction: row;
         height: var(--nav-height-tablet);
     }
+
     .nav-item {
         display: flex !important;
         height: 100%;
@@ -131,6 +142,7 @@
         cursor: pointer;
         align-items: center;
     }
+
     .nav-item-mobile-hidden {
         display: flex !important;
         height: 100%;
@@ -142,9 +154,11 @@
         cursor: pointer;
         align-items: center;
     }
+
     .nav-item:hover {
         text-decoration: underline;
     }
+
     /* .nav-item:hover,
     .nav-item-mobile-hidden:hover {
         background-color: lightgray;
@@ -156,16 +170,21 @@
         background-color: lightgray;
     }*/
     .nav-top {}
+
     .nav-button {
         display: none;
     }
+
     .center-text {}
+
     .nav-img {
         cursor: pointer;
         height: 100%;
         margin-right: 7px;
     }
+
     .separator {}
+
     main {
         padding-top: calc(var(--nav-height-tablet) + 20px);
     }
@@ -178,6 +197,7 @@
         font-size: 25px;
         width: 20px;
     }
+
     .nav-item-mobile-hidden {
         font-size: 30px;
     }
