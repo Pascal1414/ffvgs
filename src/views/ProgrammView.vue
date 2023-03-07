@@ -9,8 +9,9 @@
         <option value="jugendgruppe">Jugendgruppe</option>
     </select>
     <ul id="programm-table">
-        <ProgrammEvent v-for="programmItem in currentList" :name="programmItem.name" :date="programmItem.date" />
+        <ProgrammEvent v-for="programmItem in currentList" :name="programmItem.name" :dates="programmItem.dates" />
     </ul>
+    <p>Zudem können spontane Anlässe dazukommen. Diese werden per Mail oder im Internet angekündigt.</p>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
