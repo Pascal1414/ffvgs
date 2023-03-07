@@ -15,7 +15,7 @@
         <a class="nav-item" href="/">Jugend</a>
         <a class="nav-item" href="/">Berichte</a>
         <a class="nav-item" href="/">Galerie</a>
-        <a class="nav-item" href="/">Kontakt</a>
+        <a class="nav-item" href="/kontakt">Kontakt</a>
         <a class="nav-item" href="/">Boot</a>
 
 
