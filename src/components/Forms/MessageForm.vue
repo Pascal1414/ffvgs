@@ -1,12 +1,16 @@
 <template>
     <h1>Kontakt</h1>
-     <form>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="E-Mail"/>
+    <form>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="E-Mail" />
+        </div>
 
-        <label for="message">Nachricht</label>
-        <textarea id="message" name="message" placeholder="Nachricht"></textarea>
-
+        <div>
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" placeholder="Nachricht"></textarea>
+        </div>
+        
         <button type="submit">Absenden</button>
     </form>
 </template>
