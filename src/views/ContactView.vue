@@ -1,13 +1,15 @@
 <template>
-    <h1>Kontakt</h1>
-
-    <form>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="E-Mail"/>
-
-        <label for="message">Nachricht</label>
-        <textarea id="message" name="message" placeholder="Nachricht"></textarea>
-    </form>
+    <MessageForm />
+   
 </template>
-<script lang="ts"></script>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import MessageForm from '../components/MessageForm.vue';
+export default defineComponent({
+    name: 'ContactView',
+    components: {
+        MessageForm
+    }
+});
+</script>
 <style scoped></style>
