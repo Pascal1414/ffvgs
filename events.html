@@ -69,33 +69,40 @@
         <div id="Jungfischerkurs">
             <h1>Jungfischerkurs</h1>
             <h2>Anmeldung Jungfischerkurs</h2>
-            <form id="anmelden" class="contact-form" name="anmeldung-jugendfischen" method="POST" data-netlify="true">
+            <form id="anmelden-jungfischen" class="contact-form" name="anmeldung-jugendfischen" method="POST" data-netlify="true">
                 <div class="sub-form">
                     <div class="sub-sub-form input-left">
     
                         <h3>Jugendliche oder Jugendlicher</h3>
     
                         <p class="top-paragraph">Vorname</p>
-                        <input type="text" name="firstname" placeholder="Vorname" required>
+                        <input type="text" name="vorname-teilnehmer" placeholder="Vorname" required>
     
                         <p class="">Nachname</p>
-                        <input type="text" name="lastname" placeholder="Nachname" required>
+                        <input type="text" name="nachname-teilnehmer" placeholder="Nachname" required>
     
                         <p class="">Adresse</p>
-                        <input type="text" name="address" placeholder="Adresse" required>
+                        <input type="text" name="address-teilnehmer" placeholder="Adresse" required>
     
                         <p class="">Geburtsdatum</p>
-                        <input type="date" name="birthday" placeholder="Geburtsdatum" required>
+                        <input type="date" name="geburtsdatum-teilnehmer" placeholder="Geburtsdatum" required> 
+                        
+                        <p>Ich habe schon mal gefischt</p>
+                        <select name="schon-gefischt" id="schon-gefischt" required>
+                            <option value="">--auswählen--</option>
+                            <option value="ja">Ja</option>
+                            <option value="nein">Nein</option>
+                        </select>
                     </div>
                     <div class="sub-sub-form input-right">
     
                         <h3>Gesetzliche Vertretung</h3>
     
                         <p class="top-paragraph">Vorname</p>
-                        <input type="text" name="firstname" placeholder="Vorname" required>
+                        <input type="text" name="vorname-vertretung" placeholder="Vorname" required>
     
                         <p class="">Nachname</p>
-                        <input type="text" name="lastname" placeholder="Nachname" required>
+                        <input type="text" name="nachname-vertretung" placeholder="Nachname" required>
     
                         <p>Erreichbar wärend des Anlasses</p>
                         <select name="erreichbar" id="erreichbar" required>
@@ -105,12 +112,7 @@
                         </select>
 
     
-                        <p>Ich habe schon mal gefischt</p>
-                        <select name="schon-gefischt" id="schon-gefischt" required>
-                            <option value="">--auswählen--</option>
-                            <option value="ja">Ja</option>
-                            <option value="nein">Nein</option>
-                        </select>
+                       
                     </div>
                 </div>
                 <p> Bemerkung: Versicherung ist Sache des Teilnehmers!</p>
