@@ -34,10 +34,9 @@ export default defineComponent({
         this.currentList = this.json;
     },
     methods: {
-        selectionChanged(event) {
-            console.log(event.target.value);
+        selectionChanged(event: Event) {
 
-            switch (event.target.value) {
+            switch ((event.target as HTMLInputElement).value) {
                 case "junioren":
                     this.currentList = this.json.filter(i => i.forJunior);
                     break;

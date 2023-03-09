@@ -71,7 +71,12 @@
 
     </form>
 </template>
-<script lang="ts"></script>
+<script lang="ts">
+export default {
+    name: 'JoinForm',
+    
+}; 
+</script>
 <style scoped>
 form .inputs {
     display: grid;

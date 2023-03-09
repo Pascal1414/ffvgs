@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineComponent } from 'vue';
 import Footer from './components/Footer.vue';
 import NavMenu from './components/NavMenu.vue';
 </script>

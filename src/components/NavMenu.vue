@@ -6,7 +6,7 @@
         </a>
 
 
-        <div @click="$event.target.classList.toggle('open')" class="menu-btn">
+        <div @click=" ($event.target as HTMLElement)?.classList.toggle('open')" class="menu-btn">
             <div class="menu-btn-burger"></div>
         </div>
 
@@ -22,7 +22,9 @@
     </nav>
 </template>
 <script lang="ts">
-
+export default {
+    name: "NavMenu"
+}
 </script>
 
 <style scoped>

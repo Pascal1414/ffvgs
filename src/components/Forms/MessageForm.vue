@@ -14,7 +14,12 @@
         <button type="submit">Absenden</button>
     </form>
 </template>
-<script lang="ts"></script>
+<script lang="ts">
+export default {
+    name: 'MessageForm',
+    
+};
+</script>
 <style scoped>
 form div {
     display: flex;
