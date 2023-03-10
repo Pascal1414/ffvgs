@@ -15,7 +15,7 @@
             <a class="nav-item" href="/">Organe</a>
             <a class="nav-item" href="/">Jugend</a>
             <a class="nav-item" href="/">Berichte</a>
-            <a class="nav-item" href="/">Galerie</a>
+            <a class="nav-item" href="/galerie">Galerie</a>
             <a class="nav-item" href="/kontakt">Kontakt</a>
             <a class="nav-item" href="/">Boot</a>
         </div>
@@ -23,7 +23,6 @@
     </nav>
 </template>
 <script lang="ts">
-import type { HTMLAttributes } from 'vue';
 
 export default {
     name: "NavMenu",
