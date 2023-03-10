@@ -6,7 +6,7 @@
         </a>
 
 
-        <div @click="toggleMenu()" class="menu-btn">
+        <div @click="toggleMenu($event)" class="menu-btn">
             <div class="menu-btn-burger"></div>
         </div>
 
@@ -26,7 +26,8 @@
 export default {
     name: "NavMenu",
     methods: {
-        toggleMenu() {
+        toggleMenu(event: Event) {
+            event.target.classList.toggle("open");
             const navItems = this.$refs["nav-items"] as HTMLElement;
             navItems.classList.toggle("open");
         }
