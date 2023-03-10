@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/HomeView.vue'
 import Programm from '../views/ProgrammView.vue'
 import Contact from '../views/ContactView.vue'
-import Galery from '../views/GaleryView.vue'
+import Gallery from '../views/GalleryView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,8 +26,8 @@ const router = createRouter({
     },
     {
       path: '/galerie',
-      name: 'galery',
-      component: Galery
+      name: 'gallery',
+      component: Gallery
     }
   ]
 })
