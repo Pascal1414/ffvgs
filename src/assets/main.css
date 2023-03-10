@@ -18,6 +18,13 @@ p {
   font-size: 17px;
   color: var(--color-text);
 }
+@media  (max-width: 768px) {
+  p {
+    font-size: 15px;
+  }
+}
+  
+
 
 a {
   color: #5688b7;
