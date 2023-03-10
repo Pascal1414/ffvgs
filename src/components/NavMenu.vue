@@ -23,11 +23,14 @@
     </nav>
 </template>
 <script lang="ts">
+import type { HTMLAttributes } from 'vue';
+
 export default {
     name: "NavMenu",
     methods: {
         toggleMenu(event: Event) {
-            event.target.classList.toggle("open");
+            if (event.target != null)
+                (event.target as HTMLDivElement).classList.toggle("open");
             const navItems = this.$refs["nav-items"] as HTMLElement;
             navItems.classList.toggle("open");
         }
