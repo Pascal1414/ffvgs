@@ -1,13 +1,15 @@
 <template>
     <nav>
-        <a href="/" class="home-item">
-            <div class="logo" alt="Logo"></div>
-            <span class="text">FFVGS</span>
-        </a>
+        <div class="nav">
+            <a href="/" class="home-item">
+                <div class="logo" alt="Logo"></div>
+                <span class="text">FFVGS</span>
+            </a>
 
 
-        <div @click="toggleMenu($event)" class="menu-btn">
-            <div class="menu-btn-burger"></div>
+            <div @click="toggleMenu($event)" class="menu-btn">
+                <div class="menu-btn-burger"></div>
+            </div>
         </div>
 
         <div ref="nav-items" class="nav-items">
@@ -101,16 +103,21 @@ nav .nav-item:hover {
 @media (max-width: 1000px) {
 
     nav {
-        justify-content: space-between;
+        flex-direction: column;
         padding-right: 20px;
+        height: fit-content;
     }
 
     .nav-items {
         display: none;
     }
-
     .open.nav-items {
         display: block;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
     }
 
     .menu-btn {
