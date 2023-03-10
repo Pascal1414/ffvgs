@@ -16,10 +16,10 @@
             <a class="nav-item" href="/programm">Programm</a>
             <a class="nav-item" href="/">Organe</a>
             <a class="nav-item" href="/">Jugend</a>
-            <a class="nav-item" href="/">Berichte</a>
+            <a class="nav-item" href="/bericht">Berichte</a>
             <a class="nav-item" href="/galerie">Galerie</a>
             <a class="nav-item" href="/kontakt">Kontakt</a>
-            <a class="nav-item" href="/">Boot</a>
+            <a class="nav-item" href="/boot">Boot</a>
         </div>
 
     </nav>
