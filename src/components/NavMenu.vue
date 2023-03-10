@@ -6,24 +6,31 @@
         </a>
 
 
-        <div @click=" ($event.target as HTMLElement)?.classList.toggle('open')" class="menu-btn">
+        <div @click="toggleMenu()" class="menu-btn">
             <div class="menu-btn-burger"></div>
         </div>
 
-        <a class="nav-item" href="/programm">Programm</a>
-        <a class="nav-item" href="/">Organe</a>
-        <a class="nav-item" href="/">Jugend</a>
-        <a class="nav-item" href="/">Berichte</a>
-        <a class="nav-item" href="/">Galerie</a>
-        <a class="nav-item" href="/kontakt">Kontakt</a>
-        <a class="nav-item" href="/">Boot</a>
-
+        <div ref="nav-items" class="nav-items">
+            <a class="nav-item" href="/programm">Programm</a>
+            <a class="nav-item" href="/">Organe</a>
+            <a class="nav-item" href="/">Jugend</a>
+            <a class="nav-item" href="/">Berichte</a>
+            <a class="nav-item" href="/">Galerie</a>
+            <a class="nav-item" href="/kontakt">Kontakt</a>
+            <a class="nav-item" href="/">Boot</a>
+        </div>
 
     </nav>
 </template>
 <script lang="ts">
 export default {
-    name: "NavMenu"
+    name: "NavMenu",
+    methods: {
+        toggleMenu() {
+            const navItems = this.$refs["nav-items"] as HTMLElement;
+            navItems.classList.toggle("open");
+        }
+    }
 }
 </script>
 
@@ -38,6 +45,11 @@ nav {
     height: var(--nav-height);
     padding: 10px;
     border-bottom: solid 1px var(--color-text);
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: row;
 }
 
 nav a {
@@ -90,8 +102,12 @@ nav .nav-item:hover {
         padding-right: 20px;
     }
 
-    nav .nav-item {
+    .nav-items {
         display: none;
+    }
+
+    .open.nav-items {
+        display: block;
     }
 
     .menu-btn {
