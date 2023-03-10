@@ -1,18 +1,23 @@
 @import './base.css';
-
-#app {}
+#app {
+}
 
 /* Text */
-h1, h2, h3, h4, h5, h6 {
-  color: #66fcf1;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-titles);
 }
 
 p {
   font-weight: 375;
   font-size: 17px;
-  color: #c5c6c7;
+  color: var(--color-text);
 }
-
 
 a {
   color: #5688b7;
@@ -20,6 +25,7 @@ a {
 }
 
 /* Forms */
+
 select {
   background-color: var(--color-background);
   border: 2px var(--color-titles) solid;
@@ -31,7 +37,6 @@ select {
   transition: 0.3s;
   width: 100%;
 }
-
 
 input {
   background-color: var(--color-background);
@@ -51,12 +56,11 @@ input:focus {
   color: var(--color-text-dark);
 }
 
-input[type="radio"] {
+input[type='radio'] {
   background-color: transparent;
   width: 16px;
   height: 16px;
 }
-
 
 textarea {
   background-color: var(--color-background);
@@ -78,14 +82,14 @@ textarea:focus {
 }
 
 button {
-  background-color:  var(--color-background);
+  background-color: var(--color-background);
   border: 2px var(--color-titles) solid;
   font-size: 20px;
   padding: 10px;
   height: 100%;
   border-radius: 4px;
   align-content: center;
-  transition:  0.3s;
+  transition: 0.3s;
   color: var(--color-text);
 }
 

@@ -1,14 +1,15 @@
 /* color palette */
+
 :root {
   --charleston-green: #24282f;
   --black: #000;
-  --electric-blue: #66FCF1;
+  --electric-blue: #66fcf1;
   --silver-sand: #c5c6c7;
   --keppel: #45a29e;
-  ;
 }
 
 /* semantic color variables for this project */
+
 :root {
   --color-background: var(--charleston-green);
   --color-background-light: var(--keppel);
@@ -27,5 +28,5 @@ body {
 }
 
 * {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
