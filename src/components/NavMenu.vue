@@ -109,10 +109,13 @@ nav .nav-item:hover {
     }
 
     .nav-items {
-        display: none;
+        display: block;
+        max-height: 0px;
+        transition: all .5s ease;
+        overflow: hidden;
     }
     .open.nav-items {
-        display: block;
+        max-height: 500px;
     }
 
     .nav {
