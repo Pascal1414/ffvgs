@@ -6,6 +6,7 @@ import Contact from '../views/ContactView.vue'
 import Gallery from '../views/GalleryView.vue'
 import Boat from '../views/BoatView.vue'
 import Report from '../views/ReportView.vue'
+import AboutUs from '../views/AboutUsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,11 @@ const router = createRouter({
       path: '/bericht',
       name: 'report',
       component: Report
+    },
+    {
+      path: '/ueber-uns',
+      name: 'AboutUs',
+      component: AboutUs
     }
   ]
 })

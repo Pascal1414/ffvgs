@@ -14,7 +14,7 @@
 
         <div ref="nav-items" class="nav-items">
             <a class="nav-item" href="/programm">Programm</a>
-            <a class="nav-item" href="/">Organe</a>
+            <a class="nav-item" href="/ueber-uns">Organe</a>
             <a class="nav-item" href="/">Jugend</a>
             <a class="nav-item" href="/bericht">Berichte</a>
             <a class="nav-item" href="/galerie">Galerie</a>
