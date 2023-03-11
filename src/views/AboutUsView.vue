@@ -24,4 +24,18 @@ export default defineComponent({
     }
 })
 </script>
-<style scoped></style>
+<style scoped>
+ul{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 25px;
+}
+li{
+    list-style: none;
+    width: 40%;
+    min-width: 300px;
+}
+</style>
