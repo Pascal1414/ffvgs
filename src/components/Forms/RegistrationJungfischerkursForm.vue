@@ -1,10 +1,10 @@
 <template>
     <form>
-        <h1>Anmeldung Jungfischerkurs</h1>
+        <h2>Anmeldung Jungfischerkurs</h2>
         <p>Wir Freuen uns über deine Anmeldung! Beachte jedoch dass die Teilnehmeranzahl limitiert ist. </p>
         <div class="split">
             <div class="child">
-                <h2>Jugendliche oder Jugendlicher:</h2>
+                <h3>Jugendliche oder Jugendlicher:</h3>
                 <div>
                     <label for="firstname">Vorname*</label>
                     <input type="text" id="firstname" name="firstname" placeholder="Vorname" required>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="parent">
-                <h2>Erziehungsberechtigte Person:</h2>
+                <h3>Erziehungsberechtigte Person:</h3>
                 <div>
                     <label for="firstname-parent">Vorname*</label>
                     <input type="text" id="firstname-parent" name="firstname-parent" placeholder="Vorname" required>
@@ -70,13 +70,8 @@ form div {
     margin-bottom: 0;
 }
 
-p {
-    margin-top: 1px;
-    margin-bottom: 0;
-}
-
-h2 {
-    margin-top: 10px;
+h3 {
+    margin-bottom: 7px;
 }
 
 .split {
