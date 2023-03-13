@@ -52,29 +52,33 @@ export default {
     width: 50px;
     border: none;
     outline: none;
-    background: none;
+    background-color: black;
+    opacity: 0.5;
     color: white;
     height: 60px;
     transform: translateY(-50%);
-
 }
 
 .btn:hover {
     border: none;
-    background-color: black;
     color: white;
     cursor: pointer;
+    opacity: 1;
+    background-color: black;
+
 }
 
 .left {
     position: absolute;
     left: 0;
     top: 50%;
+    border-radius: 0 10px 10px 0;
 }
 
 .right {
     position: absolute;
     right: 0;
     top: 50%;
+    border-radius: 10px 0 0 10px;
 }
 </style>
