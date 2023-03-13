@@ -7,6 +7,7 @@ import Gallery from '../views/GalleryView.vue'
 import Boat from '../views/BoatView.vue'
 import Report from '../views/ReportView.vue'
 import AboutUs from '../views/AboutUsView.vue'
+import Young from '../views/YoungView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,7 +20,7 @@ const router = createRouter({
     {
       path: '/programm',
       name: 'programm',
-      
+
       component: Programm
     },
     {
@@ -46,6 +47,11 @@ const router = createRouter({
       path: '/ueber-uns',
       name: 'AboutUs',
       component: AboutUs
+    },
+    {
+      path: '/jugend',
+      name: 'Young',
+      component: Young
     }
   ]
 })

@@ -15,7 +15,7 @@
         <div ref="nav-items" class="nav-items">
             <a class="nav-item" href="/programm">Programm</a>
             <a class="nav-item" href="/ueber-uns">Organe</a>
-            <a class="nav-item" href="/">Jugend</a>
+            <a class="nav-item" href="/jugend">Jugend</a>
             <a class="nav-item" href="/bericht">Berichte</a>
             <a class="nav-item" href="/galerie">Galerie</a>
             <a class="nav-item" href="/kontakt">Kontakt</a>
@@ -114,6 +114,7 @@ nav .nav-item:hover {
         transition: all .5s ease;
         overflow: hidden;
     }
+
     .open.nav-items {
         max-height: 500px;
     }
