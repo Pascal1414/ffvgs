@@ -40,8 +40,12 @@ export default {
 
 <style>
 .slideshow {
-    position: relative;
-    max-width: 100%;
+    width: 100%;
+}
+
+.slideshow img {
+    width: 100%;
+    height: 100%;
 }
 
 .controls {
