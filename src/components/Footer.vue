@@ -6,8 +6,8 @@
         </div>
         <div class="footer-element">
             <h3>Events</h3>
-            <a href="">Jungfischerkurs</a>
-            <a href="">Sommernachtsfest</a>
+            <a href="/events#jungfischerkurs">Jungfischerkurs</a>
+            <a href="/events#sommernachtsfest">Sommernachtsfest</a>
         </div>
         <div class="footer-element">
             <h3>Sonstiges</h3>
