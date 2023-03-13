@@ -10,14 +10,13 @@
             <label for="message">Nachricht</label>
             <textarea id="message" name="message" placeholder="Nachricht"></textarea>
         </div>
-        
+
         <button type="submit">Absenden</button>
     </form>
 </template>
 <script lang="ts">
 export default {
-    name: 'MessageForm',
-    
+    name: 'MessageForm'
 };
 </script>
 <style scoped>
