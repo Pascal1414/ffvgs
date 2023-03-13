@@ -54,6 +54,9 @@ export default {
     outline: none;
     background: none;
     color: white;
+    height: 60px;
+    transform: translateY(-50%);
+
 }
 
 .btn:hover {
@@ -67,15 +70,11 @@ export default {
     position: absolute;
     left: 0;
     top: 50%;
-    height: 60px;
-
 }
 
 .right {
     position: absolute;
     right: 0;
     top: 50%;
-    height: 60px;
-
 }
 </style>
