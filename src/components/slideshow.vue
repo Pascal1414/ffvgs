@@ -20,6 +20,11 @@ export default {
             currentIndex: 0,
         };
     },
+    created() {
+        setInterval(() => {
+            this.next();
+        }, 5000);
+    },
     computed: {
         currentImage(): any {
             return this.images[this.currentIndex];
