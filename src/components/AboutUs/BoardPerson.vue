@@ -46,19 +46,27 @@ export default {
     display: flex;
     flex-direction: column;
 }
+
 .function {
-    margin: 10px 0 2px 0;
+    margin: 0;
+    margin-bottom: 6px;
+    white-space: pre-line;
 }
+
 .name {
+    margin: 0;
     font-weight: bold;
-    margin: 0;}
-
-
-.tel{
-    margin: 12px 0;
+    margin-bottom: 12px;
 }
-.email{
-    margin: 12px 0;
+
+.tel {
+    margin: 0;
+    margin-bottom: 12px;
+}
+
+.email {
+    margin: 0;
+    margin-bottom: 12px;
 }
 
 img {
@@ -67,4 +75,5 @@ img {
     object-fit: cover;
     margin-right: 20px;
     margin-right: 10px;
-}</style>
+}
+</style>
