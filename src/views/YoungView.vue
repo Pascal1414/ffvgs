@@ -12,7 +12,7 @@
     <slideshow :images="images" />
 </template>
 <script lang="ts">
-import Slideshow from "@/components/slideshow.vue";
+import Slideshow from "@/components/Slideshow.vue";
 
 export default {
     name: "YoungView",
