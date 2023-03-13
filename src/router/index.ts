@@ -8,6 +8,7 @@ import Boat from '../views/BoatView.vue'
 import Report from '../views/ReportView.vue'
 import AboutUs from '../views/AboutUsView.vue'
 import Young from '../views/YoungView.vue'
+import Imprint from '../views/ImprintView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,6 +53,11 @@ const router = createRouter({
       path: '/jugend',
       name: 'Young',
       component: Young
+    },
+    {
+      path: '/impressum',
+      name: 'imprint',
+      component: Imprint
     }
   ]
 })

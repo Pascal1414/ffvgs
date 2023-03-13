@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="footer-element">
             <h3>Links</h3>
-            <a href="">Impressum</a>
+            <a href="/impressum">Impressum</a>
         </div>
         <div class="footer-element">
             <h3>Events</h3>
@@ -19,7 +19,7 @@
 <script lang="ts">
 export default {
     name: "Footer"
-   
+
 };
 </script>
 
@@ -67,6 +67,7 @@ export default {
         padding-bottom: 0;
     }
 }
+
 @media (max-width: 320px) {
     .footer {
         display: flex;
