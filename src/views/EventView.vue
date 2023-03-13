@@ -3,8 +3,8 @@
     <Sommernachtsfest />
 </template>
 <script lang="ts">
-import Sommernachtsfest from '@/components/AboutUs/Event/Sommernachtsfest.vue';
-import Jungfischerkurs from '@/components/AboutUs/Event/Jungfischerkurs.vue';
+import Sommernachtsfest from '@/components/event/Sommernachtsfest.vue';
+import Jungfischerkurs from '@/components/event/Jungfischerkurs.vue';
 
 export default {
     name: 'EventView',
