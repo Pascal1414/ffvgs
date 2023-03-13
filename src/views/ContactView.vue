@@ -4,8 +4,8 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import MessageForm from '../components/Forms/MessageForm.vue';
-import JoinForm from '../components/Forms/JoinForm.vue';
+import MessageForm from '../components/forms/MessageForm.vue';
+import JoinForm from '../components/forms/JoinForm.vue';
 
 export default defineComponent({
     name: 'ContactView',
@@ -15,5 +15,4 @@ export default defineComponent({
     }
 });
 </script>
-<style scoped>
-</style>
+<style scoped></style>

@@ -17,8 +17,8 @@
 import { defineComponent } from 'vue';
 import persons from '../json/board.json'
 import vips from '../json/vip.json'
-import BoardPerson from '../components/AboutUs/BoardPerson.vue'
-import Vip from '../components/AboutUs/Vip.vue'
+import BoardPerson from '../components/aboutUs/BoardPerson.vue'
+import Vip from '../components/aboutUs/Vip.vue'
 
 export default defineComponent({
     name: "AboutUsView",
