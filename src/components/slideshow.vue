@@ -1,10 +1,8 @@
 <template>
     <div class="slideshow">
         <img :src="currentImage.src" :alt="currentImage.alt">
-        <div class="controls">
-            <button @click="prev">Prev</button>
-            <button @click="next">Next</button>
-        </div>
+        <button class="btn left" @click="prev">❮</button>
+        <button class="btn right" @click="next">❯</button>
     </div>
 </template>
 
@@ -40,7 +38,9 @@ export default {
 
 <style>
 .slideshow {
+    position: relative;
     width: 100%;
+    overflow: hidden;
 }
 
 .slideshow img {
@@ -48,10 +48,34 @@ export default {
     height: 100%;
 }
 
-.controls {
+.btn {
+    width: 50px;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+}
+
+.btn:hover {
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.left {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    top: 50%;
+    height: 60px;
+
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: 60px;
+
 }
 </style>
