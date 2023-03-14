@@ -1,11 +1,11 @@
 <template>
     <div class="board-person">
-        <img :src="image" alt="Bild von {{ name }}" />
+        <img :src="image" :alt="alt" />
         <div>
             <p class="function">{{ _function }}</p>
             <p class="name">{{ name }}</p>
-            <a class="tel" v-if="tel" href="tel:{{ tel }}">{{ tel }}</a>
-            <a class="email" v-if="email" href="mailto:{{ email}}">Email</a>
+            <a class="tel" v-if="tel" :href="tellink">{{ tel }}</a>
+            <a class="email" v-if="email" :href="mailto">Email</a>
         </div>
     </div>
 </template>
@@ -33,6 +33,13 @@ export default {
             type: String,
             required: false,
         }
+    },
+    data() {
+        return {
+            alt: "Bild von " + this.name,
+            tellink: "tel:" + this.tel,
+            mailto: "mailto:" + this.email,
+        };
     },
 };
 </script>
