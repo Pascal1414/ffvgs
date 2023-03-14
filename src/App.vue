@@ -19,7 +19,7 @@ import NavMenu from './components/NavMenu.vue';
 
 <style scoped>
 main {
-  margin: 6px 4%;
+  margin: 6px 2.5%;
   max-width: calc(1000px - 2*10px);
 
 }
