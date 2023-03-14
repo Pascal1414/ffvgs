@@ -12,6 +12,7 @@ import Imprint from '../views/ImprintView.vue'
 import Documents from '../views/DocumentsView.vue'
 import Somemrnachtsfest from '../views/event/SommernachtsfestView.vue'
 import Jungfischerkurs from '../views/event/JungfischerkursView.vue'
+import NotFound from '../views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -76,6 +77,11 @@ const router = createRouter({
       path: '/dokumente',
       name: 'documents',
       component: Documents
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: NotFound
     }
   ]
 })

@@ -49,7 +49,8 @@ nav {
     flex-direction: row;
     height: var(--nav-height);
     padding: 10px;
-    border-bottom: solid 1px var(--color-text);
+    border-bottom: solid 1px rgba(197, 198, 199, .4);
+    ;
 }
 
 .nav-items {
@@ -113,7 +114,23 @@ nav .nav-item:hover {
         max-height: 0px;
         transition: all .5s ease;
         overflow: hidden;
+        margin: 0 7px;
     }
+
+    .nav-item:first-child {
+        border-top: none;
+    }
+
+    .nav-item {
+        padding: 5px 0px !important;
+        border-top: 1px solid rgba(197, 198, 199, .4);
+        font-size: 22px !important;
+    }
+
+    .nav-item:hover {
+        text-decoration: none !important;
+    }
+
 
     .open.nav-items {
         max-height: 500px;
