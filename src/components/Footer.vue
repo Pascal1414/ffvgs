@@ -6,12 +6,12 @@
         </div>
         <div class="footer-element">
             <h3>Events</h3>
-            <a href="/events#jungfischerkurs">Jungfischerkurs</a>
-            <a href="/events#sommernachtsfest">Sommernachtsfest</a>
+            <a href="/event/jungfischerkurs">Jungfischerkurs</a>
+            <a href="/event/sommernachtsfest">Sommernachtsfest</a>
         </div>
         <div class="footer-element">
             <h3>Sonstiges</h3>
-            <a href="">Dokumente</a>
+            <a href="/dokumente">Dokumente</a>
         </div>
     </div>
 </template>

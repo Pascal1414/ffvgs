@@ -9,7 +9,9 @@ import Report from '../views/ReportView.vue'
 import AboutUs from '../views/AboutUsView.vue'
 import Young from '../views/YoungView.vue'
 import Imprint from '../views/ImprintView.vue'
-import Event from '../views/EventView.vue'
+import Documents from '../views/DocumentsView.vue'
+import Somemrnachtsfest from '../views/event/SommernachtsfestView.vue'
+import Jungfischerkurs from '../views/event/JungfischerkursView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -61,9 +63,19 @@ const router = createRouter({
       component: Imprint
     },
     {
-      path: '/events',
-      name: 'event',
-      component: Event
+      path: '/event/sommernachtsfest',
+      name: 'sommernachtsfest',
+      component: Somemrnachtsfest
+    },
+    {
+      path: '/event/jungfischerkurs',
+      name: 'jungfischerkurs',
+      component: Jungfischerkurs
+    },
+    {
+      path: '/dokumente',
+      name: 'documents',
+      component: Documents
     }
   ]
 })
