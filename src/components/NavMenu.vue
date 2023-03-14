@@ -50,7 +50,6 @@ nav {
     height: var(--nav-height);
     padding: 10px;
     border-bottom: solid 1px rgba(197, 198, 199, .4);
-    ;
 }
 
 .nav-items {
@@ -115,6 +114,7 @@ nav .nav-item:hover {
         transition: all .5s ease;
         overflow: hidden;
         margin: 0 7px;
+        margin-top: 5px;
     }
 
     .nav-item:first-child {
@@ -122,7 +122,7 @@ nav .nav-item:hover {
     }
 
     .nav-item {
-        padding: 5px 0px !important;
+        padding: 7px 0px !important;
         border-top: 1px solid rgba(197, 198, 199, .4);
         font-size: 22px !important;
     }
