@@ -89,4 +89,14 @@ h3 {
 .split div div {
     width: 100%;
 }
+
+@media (max-width: 720px) {
+    .split {
+        flex-direction: column;
+    }
+
+    .split div {
+        width: 100%;
+    }
+}
 </style>
