@@ -7,12 +7,12 @@
             </router-link>
 
 
-            <div @click="toggleMenu($event)" class="menu-btn">
+            <div @click="toggleMenu($event)" ref="menuBtn" class="menu-btn">
                 <div class="menu-btn-burger"></div>
             </div>
         </div>
 
-        <div ref="nav-items" class="nav-items">
+        <div ref="nav-items" class="nav-items" @click="closeMenu($event)">
             <router-link class="nav-item" to="/programm">Programm</router-link>
             <router-link class="nav-item" to="/ueber-uns">Organe</router-link>
             <router-link class="nav-item" to="/jugend">Jugend</router-link>
@@ -30,10 +30,14 @@ export default {
     name: "NavMenu",
     methods: {
         toggleMenu(event: Event) {
-            if (event.target != null)
-                (event.target as HTMLDivElement).classList.toggle("open");
+            (this.$refs.menuBtn as HTMLDivElement).classList.toggle("open");
             const navItems = this.$refs["nav-items"] as HTMLElement;
             navItems.classList.toggle("open");
+        },
+        closeMenu(event: Event) {
+            (this.$refs.menuBtn as HTMLDivElement).classList.remove("open");
+            const navItems = this.$refs["nav-items"] as HTMLElement;
+            navItems.classList.remove("open");
         }
     }
 }
