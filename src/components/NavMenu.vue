@@ -113,8 +113,8 @@ nav .nav-item:hover {
     }
 
     .nav-items {
+        height: 0px;
         display: block;
-        max-height: 0px;
         transition: all .5s ease;
         overflow: hidden;
         margin: 0 7px;
@@ -137,7 +137,7 @@ nav .nav-item:hover {
 
 
     .open.nav-items {
-        max-height: 500px;
+        height: 315px;
     }
 
     .nav {
