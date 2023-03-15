@@ -55,7 +55,7 @@ export default {
     },
     methods: {
         closePreview() {
-            this.$refs.imagePreview.classList.toggle('closed');
+            (this.$refs.imagePreview as HTMLDivElement).classList.toggle('closed');
         },
         prev() {
             this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
