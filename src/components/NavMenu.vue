@@ -1,10 +1,10 @@
 <template>
     <nav>
         <div class="nav">
-            <a href="/" class="home-item">
+            <router-link to="/" class="home-item">
                 <div class="logo" alt="Logo"></div>
                 <span class="text">FFVGS</span>
-            </a>
+            </router-link>
 
 
             <div @click="toggleMenu($event)" class="menu-btn">
@@ -13,13 +13,13 @@
         </div>
 
         <div ref="nav-items" class="nav-items">
-            <a class="nav-item" href="/programm">Programm</a>
-            <a class="nav-item" href="/ueber-uns">Organe</a>
-            <a class="nav-item" href="/jugend">Jugend</a>
-            <a class="nav-item" href="/bericht">Berichte</a>
-            <a class="nav-item" href="/galerie">Galerie</a>
-            <a class="nav-item" href="/kontakt">Kontakt</a>
-            <a class="nav-item" href="/boot">Boot</a>
+            <router-link class="nav-item" to="/programm">Programm</router-link>
+            <router-link class="nav-item" to="/ueber-uns">Organe</router-link>
+            <router-link class="nav-item" to="/jugend">Jugend</router-link>
+            <router-link class="nav-item" to="/bericht">Berichte</router-link>
+            <router-link class="nav-item" to="/galerie">Galerie</router-link>
+            <router-link class="nav-item" to="/kontakt">Kontakt</router-link>
+            <router-link class="nav-item" to="/boot">Boot</router-link>
         </div>
 
     </nav>

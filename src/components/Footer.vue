@@ -2,16 +2,16 @@
     <div class="footer">
         <div class="footer-element">
             <h3>Links</h3>
-            <a href="/impressum">Impressum</a>
+            <router-link to="/impressum">Impressum</router-link>
         </div>
         <div class="footer-element">
             <h3>Events</h3>
-            <a href="/event/jungfischerkurs">Jungfischerkurs</a>
-            <a href="/event/sommernachtsfest">Sommernachtsfest</a>
+            <router-link to="/event/jungfischerkurs">Jungfischerkurs</router-link>
+            <router-link to="/event/sommernachtsfest">Sommernachtsfest</router-link>
         </div>
         <div class="footer-element">
             <h3>Sonstiges</h3>
-            <a href="/dokumente">Dokumente</a>
+            <router-link to="/dokumente">Dokumente</router-link>
         </div>
     </div>
 </template>
