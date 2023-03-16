@@ -15,13 +15,18 @@
 export default {
     name: 'ImagePreview',
     props: {
-        images: {
-            type: Array as () => Array<{ src: string, alt: string }>,
+        closePreview: {
+            type: Function,
+            required: true
+        },
+        openPreview: {
+            type: Function,
             required: true
         }
     },
     data() {
         return {
+            images: [] as Array<{ src: string, alt: string }>,
             currentIndex: 0,
             tempHeight: "10px"
         };
@@ -32,6 +37,26 @@ export default {
         },
     },
     created() {
+        //Get all images from the gallery
+        const images = document.querySelectorAll('img');
+
+        images.forEach((image) => {
+            this.images.push({
+                src: image.getAttribute('src') ?? '',
+                alt: image.getAttribute('alt') ?? ''
+            });
+
+
+            const handleclick = () => {
+                this.openPreview(image.src);
+                console.log(image.src);
+            }
+            //Check if image has clickevent
+            image.removeEventListener('click', handleclick);
+
+            image.addEventListener('click', handleclick);
+        });
+
         document.addEventListener('keyup', (event) => {
             if (event.key === 'Escape') {
                 this.closePreview();
@@ -54,9 +79,6 @@ export default {
 
     },
     methods: {
-        closePreview() {
-            (this.$refs.imagePreview as HTMLDivElement).classList.toggle('closed');
-        },
         prev() {
             this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
         },
