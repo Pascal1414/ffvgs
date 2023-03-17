@@ -1,7 +1,7 @@
 <template>
     <div ref="imagePreview" class="background">
         <div class="image-preview">
-            <button class="image-preview__close" @click="closePreview">X</button>
+            <button class="image-preview__close" @click="closeClick($event)">X</button>
             <button class="image-preview__prev" @click="prev">❮</button>
             <button class="image-preview__next" @click="next">❯</button>
             <div class="image-preview__image" :style="{ backgroundImage: 'url(' + currentImage.src + ')' }">
@@ -12,10 +12,15 @@
     </div>
 </template>
 <script lang="ts">
+
+type MyFunctionType = (param: Event) => void;
+
+
 export default {
     name: 'ImagePreview',
     props: {
         closePreview: {
+
             type: Function,
             required: true
         },
@@ -23,6 +28,8 @@ export default {
             type: Function,
             required: true
         }
+
+
     },
     data() {
         return {
@@ -84,6 +91,9 @@ export default {
         },
         next() {
             this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        },
+        closeClick(event: Event) {
+            this.closePreview();
         }
     }
 }
