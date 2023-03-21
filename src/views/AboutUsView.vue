@@ -40,7 +40,7 @@ export default defineComponent({
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     row-gap: 25px;
 }
 
