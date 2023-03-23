@@ -1,5 +1,6 @@
 /* color palette */
 
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 :root {
   --charleston-green: #24282f;
   --black: #000;
@@ -28,6 +29,6 @@ body {
 }
 
 * {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Macondo', cursive;
   scroll-behavior: smooth;
 }
