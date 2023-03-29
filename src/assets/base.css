@@ -21,7 +21,11 @@
 
 body {
   color: var(--color-text);
-  background: var(--color-background);
+  background-color: var(--color-background);
+  background-image: url(mckenzie-river-gc0cdfa938_1920-modified.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
