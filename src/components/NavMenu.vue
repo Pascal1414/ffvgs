@@ -3,7 +3,10 @@
         <div class="nav">
             <router-link to="/" class="home-item">
                 <div class="logo" alt="Logo"></div>
-                <span class="text">FFVGS</span>
+                <div class="logo-text">
+                    <span class="text">FFVGS</span>
+                    <p>Fischerverein</p>
+                </div>
             </router-link>
 
 
@@ -45,7 +48,16 @@ export default {
 
 <style scoped>
 * {
-    --nav-height: 70px;
+    --nav-height: 65px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text>p {
+    margin: 0 10px;
 }
 
 nav {
@@ -54,6 +66,8 @@ nav {
     justify-content: space-between;
     height: var(--nav-height);
     padding: 10px;
+    margin: 0 40px;
+    padding: 20px 0;
 }
 
 .nav-items {
