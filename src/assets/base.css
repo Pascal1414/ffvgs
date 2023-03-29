@@ -1,6 +1,6 @@
 /* color palette */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 :root {
   --charleston-green: #24282f;
   --black: #000;
@@ -35,6 +35,6 @@ body {
 
 * {
   font-weight: 550;
-  font-family: 'Nunito', cursive;
+  font-family: 'Inter', cursive;
   scroll-behavior: smooth;
 }
