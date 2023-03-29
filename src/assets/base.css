@@ -1,6 +1,6 @@
 /* color palette */
 
-@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 :root {
   --charleston-green: #24282f;
   --black: #000;
@@ -29,6 +29,7 @@ body {
 }
 
 * {
-  font-family: 'Macondo', cursive;
+  font-weight: 550;
+  font-family: 'Nunito', cursive;
   scroll-behavior: smooth;
 }
