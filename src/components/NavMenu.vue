@@ -53,7 +53,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     height: var(--nav-height);
-    padding: 10px;
+    padding: 20px;
 }
 
 .nav-items {
@@ -108,8 +108,9 @@ nav .nav-item:hover {
 
     nav {
         flex-direction: column;
-        padding-right: 20px;
+        padding: 10px;
         height: fit-content;
+        border-bottom: solid 1px rgba(197, 198, 199, .4);
     }
 
     .nav-items {
