@@ -51,9 +51,9 @@ export default {
 nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     height: var(--nav-height);
     padding: 10px;
-    border-bottom: solid 1px rgba(197, 198, 199, .4);
 }
 
 .nav-items {
@@ -69,7 +69,7 @@ nav .nav-item {
     color: var(--color-titles);
     padding-left: 15px;
     padding-right: 15px;
-    font-size: 25px;
+    font-size: 22px;
     display: flex;
     align-items: center;
 }
