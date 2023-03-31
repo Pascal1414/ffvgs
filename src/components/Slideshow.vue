@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .slideshow {
     position: relative;
     width: 100%;
