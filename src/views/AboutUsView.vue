@@ -2,8 +2,17 @@
     <h1>Vorstand</h1>
     <ul class="board">
         <li v-for="person in persons" :key="person.name">
-            <BoardPerson :_function="person.function" :name="person.name" :image="person.image" :tel="person.tel"
-                :email="person.email" />
+            <div class="card card-side bg-base-100 shadow-xl">
+                <figure><img :src="person.image" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">{{ person.name }}</h2>
+                    <h3>{{ person.function }}</h3>
+                    <div class="card-actions justify-end">
+                        <a class="tel link link-info" v-if="person.tel" :href="person.tel">Anrufen </a>
+                        <a class="email link link-info" v-if="person.email" :href="person.email">Email</a>
+                    </div>
+                </div>
+            </div>
         </li>
     </ul>
     <h1>VIPs – Funktionäre und Ehrenmitglieder</h1>

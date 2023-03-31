@@ -1,6 +1,5 @@
 /* color palette */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 :root {
   --charleston-green: #24282f;
   --black: #000;
@@ -20,21 +19,11 @@
 }
 
 body {
-  color: var(--color-text);
-  background-color: var(--color-background);
-  background-image: url(mckenzie-river-gc0cdfa938_1920-modified2.png);
-  box-shadow: 10px 10px 202px black inset;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0;
 }
 
 * {
-  font-weight: 550;
-  font-family: 'Inter', cursive;
   scroll-behavior: smooth;
 }
