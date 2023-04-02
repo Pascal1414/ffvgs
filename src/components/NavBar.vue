@@ -3,7 +3,7 @@
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
-      <div class="w-full navbar bg-base-300 rounded-box">
+      <div class="w-full navbar bg-base-300 ">
         <div class="flex-none lg:hidden">
           <label for="my-drawer-3" class="btn btn-square btn-ghost">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -59,4 +59,10 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+@media (min-width: 1024px) {
+  .navbar {
+    @apply rounded-box;
+  }
+}
+</style>

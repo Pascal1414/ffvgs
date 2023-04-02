@@ -33,12 +33,11 @@
             </tr>
         </tbody>
     </table>
-    <p>Zudem können spontane Anlässe dazukommen. Diese werden per Mail oder im Internet angekündigt.</p>
+    <p class="mt-4">Zudem können spontane Anlässe dazukommen. Diese werden per Mail oder im Internet angekündigt.</p>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
 import json from '../json/programm.json'
-import ProgrammEvent from '../components/ProgrammEvent.vue'
 
 
 export default defineComponent({
@@ -50,7 +49,7 @@ export default defineComponent({
         };
     },
     components: {
-        ProgrammEvent
+        
     },
     created() {
         this.currentList = this.json;
