@@ -38,7 +38,8 @@
                                     }}</span>
                             </label>
                         </div>
-
+    </div>
+                </div>
                 
                         <div class="split-cols grid grid-cols-2 gap-[15px] mb-0 mt-3">
 
@@ -94,8 +95,7 @@
                                 placeholder="Nachricht"></textarea>
                         </div>                <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
 
-                    </div>
-                </div>
+                
 
             </form>
         </div>
