@@ -45,4 +45,10 @@ export default {
 
 }
 </script>
-<style scoped></style>
+<style scoped>
+@media (max-width: 1300px) {
+    .grid{
+        @apply grid-cols-1;
+    }
+}
+</style>
