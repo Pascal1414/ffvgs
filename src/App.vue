@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar.vue";
 
 <template>
   <NavBar>
-    <main>
+    <main class="mx-auto w-[65%]" >
       <RouterView />
     </main>
 
@@ -49,16 +49,13 @@ footer {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
-main {
-  margin: 6px 2.5%;
-  max-width: calc(1000px - 2*10px);
-
-}
-
-@media (min-width: 1000px) {
-  main {
-    margin: 6px auto;
+@media (max-width: 768px) {
+  main{
+    @apply w-full;
+    @apply pr-4;
+    @apply pl-4;
   }
+
+  
 }
 </style>
