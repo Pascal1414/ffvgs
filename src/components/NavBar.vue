@@ -13,8 +13,8 @@
           </label>
         </div>
         <router-link to="/" class=" flex-1 px-2 mx-2">
-          <img src="/favicon.ico" alt="Logo" class="w-10 h-10" />
-          FFVGS
+          <img src="/favicon.ico" alt="Logo" class="w-10 h-10 mr-3" />
+          <h1> FFVGS</h1>
         </router-link>
         <div class="flex-none hidden lg:block">
           <ul class="menu menu-horizontal">
@@ -50,10 +50,10 @@ export default {
         { name: 'Programm', link: '/programm' },
         { name: 'Organe', link: '/ueber-uns' },
         { name: 'Jugend', link: '/jugend' },
-        { name: 'Berichte', link: '/berichte' },
+        { name: 'Berichte', link: '/bericht' },
         { name: 'Galerie', link: '/galerie' },
         { name: 'Kontakt', link: '/kontakt' },
-        { name: 'Boot', link: '/boot'}
+        { name: 'Boot', link: '/boot' }
       ],
     };
   },

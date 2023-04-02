@@ -58,7 +58,7 @@ export default defineComponent({
                     return false;
             return true;
         },
-        formatDate(date: Date): string {            
+        formatDate(date: string): string {            
             return new Date(date).toLocaleDateString('ch-DE')
         },
         selectionChanged(event: Event) {

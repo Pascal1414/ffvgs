@@ -45,6 +45,8 @@ import NavBar from "./components/NavBar.vue";
 
 <style scoped>
 footer {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
