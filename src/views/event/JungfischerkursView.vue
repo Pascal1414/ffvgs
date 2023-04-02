@@ -15,7 +15,7 @@
     </div>
 </template>
 <script lang="ts">
-import RegistrationJungfischerkursForm from '@/components/forms/RegistrationJungfischerkursForm.vue';
+import RegistrationJungfischerkursForm from '@/components/RegistrationJungfischerkursForm.vue';
 export default {
     name: 'Jungfischerkurs',
     components: {
