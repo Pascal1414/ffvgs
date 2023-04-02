@@ -1,5 +1,5 @@
 <template>
-    <h1>Vorstand</h1>
+    <h1 class="text-4xl font-bold mb-4">Vorstand</h1>
     <ul class="board">
         <li v-for="person in persons" :key="person.name">
             <div class="card card-side bg-base-100 shadow-xl">
@@ -18,7 +18,7 @@
             </div>
         </li>
     </ul>
-    <h1>VIPs – Funktionäre und Ehrenmitglieder</h1>
+    <h1 class="text-4xl font-bold mt-4 mb-3">VIPs – Funktionäre und Ehrenmitglieder</h1>
     <ul class="vip">
         <li v-for="vip in vips" :key="vip.name">
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -38,8 +38,6 @@
 import { defineComponent } from 'vue';
 import persons from '../json/board.json'
 import vips from '../json/vip.json'
-import BoardPerson from '../components/aboutUs/BoardPerson.vue'
-import Vip from '../components/aboutUs/Vip.vue'
 
 export default defineComponent({
     name: "AboutUsView",
@@ -50,8 +48,6 @@ export default defineComponent({
         }
     },
     components: {
-        BoardPerson,
-        Vip
     }
 })
 </script>

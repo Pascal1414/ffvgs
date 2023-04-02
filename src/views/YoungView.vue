@@ -1,6 +1,6 @@
 <template>
-    <h1>Jugend</h1>
-    <p>Die FFVGS legt grossen Wert auf die Jugendförderung und die professionelle Schulung durch erfahrene Fischer
+    <h1 class="text-4xl font-bold mb-4">Jugend</h1>
+    <p class="mb-4">Die FFVGS legt grossen Wert auf die Jugendförderung und die professionelle Schulung durch erfahrene Fischer
         und den Umgang in und mit der Natur.<br>
         Jedes Jahr im Mai führen wir einen Jungfischerkurs und ein Jugendfischen durch. An diesem zweitägigen Kurs
         werden die Kinder von erfahrenen Instruktoren in die Fischerei eingeführt.<br>
