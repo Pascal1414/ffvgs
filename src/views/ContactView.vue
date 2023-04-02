@@ -12,7 +12,7 @@
                     <label class="label" for="contact-message">
                         <span class="label-text">Nachricht</span>
                     </label>
-                    <textarea id="contact-message" class="textarea textarea-bordered" placeholder="Nachricht"></textarea>
+                    <textarea id="contact-message" class="textarea textarea-bordered mb-2" placeholder="Nachricht"></textarea>
 
                     <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
 
@@ -40,7 +40,7 @@
                         </div>
 
                 
-                        <div class="grid grid-cols-2 gap-[15px] mb-0 mt-3">
+                        <div class="split-cols grid grid-cols-2 gap-[15px] mb-0 mt-3">
 
                             <div class="mb-0">
                                 <label class="label" for="join-firstname">
@@ -81,7 +81,7 @@
 
                             </div>
                         </div>
-                        <div>
+                        <div class="mb-2">
                             <label class="label" for="join-email">
                                 <span class="label-text">Email</span>
                             </label>
@@ -143,4 +143,11 @@ export default defineComponent({
     },
 });
 </script>
-<style scoped></style>
+<style scoped>
+@media (max-width: 600px) {
+  .split-cols {
+    @apply grid-cols-1;
+    @apply gap-0;
+  } 
+}
+</style>
