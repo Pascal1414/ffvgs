@@ -28,7 +28,7 @@
         <div class="modal-box w-11/12 max-w-5xl">
             <button class="btn btn-primary" @click="previous()">previous</button>
             <img v-if="previewImageArray[previewImageIndex]" :src="previewImageArray[previewImageIndex].url" />
-            <button class="btn btn-primary">next</button>
+            <button class="btn btn-primary" @click="next()">next</button>
 
             <label for="my-modal-5" class="btn btn-ghost">close modal</label>
         </div>
@@ -46,8 +46,10 @@ export default {
         previous() {
             if (this.previewImageIndex > 0) this.previewImageIndex = this.previewImageIndex - 1;
             else this.previewImageIndex = this.previewImageArray.length - 1;
-            console.log(this.previewImageArray);
-
+        },
+        next() {
+            if (this.previewImageIndex < this.previewImageArray.length - 1) this.previewImageIndex = this.previewImageIndex + 1;
+            else this.previewImageIndex = 0;
         }
     },
     data() {
