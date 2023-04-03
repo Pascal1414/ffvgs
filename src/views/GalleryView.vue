@@ -1,27 +1,41 @@
 <template>
-    <GalleryItem title="Absenden 2021">
+    <!-- The button to open modal -->
+    <label for="my-modal-5" class="btn">open modal</label>
 
-        <DoubleImage image1="/images/galery/Trüschenfischen/IMG_20221105_081130844small.jpg"
-            image2="/images/galery/Trüschenfischen/IMG_20221105_081130844small.jpg" />
-
-        <TripleImage image1="/images/galery/Helferausflug22/IMG_0868small.jpg"
-            image2="/images/galery/Helferausflug22/IMG_0868small.jpg"
-            image3="/images/galery/Helferausflug22/IMG_0868small.jpg" />
-
-    </GalleryItem>
-
-    <GalleryItem title="Absenden 2021">
-
-        <TripleImage image1="/images/galery/Helferausflug22/IMG_0868small.jpg"
-            image2="/images/galery/Helferausflug22/IMG_0868small.jpg"
-            image3="/images/galery/Helferausflug22/IMG_0868small.jpg" />
+    <!-- grid for images -->
 
 
-    </GalleryItem>
 
 
-    <ImagePreview  :close-preview="() => displayPreview = false"
-        :open-preview="() => displayPreview = true" :style="{display: getDisplay(displayPreview) }"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box w-11/12 max-w-5xl">
+            <h3 class="font-bold text-lg">Congratulations random Internet user!</h3>
+            <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+            <div class="modal-action">
+                <label for="my-modal-5" class="btn">Yay!</label>
+            </div>
+        </div>
+    </div>
 </template>
 <script lang="ts">
 import DoubleImage from '../components/gallery/DoubleImage.vue';
@@ -39,32 +53,39 @@ export default {
     },
     data() {
         return {
-            displayPreview: false,
-            // images: [
-            //     {
-            //         src: '/images/galery/Trüschenfischen/IMG_20221105_081130844small.jpg',
-            //         alt: 'Trüschenfischen'
-            //     },
-            //     {
-            //         src: '/images/galery/Helferausflug22/IMG_0868small.jpg',
-            //         alt: 'Helferausflug 2022'
-            //     }
-            // ]
+            "events": [
+                {
+                    "name": "Event 1",
+                    "images": [
+                        [
+                            {
+                                "url": "http://www.example.com/image1.jpg",
+                                "caption": "Image 1"
+                            },
+                            {
+                                "url": "http://www.example.com/image2.jpg",
+                                "caption": "Image 2"
+                            }
+                        ],
+                        [
+                            {
+                                "url": "http://www.example.com/image3.jpg",
+                                "caption": "Image 3"
+                            },
+                            {
+                                "url": "http://www.example.com/image4.jpg",
+                                "caption": "Image 4"
+                            },
+                            {
+                                "url": "http://www.example.com/image5.jpg",
+                                "caption": "Image 5"
+                            }
+                        ]
+                    ]
+                }
+            ]
         };
-    },
-    methods: {
-        openPreview() {
-            this.displayPreview = true;
-        },
-        getDisplay(display: boolean) {
-            if (display) {
-                return "block";
-            } else {
-                return "none";
-            }
-        }
     }
-
 }
 </script>
 <style scoped></style>
