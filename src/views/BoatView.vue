@@ -72,19 +72,21 @@
                     <label class="label">
                         <span class="label-text">Startzeit</span>
                     </label>
-                    <input type="time" placeholder="Startzeit" class="input input-bordered w-full max-w-xs" required />
+                    <input type="time" v-model="startTime" placeholder="Startzeit"
+                        class="input input-bordered w-full max-w-xs" required />
                 </div>
 
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
                         <span class="label-text">Endzeit</span>
                     </label>
-                    <input type="time" placeholder="Endzeit" class="input input-bordered w-full max-w-xs" required />
+                    <input type="time" v-model="endTime" placeholder="Endzeit" class="input input-bordered w-full max-w-xs"
+                        required />
                 </div>
 
                 <button class="btn btn-primary">Berechnen</button>
 
-                <div>Price: {{ price }} CHF</div>
+                <div v-if="price">Preis: {{ price }} CHF</div>
 
             </form>
 
@@ -119,28 +121,18 @@ export default {
             // Calculate duration of rental period in hours
             const start = new Date(`2000-01-01T${this.startTime}`);
             const end = new Date(`2000-01-01T${this.endTime}`);
-            const duration = (end - start) / (1000 * 60 * 60);
-            console.log(duration);
-            console.log(start);
-            console.log(end);
+            const duration = (end.getTime() - start.getTime()) / (1000 * 60 * 60);
 
-
-
-
-            // Determine price based on time of day
-            const startHour = start.getHours();
-            const endHour = end.getHours();
-            let pricePerHour = 0;
-            if (startHour >= 5 && endHour <= 19) {
-                pricePerHour = 2;
-            } else {
-                pricePerHour = 1;
+            // loop trough each hour and calculate price
+            let price = 0;
+            for (let i = 0; i < duration; i++) {
+                const hour = start.getHours() + i;
+                if (hour >= 5 && hour < 19) {
+                    price += 2;
+                } else {
+                    price += 1;
+                }
             }
-
-            // Calculate total price
-            const price = duration * pricePerHour;
-
-            // Update data property and display on page
             this.price = price;
         }
     },
