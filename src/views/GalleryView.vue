@@ -25,12 +25,29 @@
 
     <input type="checkbox" id="my-modal-5" class="modal-toggle" />
     <div class="modal">
-        <div class="modal-box w-11/12 max-w-5xl">
-            <button class="btn btn-primary" @click="previous()">previous</button>
-            <img v-if="previewImageArray[previewImageIndex]" :src="previewImageArray[previewImageIndex].url" />
-            <button class="btn btn-primary" @click="next()">next</button>
-
-            <label for="my-modal-5" class="btn btn-ghost">close modal</label>
+        <div class="modal-box w-11/12 max-w-5xl flex row h-[100%]">
+            <button class="btn absolute top-[50%] translate-y-[-50%] left-[10px]" @click="previous()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-chevron-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                </svg></button>
+            <img class="object-contain ml-auto mr-auto" v-if="previewImageArray[previewImageIndex]"
+                :src="previewImageArray[previewImageIndex].url" />
+            <button class="btn absolute top-[50%] translate-y-[-50%] right-[10px]" @click="next()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+            <label for="my-modal-5" class="btn absolute top-[10px] right-[10px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                </svg>
+            </label>
         </div>
     </div>
 </template>
