@@ -7,15 +7,24 @@
 
 
     <div v-for="event in events">
-        <h1>{{ event.name }}</h1>
-        <div v-for="images in event.images">
-            <div v-if="images.length === 2">
-                <DoubleImage :images="images" :image1="images[0].url" :image2="images[1].url" />
-            </div>
-            <div v-else>
-                <TripleImage :image1="images[0].url" :image2="images[1].url" :image3="images[2].url" />
+        <div class="card card-compact w-[100%] bg-base-200 shadow-xl">
+            <div class="card-body">
+
+                <h1 class="text-2xl font-bold mb-2">{{ event.name }}</h1>
+                <div v-for="images in event.images">
+                    <div v-if="images.length === 2" class="flex flex-row justify-between mb-[1%] gap-3">
+                        <img class="w-[50%] rounded-box" :src="images[0].url" :alt="images[0].caption" />
+                        <img class="w-[50%] rounded-box" :src="images[1].url" :alt="images[1].caption" />
+                    </div>
+                    <div v-else class="flex flex-row justify-between mb-[1%] gap-3">
+                        <img class="w-[50%] rounded-box" :src="images[0].url" :alt="images[0].caption" />
+                        <img class="w-[50%] rounded-box" :src="images[1].url" :alt="images[1].caption" />
+                        <img class="w-[50%] rounded-box" :src="images[2].url" :alt="images[2].caption" />
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 
 
@@ -48,17 +57,11 @@
     </div>
 </template>
 <script lang="ts">
-import DoubleImage from '../components/gallery/DoubleImage.vue';
-import TripleImage from '../components/gallery/TripleImage.vue';
-import GalleryItem from '../components/gallery/GalleryItem.vue';
 import ImagePreview from '../components/ImagePreview.vue';
 
 export default {
     name: 'GalleryView',
     components: {
-        GalleryItem,
-        DoubleImage,
-        TripleImage,
         ImagePreview
     },
     data() {
@@ -69,25 +72,25 @@ export default {
                     "images": [
                         [
                             {
-                                "url": "http://www.example.com/image1.jpg",
+                                "url": "/images/galery/Silchsammelaktion22/20221022_142359small.jpg",
                                 "caption": "Image 1"
                             },
                             {
-                                "url": "http://www.example.com/image2.jpg",
+                                "url": "/images/galery/Silchsammelaktion22/20221022_142359small.jpg",
                                 "caption": "Image 2"
                             }
                         ],
                         [
                             {
-                                "url": "http://www.example.com/image3.jpg",
+                                "url": "/images/galery/Helferausflug22/IMG_0868small.jpg",
                                 "caption": "Image 3"
                             },
                             {
-                                "url": "http://www.example.com/image4.jpg",
+                                "url": "/images/galery/Helferausflug22/IMG_0868small.jpg",
                                 "caption": "Image 4"
                             },
                             {
-                                "url": "http://www.example.com/image5.jpg",
+                                "url": "/images/galery/Helferausflug22/IMG_0868small.jpg",
                                 "caption": "Image 5"
                             }
                         ]
