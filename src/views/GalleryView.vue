@@ -6,7 +6,17 @@
 
 
 
-
+    <div v-for="event in events">
+        <h1>{{ event.name }}</h1>
+        <div v-for="images in event.images">
+            <div v-if="images.length === 2">
+                <DoubleImage :images="images" :image1="images[0].url" :image2="images[1].url" />
+            </div>
+            <div v-else>
+                <TripleImage :image1="images[0].url" :image2="images[1].url" :image3="images[2].url" />
+            </div>
+        </div>
+    </div>
 
 
 
