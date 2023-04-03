@@ -59,7 +59,7 @@
     </div>
 
 
-    <!-- <div id="zhcal-root" data-id="536b9e39c949c1b171e770be20b62960" data-lang="de"></div> -->
+    <div id="zhcal-root" data-id="536b9e39c949c1b171e770be20b62960" data-lang="de"></div>
 
     <input type="checkbox" id="my-modal-6" class="modal-toggle" />
     <div class="modal modal-bottom sm:modal-middle">
@@ -138,4 +138,18 @@ export default {
     },
 }
 </script>
-<style scoped></style>
+<style scoped>
+/* 
+.zhcal_header {
+    background-color: #20252e !important;
+    color: #e5e7eb !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.zhcal_intervall {
+    background-color: #20252e !important;
+    color: #e5e7eb !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+*/
+</style>
