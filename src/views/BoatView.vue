@@ -7,7 +7,9 @@
                 Drittpersonen
                 wird strafrechtlich verfolgt! Mit der Buchung des Vereinsboots akzeptierst du automatisch die
                 Benutzungsordnung,
-                bitte lese sie sorgfältig durch! Du kannst sie hier (pdf) herunterladen. </p>
+                bitte lese sie sorgfältig durch! Du kannst sie <a class="link link-primary"
+                    href="documents/BenutzungsordnungVereinsboot.pdf">hier</a>
+                herunterladen. </p>
 
             <p> Eine angefragte Buchung gilt als gültige Reservation, auch ohne Bestätigung. </p>
 
@@ -55,11 +57,18 @@
                 </div>
             </div>
         </div>
+        <div class="card card-compact w-[100%] bg-base-200 shadow-xl">
+            <figure>
+            </figure>
+            <div class="card-body">
+                <h2 class="text-2xl font-bold mb-2">Kalender:</h2>
 
+                <div id="zhcal-root" data-id="536b9e39c949c1b171e770be20b62960" data-lang="de"></div>
+            </div>
+        </div>
     </div>
 
 
-    <div id="zhcal-root" data-id="536b9e39c949c1b171e770be20b62960" data-lang="de"></div>
 
     <input type="checkbox" id="my-modal-6" class="modal-toggle" />
     <div class="modal modal-bottom sm:modal-middle">
