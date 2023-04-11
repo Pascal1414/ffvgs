@@ -46,12 +46,14 @@
 
 
                         <div class="form-control">
-                            <label class="label">
+                            <label for="course-registration-place" class="label">
                                 <span class="label-text">Ort</span>
                             </label>
                             <label class="input-group">
-                                <input type="text" placeholder="Ort" class="input input-bordered w-[70%]" />
-                                <input type="text" placeholder="PLZ" class="input input-bordered w-[30%]" />
+                                <input type="text" id="course-registration-city" placeholder="Ort"
+                                    class="input input-bordered w-[70%]" />
+                                <input id="course-registration-zip" type="text" placeholder="PLZ"
+                                    class="input input-bordered w-[30%]" />
                             </label>
                         </div>
 
