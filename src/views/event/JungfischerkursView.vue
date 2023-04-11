@@ -1,17 +1,23 @@
 <template>
     <h1 class="text-4xl font-bold mb-4">Jungfischerkurs</h1>
-    <div class="grid card bg-base-200 rounded-box p-4 gap-1 mb-4">
-        <p>
-            Jedes Jahr bietet die FFVGS 50 Jugendlichen ab Jahrgang 2011 bis 2015 die Möglichkeit, unter
-            professioneller Anleitung einen Einblick in die Freizeit-Angelei zu erhalten.</p>
 
-        <p> Zuerst wird in der Theorie der Umgang mit dem Lebewesen «Fisch», der Natur und diverses
-            Angeltechniken erlernt, danach wird das theoretisch Erlernte mit erfahrenen Fischern am Wasser getestet. Die
-            anschliessende
-            Rangverkündigung und Verabschiedung mit den Eltern runden den spannende Angelmorgen gebührend
-            ab. </p>
+    <div class="flex flex-col mb-4 w-full lg:flex-row">
+        <div class="  items-center lg:w-[50%] p-4 card bg-base-200 rounded-box ">
+            <p>
+                Jedes Jahr bietet die FFVGS 50 Jugendlichen ab Jahrgang 2011 bis 2015 die Möglichkeit, unter
+                professioneller Anleitung einen Einblick in die Freizeit-Angelei zu erhalten.</p>
+
+            <p> Zuerst wird in der Theorie der Umgang mit dem Lebewesen «Fisch», der Natur und diverses
+                Angeltechniken erlernt, danach wird das theoretisch Erlernte mit erfahrenen Fischern am Wasser getestet. Die
+                anschliessende
+                Rangverkündigung und Verabschiedung mit den Eltern runden den spannende Angelmorgen gebührend
+                ab. </p>
+        </div>
+        <div class="divider lg:divider-horizontal"></div>
+        <div class="grid flex-grow lg:w-[50%] p-4 card bg-base-200 rounded-box place-items-center">
+            <slideshow class="double-item  " :images="images" />
+        </div>
     </div>
-
 
     <div class="card w-full bg-base-200 shadow-xl">
         <div class="card-body">
@@ -99,34 +105,28 @@
             </form>
         </div>
     </div>
-
-    <div class="carousel w-full mt-4 rounded-box">
-        <div v-for="(image, index) in images" :id="'item' + index" class="carousel-item w-full">
-            <img :src="image" class="w-full" />
-        </div>
-
-    </div>
-    <div class="flex justify-center w-full py-2 gap-2">
-        <a v-for="(image, index) in images" :href="'#item' + index" class="btn btn-xs">{{ index + 1 }}</a>
-
-    </div>
 </template>
 <script lang="ts">
+import Slideshow from '@/components/Slideshow.vue';
+
 export default {
     name: 'Jungfischerkurs',
     data() {
         return {
             images: [
-                '/images/event/jungfischerkurs/festzelt.jpg',
-                '/images/event/jungfischerkurs/fischen.jpg',
-                '/images/event/jungfischerkurs/fischen2.jpg',
-                '/images/event/jungfischerkurs/fischen3.jpg',
-                '/images/event/jungfischerkurs/schiff.jpg',
-                '/images/event/jungfischerkurs/schiff-close.jpg',
-                '/images/event/jungfischerkurs/zielschiessen.jpg',
+                { src: '/images/event/jungfischerkurs/festzelt.jpg', alt: 'Festzelt' },
+                { src: '/images/event/jungfischerkurs/fischen.jpg', alt: 'Fischen' },
+                { src: '/images/event/jungfischerkurs/fischen2.jpg', alt: 'Fischen' },
+                { src: '/images/event/jungfischerkurs/fischen3.jpg', alt: 'Fischen' },
+                { src: '/images/event/jungfischerkurs/schiff.jpg', alt: 'Schiff' },
+                { src: '/images/event/jungfischerkurs/schiff-close.jpg', alt: 'Schiff' },
+                { src: '/images/event/jungfischerkurs/zielschiessen.jpg', alt: 'Zielschiessen' }
             ],
         };
     },
+    components: {
+        Slideshow,
+    }
 };
 </script >
 <style lang="css"></style>

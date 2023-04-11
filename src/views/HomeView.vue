@@ -12,7 +12,7 @@
     <div class="divider"></div>
     <div class="hero min-h-[400px] bg-base-100">
         <div class="hero-content flex-col lg:flex-row-reverse">
-            <img src="/" class="max-w-sm rounded-lg shadow-2xl" />
+            <img src="/images/event/jungfischerkurs/fischen2.jpg" class="max-w-sm rounded-lg shadow-2xl" />
             <div>
                 <h1 class="text-5xl font-bold">Jungfischerkurs </h1>
                 <p class="py-6"> In diesem Jahr bietet die FFVGS wieder 50 Jugendlichen ab Jahrgang 2011 bis 2015 die
