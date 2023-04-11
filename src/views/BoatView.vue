@@ -93,7 +93,7 @@
                         required />
                 </div>
 
-                <button class="btn btn-primary">Berechnen</button>
+                <button class="btn btn-primary mt-4">Berechnen</button>
 
                 <div v-if="price">Preis: {{ price }} CHF</div>
 
