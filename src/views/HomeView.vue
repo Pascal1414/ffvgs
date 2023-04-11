@@ -44,11 +44,10 @@
 </template> 
 
 <script lang="ts">
-import { defineComponent } from 'vue';
 
-export default defineComponent({
-    name: 'HomeView',
-});
+export default {
+    name: 'HomeView'
+};
 </script>
 
 <style scoped></style>
