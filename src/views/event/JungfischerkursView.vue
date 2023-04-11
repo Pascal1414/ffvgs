@@ -99,10 +99,34 @@
             </form>
         </div>
     </div>
+
+    <div class="carousel w-full mt-4 rounded-box">
+        <div v-for="(image, index) in images" :id="'item' + index" class="carousel-item w-full">
+            <img :src="image" class="w-full" />
+        </div>
+
+    </div>
+    <div class="flex justify-center w-full py-2 gap-2">
+        <a v-for="(image, index) in images" :href="'#item' + index" class="btn btn-xs">{{ index + 1 }}</a>
+
+    </div>
 </template>
 <script lang="ts">
 export default {
     name: 'Jungfischerkurs',
+    data() {
+        return {
+            images: [
+                '/images/event/jungfischerkurs/festzelt.jpg',
+                '/images/event/jungfischerkurs/fischen.jpg',
+                '/images/event/jungfischerkurs/fischen2.jpg',
+                '/images/event/jungfischerkurs/fischen3.jpg',
+                '/images/event/jungfischerkurs/schiff.jpg',
+                '/images/event/jungfischerkurs/schiff-close.jpg',
+                '/images/event/jungfischerkurs/zielschiessen.jpg',
+            ],
+        };
+    },
 };
 </script >
 <style lang="css"></style>
