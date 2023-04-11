@@ -1,14 +1,17 @@
 <template>
     <h1 class="text-4xl font-bold mb-4">Jungfischerkurs</h1>
-    <p>
-        Jedes Jahr bietet die FFVGS 50 Jugendlichen ab Jahrgang 2011 bis 2015 die Möglichkeit, unter
-        professioneller Anleitung einen Einblick in die Freizeit-Angelei zu erhalten.<br>
-        Zuerst wird in der Theorie der Umgang mit dem Lebewesen «Fisch», der Natur und diverses
-        Angeltechniken erlernt, danach wird das theoretisch Erlernte mit erfahrenen Fischern am Wasser getestet. Die
-        anschliessende
-        Rangverkündigung und Verabschiedung mit den Eltern runden den spannende Angelmorgen gebührend
-        ab.
-    </p>
+    <div class="grid card bg-base-200 rounded-box p-4 gap-1 mb-4">
+        <p>
+            Jedes Jahr bietet die FFVGS 50 Jugendlichen ab Jahrgang 2011 bis 2015 die Möglichkeit, unter
+            professioneller Anleitung einen Einblick in die Freizeit-Angelei zu erhalten.<br>
+            Zuerst wird in der Theorie der Umgang mit dem Lebewesen «Fisch», der Natur und diverses
+            Angeltechniken erlernt, danach wird das theoretisch Erlernte mit erfahrenen Fischern am Wasser getestet. Die
+            anschliessende
+            Rangverkündigung und Verabschiedung mit den Eltern runden den spannende Angelmorgen gebührend
+            ab.
+        </p>
+    </div>
+
 
     <div class="card w-full bg-base-200 shadow-xl">
         <div class="card-body">
@@ -63,70 +66,39 @@
 
                     </div>
                     <div class="divider lg:divider-horizontal"></div>
-                    <div class="card lg:w-[50%]">
-                        <h2 class="card-title">Erziehungsberechtigte Person</h2>
+                    <div class="card lg:w-[50%] flex column justify-between">
+                        <div>
+                            <h2 class="card-title">Erziehungsberechtigte Person</h2>
+                            <label class="label" for="course-registration-parent-firstname">
+                                <span class="label-text">Vorname</span>
+                            </label>
+                            <input id="course-registration-parent-firstname" type="text" placeholder="Vorname"
+                                class="input input-bordered w-full " />
 
+                            <label class="label" for="course-registration-parent-lastname">
+                                <span class="label-text">Nachname</span>
+                            </label>
+                            <input id="course-registration-parent-lastname" type="text" placeholder="Nachname"
+                                class="input input-bordered w-full " />
+
+                            <label class="label" for="course-registration-parent-tel">
+                                <span class="label-text">Telefonnummer</span>
+                            </label>
+                            <input id="course-registration-parent-tel" type="tel" placeholder="Telefonnummer"
+                                class="input input-bordered w-full " />
+
+                            <label class="label" for="course-registration-parent-email">
+                                <span class="label-text">E-Mail</span>
+                            </label>
+                            <input id="course-registration-parent-email" type="email" placeholder="E-Mail"
+                                class="input input-bordered w-full " />
+                        </div>
+                        <button class="btn btn-primary mt-4">Anmelden</button>
                     </div>
                 </div>
-
             </form>
-
         </div>
     </div>
-
-
-    <form>
-        <p>Wir Freuen uns über deine Anmeldung! Beachte jedoch dass die Teilnehmeranzahl limitiert ist. </p>
-        <div class="split">
-            <div class="child">
-                <h3>Jugendliche oder Jugendlicher:</h3>
-                <div>
-                    <label for="firstname">Vorname*</label>
-                    <input type="text" id="firstname" name="firstname" placeholder="Vorname" required>
-                </div>
-                <div>
-                    <label for="lastname">Nachname*</label>
-                    <input type="text" id="lastname" name="lastname" placeholder="Nachname" required>
-                </div>
-                <div>
-                    <label for="address">Adresse*</label>
-                    <input type="text" id="address" name="address" placeholder="Adresse" required>
-                </div>
-                <div>
-                    <label for="birthday">Geburtsdatum*</label>
-                    <input type="date" id="birthday" name="birthday" required>
-                </div>
-            </div>
-            <div class="parent">
-                <h3>Erziehungsberechtigte Person:</h3>
-                <div>
-                    <label for="firstname-parent">Vorname*</label>
-                    <input type="text" id="firstname-parent" name="firstname-parent" placeholder="Vorname" required>
-                </div>
-                <div>
-                    <label for="lastname-parent">Nachname*</label>
-                    <input type="text" id="lastname-parent" name="lastname-parent" placeholder="Nachname" required>
-                </div>
-                <div>
-                    <label for="email-parent">E-Mail*</label>
-                    <input type="email" id="email-parent" name="email-parent" placeholder="E-Mail" required>
-                </div>
-                <div>
-                    <label for="phone-parent">Erreichbar wärend des Anlasses (Tel.)*</label>
-                    <input type="tel" id="phone-parent" name="phone-parent" placeholder="Telefon" required>
-                </div>
-            </div>
-        </div>
-        <div>
-            <label for="alreadyfished">Ich habe schon mal gefischt*</label>
-            <select name="alreadyfished" id="alreadyfished" required>
-                <option value="">Bitte auswählen</option>
-                <option value="yes">Ja</option>
-                <option value="no">Nein</option>
-            </select>
-        </div>
-        <button type="submit">Absenden</button>
-    </form>
 </template>
 <script lang="ts">
 export default {
