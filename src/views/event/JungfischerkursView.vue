@@ -46,7 +46,7 @@
 
 
                         <div class="form-control">
-                            <label for="course-registration-place" class="label">
+                            <label for="course-registration-city" class="label">
                                 <span class="label-text">Ort</span>
                             </label>
                             <label class="input-group">
