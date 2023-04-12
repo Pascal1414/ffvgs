@@ -57,6 +57,14 @@ export default {
       ],
     };
   },
+  created() {
+    // Listen to the navigation event
+    this.$router.afterEach((to, from) => {
+      // Close the drawer
+      const drawer = document.getElementById('my-drawer-3') as HTMLInputElement;
+      drawer.checked = false;
+    });
+  }
 };
 </script>
 <style scoped>
