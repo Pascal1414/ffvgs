@@ -23,12 +23,13 @@ import NavBar from "./components/NavBar.vue";
         <span class="footer-title">Social</span>
         <div class="grid grid-flow-col gap-4">
 
-          <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+          <a href="https://www.facebook.com/FFVGS/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" class="fill-current">
               <path
                 d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
               </path>
             </svg></a>
-          <a>
+          <a href="https://github.com/Pascal1414/ffvgs">
             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
               class="inline-block h-5 w-5 fill-current md:h-6 md:w-6">
               <path
@@ -44,10 +45,10 @@ import NavBar from "./components/NavBar.vue";
           <option>synthwave</option>
           <option>retro</option>
           <option>cyberpunk</option>
-              <option>aqua</option>
-              <option>wireframe</option>
-              <option>luxury</option>
-            </select> -->
+                                <option>aqua</option>
+                                <option>wireframe</option>
+                                <option>luxury</option>
+                              </select> -->
 
       </div>
     </footer>
