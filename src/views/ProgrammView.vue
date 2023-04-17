@@ -13,26 +13,23 @@
             <option value="jugendgruppe">Jugendgruppe</option>
         </select>
     </div>
-
-
-    <table class="table w-full">
-        <tbody>
-            <tr v-for="programmItem in currentList">
-                <td>
-                    <svg fill="#ffffff" width="27px" height="27px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                        <path v-if="alreadyHappened(programmItem)"
-                            d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z" />
-                    </svg>
-                </td>
-                <td>{{ programmItem.name }}</td>
-                <td>
+    <ul class="menu bg-base-100 w-56 p-2 rounded-box w-full">
+        <li v-for="programmItem in currentList" class="flex flex-row">
+            <div class="w-full flex flex-row ">
+                <svg fill="#ffffff" width="27px" height="27px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path v-if="alreadyHappened(programmItem)"
+                        d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z" />
+                </svg>
+                <div class="flex justify-between flex-wrap w-full ">
+                    <div class="min-w-[260px]">{{ programmItem.name }}</div>
                     <div class="dates">
                         <div v-for="date in programmItem.dates">{{ formatDate(date) }} </div>
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+            </div>
+        </li>
+    </ul>
+
     <p class="mt-4">Zudem können spontane Anlässe dazukommen. Diese werden per Mail oder im Internet angekündigt.</p>
 </template>
 <script lang="ts">
@@ -49,7 +46,7 @@ export default defineComponent({
         };
     },
     components: {
-        
+
     },
     created() {
         this.currentList = this.json;
