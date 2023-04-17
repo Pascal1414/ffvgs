@@ -26,7 +26,7 @@
     <input type="checkbox" id="my-modal-5" class="modal-toggle" />
     <div class="modal">
         <div class="modal-box max-w-[100%] w-[100%] flex row h-[100%] bg-transparent">
-            <button class="btn btn-square btn-primary absolute top-[50%] translate-y-[-50%] left-[2%]" @click="previous()">
+            <button class="btn btn-square btn-primary absolute top-[50%] !translate-y-[-50%] left-[2%]" @click="previous()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chevron-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -34,7 +34,7 @@
                 </svg></button>
             <img class="object-contain ml-auto mr-auto max-w-[80%]" v-if="previewImageArray[previewImageIndex]"
                 :src="previewImageArray[previewImageIndex].url" />
-            <button class="btn btn-square btn-primary absolute top-[50%] translate-y-[-50%] right-[2%]" @click="next()">
+            <button class="btn btn-square btn-primary absolute top-[50%] !translate-y-[-50%] right-[2%]" @click="next()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-chevron-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -52,13 +52,9 @@
     </div>
 </template>
 <script lang="ts">
-import ImagePreview from '../components/ImagePreview.vue';
 
 export default {
     name: 'GalleryView',
-    components: {
-        ImagePreview
-    },
     methods: {
         previous() {
             if (this.previewImageIndex > 0) this.previewImageIndex = this.previewImageIndex - 1;
