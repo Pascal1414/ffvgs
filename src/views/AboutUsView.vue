@@ -3,14 +3,13 @@
         <div class="card-body">
             <h1 class="text-4xl font-bold mb-4 flex justify-center">Vorstand</h1>
             <div class="board flex flex-wrap justify-around gap-[25px]">
-                <div v-for="person in persons" class="card card-side bg-base-100 shadow-xl">
-                    <figure class="w-[180px]">
-                        <img :src="person.image" alt="Movie" />
-                    </figure>
+
+                <div v-for="person in persons" class="card lg:card-side bg-base-100 shadow-xl">
+                    <figure class="w-[180px] "><img :src="person.image" alt="Album" /></figure>
                     <div class="card-body w-[200px]">
                         <h2 class="card-title">{{ person.name }}</h2>
                         <p>{{ person.function }}</p>
-                        <div class="card-actions flex flex-row gap-[20px] mt-[24px]">
+                        <div class="card-actions ">
                             <a :href="'tel:' + person.tel">
                                 <svg class="fill-current" width="24" height="24" viewBox="0 0 32 32"
                                     xmlns="http://www.w3.org/2000/svg">
