@@ -2,7 +2,7 @@
     <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
         <div class="card-body">
             <h1 class="text-2xl font-bold">Kontakt</h1>
-            <form>
+            <form data-netlify="true" name="Contact-Form" netlify-honeypot="bot-field">
                 <div class="form-control w-full ">
                     <label class="label" for="contact-email">
                         <span class="label-text">Email</span>
