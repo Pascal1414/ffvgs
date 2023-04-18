@@ -1,11 +1,12 @@
 <template>
     <div class="hero min-h-[300px] bg-base-100">
         <div class="hero-content text-center">
-            <div class="max-w-md">
+            <div class="max-w-xl">
                 <h1 class="text-5xl font-bold">FFVGS </h1>
-                <p class="py-6"> Die Freie Fischervereinigung Greifensee Schwerzenbach Lorem ipsum, dolor sit amet
-                    consectetur adipisicing elit. Enim suscipit ut adipisci nemo veniam doloremque et ullam voluptas
-                    corporis! Deleniti.</p>
+                <p class="py-6"> Der Freie Fischerverein Greifensee-Schwerzenbach besteht seit 1978 und ist ein Verein mit
+                    rund 170 Mitgliedern aus allen Altersklassen. Wir fördern den Angelsport und geben unser Wissen den
+                    jüngeren Fischern weiter. So lernen Sie aus professioneller Sicht, wie die Fischerei Spass macht und
+                    sich trotzdem mit Flora und Fauna am Wasser vereinbaren lässt.</p>
             </div>
         </div>
     </div>

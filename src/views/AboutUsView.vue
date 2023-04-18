@@ -5,8 +5,10 @@
             <div class="board flex flex-wrap justify-around gap-[25px]">
 
                 <div v-for="person in persons" class="card lg:card-side bg-base-100 shadow-xl">
-                    <figure class="w-[180px] "><img :src="person.image" alt="Album" /></figure>
-                    <div class="card-body w-[200px]">
+                    <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
+                        <img class="h-[100%] w-[100%]" :src="person.image" alt="Album" />
+                    </figure>
+                    <div class="card-body w-[260px]">
                         <h2 class="card-title">{{ person.name }}</h2>
                         <p>{{ person.function }}</p>
                         <div class="card-actions ">
@@ -42,7 +44,6 @@
                     <div class="card-body">
                         <h2 class="card-title">{{ vip.name }}</h2>
                         <p>{{ vip.role }}</p>
-
                     </div>
                 </div>
             </div>
