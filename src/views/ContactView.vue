@@ -2,7 +2,7 @@
     <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
         <div class="card-body">
             <h1 class="text-2xl font-bold">Kontakt</h1>
-            <form v-on:submit.prevent="submitFormContact($event)">
+            <form>
                 <div class="form-control w-full ">
                     <label class="label" for="contact-email">
                         <span class="label-text">Email</span>
@@ -101,9 +101,7 @@
     </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
+export default {
     name: 'ContactView',
     components: {
 
@@ -156,7 +154,7 @@ export default defineComponent({
             ]
         };
     },
-});
+};
 </script>
 <style scoped>
 @media (max-width: 600px) {
