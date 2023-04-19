@@ -42,25 +42,6 @@
             </div>
         </div>
     </div>
-
-
-    <form class="" name="contact" method="POST" data-netlify="true">
-
-        <p class="top-paragraph">Email</p>
-        <input class="" type="email" name="Email" required />
-        <p>Nachricht</p>
-        <textarea class="" type="text" name="Nachricht"></textarea>
-        <button class="">Absenden</button>
-    </form>
-
-    <form class="" name="contact" method="POST" netlify>
-
-        <p class="top-paragraph">Email</p>
-        <input class="" type="email" name="Email" required />
-        <p>Nachricht</p>
-        <textarea class="" type="text" name="Nachricht"></textarea>
-        <button class="">Absenden</button>
-    </form>
 </template> 
 
 <script lang="ts">
