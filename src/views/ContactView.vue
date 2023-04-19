@@ -1,10 +1,4 @@
 <template>
-    <form name="simple-form" hidden method="post">
-        <input type="hidden" name="form-name" value="simple-form" /><input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="textarea" name="message" />
-        <button type="submit">Send</button>
-    </form>
     <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
         <div class="card-body">
             <h1 class="text-2xl font-bold">Kontakt</h1>
