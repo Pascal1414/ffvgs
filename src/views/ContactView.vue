@@ -108,6 +108,22 @@ export default defineComponent({
     components: {
 
     },
+    methods: {
+        submitFormContact(event: Event) {
+            fetch('/', {
+                method: 'POST',
+                body: new FormData(event.target as HTMLFormElement)
+            })
+                .then(() => {
+                    console.log('success');
+
+                })
+                .catch((error) => {
+                    console.log('error');
+
+                })
+        }
+    },
     data() {
         return {
             memberships: [
