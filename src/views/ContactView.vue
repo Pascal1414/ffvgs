@@ -2,7 +2,7 @@
     <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
         <div class="card-body">
             <h1 class="text-2xl font-bold">Kontakt</h1>
-            <form>
+            <form name="contact" method="POST" data-netlify="true">
                 <div class="form-control w-full ">
                     <label class="label" for="contact-email">
                         <span class="label-text">Email</span>
@@ -43,7 +43,6 @@
                 </div>
 
                 <div class="split-cols grid grid-cols-2 gap-[15px] mb-0 mt-3">
-
                     <div class="mb-0">
                         <label class="label" for="join-firstname">
                             <span class="label-text">Vorname</span>
@@ -93,9 +92,6 @@
                     <textarea id="join-message" class="textarea textarea-bordered w-full"
                         placeholder="Nachricht"></textarea>
                 </div> <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
-
-
-
             </form>
         </div>
     </div>
