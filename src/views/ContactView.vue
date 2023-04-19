@@ -2,17 +2,18 @@
     <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
         <div class="card-body">
             <h1 class="text-2xl font-bold">Kontakt</h1>
-            <form name="contact" method="post" :data-netlify="true" data-netlify-honeypot="bot-field" netlify>
+            <form name="contact" method="post" data-netlify=true>
                 <div class="form-control w-full ">
                     <label class="label" for="contact-email">
                         <span class="label-text">Email</span>
                     </label>
-                    <input id="contact-email" type="email" placeholder="Email" class="input input-bordered w-full " />
+                    <input id="contact-email" name="email" type="email" placeholder="Email"
+                        class="input input-bordered w-full " />
 
                     <label class="label" for="contact-message">
                         <span class="label-text">Nachricht</span>
                     </label>
-                    <textarea id="contact-message" class="textarea textarea-bordered mb-2"
+                    <textarea id="contact-message" name="message" class="textarea textarea-bordered mb-2"
                         placeholder="Nachricht"></textarea>
 
                     <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
