@@ -1,7 +1,9 @@
 <template>
     <form name="ask-question" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="ask-question" />
-        <input id="contact-email" name="email" type="email" placeholder="Email" class="input input-bordered w-full " />
+
+        <input class="" type="email" name="Email" required />
+
         <button>Submit</button>
     </form>
 
