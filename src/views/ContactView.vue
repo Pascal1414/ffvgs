@@ -1,15 +1,4 @@
 <template>
-    <form name="ask-question" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="ask-question" />
-
-        <input class="" type="email" name="Email" required />
-
-        <button>Submit</button>
-    </form>
-
-
-    <hr>
-    <hr>
     <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
         <div class="card-body">
             <h1 class="text-2xl font-bold">Kontakt</h1>
