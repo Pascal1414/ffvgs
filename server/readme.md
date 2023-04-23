@@ -110,17 +110,18 @@ app.use(router)
 ```
 By wrapping the code inside an IIFE, we can make use of the async keyword to make sure that the await keyword is used correctly. This should fix the error you're seeing.
 <hr>
-now occures the error: C:\Users\user\Documents\Git\ffvgs\src\App.vue:1
-```
-<script setup lang="ts">
+now occures the error:
+ C:\Users\user\Documents\Git\ffvgs\src\App.vue:1
+
+< script setup lang="ts">
 ^
 
 SyntaxError: Unexpected token '<' 
-```
-<hr>
-The error message you're seeing indicates that the JavaScript parser is encountering an unexpected token, which in this case is the < character at the beginning of your <script> tag. This typically happens when you try to include JavaScript code in a file that's not meant to contain JavaScript.
 
-Based on the error message you provided, it seems like the error is occurring in your App.vue file. The most likely cause of the error is that you're trying to use the <script> tag in a file that's not being parsed as a Vue component. This can happen if you have a syntax error in your component, or if you're not importing it correctly.
+<hr>
+The error message you're seeing indicates that the JavaScript parser is encountering an unexpected token, which in this case is the < character at the beginning of your < script> tag. This typically happens when you try to include JavaScript code in a file that's not meant to contain JavaScript.
+
+Based on the error message you provided, it seems like the error is occurring in your App.vue file. The most likely cause of the error is that you're trying to use the < script> tag in a file that's not being parsed as a Vue component. This can happen if you have a syntax error in your component, or if you're not importing it correctly.
 
 To fix the error, make sure that your App.vue file is properly formatted as a Vue 3 component. Here's an example of a basic App.vue file:
 
@@ -165,7 +166,7 @@ To troubleshoot this issue, you can try the following:
 
 1. Make sure that you have installed all the necessary dependencies for your project, including the @vue/compiler-sfc package which is needed to compile Vue single-file components.
 
-1. Check your build configuration to make sure that you have set up the appropriate loaders for your project. In particular, you need to make sure that you have a vue-loader configured in your build process.
+2. Check your build configuration to make sure that you have set up the appropriate loaders for your project. In particular, you need to make sure that you have a vue-loader configured in your build process.
 
 Here's an example of what your vite.config.js file could look like:
 
