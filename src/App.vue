@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import NavBar from "./components/NavBar.vue";
+</script>
+
 <template>
   <NavBar>
     <main class="mx-auto w-[65%] mt-4 mb-4">
@@ -53,6 +57,11 @@
 </template>
 <script lang="ts">
 export default {
+  methods: {
+    // updateTheme($event: any) {
+    //   document.documentElement.setAttribute('data-theme', $event.target.value);
+    // }
+  }
 }
 </script>
 
