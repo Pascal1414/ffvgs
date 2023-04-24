@@ -16,21 +16,9 @@
 
 
 <form name="contact" method="POST" netlify>
-  <input type="hidden" name="form-name" value="contact" />
-  <div class="form-control w-full ">
-    <label class="label" for="contact-email">
-      <span class="label-text">Email</span>
-    </label>
-    <input id="contact-email" name="email" type="email" placeholder="Email" class="input input-bordered w-full " />
-
-    <label class="label" for="contact-message">
-      <span class="label-text">Nachricht</span>
-    </label>
-    <textarea id="contact-message" name="message" class="textarea textarea-bordered mb-2"
-      placeholder="Nachricht"></textarea>
-
-    <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
-  </div>
+  <input name="form-name" />
+  <input name="email" type="email" />
+  <textarea name="message"></textarea>
 </form>
 
 </html>
