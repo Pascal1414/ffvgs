@@ -96,7 +96,7 @@
                     <label class="label" for="join-message">
                         <span class="label-text">Nachricht</span>
                     </label>
-                    <textarea id="join-message" name="name" class="textarea textarea-bordered w-full"
+                    <textarea id="join-message" name="message" class="textarea textarea-bordered w-full"
                         placeholder="Nachricht">
                     </textarea>
                 </div>

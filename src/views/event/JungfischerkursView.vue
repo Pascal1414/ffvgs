@@ -23,6 +23,8 @@
         <div class="card-body">
             <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
             <form name="registration-jungfischerkurs" method="POST" netlify>
+                <input type="hidden" name="form-name" value="registration-jungfischerkurs" />
+
                 <div class="flex flex-col w-full lg:flex-row">
                     <div class="card lg:w-[50%]">
                         <h2 class="card-title">Jugendliche oder Jugendlicher</h2>

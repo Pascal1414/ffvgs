@@ -29,7 +29,7 @@
 
 <form name="join-association" method="POST" netlify>
   <input type="hidden" name="form-name" value="join-association" />
-  <input type="radio" name="join-membership" class="radio checked:bg-red-500" required />
+  <input type="radio" name="membership" class="radio checked:bg-red-500" required />
 
   <input id="join-firstname" name="firstname" type="text" placeholder="Vorname" class="input input-bordered w-full "
     required />
@@ -49,12 +49,13 @@
 
   <input id="join-email" name="email" type="email" placeholder="Email" class="input input-bordered w-full" required />
 
-  <textarea id="join-message" name="name" class="textarea textarea-bordered w-full" placeholder="Nachricht">
+  <textarea id="join-message" name="message" class="textarea textarea-bordered w-full" placeholder="Nachricht">
                     </textarea>
   <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
 </form>
 
 <form name="registration-jungfischerkurs" method="POST" netlify>
+  <input type="hidden" name="form-name" value="registration-jungfischerkurs" />
 
   <input id="course-registration-firstname" name="firstname" type="text" placeholder="Vorname"
     class="input input-bordered w-full" required />
