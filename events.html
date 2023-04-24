@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/organe.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="css/event.css">
 
     <script src="js/slideshow.js"></script>
     <script src="js/imagepreview.js"></script>
@@ -68,9 +69,32 @@
     <main>
         <div id="Jungfischerkurs">
             <h1>Jungfischerkurs</h1>
+            <div class="split">
+                <img src="img/event/IMG-20230421-WA0000.jpg">
+                <p>
+                    Am Samstag, 13. Mai und Sonntag, 14. Mai findet wieder unser beliebtes Jugendfischen am Greifensee
+                    statt.
+                    Wir zeigen den Kindern in der Theorie den Umgang mit dem Lebewesen «Fisch», der Natur und diverses
+                    Angeltechniken. Das theoretisch Erlernte wird am Sonntag mit erfahrenen Fischern am Wasser getestet,
+                    mit
+                    anschliessender Rangverkündigung.
+                    Während beiden Tagen läuft auch unsere Fischküche auf der Schlosswiese auf Hochtouren.
+                    Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill stehen am Samstag ab 11 Uhr bis ca. 16 Uhr
+                    zur
+                    Auswahl (Grill und Getränke bis ca. 18 Uhr). Es findet kein Abendbetrieb statt (dafür dann am
+                    Sommernachtsfest vom 12./13. August). Am Sonntag ist unsere Küche ab 11 offen - «es hät solangs hät»
+                    –
+                    bis spätestens 16 Uhr.
+                    Und weil auch gleich noch Muttertag ist, spielt die beliebte Dorfmusig Gryfesee am Sonntag um 11 Uhr
+                    zum
+                    Konzert auf.»<br>
+                    Wir freuen uns auf viele Besucher!<br>
+                    Petri Heil, Eure FFVGS<br>
+                </p>
+            </div>
             <h2>Anmeldung Jungfischerkurs</h2>
             <form id="anmelden-jungfischen" class="contact-form" name="anmeldung-jugendfischen" method="POST"
-                data-netlify="true">
+                data-netlify="true" data-netlify-recaptcha="true">
                 <div class="sub-form">
                     <div class="sub-sub-form input-left">
 
@@ -117,11 +141,23 @@
 
                 </div>
                 <p> Bemerkung: Versicherung ist Sache des Teilnehmers!</p>
+                <div data-netlify-recaptcha="true"></div>
                 <button class="form-button" type="submit">Absenden</button>
             </form>
+
+            <div class="slideshow">
+                <button class="slideshow-button slideshow-button-left" onclick="slideshowBack()">❮</button>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/event/IMG-20230421-WA0003.jpg">
+                </div>
+                <div class="image-conntainer fade">
+                    <img class="slideshow-image" src="img/event/IMG-20230421-WA0005.jpg">
+                </div>
+                <button class="slideshow-button slideshow-button-right" onclick="slideshowForwards(-1)">❯</button>
+            </div>
         </div>
         <div id="Sommernachtsfest">
-            <h1>Sommernachtsfest</h1>
+            <!-- <h1>Sommernachtsfest</h1> -->
         </div>
     </main>
 
