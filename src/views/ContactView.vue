@@ -3,6 +3,7 @@
         <div class="card-body">
             <h1 class="text-2xl font-bold">Kontakt</h1>
             <form name="contact" method="post" netlify :data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
                 <div class="form-control w-full ">
                     <label class="label" for="contact-email">
                         <span class="label-text">Email</span>
