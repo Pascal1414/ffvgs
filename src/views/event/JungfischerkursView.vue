@@ -22,52 +22,52 @@
     <div class="card w-full bg-base-200 shadow-xl">
         <div class="card-body">
             <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
-            <form>
+            <form name="registration-jungfischerkurs" method="POST" netlify>
                 <div class="flex flex-col w-full lg:flex-row">
                     <div class="card lg:w-[50%]">
                         <h2 class="card-title">Jugendliche oder Jugendlicher</h2>
                         <label class="label" for="course-registration-firstname">
                             <span class="label-text">Vorname</span>
                         </label>
-                        <input id="course-registration-firstname" type="text" placeholder="Vorname"
-                            class="input input-bordered w-full " />
+                        <input id="course-registration-firstname" name="firstname" type="text" placeholder="Vorname"
+                            class="input input-bordered w-full" required />
 
                         <label class="label" for="course-registration-lastname">
                             <span class="label-text">Nachname</span>
                         </label>
-                        <input id="course-registration-lastname" type="text" placeholder="Nachname"
-                            class="input input-bordered w-full " />
+                        <input id="course-registration-lastname" name="lastname" type="text" placeholder="Nachname"
+                            class="input input-bordered w-full" required />
 
                         <label class="label" for="course-registration-address">
                             <span class="label-text">Adresse</span>
                         </label>
-                        <input id="course-registration-address" type="text" placeholder="Adresse"
-                            class="input input-bordered w-full " />
-
+                        <input id="course-registration-address" name="address" type="text" placeholder="Adresse"
+                            class="input input-bordered w-full " required />
 
                         <div class="form-control">
                             <label for="course-registration-city" class="label">
                                 <span class="label-text">Ort</span>
                             </label>
                             <label class="input-group">
-                                <input type="text" id="course-registration-city" placeholder="Ort"
-                                    class="input input-bordered w-[70%]" />
-                                <input id="course-registration-zip" type="text" placeholder="PLZ"
-                                    class="input input-bordered w-[30%]" />
+                                <input type="text" id="course-registration-city" name="city" placeholder="Ort"
+                                    class="input input-bordered w-[70%]" required />
+                                <input id="course-registration-zip" name="zip" type="text" placeholder="PLZ"
+                                    class="input input-bordered w-[30%]" required />
                             </label>
                         </div>
 
                         <label class="label" for="course-registration-birthdate">
                             <span class="label-text">Geburtsdatum</span>
                         </label>
-                        <input id="course-registration-birthdate" type="date" placeholder="Geburtsdatum"
-                            class="input input-bordered w-full " />
+                        <input id="course-registration-birthdate" name="birthdate" type="date" placeholder="Geburtsdatum"
+                            class="input input-bordered w-full " required />
 
                         <label class="label" for="course-registration-already-fished">
                             <span class="label-text">Schon einmal gefischt?</span>
                         </label>
-                        <select id="course-registration-already-fished" class="select select-bordered w-full ">
-                            <option disabled selected>Schon einmal gefischt?</option>
+                        <select id="course-registration-already-fished" name="already-fished"
+                            class="select select-bordered w-full" required>
+                            <option disabled selected hidden value="">Schon einmal gefischt?</option>
                             <option>ja</option>
                             <option>nein</option>
                         </select>
@@ -80,26 +80,26 @@
                             <label class="label" for="course-registration-parent-firstname">
                                 <span class="label-text">Vorname</span>
                             </label>
-                            <input id="course-registration-parent-firstname" type="text" placeholder="Vorname"
-                                class="input input-bordered w-full " />
+                            <input id="course-registration-parent-firstname" name="firstname" type="text"
+                                placeholder="Vorname" class="input input-bordered w-full" required />
 
                             <label class="label" for="course-registration-parent-lastname">
                                 <span class="label-text">Nachname</span>
                             </label>
-                            <input id="course-registration-parent-lastname" type="text" placeholder="Nachname"
-                                class="input input-bordered w-full " />
+                            <input id="course-registration-parent-lastname" name="lastname" type="text"
+                                placeholder="Nachname" class="input input-bordered w-full" required />
 
                             <label class="label" for="course-registration-parent-tel">
                                 <span class="label-text">Telefonnummer</span>
                             </label>
-                            <input id="course-registration-parent-tel" type="tel" placeholder="Telefonnummer"
-                                class="input input-bordered w-full " />
+                            <input id="course-registration-parent-tel" name="parent-tel" type="tel"
+                                placeholder="Telefonnummer" class="input input-bordered w-full" required />
 
                             <label class="label" for="course-registration-parent-email">
                                 <span class="label-text">E-Mail</span>
                             </label>
-                            <input id="course-registration-parent-email" type="email" placeholder="E-Mail"
-                                class="input input-bordered w-full " />
+                            <input id="course-registration-parent-email" name="parent-email" type="email"
+                                placeholder="E-Mail" class="input input-bordered w-full" required />
                         </div>
                         <button class="btn btn-primary mt-4">Anmelden</button>
                     </div>

@@ -9,13 +9,13 @@
                         <span class="label-text">Email</span>
                     </label>
                     <input id="contact-email" name="email" type="email" placeholder="Email"
-                        class="input input-bordered w-full " />
+                        class="input input-bordered w-full " required />
 
                     <label class="label" for="contact-message">
                         <span class="label-text">Nachricht</span>
                     </label>
                     <textarea id="contact-message" name="message" class="textarea textarea-bordered mb-2"
-                        placeholder="Nachricht"></textarea>
+                        placeholder="Nachricht" required></textarea>
 
                     <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
                 </div>
@@ -35,10 +35,10 @@
 
                         <div v-for="membership in memberships" class="form-control mb-0">
                             <label class="label cursor-pointer justify-start">
-                                <input type="radio" name="join-membership" class="radio checked:bg-red-500" /> <span
-                                    class="label-text ml-4">{{ membership.name + ' (' + membership.price + ') ' +
-                                        membership.age
-                                    }}</span>
+                                <input type="radio" name="join-membership" class="radio checked:bg-red-500" required />
+                                <span class="label-text ml-4">{{ membership.name + ' (' + membership.price + ') ' +
+                                    membership.age
+                                }}</span>
                             </label>
                         </div>
                     </div>
@@ -49,36 +49,40 @@
                         <label class="label" for="join-firstname">
                             <span class="label-text">Vorname</span>
                         </label>
-                        <input id="join-firstname" type="text" placeholder="Vorname" class="input input-bordered w-full " />
+                        <input id="join-firstname" name="firstname" type="text" placeholder="Vorname"
+                            class="input input-bordered w-full " required />
 
                         <label class="label" for="join-lastname">
                             <span class="label-text">Lastname</span>
                         </label>
-                        <input id="join-lastname" type="text" placeholder="Nachname" class="input input-bordered w-full " />
+                        <input id="join-lastname" name="lastname" type="text" placeholder="Nachname"
+                            class="input input-bordered w-full " required />
 
                         <label class="label" for="join-birthdate">
                             <span class="label-text">Geburtsdatum</span>
                         </label>
-                        <input id="join-birthdate" type="date" placeholder="Geburtsdatum"
-                            class="input input-bordered w-full " />
+                        <input id="join-birthdate" name="birthdate" type="date" placeholder="Geburtsdatum"
+                            class="input input-bordered w-full " required />
 
                     </div>
                     <div class="mb-0">
                         <label class="label" for="join-street">
                             <span class="label-text">Strasse und Nummer</span>
                         </label>
-                        <input id="join-street" type="text" placeholder="Strasse und Nummer"
-                            class="input input-bordered w-full " />
+                        <input id="join-street" name="street" type="text" placeholder="Strasse und Nummer"
+                            class="input input-bordered w-full" required />
 
                         <label class="label" for="join-zip">
                             <span class="label-text">PLZ</span>
                         </label>
-                        <input id="join-zip" type="text" placeholder="PLZ" class="input input-bordered w-full " />
+                        <input id="join-zip" type="text" name="zip" placeholder="PLZ" class="input input-bordered w-full"
+                            required />
 
                         <label class="label" for="join-place">
                             <span class="label-text">Ort</span>
                         </label>
-                        <input id="join-place" type="text" placeholder="Ort" class="input input-bordered w-full " />
+                        <input id="join-place" name="place" type="text" placeholder="Ort"
+                            class="input input-bordered w-full" required />
 
                     </div>
                 </div>
@@ -86,14 +90,17 @@
                     <label class="label" for="join-email">
                         <span class="label-text">Email</span>
                     </label>
-                    <input id="join-email" type="email" placeholder="Email" class="input input-bordered w-full " />
+                    <input id="join-email" name="email" type="email" placeholder="Email" class="input input-bordered w-full"
+                        required />
 
                     <label class="label" for="join-message">
                         <span class="label-text">Nachricht</span>
                     </label>
-                    <textarea id="join-message" class="textarea textarea-bordered w-full"
-                        placeholder="Nachricht"></textarea>
-                </div> <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
+                    <textarea id="join-message" name="name" class="textarea textarea-bordered w-full"
+                        placeholder="Nachricht">
+                    </textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
             </form>
         </div>
     </div>
