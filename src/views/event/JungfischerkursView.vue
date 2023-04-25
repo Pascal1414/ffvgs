@@ -31,19 +31,19 @@
                         <label class="label" for="course-registration-firstname">
                             <span class="label-text">Vorname</span>
                         </label>
-                        <input id="course-registration-firstname" name="firstname" type="text" placeholder="Vorname"
-                            class="input input-bordered w-full" required />
+                        <input id="course-registration-firstname" name="participant-firstname" type="text"
+                            placeholder="Vorname" class="input input-bordered w-full" required />
 
                         <label class="label" for="course-registration-lastname">
                             <span class="label-text">Nachname</span>
                         </label>
-                        <input id="course-registration-lastname" name="lastname" type="text" placeholder="Nachname"
-                            class="input input-bordered w-full" required />
+                        <input id="course-registration-lastname" name="participant-lastname" type="text"
+                            placeholder="Nachname" class="input input-bordered w-full" required />
 
                         <label class="label" for="course-registration-address">
                             <span class="label-text">Adresse</span>
                         </label>
-                        <input id="course-registration-address" name="address" type="text" placeholder="Adresse"
+                        <input id="course-registration-address" name="participant-address" type="text" placeholder="Adresse"
                             class="input input-bordered w-full " required />
 
                         <div class="form-control">
@@ -51,9 +51,9 @@
                                 <span class="label-text">Ort</span>
                             </label>
                             <label class="input-group">
-                                <input type="text" id="course-registration-city" name="city" placeholder="Ort"
+                                <input type="text" id="course-registration-city" name="participant-city" placeholder="Ort"
                                     class="input input-bordered w-[70%]" required />
-                                <input id="course-registration-zip" name="zip" type="text" placeholder="PLZ"
+                                <input id="course-registration-zip" name="participant-zip" type="text" placeholder="PLZ"
                                     class="input input-bordered w-[30%]" required />
                             </label>
                         </div>
@@ -61,13 +61,13 @@
                         <label class="label" for="course-registration-birthdate">
                             <span class="label-text">Geburtsdatum</span>
                         </label>
-                        <input id="course-registration-birthdate" name="birthdate" type="date" placeholder="Geburtsdatum"
-                            class="input input-bordered w-full " required />
+                        <input id="course-registration-birthdate" name="participant-birthdate" type="date"
+                            placeholder="Geburtsdatum" class="input input-bordered w-full " required />
 
                         <label class="label" for="course-registration-already-fished">
                             <span class="label-text">Schon einmal gefischt?</span>
                         </label>
-                        <select id="course-registration-already-fished" name="already-fished"
+                        <select id="course-registration-already-fished" name="participant-already-fished"
                             class="select select-bordered w-full" required>
                             <option disabled selected hidden value="">Schon einmal gefischt?</option>
                             <option>ja</option>
@@ -82,13 +82,13 @@
                             <label class="label" for="course-registration-parent-firstname">
                                 <span class="label-text">Vorname</span>
                             </label>
-                            <input id="course-registration-parent-firstname" name="firstname" type="text"
+                            <input id="course-registration-parent-firstname" name="parent-firstname" type="text"
                                 placeholder="Vorname" class="input input-bordered w-full" required />
 
                             <label class="label" for="course-registration-parent-lastname">
                                 <span class="label-text">Nachname</span>
                             </label>
-                            <input id="course-registration-parent-lastname" name="lastname" type="text"
+                            <input id="course-registration-parent-lastname" name="parent-lastname" type="text"
                                 placeholder="Nachname" class="input input-bordered w-full" required />
 
                             <label class="label" for="course-registration-parent-tel">
