@@ -130,6 +130,11 @@ export default {
             // Calculate duration of rental period in hours
             const start = new Date(`2000-01-01T${this.startTime}`);
             const end = new Date(`2000-01-01T${this.endTime}`);
+
+            if (this.endTime < this.startTime) {
+                end.setDate(end.getDate() + 1);
+            }
+
             const duration = (end.getTime() - start.getTime()) / (1000 * 60 * 60);
 
             // loop trough each hour and calculate price
