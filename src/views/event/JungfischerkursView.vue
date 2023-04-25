@@ -2,16 +2,38 @@
     <h1 class="text-4xl font-bold mb-4">Jungfischerkurs</h1>
 
     <div class="flex flex-col mb-4 w-full lg:flex-row">
-        <div class="  items-center lg:w-[50%] p-4 card bg-base-200 rounded-box ">
+        <div class="  lg:w-[50%] p-4 card bg-base-200 rounded-box ">
             <p>
                 Jedes Jahr bietet die FFVGS 50 Jugendlichen ab Jahrgang 2011 bis 2015 die Möglichkeit, unter
                 professioneller Anleitung einen Einblick in die Freizeit-Angelei zu erhalten.</p>
 
-            <p> Zuerst wird in der Theorie der Umgang mit dem Lebewesen «Fisch», der Natur und diverses
+            <p class="mb-2"> Zuerst wird in der Theorie der Umgang mit dem Lebewesen «Fisch», der Natur und diverses
                 Angeltechniken erlernt, danach wird das theoretisch Erlernte mit erfahrenen Fischern am Wasser getestet. Die
                 anschliessende
                 Rangverkündigung und Verabschiedung mit den Eltern runden den spannende Angelmorgen gebührend
                 ab. </p>
+            <div class="card card-compact bg-base-100 shadow-xl mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Ablauf</h2>
+                    <ul>
+                        <li>
+                            <p><span class="font-bold">13.05.2023: </span> Theorie und Umgang mit dem Lebewesen «Fisch».</p>
+                        </li>
+                        <li><span class="font-bold">14.05.2023: </span> Verteilt um den Greifensee werden wir angeln gehen.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="alert alert-info shadow-lg">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span>Die Teilnehmerzahl ist begrenzt! </span>
+                </div>
+            </div>
         </div>
         <div class="divider lg:divider-horizontal"></div>
         <div class="grid flex-grow lg:w-[50%] p-4 card bg-base-200 rounded-box place-items-center">
