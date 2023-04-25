@@ -35,7 +35,7 @@
 
                         <div v-for="membership in memberships" class="form-control mb-0">
                             <label class="label cursor-pointer justify-start">
-                                <input type="radio" name="join-membership" class="radio checked:bg-red-500" required
+                                <input type="radio" name="membership" class="radio checked:bg-red-500" required
                                     :value="membership.name" />
                                 <span class="label-text ml-4">{{ membership.name + ' (' + membership.price + ') ' +
                                     membership.age
