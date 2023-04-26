@@ -102,16 +102,16 @@ import NavBar from "./components/NavBar.vue";
 export default {
   data() {
     return {
-      themeCheckbox: false
+      themeCheckbox: true
     }
   },
   created() {
     const theme = localStorage.getItem('theme');
     console.log("theme", theme);
-    if (theme === "dark") {
-      this.updateTheme(true);
-    } else {
+    if (theme === "light") {
       this.updateTheme(false);
+    } else {
+      this.updateTheme(true);
     }
 
   },
