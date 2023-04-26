@@ -17,9 +17,8 @@
             <ul class="menu bg-base-200 w-56 p-2 rounded-box w-full gap-2">
                 <li v-for="programmItem in currentList" class="flex flex-row">
                     <div class="w-full flex flex-row ">
-                        <svg fill="#ffffff" width="27px" height="27px" viewBox="0 0 32 32"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path v-if="alreadyHappened(programmItem)"
+                        <svg width="27px" height="27px" viewBox="0 0 32 32" class="" xmlns="http://www.w3.org/2000/svg">
+                            <path v-if="alreadyHappened(programmItem)" class="fill-base-content"
                                 d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z" />
                         </svg>
                         <div class="flex justify-between flex-wrap w-full ">

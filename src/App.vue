@@ -40,7 +40,7 @@ import NavBar from "./components/NavBar.vue";
           <label class="swap">
 
             <!-- this hidden checkbox controls the state -->
-            <input type="checkbox" />
+            <input type="checkbox" v-model="themeCheckbox" @click="updateTheme(themeCheckbox)" />
 
             <!-- volume on icon -->
             <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24"
@@ -100,10 +100,35 @@ import NavBar from "./components/NavBar.vue";
 </template>
 <script lang="ts">
 export default {
+  data() {
+    return {
+      themeCheckbox: false
+    }
+  },
+  created() {
+    const theme = localStorage.getItem('theme');
+    console.log("theme", theme);
+    if (theme === "dark") {
+      this.updateTheme(true);
+    } else {
+      this.updateTheme(false);
+    }
+
+  },
   methods: {
-    // updateTheme($event: any) {
-    //   document.documentElement.setAttribute('data-theme', $event.target.value);
-    // }
+    updateTheme(isDarkMode: boolean) {
+      console.log("updateTheme", isDarkMode);
+
+      if (isDarkMode) {
+        document.documentElement.setAttribute('data-theme', "dark");
+        localStorage.setItem('theme', "dark");
+        this.themeCheckbox = false;
+      } else {
+        document.documentElement.setAttribute('data-theme', "light");
+        localStorage.setItem('theme', "light");
+        this.themeCheckbox = true;
+      }
+    }
   }
 }
 </script>
