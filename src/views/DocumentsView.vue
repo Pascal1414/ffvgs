@@ -21,6 +21,13 @@
             <a class="link no-underline" href="documents/FFV_Statuten_5_A5.pdf">FFV Statuten 5 A5</a>
 
         </li>
+        <li class="menu-title">
+            <span>Vereinsfischen</span>
+        </li>
+        <li>
+            <a id="vereisfischen" class="link no-underline" href="documents/Vereinsfischen-2023.pdf">Informationen
+                Vereisfischen</a>
+        </li>
     </ul>
 </template>
 <script lang="ts">
