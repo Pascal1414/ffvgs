@@ -3,7 +3,7 @@
 
     <div class="flex flex-col mb-4 w-full lg:flex-row">
         <div class="  lg:w-[50%] p-4 card bg-base-200 rounded-box ">
-            <p>
+            <!-- <p>
                 Jedes Jahr bietet die FFVGS 50 Jugendlichen ab Jahrgang 2011 bis 2015 die Möglichkeit, unter
                 professioneller Anleitung einen Einblick in die Freizeit-Angelei zu erhalten.</p>
 
@@ -11,7 +11,22 @@
                 Angeltechniken erlernt, danach wird das theoretisch Erlernte mit erfahrenen Fischern am Wasser getestet. Die
                 anschliessende
                 Rangverkündigung und Verabschiedung mit den Eltern runden den spannende Angelmorgen gebührend
-                ab. </p>
+                ab. </p> -->
+
+            <p class="mb-2">
+                Am Samstag, 13. Mai und Sonntag, 14. Mai findet wieder unser beliebtes Jugendfischen am Greifensee statt.
+                Wir zeigen den Kindern in der Theorie den Umgang mit dem Lebewesen «Fisch», der Natur und diverses
+                Angeltechniken. Das theoretisch Erlernte wird am Sonntag mit erfahrenen Fischern am Wasser getestet, mit
+                anschliessender Rangverkündigung. Während beiden Tagen läuft auch unsere Fischküche auf der Schlosswiese auf
+                Hochtouren. Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill stehen am Samstag ab 11 Uhr bis ca. 16
+                Uhr zur Auswahl (Grill und Getränke bis ca. 18 Uhr). Es findet kein Abendbetrieb statt (dafür dann am
+                Sommernachtsfest vom 12./13. August). Am Sonntag ist unsere Küche ab 11 offen - «es hät solangs hät» - bis
+                spätestens 16 Uhr. Und weil auch gleich noch Muttertag ist, spielt die beliebte Dorfmusig Gryfesee am
+                Sonntag um 11 Uhr zum Konzert auf.»
+                Wir freuen uns auf viele Besucher!
+                Petri Heil, Eure FFVGS
+            </p>
+
             <div class="card card-compact bg-base-100 shadow-xl mb-4">
                 <div class="card-body">
                     <h2 class="card-title">Ablauf</h2>
