@@ -22,7 +22,7 @@
                     Am 1. Mai findet das alljährliche Vereisfischen statt. Das Messen findet bei gutem Wetter auf der
                     Schlosswiese und bei schlechtem Wetter in der Milchhütte in Greifensee statt.
                 </p>
-                <router-link class="btn btn-primary" to="dokumente#vereisfischen">Weitere Informationen</router-link>
+                <router-link class="btn btn-primary" to="dokumente#vereisfischen">Weitere Informationen (pdf)</router-link>
 
             </div>
         </div>
