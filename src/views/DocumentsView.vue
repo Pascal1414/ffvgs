@@ -26,7 +26,7 @@
         </li>
         <li>
             <a id="vereisfischen" class="link no-underline" href="documents/Vereinsfischen-2023.pdf">Informationen
-                Vereisfischen</a>
+                Vereinsfischen</a>
         </li>
     </ul>
 </template>
