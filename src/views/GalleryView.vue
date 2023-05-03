@@ -70,133 +70,154 @@ export default {
                 caption: ''
             }],
             previewImageIndex: -1,
-            "events": [
-                {
-                    "name": "Absenden (19.11.2022)",
-                    "images": [
-                        [
-                            {
-                                "url": "/images/galery/Absenden22/20221119_200447small.jpg",
-                                "caption": "Absenden"
-                            },
-                            {
-                                "url": "/images/galery/Absenden22/20221119_230733small.jpg",
-                                "caption": "Boot"
-                            }
-                        ],
-                        [
-                            {
-                                "url": "/images/galery/Absenden22/absenden1small.jpg",
-                                "caption": "Abendessen"
-                            },
-                            {
-                                "url": "/images/galery/Absenden22/absenden2small.jpg",
-                                "caption": "Lotto"
-                            }
-                        ], [
-                            {
-                                "url": "/images/galery/Absenden22/absenden3small.jpg",
-                                "caption": "Dessert"
-                            },
-                            {
-                                "url": "/images/galery/Absenden22/absenden4small.jpg",
-                                "caption": "Boot"
-                            }
-                        ]
-                    ]
+            "events": [{
+                "name": "1. Vereinsfischen (01.05.2023)",
+                "images": [
+                    [{
+                        "url": "/images/galery/1.Vereinsfischen23/mittagessen.jpg",
+                        "caption": "Mittagessen"
+                    },
+                    ], [{
+                        "url": "/images/galery/1.Vereinsfischen23/hecht.jpg",
+                        "caption": "Gefangener Hecht "
+                    }, {
+                        "url": "/images/galery/1.Vereinsfischen23/hecht-jugend.jpg",
+                        "caption": "Gefangene Hechte"
+                    },
+                    {
+                        "url": "/images/galery/1.Vereinsfischen23/essen.jpg",
+                        "caption": "Mittagessen in der Milchhütte"
+                    }]
 
-                }, {
-                    "name": "Trüschenfischen (05.11.2022)",
-                    "images": [
-                        [{
-                            "url": "/images/galery/Trüschenfischen22/IMG_20221105_081130844small.jpg",
-                            "caption": "Schiffe"
+                ]
+            },
+            {
+                "name": "Absenden (19.11.2022)",
+                "images": [
+                    [
+                        {
+                            "url": "/images/galery/Absenden22/20221119_200447small.jpg",
+                            "caption": "Absenden"
                         },
                         {
-                            "url": "/images/galery/Trüschenfischen22/IMG_20221105_111110798small.jpg",
-                            "caption": "Unwetter"
-                        }],
-                        [{
-                            "url": "/images/galery/Trüschenfischen22/IMG_20221105_111112339small.jpg",
-                            "caption": "Regen"
+                            "url": "/images/galery/Absenden22/20221119_230733small.jpg",
+                            "caption": "Boot"
+                        }
+                    ],
+                    [
+                        {
+                            "url": "/images/galery/Absenden22/absenden1small.jpg",
+                            "caption": "Abendessen"
                         },
                         {
-                            "url": "/images/galery/Trüschenfischen22/IMG_20221105_141223498small.jpg",
-                            "caption": "Regenbogen"
-                        }]
+                            "url": "/images/galery/Absenden22/absenden2small.jpg",
+                            "caption": "Lotto"
+                        }
+                    ], [
+                        {
+                            "url": "/images/galery/Absenden22/absenden3small.jpg",
+                            "caption": "Dessert"
+                        },
+                        {
+                            "url": "/images/galery/Absenden22/absenden4small.jpg",
+                            "caption": "Boot"
+                        }
                     ]
-                },
-                {
-                    "name": "Silchsammelaktion (22.10.2022)",
-                    "images": [
-                        [
-                            {
-                                "url": "/images/galery/Silchsammelaktion22/20221022_142359small.jpg",
-                                "caption": "Taucher springt ins Wasser"
-                            },
-                            {
-                                "url": "/images/galery/Silchsammelaktion22/20221022_142717small.jpg",
-                                "caption": "Taucher zieht Flossen an"
-                            }
-                        ],
-                        [
-                            {
-                                "url": "/images/galery/Silchsammelaktion22/20221022_134846small.jpg",
-                                "caption": "Anweisungen"
-                            },
-                            {
-                                "url": "/images/galery/Silchsammelaktion22/20221022_141214small.jpg",
-                                "caption": "Taucher zieht sich Ausrüstung an."
-                            },
-                            {
-                                "url": "/images/galery/Silchsammelaktion22/20221022_142011small.jpg",
-                                "caption": "Boot wird bereit gemacht"
-                            }
-                        ], [
-                            {
-                                "url": "/images/galery/Silchsammelaktion22/20221022_133154small.jpg",
-                                "caption": ""
-                            }, {
-                                "url": "/images/galery/Silchsammelaktion22/20221022_142203small.jpg",
-                                "caption": "Es geht los"
-                            }
-                        ]
+                ]
+
+            }, {
+                "name": "Trüschenfischen (05.11.2022)",
+                "images": [
+                    [{
+                        "url": "/images/galery/Trüschenfischen22/IMG_20221105_081130844small.jpg",
+                        "caption": "Schiffe"
+                    },
+                    {
+                        "url": "/images/galery/Trüschenfischen22/IMG_20221105_111110798small.jpg",
+                        "caption": "Unwetter"
+                    }],
+                    [{
+                        "url": "/images/galery/Trüschenfischen22/IMG_20221105_111112339small.jpg",
+                        "caption": "Regen"
+                    },
+                    {
+                        "url": "/images/galery/Trüschenfischen22/IMG_20221105_141223498small.jpg",
+                        "caption": "Regenbogen"
+                    }]
+                ]
+            },
+            {
+                "name": "Silchsammelaktion (22.10.2022)",
+                "images": [
+                    [
+                        {
+                            "url": "/images/galery/Silchsammelaktion22/20221022_142359small.jpg",
+                            "caption": "Taucher springt ins Wasser"
+                        },
+                        {
+                            "url": "/images/galery/Silchsammelaktion22/20221022_142717small.jpg",
+                            "caption": "Taucher zieht Flossen an"
+                        }
+                    ],
+                    [
+                        {
+                            "url": "/images/galery/Silchsammelaktion22/20221022_134846small.jpg",
+                            "caption": "Anweisungen"
+                        },
+                        {
+                            "url": "/images/galery/Silchsammelaktion22/20221022_141214small.jpg",
+                            "caption": "Taucher zieht sich Ausrüstung an."
+                        },
+                        {
+                            "url": "/images/galery/Silchsammelaktion22/20221022_142011small.jpg",
+                            "caption": "Boot wird bereit gemacht"
+                        }
+                    ], [
+                        {
+                            "url": "/images/galery/Silchsammelaktion22/20221022_133154small.jpg",
+                            "caption": ""
+                        }, {
+                            "url": "/images/galery/Silchsammelaktion22/20221022_142203small.jpg",
+                            "caption": "Es geht los"
+                        }
                     ]
-                },
-                {
-                    "name": "Helferausflug Brauerei Wädenswil (17.09.2022)",
-                    "images": [
-                        [
-                            {
-                                "url": "/images/galery/Helferausflug22/IMG_0868small.jpg",
-                                "caption": "Schiff vom Zürichsee"
-                            },
-                            {
-                                "url": "/images/galery/Helferausflug22/IMG_0883small.jpg",
-                                "caption": "In der Brauerei"
-                            },
-                            {
-                                "url": "/images/galery/Helferausflug22/IMG_0885small.jpg",
-                                "caption": "Auf dem Zürichsee"
-                            }
-                        ]
+                ]
+            },
+            {
+                "name": "Helferausflug Brauerei Wädenswil (17.09.2022)",
+                "images": [
+                    [
+                        {
+                            "url": "/images/galery/Helferausflug22/IMG_0868small.jpg",
+                            "caption": "Schiff vom Zürichsee"
+                        },
+                        {
+                            "url": "/images/galery/Helferausflug22/IMG_0883small.jpg",
+                            "caption": "In der Brauerei"
+                        },
+                        {
+                            "url": "/images/galery/Helferausflug22/IMG_0885small.jpg",
+                            "caption": "Auf dem Zürichsee"
+                        }
                     ]
-                },
-                {
-                    "name": "Glattfischen (10.09.2022)",
-                    "images": [
-                        [
-                            {
-                                "url": "/images/galery/Glattfischen22/IMG_5240small.jpg",
-                                "caption": "Die Fänge"
-                            },
-                            {
-                                "url": "/images/galery/Glattfischen22/IMG_5243small.jpg",
-                                "caption": "Die Fänge"
-                            }
-                        ]
+                ]
+            },
+            {
+                "name": "Glattfischen (10.09.2022)",
+                "images": [
+                    [
+                        {
+                            "url": "/images/galery/Glattfischen22/IMG_5240small.jpg",
+                            "caption": "Die Fänge"
+                        },
+                        {
+                            "url": "/images/galery/Glattfischen22/IMG_5243small.jpg",
+                            "caption": "Die Fänge"
+                        }
                     ]
-                }
+                ]
+            }
+
             ]
         };
     }
