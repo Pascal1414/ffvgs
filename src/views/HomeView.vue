@@ -12,23 +12,6 @@
     </div>
 
     <div class="divider"></div>
-
-    <div class="sm:hero min-h-[400px] bg-base-100">
-        <div class="hero-content w-full flex-col lg:flex-row">
-            <img src="/images/home/1-vereisfischen.jpg" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
-            <div>
-                <h1 class="text-5xl font-bold">1. Vereinsfischen </h1>
-                <p class="py-6">
-                    Am 1. Mai findet das alljährliche Vereisfischen statt. Das Messen findet bei gutem Wetter auf der
-                    Schlosswiese und bei schlechtem Wetter in der Milchhütte in Greifensee statt.
-                </p>
-                <router-link class="btn btn-primary" to="dokumente#vereisfischen">Weitere Informationen (pdf)</router-link>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="divider"></div>
     <div class="sm:hero min-h-[400px] bg-base-100">
         <div class="hero-content w-full flex-col lg:flex-row-reverse">
             <img src="/images/event/jungfischerkurs/fischen2.jpg" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
