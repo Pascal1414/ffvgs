@@ -12,6 +12,24 @@
     </div>
 
     <div class="divider"></div>
+
+    <div class="sm:hero min-h-[400px] bg-base-100">
+        <div class="hero-content w-full flex-col lg:flex-row">
+            <img src="/images/home/home.png" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
+            <div>
+                <h1 class="text-5xl font-bold">Neues Design </h1>
+                <p class="py-6">
+                    Die Webseite hat ein neues Design bekommen. Sie lässt sich gleich bedienen wie die vorherige Webseite.
+                    Falls dir das dunkle Design nicht gefällt, kannst du es
+                    <a class="link link-info" href="#theme-toggle">rechts unten in der Fusszeile</a> ändern. Das Icon zeigt
+                    an, in welchem Design du dich gerade befindest. Bei Fragen zu der Webseite kannst du dich gerne über das
+                    <router-link class="link link-info" to="/kontakt">Kontaktformular</router-link> melden.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
     <div class="sm:hero min-h-[400px] bg-base-100">
         <div class="hero-content w-full flex-col lg:flex-row-reverse">
             <img src="/images/event/jungfischerkurs/fischen2.jpg" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />

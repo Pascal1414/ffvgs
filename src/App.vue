@@ -37,7 +37,7 @@ import NavBar from "./components/NavBar.vue";
               </path>
             </svg>
           </a>
-          <label class="swap">
+          <label class="swap" id="theme-toggle">
 
             <!-- this hidden checkbox controls the state -->
             <input type="checkbox" v-model="themeCheckbox" @click="updateTheme(themeCheckbox)" />
