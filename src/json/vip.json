@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Fredi Hafner",
+    "role": "Ehrenpräsident",
+    "image": "/images/vip/fredi-hafner.jpg"
+  },
+  {
+    "name": "Sepp Biland",
+    "role": "Senior \n Chefinstruktor",
+    "image": "/images/vip/sepp-biland.jpg"
+  },
+  {
+    "name": "René Carlen",
+    "role": "Jugend",
+    "image": "/images/vip/rene-carlen.jpg"
+  },
+  {
+    "name": "Sandor Dreier",
+    "role": "Allrounder",
+    "image": "/images/vip/sandor-dreier.jpg"
+  },
+  {
+    "name": "Ben Galler",
+    "role": "Vereinsboot",
+    "image": "/images/vip/ben-galler.jpg"
+  },
+  {
+    "name": "Hans Keller",
+    "role": "Fischküche \n Ehrenbrigade",
+    "image": "/images/vip/hans-keller.jpg"
+  },
+  {
+    "name": "Franz Grundwürmer",
+    "role": "Fischküche \n Ehrenbrigade",
+    "image": "/images/vip/franz-grundwürmer.jpg"
+  },
+  {
+    "name": "Toni Spirig",
+    "role": "Fischküche \n Ehrenbrigade",
+    "image": "/images/vip/toni-spirig.jpg"
+  },
+  {
+    "name": "Koni Kurt",
+    "role": "Fischküche \n Ehrenbrigade",
+    "image": "/images/vip/koni-kurt.jpg"
+  }
+]
