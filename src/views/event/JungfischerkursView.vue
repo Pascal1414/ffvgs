@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <div class="card w-full bg-base-200 shadow-xl">
+    <!--div class="card w-full bg-base-200 shadow-xl">
         <div class="card-body">
             <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
             <form name="registration-jungfischerkurs" method="POST" netlify>
@@ -145,7 +145,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div-->
 </template>
 <script lang="ts">
 import Slideshow from '@/components/Slideshow.vue';
