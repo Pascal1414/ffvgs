@@ -36,6 +36,7 @@
             <div class="w-full sm:w-auto">
                 <h1 class="text-5xl font-bold">Jungfischerkurs </h1>
                 <p class="py-6">Vielen Dank für die zahlreichen Anmeldungen für den Jungfischerkurs. </p>
+                <router-link class="btn btn-primary" to="/event/jungfischerkurs">Mehr erfahren</router-link>
                 <!--p class="py-6"> In diesem Jahr bietet die FFVGS wieder 50 Jugendlichen ab Jahrgang 2011 bis 2015 die
                     Möglichkeit, unter professioneller Anleitung einen Einblick in die Freizeit-Angelei zu erhalten.</p>
                 <router-link class="btn btn-primary" to="/event/jungfischerkurs">Jetzt anmelden</router-link-->
