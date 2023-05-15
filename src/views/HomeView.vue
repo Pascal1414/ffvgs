@@ -14,23 +14,7 @@
 
 
     <div class="divider"></div>
-    <div class="sm:hero min-h-[400px] bg-base-100">
-        <div class="hero-content w-full flex-col lg:flex-row-reverse">
-            <img src="/images/event/jungfischerkurs/fischknusperli.jpg"
-                class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
-            <div class="w-full sm:w-auto">
-                <h1 class="text-5xl font-bold">Jungfischerkurs </h1>
-                <p class="py-6">Vielen Dank für die zahlreichen Anmeldungen für den Jungfischerkurs.
-                    Während beiden Tagen läuft auch unsere Fischküche auf der Schlosswiese auf Hochtouren.
-                    Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill stehen am Samstag ab 11 Uhr bis ca. 16 Uhr zur
-                    Auswahl (Grill und Getränke bis ca. 18 Uhr). Es findet kein Abendbetrieb statt (dafür dann am
-                    Sommernachtsfest vom 12./13. August). Am Sonntag ist unsere Küche ab 11 offen – «es hät solangs hät» –
-                    bis spätestens 16 Uhr. </p>
-                <router-link class="btn btn-primary" to="/event/jungfischerkurs">Mehr erfahren</router-link>
-            </div>
-        </div>
-    </div>
-    <div class="divider"></div>
+
 
     <div class="sm:hero min-h-[400px] bg-base-100">
         <div class="hero-content w-full flex-col lg:flex-row">
@@ -50,7 +34,7 @@
     <div class="divider"></div>
 
     <div class="sm:hero min-h-[400px] bg-base-100">
-        <div class="hero-content w-full flex-col lg:flex-row">
+        <div class="hero-content w-full flex-col lg:flex-row-reverse">
             <img src="/images/home/fisch-des-jahres-2023.jpg" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
             <div>
                 <h1 class="text-5xl font-bold">Fisch des Jahres</h1>
