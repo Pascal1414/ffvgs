@@ -14,15 +14,13 @@
                 ab. </p> -->
 
             <p class="mb-2">
-                Am Samstag, 13. Mai und Sonntag, 14. Mai findet wieder unser beliebtes Jugendfischen am Greifensee statt.
+                Jedes Jahr findet wärend dem Muttertagswochenende unser beliebtes Jugendfischen am Greifensee statt.
                 Wir zeigen den Kindern in der Theorie den Umgang mit dem Lebewesen «Fisch», der Natur und diverses
                 Angeltechniken. Das theoretisch Erlernte wird am Sonntag mit erfahrenen Fischern am Wasser getestet, mit
                 anschliessender Rangverkündigung. Während beiden Tagen läuft auch unsere Fischküche auf der Schlosswiese auf
-                Hochtouren. Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill stehen am Samstag ab 11 Uhr bis ca. 16
-                Uhr zur Auswahl (Grill und Getränke bis ca. 18 Uhr). Es findet kein Abendbetrieb statt (dafür dann am
-                Sommernachtsfest vom 12./13. August). Am Sonntag ist unsere Küche ab 11 offen - «es hät solangs hät» - bis
-                spätestens 16 Uhr. Und weil auch gleich noch Muttertag ist, spielt die beliebte Dorfmusig Gryfesee am
-                Sonntag um 11 Uhr zum Konzert auf.»
+                Hochtouren. Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill steht auf der Menükarte. <br> Am Sonntag
+                morgen spielt die beliebte Dorfmusig Gryfesee ein
+                Konzert auf.»
                 Wir freuen uns auf viele Besucher!
                 Petri Heil, Eure FFVGS
             </p>
@@ -32,9 +30,9 @@
                     <h2 class="card-title">Ablauf</h2>
                     <ul>
                         <li>
-                            <p><span class="font-bold">13.05.2023: </span> Theorie und Umgang mit dem Lebewesen «Fisch».</p>
+                            <p><span class="font-bold">Samstag: </span> Theorie und Umgang mit dem Lebewesen «Fisch».</p>
                         </li>
-                        <li><span class="font-bold">14.05.2023: </span> Verteilt um den Greifensee werden wir angeln gehen.
+                        <li><span class="font-bold">Sonntag: </span> Verteilt um den Greifensee werden wir angeln gehen.
                         </li>
                     </ul>
                 </div>
@@ -46,9 +44,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     </svg>
-                    <span>Es kann sich nicht mehr angemeldet werden! </span>
+                    <span>Das Anmeldeformular wird einige Zeit vor dem Event Aufgeschaltet. </span>
                 </div>
             </div>
+
+
         </div>
         <div class="divider lg:divider-horizontal"></div>
         <div class="grid flex-grow lg:w-[50%] p-4 card bg-base-200 rounded-box place-items-center">
