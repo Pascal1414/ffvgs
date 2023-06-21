@@ -15,7 +15,7 @@
   },
   {
     "name": "46. Generalversammlung",
-    "dates":[ "2023-02-11"],
+    "dates": ["2023-02-11"],
     "forAll": true,
     "forJunior": true,
     "forJugendGroup": false
@@ -78,7 +78,7 @@
   },
   {
     "name": "Sommernachtsfest",
-    "dates": ["2023-08-12","2023-08-13" ],
+    "dates": ["2023-08-12", "2023-08-13"],
     "forAll": true,
     "forJunior": true,
     "forJugendGroup": true
@@ -120,7 +120,7 @@
   },
   {
     "name": "Trüschenfischen",
-    "dates": [],
+    "dates": ["2023-11-04"],
     "forAll": false,
     "forJunior": true,
     "forJugendGroup": true
