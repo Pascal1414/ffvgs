@@ -15,7 +15,7 @@
                 </select>
             </div>
             <ul class="menu bg-base-200 w-56 p-2 rounded-box w-full gap-2">
-                <li v-for="programmItem in currentList" class="flex flex-row">
+                <li v-for="(programmItem, index) in currentList" class="flex flex-row" :id="String(index)">
                     <div class="w-full flex flex-row ">
                         <svg width="27px" height="27px" viewBox="0 0 32 32" class="" xmlns="http://www.w3.org/2000/svg">
                             <path v-if="alreadyHappened(programmItem)" class="fill-base-content"
@@ -63,7 +63,19 @@ export default defineComponent({
     created() {
         this.currentList = this.json;
     },
+    mounted() {
+        //this.setFocusOnNextEvent();
+    },
     methods: {
+        setFocusOnNextEvent() {
+            for (let i = 0; i < this.currentList.length; i++) {
+                if (!this.alreadyHappened(this.currentList[i])) {
+                    let element = document.getElementById(String(i));
+                    element?.scrollIntoView();
+                    break;
+                }
+            }
+        },
         alreadyHappened(programmItem: any): boolean {
 
             if (programmItem.dates === null || programmItem.dates.length === 0)
