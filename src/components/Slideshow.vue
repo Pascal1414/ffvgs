@@ -12,17 +12,14 @@
 </template>
 
 <script lang="ts">
-
 export default {
   name: 'Slideshow',
   props: {
     images: {
-      type: Array as () => Array<{ src: string, alt: string }>,
-      required: true,
-    },
+      type: Array as () => Array<{ src: string; alt: string }>,
+      required: true
+    }
   },
-  methods: {
-  }
-};
+  methods: {}
+}
 </script>
-

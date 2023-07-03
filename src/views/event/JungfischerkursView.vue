@@ -1,9 +1,9 @@
 <template>
-    <h1 class="text-4xl font-bold mb-4">Jungfischerkurs</h1>
+  <h1 class="text-4xl font-bold mb-4">Jungfischerkurs</h1>
 
-    <div class="flex flex-col mb-4 w-full lg:flex-row">
-        <div class="  lg:w-[50%] p-4 card bg-base-200 rounded-box ">
-            <!-- <p>
+  <div class="flex flex-col mb-4 w-full lg:flex-row">
+    <div class="lg:w-[50%] p-4 card bg-base-200 rounded-box">
+      <!-- <p>
                 Jedes Jahr bietet die FFVGS 50 Jugendlichen ab Jahrgang 2011 bis 2015 die Möglichkeit, unter
                 professioneller Anleitung einen Einblick in die Freizeit-Angelei zu erhalten.</p>
 
@@ -13,50 +13,52 @@
                 Rangverkündigung und Verabschiedung mit den Eltern runden den spannende Angelmorgen gebührend
                 ab. </p> -->
 
-            <p class="mb-2">
-                Jedes Jahr findet wärend dem Muttertagswochenende unser beliebtes Jugendfischen am Greifensee statt.
-                Wir zeigen den Kindern in der Theorie den Umgang mit dem Lebewesen «Fisch», der Natur und diverses
-                Angeltechniken. Das theoretisch Erlernte wird am Sonntag mit erfahrenen Fischern am Wasser getestet, mit
-                anschliessender Rangverkündigung. Während beiden Tagen läuft auch unsere Fischküche auf der Schlosswiese auf
-                Hochtouren. Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill steht auf der Menükarte. <br> Am Sonntag
-                morgen spielt die beliebte Dorfmusig Gryfesee ein
-                Konzert auf.»
-                Wir freuen uns auf viele Besucher!
-                Petri Heil, Eure FFVGS
-            </p>
+      <p class="mb-2">
+        Jedes Jahr findet wärend dem Muttertagswochenende unser beliebtes Jugendfischen am
+        Greifensee statt. Wir zeigen den Kindern in der Theorie den Umgang mit dem Lebewesen
+        «Fisch», der Natur und diverses Angeltechniken. Das theoretisch Erlernte wird am Sonntag mit
+        erfahrenen Fischern am Wasser getestet, mit anschliessender Rangverkündigung. Während beiden
+        Tagen läuft auch unsere Fischküche auf der Schlosswiese auf Hochtouren.
+        Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill steht auf der Menükarte. <br />
+        Am Sonntag morgen spielt die beliebte Dorfmusig Gryfesee ein Konzert auf.» Wir freuen uns
+        auf viele Besucher! Petri Heil, Eure FFVGS
+      </p>
 
-            <div class="card card-compact bg-base-100 shadow-xl mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">Ablauf</h2>
-                    <ul>
-                        <li>
-                            <p><span class="font-bold">Samstag: </span> Theorie und Umgang mit dem Lebewesen «Fisch».</p>
-                        </li>
-                        <li><span class="font-bold">Sonntag: </span> Verteilt um den Greifensee werden wir angeln gehen.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="alert alert-info shadow-lg">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <span>Das Anmeldeformular wird einige Zeit vor dem Event Aufgeschaltet. </span>
-                </div>
-            </div>
-
-
+      <div class="card card-compact bg-base-100 shadow-xl mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Ablauf</h2>
+          <ul>
+            <li>
+              <p>
+                <span class="font-bold">Samstag: </span> Theorie und Umgang mit dem Lebewesen
+                «Fisch».
+              </p>
+            </li>
+            <li>
+              <span class="font-bold">Sonntag: </span> Verteilt um den Greifensee werden wir angeln
+              gehen.
+            </li>
+          </ul>
         </div>
-        <div class="divider lg:divider-horizontal"></div>
-        <div class="grid flex-grow lg:w-[50%] p-4 card bg-base-200 rounded-box place-items-center">
-            <slideshow class="double-item  " :images="images" />
+      </div>
+      <div class="alert alert-info shadow-lg">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <span>Das Anmeldeformular wird einige Zeit vor dem Event Aufgeschaltet. </span>
         </div>
+      </div>
     </div>
+    <div class="divider lg:divider-horizontal"></div>
+    <div class="grid flex-grow lg:w-[50%] p-4 card bg-base-200 rounded-box place-items-center">
+      <slideshow class="double-item" :images="images" />
+    </div>
+  </div>
 
-    <!--div class="card w-full bg-base-200 shadow-xl">
+  <!--div class="card w-full bg-base-200 shadow-xl">
         <div class="card-body">
             <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
             <form name="registration-jungfischerkurs" method="POST" netlify>
@@ -148,26 +150,26 @@
     </div-->
 </template>
 <script lang="ts">
-import Slideshow from '@/components/Slideshow.vue';
+import Slideshow from '@/components/Slideshow.vue'
 
 export default {
-    name: 'Jungfischerkurs',
-    data() {
-        return {
-            images: [
-                { src: '/images/event/jungfischerkurs/festzelt.jpg', alt: 'Festzelt' },
-                { src: '/images/event/jungfischerkurs/fischen.jpg', alt: 'Fischen' },
-                { src: '/images/event/jungfischerkurs/fischen2.jpg', alt: 'Fischen' },
-                { src: '/images/event/jungfischerkurs/fischen3.jpg', alt: 'Fischen' },
-                { src: '/images/event/jungfischerkurs/schiff.jpg', alt: 'Schiff' },
-                { src: '/images/event/jungfischerkurs/schiff-close.jpg', alt: 'Schiff' },
-                { src: '/images/event/jungfischerkurs/zielschiessen.jpg', alt: 'Zielschiessen' }
-            ],
-        };
-    },
-    components: {
-        Slideshow,
+  name: 'Jungfischerkurs',
+  data() {
+    return {
+      images: [
+        { src: '/images/event/jungfischerkurs/festzelt.jpg', alt: 'Festzelt' },
+        { src: '/images/event/jungfischerkurs/fischen.jpg', alt: 'Fischen' },
+        { src: '/images/event/jungfischerkurs/fischen2.jpg', alt: 'Fischen' },
+        { src: '/images/event/jungfischerkurs/fischen3.jpg', alt: 'Fischen' },
+        { src: '/images/event/jungfischerkurs/schiff.jpg', alt: 'Schiff' },
+        { src: '/images/event/jungfischerkurs/schiff-close.jpg', alt: 'Schiff' },
+        { src: '/images/event/jungfischerkurs/zielschiessen.jpg', alt: 'Zielschiessen' }
+      ]
     }
-};
-</script >
+  },
+  components: {
+    Slideshow
+  }
+}
+</script>
 <style lang="css"></style>
