@@ -2,7 +2,7 @@
   <h2 class="text-4xl font-bold mb-4 flex justify-center">Berichte</h2>
   <div class="divider"></div>
   <div class="mb-4 grid gap-4 grid-cols-2">
-    <div v-for="report in reports" class="card bg-base-200 shadow-xl">
+    <div v-for="(report, index) in reports" :key="index" class="card bg-base-200 shadow-xl">
       <div class="card-body">
         <h1 class="text-2xl font-bold">{{ report.title }}</h1>
         <p class="whitespace-pre-line">{{ report.text }}</p>

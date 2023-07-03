@@ -153,7 +153,7 @@
 import Slideshow from '@/components/Slideshow.vue'
 
 export default {
-  name: 'Jungfischerkurs',
+  name: 'JungfischerKurs',
   data() {
     return {
       images: [

@@ -19,7 +19,7 @@
         <div class="flex-none hidden lg:block">
           <ul class="menu menu-horizontal">
             <!-- Navbar menu content here -->
-            <li v-for="navItem in navItems">
+            <li v-for="(navItem, index) in navItems" :key="index">
               <router-link :to="navItem.link">{{ navItem.name }}</router-link>
             </li>
           </ul>
@@ -32,7 +32,7 @@
       <label for="my-drawer-3" class="drawer-overlay"></label>
       <ul class="menu p-4 w-80 bg-base-100">
         <!-- Sidebar content here -->
-        <li v-for="navItem in navItems">
+        <li v-for="(navItem, index) in navItems" :key="index">
           <router-link :to="navItem.link">{{ navItem.name }}</router-link>
         </li>
       </ul>

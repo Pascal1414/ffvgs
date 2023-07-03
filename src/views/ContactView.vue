@@ -33,7 +33,7 @@
           <div class="card-body gap-0">
             <p class="mb-2">Ich wünsche eine Aufnahme als:</p>
 
-            <div v-for="membership in memberships" class="form-control mb-0">
+            <div v-for="(membership, index) in memberships" :key="index" class="form-control mb-0">
               <label class="label cursor-pointer justify-start">
                 <input type="radio" name="membership" class="radio checked:bg-red-500" required
                   :value="membership.name" />

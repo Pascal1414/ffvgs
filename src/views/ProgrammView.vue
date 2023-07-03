@@ -15,7 +15,7 @@
         </select>
       </div>
       <ul class="menu bg-base-200 w-56 p-2 rounded-box w-full gap-2">
-        <li v-for="(programmItem, index) in currentList" class="flex flex-row" :id="String(index)">
+        <li v-for="(programmItem, index) in currentList" class="flex flex-row" :key="index" :id="String(index)">
           <div class="w-full flex flex-row">
             <svg width="27px" height="27px" viewBox="0 0 32 32" class="" xmlns="http://www.w3.org/2000/svg">
               <path v-if="alreadyHappened(programmItem)" class="fill-base-content"
@@ -24,7 +24,7 @@
             <div class="flex justify-between flex-wrap w-full">
               <div class="min-w-[260px]">{{ programmItem.name }}</div>
               <div class="dates">
-                <div v-for="date in programmItem.dates">{{ formatDate(date) }}</div>
+                <div v-for="(date, index) in programmItem.dates" :key="index">{{ formatDate(date) }}</div>
               </div>
             </div>
           </div>

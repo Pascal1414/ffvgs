@@ -3,7 +3,7 @@
     <div class="card-body">
       <h1 class="text-4xl font-bold mb-4 flex justify-center">Vorstand</h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
-        <div v-for="person in persons" class="card lg:card-side bg-base-100 shadow-xl">
+        <div v-for="(person, index) in persons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
             <img class="h-[100%] w-[100%]" :src="person.image" alt="Album" />
           </figure>
@@ -36,7 +36,7 @@
         VIPs – Funktionäre und Ehrenmitglieder
       </h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
-        <div v-for="vip in vips" class="card w-96 card-side bg-base-100 shadow-xl">
+        <div v-for="(vip, index) in vips" :key="index" class="card w-96 card-side bg-base-100 shadow-xl">
           <figure class="">
             <img :src="vip.image" alt="Shoes" class="rounded-xl" />
           </figure>

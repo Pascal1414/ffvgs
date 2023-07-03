@@ -68,7 +68,7 @@
       <h3 class="font-bold text-lg">Preis berechnen</h3>
       <p>Beachte dass der berechnete Betrag nicht stimmen muss. Am besten nochmals überprüfen.</p>
 
-      <form @submit.prevent="calculatePrice($event)">
+      <form @submit.prevent="calculatePrice()">
         <div class="form-control w-full max-w-xs">
           <label class="label">
             <span class="label-text">Startzeit</span>
@@ -114,7 +114,7 @@ export default {
     }
   },
   methods: {
-    calculatePrice(event: Event) {
+    calculatePrice() {
       console.log('calculating price')
 
       // Calculate duration of rental period in hours

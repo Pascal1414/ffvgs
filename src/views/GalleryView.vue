@@ -1,18 +1,18 @@
 <template>
-  <div v-for="event in events">
+  <div v-for="(event, index) in events" :key="index">
     <div class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4">
       <div class="card-body">
         <h1 class="text-2xl font-bold mb-2">{{ event.name }}</h1>
-        <div v-for="images in event.images" class="flex flex-row justify-between mb-[1%] gap-[2%]">
+        <div v-for="(images, index) in event.images" :key="index" class="flex flex-row justify-between mb-[1%] gap-[2%]">
           <label v-for="(image, index) in images" for="my-modal-5" class="w-[50%]" :key="index" @click="() => {
-              previewImageArray = []
-              event.images.forEach((group) => {
-                group.forEach((image) => {
-                  previewImageArray.push(image)
-                })
+            previewImageArray = []
+            event.images.forEach((group) => {
+              group.forEach((image) => {
+                previewImageArray.push(image)
               })
-              previewImageIndex = index
-            }
+            })
+            previewImageIndex = index
+          }
             ">
             <img class="md:rounded-md" :src="image.url" :alt="image.caption" />
           </label>
