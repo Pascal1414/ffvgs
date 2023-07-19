@@ -79,21 +79,21 @@ export default {
           images: [
             [
               {
-                url: '/images/galery/2.Vereinsfischen23/grosse_fänge.jpg',
+                url: '/images/galery/2.Vereinsfischen23/grosse_fänge_small.jpg',
                 caption: 'Tagessieger'
               },
               {
-                url: '/images/galery/2.Vereinsfischen23/mittagessen.jpg',
+                url: '/images/galery/2.Vereinsfischen23/mittagessen_small.jpg',
                 caption: 'Mittagessen'
               }
             ],
             [
               {
-                url: '/images/galery/2.Vereinsfischen23/felche.jpg',
+                url: '/images/galery/2.Vereinsfischen23/felche_small.jpg',
                 caption: 'Grösste Felche'
               },
               {
-                url: '/images/galery/2.Vereinsfischen23/felche_messen.jpg',
+                url: '/images/galery/2.Vereinsfischen23/felche_messen_small.jpg',
                 caption: 'Die grösste Felche wird gemessen'
               }
             ]
