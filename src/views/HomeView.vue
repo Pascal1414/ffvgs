@@ -16,26 +16,6 @@
   <div class="divider"></div>
 
   <div class="sm:hero min-h-[400px] bg-base-100">
-    <div class="hero-content w-full flex-col lg:flex-row">
-      <img src="/images/home/Flyer-Sommernachtsfest-2023.jpg" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
-      <div>
-        <h1 class="text-5xl font-bold">Sommernachtsfest</h1>
-        <p class="py-6">
-          Am 12. und 13. August öffnen wir unsere Fischküche, an deren Theke feine Zanderfilets im
-          Bierteig gebacken werden. Sie sind in der Regel bis 22 Uhr erhältlich. Auch am Sonntag
-          gibt es die zarten Fischfilets, so lange, bis wir ausverkauft sind. Für jene Gäste, die
-          lieber Grilladen geniessen, gibt es Würste oder Steaks vom Grill. Auch Pommes Frites
-          werden frisch zubereitet. Dazu bietet unsere Theke im Festzelt vielerlei passende Getränke
-          sowie Kaffee. Weil ein sommerliches Fest am See eine fröhliche Sache ist, sorgen wir auch
-          für musikalische Unterhaltung. Am Samstagabend spielt eine Band zum Tanz auf, am
-          Sonntagvormittag ab 11 Uhr findet das Frühschoppenkonzert satt.
-        </p>
-        <p>Wir freuen uns auf zahlreiche Besucherinnen und Besucher, die mit uns feiern!</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="sm:hero min-h-[400px] bg-base-100">
     <div class="hero-content w-full flex-col lg:flex-row-reverse">
       <img src="/images/home/fisch-des-jahres-2023.jpg" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
       <div>
