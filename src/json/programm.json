@@ -105,6 +105,13 @@
     "forJugendGroup": true
   },
   {
+    "name": "Hechtfischen Shilsee",
+    "dates": ["2023-10-07"],
+    "forAll": false,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
     "name": "3. Vereinsfischen ",
     "dates": ["2023-10-14"],
     "forAll": true,
@@ -122,6 +129,13 @@
     "name": "Trüschenfischen",
     "dates": ["2023-11-04"],
     "forAll": false,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "Limmat Reinigung in Zürich",
+    "dates": ["2023-11-11"],
+    "forAll": true,
     "forJunior": true,
     "forJugendGroup": true
   },
