@@ -75,8 +75,24 @@ export default {
       previewImageIndex: -1,
       events: [
         {
+          name: 'Sommernachtsfest (12. / 13.08.2022)',
+          images: [
+            [
+              {
+                url: '/images/galery/Sommernachtsfest23/fischkueche.jpg',
+                caption: 'Fischküche'
+              },
+              {
+                url: '/images/galery/Sommernachtsfest23/saucen_herstellen.jpg',
+                caption: 'Saucen herstellen'
+              }
+            ]
+          ],
+        },
+        {
           name: '2. Vereinsfischen (01.07.2023)',
           images: [
+
             [
               {
                 url: '/images/galery/2.Vereinsfischen23/grosse_fänge_small.jpg',
