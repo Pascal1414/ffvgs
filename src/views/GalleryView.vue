@@ -79,24 +79,24 @@ export default {
           images: [
             [
               {
-                url: '/images/galery/Helferausflug23/traktorfahren.jpg',
+                url: '/images/galery/Helferausflug23/traktorfahren_small.jpg',
                 caption: 'Traktorfahren'
               },
               {
-                url: '/images/galery/Helferausflug23/traktorfahren2.jpg',
+                url: '/images/galery/Helferausflug23/traktorfahren2_small.jpg',
                 caption: 'Traktorfahren'
               }
               , {
-                url: '/images/galery/Helferausflug23/traktorfahren3.jpg',
+                url: '/images/galery/Helferausflug23/traktorfahren3_small.jpg',
                 caption: 'Traktorfahren'
               }
             ], [
               {
-                url: '/images/galery/Helferausflug23/armbrustschiessen.jpg',
+                url: '/images/galery/Helferausflug23/armbrustschiessen_small.jpg',
                 caption: 'Armbrustschiessen'
               },
               {
-                url: '/images/galery/Helferausflug23/melken.jpg',
+                url: '/images/galery/Helferausflug23/melken_small.jpg',
                 caption: 'Melken'
               }
             ]
@@ -107,11 +107,11 @@ export default {
           images: [
             [
               {
-                url: '/images/galery/Sommernachtsfest23/fischkueche.jpg',
+                url: '/images/galery/Sommernachtsfest23/fischkueche_small.jpg',
                 caption: 'Fischküche'
               },
               {
-                url: '/images/galery/Sommernachtsfest23/saucen_herstellen.jpg',
+                url: '/images/galery/Sommernachtsfest23/saucen_herstellen_small.jpg',
                 caption: 'Saucen herstellen'
               }
             ]
