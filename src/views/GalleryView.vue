@@ -75,7 +75,35 @@ export default {
       previewImageIndex: -1,
       events: [
         {
-          name: 'Sommernachtsfest (12. / 13.08.2022)',
+          name: 'Helferausflug (30.09.2023)',
+          images: [
+            [
+              {
+                url: '/images/galery/Helferausflug23/traktorfahren.jpg',
+                caption: 'Traktorfahren'
+              },
+              {
+                url: '/images/galery/Helferausflug23/traktorfahren2.jpg',
+                caption: 'Traktorfahren'
+              }
+              , {
+                url: '/images/galery/Helferausflug23/traktorfahren3.jpg',
+                caption: 'Traktorfahren'
+              }
+            ], [
+              {
+                url: '/images/galery/Helferausflug23/armbrustschiessen.jpg',
+                caption: 'Armbrustschiessen'
+              },
+              {
+                url: '/images/galery/Helferausflug23/melken.jpg',
+                caption: 'Melken'
+              }
+            ]
+          ]
+        },
+        {
+          name: 'Sommernachtsfest (12. / 13.08.2023)',
           images: [
             [
               {
