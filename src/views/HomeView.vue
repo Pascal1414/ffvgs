@@ -19,7 +19,7 @@
       <div>
         <h1 class="text-5xl font-bold">Neujahrsapéro 2024</h1>
         <p class="py-6">
-          Wir werden am 6. Januar 2024 um 11:30 vom Sportfischer Verein Glattal zum Neujahrsapéro eingeladen. Der Apéro
+          Wir sind am 6. Januar 2024 um 11:30 vom Sportfischer Verein Glattal zum Neujahrsapéro eingeladen. Der Apéro
           wird auf dem Vereinsgrundstück des SFV Glattal in Fällanden stattfinden. Parkplätze gibt es vis-à-vis der
           Jugendherberge Fällanden. Anmeldungen bitte bis am 28. Dezember 2023 an <a href="mailto:rider@renaterieder.ch"
             class="link link-info">rieder@renaterieder.ch</a> oder per Telefon an 078 624 52 07.
