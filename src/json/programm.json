@@ -1,12 +1,5 @@
 [
   {
-    "name": "Apéro Garnhänki",
-    "dates": ["2023-01-02"],
-    "forAll": true,
-    "forJunior": false,
-    "forJugendGroup": false
-  },
-  {
     "name": "Neujahresapéro Greifensee",
     "dates": ["2023-01-07"],
     "forAll": true,
@@ -157,13 +150,6 @@
     "name": "Ehren- und Freimitgliederanlass",
     "dates": ["2023-12-15"],
     "forAll": false,
-    "forJunior": false,
-    "forJugendGroup": false
-  },
-  {
-    "name": "Apéro Garnhänki",
-    "dates": ["2024-01-02"],
-    "forAll": true,
     "forJunior": false,
     "forJugendGroup": false
   },
