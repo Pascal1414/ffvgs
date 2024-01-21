@@ -18,7 +18,7 @@
 
   <div class="sm:hero min-h-[400px] bg-base-100">
     <div class="hero-content w-full flex-col lg:flex-row-reverse">
-      <img src="public\images\home\marmorata-forelle.png" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
+      <img src="\images\home\marmorata-forelle.png" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
       <div>
         <h1 class="text-5xl font-bold">Fisch des Jahres</h1>
         <p class="py-6">
