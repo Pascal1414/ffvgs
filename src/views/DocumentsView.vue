@@ -25,6 +25,13 @@
       <a id="vereisfischen" class="link no-underline" href="documents/Vereinsfischen-2023.pdf">Informationen
         Vereinsfischen</a>
     </li>
+    <li class="menu-title">
+      <span>GV-Protokoll</span>
+    </li>
+    <li>
+      <a id="vereisfischen" class="link no-underline" href="documents/GV-Protokoll-2023.pdf">
+        GV-Protokoll</a>
+    </li>
   </ul>
 </template>
 <script lang="ts">
