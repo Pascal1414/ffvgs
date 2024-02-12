@@ -1,58 +1,44 @@
 [
-    {
-        "function": "Kassierin \n Co-Präsidentin",
-        "name": "Renate Rieder",
-        "email": "rieder@renaterieder.ch ",
-        "tel": "078 624 52 07",
-        "image": "/images/board/renate-rieder.jpg"
-    },
-    {
-        "function": " Bauchef \n Co-Präsident",
-        "name": "Eki Altiparmak",
-        "email": "civciv@gmx.ch",
-        "tel": "078 797 27 45",
-        "image": "/images/board/eki-altipamak.jpg"
-    },
-    {
-        "function": " Obmann",
-        "name": "Oli Beck",
-        "email": "shark.beck67@gmail.com",
-        "tel": "079 389 43 39",
-        "image": "/images/board/oliver-beck.jpg"
-    },
-    {
-        "function": "Aktuarin",
-        "name": "Annamaria Ress",
-        "email": "annamaria@ress.ch ",
-        "tel": "079 666 95 59",
-        "image": "/images/board/annamaria-ress.jpg"
-    },
-    {
-        "function": "Materialverwalter",
-        "name": "Kevin Senn",
-        "email": "kevinsenn89@gmail.com ",
-        "tel": "078 802 60 42",
-        "image": "/images/board/kevin-senn.jpg"
-    },
-    {
-        "function": "Festwirtin",
-        "name": "Nicole Hafner",
-        "email": "nicole.hafner@ubs.com",
-        "tel": "079 246 91 40",
-        "image": "/images/board/nicole-hafner.jpg"
-    },
-    {
-        "function": "Küchenchef",
-        "name": "Luca Ress",
-        "email": "luca@ress.ch",
-        "tel": " 079 363 39 46",
-        "image": "/images/board/luca-ress.jpg"
-    },
-    {
-        "function": "Springer Bau",
-        "name": "Marco Riget",
-        "email": "m.riget@mail.ch",
-        "tel": "076 830 07 89",
-        "image": "/images/board/marco-riget.jpg"
-    }
+  {
+    "function": "Co-Präsidentin, Kassierin",
+    "name": "Renate Rieder",
+    "email": "rieder@renaterieder.ch ",
+    "tel": "078 624 52 07",
+    "image": "/images/board/renate-rieder.jpg"
+  },
+  {
+    "function": "Co-Präsident, Bauchef",
+    "name": "Marco Riget",
+    "email": "civciv@gmx.ch",
+    "tel": "078 797 27 45",
+    "image": "/images/board/marco-riget.jpg"
+  },
+  {
+    "function": "Aktuarin",
+    "name": "Annamaria Ress",
+    "email": "annamaria@ress.ch ",
+    "tel": "079 666 95 59",
+    "image": "/images/board/annamaria-ress.jpg"
+  },
+  {
+    "function": "Materialverwalter",
+    "name": "Kevin Senn",
+    "email": "kevinsenn89@gmail.com ",
+    "tel": "078 802 60 42",
+    "image": "/images/board/kevin-senn.jpg"
+  },
+  {
+    "function": "Festwirtin",
+    "name": "Nicole Hafner",
+    "email": "nicole.hafner@ubs.com",
+    "tel": "079 246 91 40",
+    "image": "/images/board/nicole-hafner.jpg"
+  },
+  {
+    "function": "Küchenchef",
+    "name": "Luca Ress",
+    "email": "luca@ress.ch",
+    "tel": " 079 363 39 46",
+    "image": "/images/board/luca-ress.jpg"
+  }
 ]
