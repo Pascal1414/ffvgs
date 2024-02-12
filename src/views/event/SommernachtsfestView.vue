@@ -1,5 +1,12 @@
+<script setup lang="ts">
+import NotHappenAlert from '@/components/NotHappenAlert.vue'
+
+</script>
 <template>
   <h1 class="text-4xl font-bold mb-4">Sommernachtsfest</h1>
+
+  <NotHappenAlert name-string="das Sommernachtsfest" />
+
   <div class="flex flex-col w-full lg:flex-row">
     <div class="grid lg:w-[50%] flex-grow  card bg-base-300 rounded-box place-items-center">
 

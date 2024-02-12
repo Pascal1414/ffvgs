@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import NotHappenAlert from '@/components/NotHappenAlert.vue'
+
+</script>
 <template>
   <h1 class="text-4xl font-bold mb-4">Jungfischerkurs</h1>
+
+  <NotHappenAlert name-string="der Jungfischerkurs" />
 
   <div class="flex flex-col mb-4 w-full lg:flex-row">
     <div class="lg:w-[50%] p-4 card bg-base-200 rounded-box">
