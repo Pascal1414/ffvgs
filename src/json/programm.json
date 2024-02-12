@@ -1,160 +1,13 @@
 [
   {
+    "name": "Apéro Garnhänki",
+    "dates": ["2024-01-02"],
+    "forAll": true,
+    "forJunior": false,
+    "forJugendGroup": false
+  },
+  {
     "name": "Neujahresapéro Greifensee",
-    "dates": ["2023-01-07"],
-    "forAll": true,
-    "forJunior": false,
-    "forJugendGroup": false
-  },
-  {
-    "name": "46. Generalversammlung",
-    "dates": ["2023-02-11"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": false
-  },
-  {
-    "name": "Neumitgliederanlass",
-    "dates": ["2023-03-11"],
-    "forAll": true,
-    "forJunior": false,
-    "forJugendGroup": false
-  },
-  {
-    "name": "Treffen mit Eltern",
-    "dates": ["2023-03-24"],
-    "forAll": false,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Jugendgruppe- und Juniorenanlass",
-    "dates": ["2023-03-25"],
-    "forAll": false,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "1. Vereinsfischen",
-    "dates": ["2023-05-01"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Jugendfischen",
-    "dates": ["2023-05-13", "2023-05-14"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Jugendgruppe- und Juniorenanlass",
-    "dates": ["2023-05-27"],
-    "forAll": false,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Jugendgruppe- und Juniorenanlass",
-    "dates": ["2023-06-10"],
-    "forAll": false,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "2. Vereinsfischen",
-    "dates": ["2023-07-01"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Sommernachtsfest",
-    "dates": ["2023-08-12", "2023-08-13"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Jugendgruppe- und Juniorenanlass",
-    "dates": ["2023-09-09"],
-    "forAll": false,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Plauschfischen",
-    "dates": ["2023-09-16"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Helferausflug",
-    "dates": ["2023-09-30"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Hechtfischen Shilsee",
-    "dates": ["2023-10-07"],
-    "forAll": false,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "3. Vereinsfischen ",
-    "dates": ["2023-10-14"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Silchsammelaktion",
-    "dates": ["2023-10-28"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Trüschenfischen",
-    "dates": ["2023-11-04"],
-    "forAll": false,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Limmat Reinigung in Zürich",
-    "dates": ["2023-11-11"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Absenden",
-    "dates": ["2023-11-18"],
-    "forAll": true,
-    "forJunior": true,
-    "forJugendGroup": false
-  },
-  {
-    "name": "Absenden Jugendgruppe",
-    "dates": ["2023-12-02"],
-    "forAll": false,
-    "forJunior": false,
-    "forJugendGroup": true
-  },
-  {
-    "name": "Ehren- und Freimitgliederanlass",
-    "dates": ["2023-12-15"],
-    "forAll": false,
-    "forJunior": false,
-    "forJugendGroup": false
-  },
-  {
-    "name": "Neujahresapéro",
     "dates": ["2024-01-06"],
     "forAll": true,
     "forJunior": false,
@@ -163,6 +16,90 @@
   {
     "name": "47. Generalversammlung",
     "dates": ["2024-02-09"],
+    "forAll": true,
+    "forJunior": true,
+    "forJugendGroup": false
+  },
+  {
+    "name": "1. Vereinsfischen",
+    "dates": ["2024-05-01"],
+    "forAll": true,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "2. Vereinsfischen",
+    "dates": ["2024-07-06"],
+    "forAll": true,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "Plauschfischen",
+    "dates": ["2024-09-21"],
+    "forAll": true,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "3. Vereinsfischen",
+    "dates": ["2024-10-12"],
+    "forAll": true,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "Silchsammelaktion",
+    "dates": ["2024-10-26"],
+    "forAll": true,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "Absenden",
+    "dates": ["2024-11-16"],
+    "forAll": true,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "Chlaushöck Jugendgruppe",
+    "dates": ["2024-12-07"],
+    "forAll": false,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "Ehren- und Freimitgliederanlass",
+    "dates": ["2024-12-13"],
+    "forAll": false,
+    "forJunior": false,
+    "forJugendGroup": false
+  },
+  {
+    "name": "Apéro Garnhänki",
+    "dates": ["2025-01-02"],
+    "forAll": true,
+    "forJunior": false,
+    "forJugendGroup": false
+  },
+  {
+    "name": "Neujahresapéro in Uster",
+    "dates": ["2025-01-04"],
+    "forAll": true,
+    "forJunior": false,
+    "forJugendGroup": false
+  },
+  {
+    "name": "1. Vereinsfischen",
+    "dates": ["2025-01-11"],
+    "forAll": true,
+    "forJunior": true,
+    "forJugendGroup": true
+  },
+  {
+    "name": "48. Generalversammlung",
+    "dates": ["2025-02-07"],
     "forAll": true,
     "forJunior": true,
     "forJugendGroup": false
