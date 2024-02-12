@@ -1,5 +1,5 @@
 <template>
-    <div class="hero-content text-center text-neutral-content">
+    <div class="hero-content text-center">
         <div>
             <h1 class="mb-5 text-5xl font-bold">2024 wird ein Jahr ohne Sommernachtsfest und Jungfischerkurs</h1>
             <h3 class="mb-5 text-2xl font-semibold">Der lokale Fischerverein verzichtet dieses Jahr auf die Durchführung des

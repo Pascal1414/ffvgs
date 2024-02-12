@@ -10,7 +10,7 @@ import NotHappenAlert from '@/components/NotHappenAlert.vue'
   <div class="flex flex-col w-full lg:flex-row">
     <div class="grid lg:w-[50%] flex-grow  card bg-base-300 rounded-box place-items-center">
 
-      <div class="card  text-neutral-content">
+      <div class="card">
         <div class="card-body items-center text-center">
           <h2 class="card-title">Samstag</h2>
           <p>Am Samstag öffnen wir unsere Fischküche, an deren Theke feine Zanderfilets im Bierteig gebacken werden. Sie
@@ -29,7 +29,7 @@ import NotHappenAlert from '@/components/NotHappenAlert.vue'
     <div class="divider lg:divider-horizontal"></div>
 
     <div class="grid lg:w-[50%] flex-grow card bg-base-300 rounded-box place-items-center">
-      <div class="card  text-neutral-content">
+      <div class="card">
         <div class="card-body items-center text-center">
           <h2 class="card-title">Sonnatg</h2>
           <p>Auch am Sonntag gibt es die zarten Fischfilets und die Grilladen, so lange, bis wir ausverkauft sind. </p>
