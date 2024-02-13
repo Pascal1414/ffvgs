@@ -13,7 +13,6 @@ import Documents from '../views/DocumentsView.vue'
 import Somemrnachtsfest from '../views/event/SommernachtsfestView.vue'
 import Jungfischerkurs from '../views/event/JungfischerkursView.vue'
 import NotFound from '../views/NotFoundView.vue'
-import EventsView from '@/views/event/EventsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -63,11 +62,6 @@ const router = createRouter({
       path: '/impressum',
       name: 'imprint',
       component: Imprint
-    },
-    {
-      path: '/event',
-      name: 'event',
-      component: EventsView
     },
     {
       path: '/event/sommernachtsfest',
