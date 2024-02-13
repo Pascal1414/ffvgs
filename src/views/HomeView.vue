@@ -18,11 +18,12 @@
 
   <div class="sm:hero min-h-[400px] bg-base-100">
     <div class="hero-content place-items-start w-full flex-col">
-      <h1 class="text-3xl font-bold">2024 wird ein Jahr ohne Jungfischerkurs und Sommernachtsfest-Anlass
+      <h1 style="overflow-wrap: anywhere;" class="text-3xl font-bold">2024 wird ein Jahr ohne Jungfischerkurs und
+        Sommernachtsfest-Anlass
       </h1>
       <p class="card-title">
         Die Spatzen pfeifen es seit einer Weile schon von den Dächern: Der lokale Fischerverein verzichtet
-        dieses Jahr auf die Durchführung seiner grossen Anlässe wie den Jungfischerkurs am MuttertagsWochenende und das
+        dieses Jahr auf die Durchführung seiner grossen Anlässe wie den Jungfischerkurs am MuttertagsWochenende und das
         Sommernachtsfest im August.</p>
       <p>
         Beide Anlässe erfreuen sich recht grosser Beliebtheit bei den Besuchern, besonders natürlich bei
