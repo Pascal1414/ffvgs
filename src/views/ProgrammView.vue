@@ -56,75 +56,71 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineComponent, onMounted, ref } from 'vue'
 import { createClient } from '@supabase/supabase-js'
 //import { Database } from '../database.types'
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLIC_ANON_KEY)
 
-export default defineComponent({
-  name: 'ProgrammView',
-  data() {
-    return {
-      json: [],
-      currentList: []
-    }
-  },
-  components: {},
-  mounted() {
 
-    supabase
-      .from('Program')
-      .select('*').then(({ data, error }) => {
-        console.log(data, error);
+let json = ref([])
+let currentList = ref([])
 
-        this.json = data
-        this.currentList = this.json
-      })
-    this.currentList = this.json
 
-  },
-  methods: {
-    setFocusOnNextEvent() {
-      for (let i = 0; i < this.currentList.length; i++) {
-        if (!this.alreadyHappened(this.currentList[i])) {
-          let element = document.getElementById(String(i))
-          element?.scrollIntoView()
-          break
-        }
-      }
-    },
-    alreadyHappened(programmItem: any): boolean {
-      if (programmItem.dates === null || programmItem.dates.length === 0) return false
-      for (let date of programmItem.dates) if (new Date(date) > new Date()) return false
-      return true
-    },
-    formatDate(date: string): string {
-      return new Date(date).toLocaleDateString('ch-DE')
-    },
-    selectionChanged(event: Event) {
-      switch ((event.target as HTMLInputElement).value) {
-        case 'junioren':
-          this.currentList = this.json.filter((i) => i.forJunior)
-          break
-        case 'alle':
-          this.currentList = this.json.filter((i) => i.forAll)
-          break
-        case 'jugendgruppe':
-          this.currentList = this.json.filter((i) => i.forJugendGroup)
-          break
+onMounted(() => {
 
-        default:
-          this.currentList = this.json
+  supabase
+    .from('Program')
+    .select('*').then(({ data, error }) => {
+      console.log(data, error);
 
-          break
-      }
+      json = data
+      currentList = json
+    })
+  currentList.value = json
 
-      console.log(this.currentList)
+})
+
+function setFocusOnNextEvent() {
+  for (let i = 0; i < currentList.length; i++) {
+    if (!alreadyHappened.currentList[i])) {
+      let element = document.getElementById(String(i))
+      element?.scrollIntoView()
+      break
     }
   }
-})
+}
+function alreadyHappened(programmItem: any): boolean {
+  if (programmItem.dates === null || programmItem.dates.length === 0) return false
+  for (let date of programmItem.dates) if (new Date(date) > new Date()) return false
+  return true
+}
+function formatDate(date: string): string {
+  return new Date(date).toLocaleDateString('ch-DE')
+}
+function selectionChanged(event: Event) {
+  switch ((event.target as HTMLInputElement).value) {
+    case 'junioren':
+      currentList = json.filter((i) => i.forJunior)
+      break
+    case 'alle':
+      currentList = json.filter((i) => i.forAll)
+      break
+    case 'jugendgruppe':
+      currentList = json.filter((i) => i.forJugendGroup)
+      break
+
+    default:
+      currentList = json
+
+      break
+  }
+
+  console.log(currentList)
+}
+
+
 </script>
 
 <style scoped>
