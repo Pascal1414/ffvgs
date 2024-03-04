@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
     "daisyui": "^2.51.5",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
