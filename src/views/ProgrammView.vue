@@ -58,27 +58,32 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import json from '../json/programm.json'
 import { createClient } from '@supabase/supabase-js'
+//import { Database } from '../database.types'
 
-
-
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_PUBLIC_ANON_KEY)
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLIC_ANON_KEY)
 
 export default defineComponent({
   name: 'ProgrammView',
   data() {
     return {
-      json: json,
-      currentList: json
+      json: [],
+      currentList: []
     }
   },
   components: {},
-  created() {
-    this.currentList = this.json
-  },
   mounted() {
-    //this.setFocusOnNextEvent();
+
+    supabase
+      .from('Program')
+      .select('*').then(({ data, error }) => {
+        console.log(data, error);
+
+        this.json = data
+        this.currentList = this.json
+      })
+    this.currentList = this.json
+
   },
   methods: {
     setFocusOnNextEvent() {
