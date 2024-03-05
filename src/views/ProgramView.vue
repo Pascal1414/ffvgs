@@ -59,11 +59,11 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
-import type { Database } from '../database/supabase';
+import type { Tables } from '../database/supabase';
 import { supabase } from '../supabase';
 
-let json: Ref<Array<Database['public']['Tables']['Program']['Row']>> = ref([])
-let currentList: Ref<Array<Database['public']['Tables']['Program']['Row']>> = ref([])
+let json: Ref<Array<Tables<'Program'>>> = ref([])
+let currentList: Ref<Array<Tables<'Program'>>> = ref([])
 
 
 onMounted(() => {
