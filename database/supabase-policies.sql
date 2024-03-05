@@ -9,3 +9,6 @@ SELECT TO public USING (true);
 /* Enable read access for all users */
 CREATE POLICY "Enable read access for all users" ON "public"."Vips" AS PERMISSIVE FOR
 SELECT TO public USING (true);
+/* Enable read access for all users */
+CREATE POLICY "Enable read access for all users" ON "public"."Reports" AS PERMISSIVE FOR
+SELECT TO public USING (true);
