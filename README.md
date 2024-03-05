@@ -23,6 +23,8 @@ The policies can be found in the [supabase-policies.sql](Database/supabase-polic
 
 ### Buckets
 
+Supabase Buckets are used to store images. The following buckets are used:
+
 #### AboutUsImages (public)
 
 ## Recommended IDE Setup
