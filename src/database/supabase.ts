@@ -66,6 +66,30 @@ export type Database = {
         }
         Relationships: []
       }
+      Vips: {
+        Row: {
+          created_at: string
+          function: string
+          id: number
+          imageSrc: string
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          function: string
+          id?: number
+          imageSrc: string
+          name: string
+        }
+        Update: {
+          created_at?: string
+          function?: string
+          id?: number
+          imageSrc?: string
+          name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

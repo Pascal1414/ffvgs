@@ -38,11 +38,11 @@
       <div class="board flex flex-wrap justify-around gap-[25px]">
         <div v-for="(vip, index) in vips" :key="index" class="card w-96 card-side bg-base-100 shadow-xl">
           <figure class="">
-            <img :src="vip.image" alt="Shoes" class="rounded-xl" />
+            <img :src="vip.imageSrc" alt="Shoes" class="rounded-xl" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">{{ vip.name }}</h2>
-            <p>{{ vip.role }}</p>
+            <p>{{ vip.function }}</p>
           </div>
         </div>
       </div>
@@ -54,10 +54,9 @@
 import { onMounted, ref, type Ref } from 'vue';
 import type { Tables } from '../database/supabase';
 import { supabase } from '../supabase';
-import vipJson from '../json/vip.json';
 
 const boardPersons: Ref<Array<Tables<'BoardPersons'>>> = ref([]);
-const vips = ref(vipJson);
+const vips: Ref<Array<Tables<'Vips'>>> = ref([]);
 
 onMounted(() => {
   supabase
@@ -65,6 +64,10 @@ onMounted(() => {
     .select('*').then(response => {
       boardPersons.value = response.data || [];
     });
+
+  supabase.from('Vips').select('*').then(response => {
+    vips.value = response.data || [];
+  });
 });
 
 </script>
