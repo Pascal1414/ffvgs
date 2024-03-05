@@ -69,7 +69,10 @@ let currentList: Ref<Array<Tables<'Program'>>> = ref([])
 onMounted(() => {
   supabase
     .from('Program')
-    .select('*').then(({ data, error }) => {
+    .select('*').order(
+      'dates',
+      { ascending: true, nullsFirst: true }
+    ).then(({ data, error }) => {
       json.value = data || [];
       currentList.value = json.value
     })
