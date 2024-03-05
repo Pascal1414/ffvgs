@@ -1,5 +1,5 @@
 <template>
-    <div class="hero min-h-screen bg-base-200">
+    <div class="hero min-h-[30rem] bg-base-200">
         <div class="hero-content flex-col" :class="{ 'lg:flex-row-reverse': reversed, 'lg:flex-row': !reversed }">
             <img :src="props.images?.[0]" class="max-w-sm rounded-lg shadow-2xl" />
             <div>
