@@ -59,10 +59,8 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
-import { createClient } from '@supabase/supabase-js'
 import type { Database } from '../database/supabase';
-
-const supabase = createClient<Database>(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLIC_ANON_KEY)
+import { supabase } from '../supabase';
 
 let json: Ref<Array<Database['public']['Tables']['Program']['Row']>> = ref([])
 let currentList: Ref<Array<Database['public']['Tables']['Program']['Row']>> = ref([])
