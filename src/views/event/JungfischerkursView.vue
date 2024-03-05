@@ -5,7 +5,8 @@
     <div class="card p-10">
       <h1 class="text-3xl font-bold mb-2" style="overflow-wrap: anywhere;">2024 wird ein Jahr ohne Jungfischerkurs
       </h1>
-      <h2 class="card-title">Der lokale Fischerverein verzichtet dieses Jahr auf die Durchführung des Jungfischerkurses am
+      <h2 class="card-title">Der lokale Fischerverein verzichtet dieses Jahr auf die Durchführung des Jungfischerkurses
+        am
         Muttertags-Wochenende.
       </h2>
       <p class="py-6">Unser Grossanlässe wie der Jungfischerkurs und das Sommernachtsfest erfreuen sich sehr grosser
@@ -174,27 +175,21 @@
         </div>
     </div-->
 </template>
-<script lang="ts">
-import Slideshow from '@/components/Slideshow.vue'
 
-export default {
-  name: 'JungfischerKurs',
-  data() {
-    return {
-      images: [
-        { src: '/images/event/jungfischerkurs/festzelt.jpg', alt: 'Festzelt' },
-        { src: '/images/event/jungfischerkurs/fischen.jpg', alt: 'Fischen' },
-        { src: '/images/event/jungfischerkurs/fischen2.jpg', alt: 'Fischen' },
-        { src: '/images/event/jungfischerkurs/fischen3.jpg', alt: 'Fischen' },
-        { src: '/images/event/jungfischerkurs/schiff.jpg', alt: 'Schiff' },
-        { src: '/images/event/jungfischerkurs/schiff-close.jpg', alt: 'Schiff' },
-        { src: '/images/event/jungfischerkurs/zielschiessen.jpg', alt: 'Zielschiessen' }
-      ]
-    }
-  },
-  components: {
-    Slideshow
-  }
-}
+<script lang="ts" setup>
+import Slideshow from '@/components/Slideshow.vue'
+import { ref } from 'vue';
+
+const images = ref([
+  { src: '/images/event/jungfischerkurs/festzelt.jpg', alt: 'Festzelt' },
+  { src: '/images/event/jungfischerkurs/fischen.jpg', alt: 'Fischen' },
+  { src: '/images/event/jungfischerkurs/fischen2.jpg', alt: 'Fischen' },
+  { src: '/images/event/jungfischerkurs/fischen3.jpg', alt: 'Fischen' },
+  { src: '/images/event/jungfischerkurs/schiff.jpg', alt: 'Schiff' },
+  { src: '/images/event/jungfischerkurs/schiff-close.jpg', alt: 'Schiff' },
+  { src: '/images/event/jungfischerkurs/zielschiessen.jpg', alt: 'Zielschiessen' }
+]);
+
 </script>
+
 <style lang="css"></style>

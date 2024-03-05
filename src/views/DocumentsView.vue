@@ -33,11 +33,10 @@
     </li>
   </ul>
 </template>
-<script lang="ts">
-export default {
-  name: 'DocumentsView'
-}
+
+<script lang="ts" setup>
 </script>
+
 <style scoped>
 div {
   display: flex;

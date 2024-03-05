@@ -7,11 +7,10 @@
     </div>
   </main>
 </template>
-<script lang="ts">
-export default {
-  name: 'NotFoundView'
-}
+
+<script lang="ts" setup>
 </script>
+
 <style lang="css">
 .center {
   display: flex;

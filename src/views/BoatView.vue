@@ -16,7 +16,8 @@
     </div>
     <div class="alert shadow-lg">
       <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          class="stroke-info flex-shrink-0 w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
@@ -96,52 +97,53 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: 'BoatView',
-  mounted() {
-    const script = document.createElement('script')
-    script.src = 'https://app.calendarapp.de/loadcal.php'
-    script.async = true
-    document.body.appendChild(script)
-  },
-  data() {
-    return {
-      startTime: '',
-      endTime: '',
-      pricePerHour: 0,
-      price: 0
-    }
-  },
-  methods: {
-    calculatePrice() {
-      console.log('calculating price')
 
-      // Calculate duration of rental period in hours
-      const start = new Date(`2000-01-01T${this.startTime}`)
-      const end = new Date(`2000-01-01T${this.endTime}`)
+<script lang="ts" setup>
+import { ref, onMounted } from 'vue'
+import type { Ref } from 'vue'
 
-      if (this.endTime < this.startTime) {
-        end.setDate(end.getDate() + 1)
-      }
+const startTime: Ref<String> = ref('')
+const endTime: Ref<String> = ref('')
+const price: Ref<Number> = ref(0)
 
-      const duration = (end.getTime() - start.getTime()) / (1000 * 60 * 60)
+onMounted(() => {
+  const script = document.createElement('script')
+  script.src = 'https://app.calendarapp.de/loadcal.php'
+  script.async = true
+  document.body.appendChild(script)
+})
 
-      // loop trough each hour and calculate price
-      let price = 0
-      for (let i = 0; i < duration; i++) {
-        const hour = start.getHours() + i
-        if (hour >= 5 && hour < 19) {
-          price += 2
-        } else {
-          price += 1
-        }
-      }
-      this.price = price
+
+function calculatePrice() {
+  console.log('calculating price')
+
+  // Calculate duration of rental period in hours
+  const start = new Date(`2000-01-01T${startTime.value}`)
+  const end = new Date(`2000-01-01T${endTime.value}`)
+
+  if (endTime.value < startTime.value) {
+    end.setDate(end.getDate() + 1)
+  }
+
+  const duration = (end.getTime() - start.getTime()) / (1000 * 60 * 60)
+
+  // loop trough each hour and calculate price
+  let tmpPrice = 0
+  for (let i = 0; i < duration; i++) {
+    const hour = start.getHours() + i
+    if (hour >= 5 && hour < 19) {
+      tmpPrice += 2
+    } else {
+      tmpPrice += 1
     }
   }
+  console.log("price", price);
+
+  price.value = tmpPrice
 }
+
 </script>
+
 <style scoped>
 /* 
 .zhcal_header {

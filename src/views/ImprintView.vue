@@ -54,9 +54,8 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: 'ImprintView'
-}
+
+<script lang="ts" setup>
 </script>
+
 <script lang="ts"></script>

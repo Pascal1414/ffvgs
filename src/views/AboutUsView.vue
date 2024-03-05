@@ -49,20 +49,14 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
-import persons from '../json/board.json'
-import vips from '../json/vip.json'
 
-export default defineComponent({
-  name: 'AboutUsView',
-  data() {
-    return {
-      persons: persons,
-      vips: vips
-    }
-  },
-  components: {}
-})
+<script setup lang="ts">
+import { ref } from 'vue';
+import boardJson from '../json/board.json';
+import vipJson from '../json/vip.json';
+
+const persons = ref(boardJson);
+const vips = ref(vipJson);
 </script>
+
 <style scoped></style>

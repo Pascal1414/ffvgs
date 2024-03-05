@@ -15,34 +15,27 @@
     <slideshow class="double-item w-[50%]" :images="images" />
   </div>
 </template>
-<script lang="ts">
-import Slideshow from '@/components/Slideshow.vue'
 
-export default {
-  name: 'YoungView',
-  components: {
-    Slideshow
+<script lang="ts" setup>
+import Slideshow from '@/components/Slideshow.vue'
+import { ref } from 'vue'
+
+const images = ref([
+  {
+    src: '/images/young/jugendfischen.jpg',
+    alt: 'Image 1'
   },
-  data() {
-    return {
-      images: [
-        {
-          src: '/images/young/jugendfischen.jpg',
-          alt: 'Image 1'
-        },
-        {
-          src: '/images/young/jugendfischensteg.jpg',
-          alt: 'Image 2'
-        },
-        {
-          src: '/images/young/jugenfischenknoten.jpg',
-          alt: 'Image 3'
-        }
-      ]
-    }
+  {
+    src: '/images/young/jugendfischensteg.jpg',
+    alt: 'Image 2'
+  },
+  {
+    src: '/images/young/jugenfischenknoten.jpg',
+    alt: 'Image 3'
   }
-}
+])
 </script>
+
 <style scoped>
 @media (max-width: 1300px) {
   .double-view {

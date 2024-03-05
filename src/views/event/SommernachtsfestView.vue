@@ -32,10 +32,12 @@
           <h2 class="card-title">Samstag</h2>
           <p>Am Samstag öffnen wir unsere Fischküche, an deren Theke feine Zanderfilets im Bierteig gebacken werden. Sie
             sind in der Regel bis 22 Uhr erhältlich. Für jene Gäste, die lieber Grilladen geniessen, gibt es Würste oder
-            Steaks vom Grill. Auch Pommes Frites werden frisch zubereitet. Dazu bietet unsere Theke im Festzelt vielerlei
+            Steaks vom Grill. Auch Pommes Frites werden frisch zubereitet. Dazu bietet unsere Theke im Festzelt
+            vielerlei
             passende Getränke sowie Kaffee.</p>
           <p>
-            Weil ein sommerliches Fest am See eine fröhliche Sache ist, sorgen wir auch für musikalische Unterhaltung. Am
+            Weil ein sommerliches Fest am See eine fröhliche Sache ist, sorgen wir auch für musikalische Unterhaltung.
+            Am
             Abend spielt eine Band zum Tanz auf.
           </p>
 
@@ -58,8 +60,6 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: 'SommernachtsFest'
-}
+
+<script lang="ts" setup>
 </script>

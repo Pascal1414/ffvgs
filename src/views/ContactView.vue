@@ -38,8 +38,8 @@
                 <input type="radio" name="membership" class="radio checked:bg-red-500" required
                   :value="membership.name" />
                 <span class="label-text ml-4">{{
-                  membership.name + ' (' + membership.price + ') ' + membership.age
-                }}</span>
+              membership.name + ' (' + membership.price + ') ' + membership.age
+            }}</span>
               </label>
             </div>
           </div>
@@ -75,7 +75,8 @@
             <label class="label" for="join-zip">
               <span class="label-text">PLZ</span>
             </label>
-            <input id="join-zip" type="text" name="zip" placeholder="PLZ" class="input input-bordered w-full" required />
+            <input id="join-zip" type="text" name="zip" placeholder="PLZ" class="input input-bordered w-full"
+              required />
 
             <label class="label" for="join-place">
               <span class="label-text">Ort</span>
@@ -102,43 +103,41 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: 'ContactView',
-  components: {},
-  data() {
-    return {
-      memberships: [
-        {
-          name: 'Jungfischer',
-          price: '50.00',
-          age: 'bis 14 Jahren'
-        },
-        {
-          name: 'Junior',
-          price: '50.00',
-          age: 'ab 14 Jahren'
-        },
-        {
-          name: 'Aktivmitglied',
-          price: '120.00',
-          age: ''
-        },
-        {
-          name: 'Passivmitglied',
-          price: '50.00',
-          age: ''
-        },
-        {
-          name: 'Veteran',
-          price: '70.00',
-          age: 'Aktivmitglied ab 65 Jahren'
-        }
-      ]
-    }
+
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const memberships = ref([
+  {
+    name: 'Jungfischer',
+    price: '50.00',
+    age: 'bis 14 Jahren'
+  },
+  {
+    name: 'Junior',
+    price: '50.00',
+    age: 'ab 14 Jahren'
+  },
+  {
+    name: 'Aktivmitglied',
+    price: '120.00',
+    age: ''
+  },
+  {
+    name: 'Passivmitglied',
+    price: '50.00',
+    age: ''
+  },
+  {
+    name: 'Veteran',
+    price: '70.00',
+    age: 'Aktivmitglied ab 65 Jahren'
   }
-}
+])
+
+
 </script>
+
 <style scoped>
 @media (max-width: 600px) {
   .split-cols {
