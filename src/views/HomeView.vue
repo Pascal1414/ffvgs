@@ -15,20 +15,17 @@
 
   <div class="divider">
   </div>
-  <div v-for="article in articles">
-    <div v-if="article.images?.length">
-      <div class="sm:hero min-h-[400px] bg-base-100">
-        <div class="hero-content w-full flex-col lg:flex-row-reverse">
-          <img :src="article.images[0]" class="w-full sm:w-auto max-w-sm rounded-lg shadow-2xl" />
-          <div v-html="markdownToHtml(article.text)">
-          </div>
-        </div>
-      </div>
-    </div>
+
+  <div v-for="(article, index) in articles">
+    <HeroImage v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images"
+      v-html="marked(article.text)" />
     <div v-else>
       <div class="sm:hero min-h-[400px] bg-base-100">
-        <div class="hero-content place-items-start w-full flex-col" v-html="markdownToHtml(article.text)" />
+        <div class="hero-content place-items-start w-full flex-col" v-html="marked(article.text)" />
       </div>
+    </div>
+
+    <div class="divider">
     </div>
   </div>
 </template>
@@ -39,6 +36,8 @@ import type { Ref } from 'vue';
 import { marked } from 'marked';
 import { supabase } from '../supabase';
 import type { Tables } from '@/database/supabase';
+import HeroImage from '@/components/HeroImage.vue';
+
 
 let articles: Ref<Array<Tables<'HomeArticles'>>> = ref([])
 
@@ -52,9 +51,11 @@ onMounted(() => {
     });
 });
 
-function markdownToHtml(markdown: string) {
-  return marked(markdown)
-}
+
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  color: red;
+}
+</style>
