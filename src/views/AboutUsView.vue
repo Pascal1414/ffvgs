@@ -5,7 +5,7 @@
       <div class="board flex flex-wrap justify-around gap-[25px]">
         <div v-for="(person, index) in boardPersons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
-            <img class="h-[100%] w-[100%]" :src="person.imagesrc" alt="Album" />
+            <img class="h-[100%] w-[100%]" :src="person.imageSrc" alt="Album" />
           </figure>
           <div class="card-body w-[260px]">
             <h2 class="card-title">{{ person.name }}</h2>
