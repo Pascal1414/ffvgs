@@ -8,7 +8,7 @@ The application uses a supabase backend. You need to add the following environme
 
 ```
 VITE_SUPABASE_URL=https://<your-supabase-url>.supabase.co
-VITE_SUPABASE_PUBLIC_ANON_KEY=public-anon-key
+VITE_SUPABASE_KEY=public-anon-key
 ```
 
 It can be found in the supabase dashboard under the API section.
