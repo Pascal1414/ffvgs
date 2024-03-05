@@ -3,9 +3,9 @@
     <div class="card-body">
       <h1 class="text-4xl font-bold mb-4 flex justify-center">Vorstand</h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
-        <div v-for="(person, index) in persons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
+        <div v-for="(person, index) in boardPersons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
-            <img class="h-[100%] w-[100%]" :src="person.image" alt="Album" />
+            <img class="h-[100%] w-[100%]" :src="person.imagesrc" alt="Album" />
           </figure>
           <div class="card-body w-[260px]">
             <h2 class="card-title">{{ person.name }}</h2>
@@ -51,12 +51,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import boardJson from '../json/board.json';
+import { onMounted, ref, type Ref } from 'vue';
+import type { Tables } from '../database/supabase';
+import { supabase } from '../supabase';
 import vipJson from '../json/vip.json';
 
-const persons = ref(boardJson);
+const boardPersons: Ref<Array<Tables<'BoardPersons'>>> = ref([]);
 const vips = ref(vipJson);
+
+onMounted(() => {
+  supabase
+    .from('BoardPersons')
+    .select('*').then(response => {
+      boardPersons.value = response.data || [];
+    });
+});
+
 </script>
 
 <style scoped></style>
