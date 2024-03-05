@@ -21,12 +21,6 @@ The database schema can be found in the [database.types.ts](src\database.types.t
 
 The policies can be found in the [supabase-policies.sql](Database/supabase-policies.sql) file.
 
-### Buckets
-
-Supabase Buckets are used to store images. The following buckets are used:
-
-#### AboutUsImages (public)
-
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
