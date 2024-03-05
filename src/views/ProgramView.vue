@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col items-center">
-    <h1 class="text-4xl font-bold mb-4">Programm</h1>
+    <h1 class="text-4xl font-bold mb-4">Program</h1>
     <div class="form-control">
       <label for="role" class="label">
-        <span class="label-text">Programm nach Mitgliedschaft anzeigen:</span>
+        <span class="label-text">Program nach Mitgliedschaft anzeigen:</span>
       </label>
       <select class="select select-bordered max-w-xs mb-4" name="mitgliedschaft" id="role"
         @change="selectionChanged($event)">
@@ -26,17 +26,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(programmItem, index) in currentList">
+        <tr v-for="programItem in currentList">
           <th>
             <svg width="27px" height="27px" viewBox="0 0 32 32" class="" xmlns="http://www.w3.org/2000/svg">
-              <path v-if="alreadyHappened(programmItem)" class="fill-base-content"
+              <path v-if="alreadyHappened(programItem)" class="fill-base-content"
                 d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z" />
             </svg>
           </th>
-          <td>{{ programmItem.name }}</td>
+          <td>{{ programItem.name }}</td>
           <td>
             <div class="dates">
-              <div v-for="(date, index) in programmItem.dates" :key="index">{{ formatDate(date) }}</div>
+              <div v-for="(date, index) in programItem.dates" :key="index">{{ formatDate(date) }}</div>
             </div>
           </td>
         </tr>
@@ -57,43 +57,29 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent, onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import type { Ref } from 'vue'
 import { createClient } from '@supabase/supabase-js'
-//import { Database } from '../database.types'
+import type { Database } from '../database/supabase';
 
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLIC_ANON_KEY)
+const supabase = createClient<Database>(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLIC_ANON_KEY)
 
-
-let json = ref([])
-let currentList = ref([])
+let json: Ref<Array<Database['public']['Tables']['Program']['Row']>> = ref([])
+let currentList: Ref<Array<Database['public']['Tables']['Program']['Row']>> = ref([])
 
 
 onMounted(() => {
-
   supabase
     .from('Program')
     .select('*').then(({ data, error }) => {
-      console.log(data, error);
-
-      json = data
-      currentList = json
+      json.value = data || [];
+      currentList.value = json.value
     })
-  currentList.value = json
-
 })
 
-function setFocusOnNextEvent() {
-  for (let i = 0; i < currentList.length; i++) {
-    if (!alreadyHappened.currentList[i])) {
-      let element = document.getElementById(String(i))
-      element?.scrollIntoView()
-      break
-    }
-  }
-}
-function alreadyHappened(programmItem: any): boolean {
-  if (programmItem.dates === null || programmItem.dates.length === 0) return false
-  for (let date of programmItem.dates) if (new Date(date) > new Date()) return false
+function alreadyHappened(programItem: any): boolean {
+  if (programItem.dates === null || programItem.dates.length === 0) return false
+  for (let date of programItem.dates) if (new Date(date) > new Date()) return false
   return true
 }
 function formatDate(date: string): string {
@@ -102,29 +88,25 @@ function formatDate(date: string): string {
 function selectionChanged(event: Event) {
   switch ((event.target as HTMLInputElement).value) {
     case 'junioren':
-      currentList = json.filter((i) => i.forJunior)
+      currentList.value = json.value.filter((i) => i.forJunior)
       break
     case 'alle':
-      currentList = json.filter((i) => i.forAll)
+      currentList.value = json.value.filter((i) => i.forAll)
       break
     case 'jugendgruppe':
-      currentList = json.filter((i) => i.forJugendGroup)
+      currentList.value = json.value.filter((i) => i.forJugendGroup)
       break
 
     default:
       currentList = json
-
       break
   }
-
-  console.log(currentList)
 }
-
 
 </script>
 
 <style scoped>
-#programm-table {
+#program-table {
   padding: 0;
   list-style: none;
 }

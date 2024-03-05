@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/HomeView.vue'
-import Programm from '../views/ProgrammView.vue'
+import Programm from '../views/ProgramView.vue'
 import Contact from '../views/ContactView.vue'
 import Gallery from '../views/GalleryView.vue'
 import Boat from '../views/BoatView.vue'
