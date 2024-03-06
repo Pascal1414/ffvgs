@@ -14,6 +14,7 @@ import Somemrnachtsfest from '../views/event/SommernachtsfestView.vue'
 import Jungfischerkurs from '../views/event/JungfischerkursView.vue'
 import Login from '../views/LoginView.vue'
 import ResetPassword from '../views/ResetPasswordView.vue'
+import SetPassword from '../views/SetPasswordView.vue'
 import NotFound from '../views/NotFoundView.vue'
 
 const router = createRouter({
@@ -91,6 +92,11 @@ const router = createRouter({
       component: ResetPassword
     },
     {
+      path: '/set-password',
+      name: 'SetPassword',
+      component: SetPassword
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: NotFound
@@ -105,6 +111,16 @@ const router = createRouter({
     } else {
       return { x: 0, y: 0 }
     }
+  }
+})
+
+router.beforeEach((to, from, next) => {
+  console.log(to)
+
+  if (to.hash.startsWith('#access_token')) {
+    next('/set-password')
+  } else {
+    next()
   }
 })
 

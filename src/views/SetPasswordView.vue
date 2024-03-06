@@ -9,17 +9,17 @@
             </div>
             <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <form class="card-body" @submit.prevent="submitForm">
-                    <div class=" form-control">
+                    <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Email</span>
+                            <span class="label-text">Password</span>
                         </label>
-                        <input type="email" placeholder="email" class="input input-bordered" required />
+                        <input type="password" placeholder="password" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                         <p class="text-error">{{ error }}</p>
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Login</button>
+                        <button class="btn btn-primary">Update Password</button>
                     </div>
                 </form>
             </div>
@@ -28,7 +28,6 @@
 </template>
 
 <script lang="ts" setup>
-
 import { ref } from 'vue';
 import { supabase } from '@/supabase';
 import router from '@/router';
@@ -40,20 +39,17 @@ let error = ref('');
 function submitForm() {
     error.value = ""
 
-    const email = (document.querySelector('input[type="email"]') as HTMLInputElement).value;
+    const password = (document.querySelector('input[type="password"]') as HTMLInputElement).value;
 
-    supabase.auth.resetPasswordForEmail(email).then((data) => {
-        console.log("Error", data);
-
+    supabase.auth.updateUser({
+        password: password
+    }).then((data, resError) => {
         if (data.error) {
             error.value = data.error.message;
             return;
         }
 
-        // Redirect to login
-        router.push('/');
+        router.push({ name: 'login' });
     });
 }
 </script>
-
-<style scoped></style>
