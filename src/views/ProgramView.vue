@@ -13,6 +13,7 @@
         <option value="jugendgruppe">Jugendgruppe</option>
       </select>
     </div>
+    <button class="btn btn-primary" @click="startCreateMode">Neues Programm</button>
   </div>
 
   <div class="overflow-x-auto">
@@ -23,6 +24,7 @@
           <th>Done</th>
           <th>Name</th>
           <th>Date</th>
+          <th>Controll</th>
         </tr>
       </thead>
       <tbody>
@@ -38,6 +40,9 @@
             <div class="dates">
               <div v-for="(date, index) in programItem.dates" :key="index">{{ formatDate(date) }}</div>
             </div>
+          </td>
+          <td>
+            <button class="btn btn-neutral" @click="startEditMode(programItem)">Edit</button>
           </td>
         </tr>
       </tbody>
@@ -66,7 +71,7 @@
       <label class="label">
         <span class="label-text">Beschreibung</span>
       </label>
-      <textarea v-model="description" class="textarea textarea-bordered" placeholder="Beschreibung" required></textarea>
+      <textarea v-model="description" class="textarea textarea-bordered" placeholder="Beschreibung"></textarea>
     </div>
 
     <div class="form-control">
@@ -75,16 +80,23 @@
           <div class="card bg-base-200 shadow-xl h-min">
             <div class="flex p-3 flex-row gap-5">
               <p>{{ date }}</p>
-              <button class="btn btn-error btn-xs" @click="onRemoveDate(index)">Remove</button>
+              <button type="button" class="btn btn-error btn-xs" @click="onRemoveDate(index)">Remove</button>
             </div>
           </div>
         </div>
       </div>
 
-      <form @submit.prevent="onAddDate" class="flex  flex-row gap-2">
+      <div class="flex  flex-row gap-2">
         <input type="date" class="input input-bordered" />
-        <button class="btn btn-primary">Add</button>
-      </form>
+        <button class="btn btn-square btn-outline" @click="onAddDate()">
+          <div class="rotate-45">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+        </button>
+      </div>
     </div>
 
     <div class="form-control flex-row justify-evenly ">
@@ -105,7 +117,7 @@
 
 
     <div class="form-control mt-6">
-      <button class="btn btn-primary">{{ confirmButtonText }}</button>
+      <button type="submit" class="btn btn-primary">{{ confirmButtonText }}</button>
     </div>
   </form>
 </template>
@@ -120,9 +132,10 @@ let programs: Ref<Array<Tables<'Program'>>> = ref([])
 let currentList: Ref<Array<Tables<'Program'>>> = ref([])
 
 /* Add and Edit */
-let formVisible = ref(true)
-let confirmButtonText = ref('Hinzufügen')
+let formVisible = ref(false)
+let confirmButtonText = ref('')
 let isEditing = ref(false)
+let editProgram: Ref<Tables<'Program'> | null> = ref(null)
 let error = ref('')
 
 /* Values */
@@ -139,12 +152,57 @@ function onAddDate() {
   if (date === '') return
   dates.value.push(date)
   dateElement.value = ''
+  return false
 }
 function onRemoveDate(index: number) {
   dates.value.splice(index, 1)
 }
+
+function startCreateMode() {
+  formVisible.value = true
+  confirmButtonText.value = 'Hinzufügen'
+  isEditing.value = false
+  resetForm()
+}
+
+function startEditMode(program: Tables<'Program'>) {
+  editProgram.value = program
+  formVisible.value = true
+  confirmButtonText.value = 'Speichern'
+  isEditing.value = true
+  name.value = program.name
+  description.value = program.description
+  dates.value = program.dates
+  forAll.value = program.forAll
+  forJunior.value = program.forJunior
+  forJugendGroup.value = program.forJugendGroup
+}
+
 async function formSubmit() {
+
   if (isEditing.value) {
+    if (editProgram.value == null) {
+      error.value = 'Program not found'
+      return
+    }
+    const { data, error } = await supabase
+      .from('Program')
+      .update({
+        name: name.value,
+        description: description.value,
+        dates: dates.value,
+        forAll: forAll.value,
+        forJunior: forJunior.value,
+        forJugendGroup: forJugendGroup.value
+      })
+      .eq('id', editProgram.value.id)
+      .select()
+    if (error) {
+      error.value = error.message
+      return
+    }
+    const index = programs.value.findIndex((i) => i.id === editProgram.value.id)
+    programs.value[index] = data[0]
 
   } else {
     const { data, error } = await supabase
@@ -164,8 +222,8 @@ async function formSubmit() {
       error.value = error.message
       return
     }
+    programs.value.push(data[0])
   }
-
   resetForm()
 }
 function resetForm() {
