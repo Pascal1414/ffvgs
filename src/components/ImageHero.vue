@@ -4,7 +4,7 @@
             :class="{ 'lg:flex-row-reverse': reversed, 'lg:flex-row': !reversed, 'lg:justify-between': reversed, 'lg:justify-start': !reversed }">
             <img v-if="props.images?.length == 1" :src="props.images?.[0]"
                 class="w-full max-w-sm rounded-lg shadow-2xl" />
-            <div v-else class="w-full lg:w-1/2">
+            <div v-else>
                 <Slideshow :images="getImagesForSlideshow()" class="slideshow" />
             </div>
             <div>
