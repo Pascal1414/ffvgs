@@ -49,28 +49,4 @@ onMounted(() => {
 
 </script>
 
-<style scoped>
-.marked:deep(h1) {
-  @apply text-4xl font-bold;
-}
-
-.marked:deep(h2) {
-  @apply text-3xl font-bold;
-}
-
-.marked:deep(h3) {
-  @apply text-2xl font-bold;
-}
-
-.marked:deep(h4) {
-  @apply text-xl font-bold;
-}
-
-.marked:deep(p) {
-  @apply py-6
-}
-
-.marked:deep(a) {
-  @apply link link-primary
-}
-</style>
+<style scoped src="../css/marked.css"></style>
