@@ -5,8 +5,8 @@
       <label for="role" class="label">
         <span class="label-text">Program nach Mitgliedschaft anzeigen:</span>
       </label>
-      <select class="select select-bordered max-w-xs mb-4" name="mitgliedschaft" id="role"
-        @change="selectionChanged($event)">
+      <select ref="selectionSelect" class="select select-bordered max-w-xs mb-4" name="mitgliedschaft" id="role"
+        @change="updateVisibleProgramsToInputField()">
         <option value="none" selected>Alles anzeigen</option>
         <option value="alle">Alle Mitglieder</option>
         <option value="junioren">Junioren</option>
@@ -28,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="programItem in currentList">
+        <tr v-for="programItem in currentList" :key="programItem.id">
           <th>
             <svg width="27px" height="27px" viewBox="0 0 32 32" class="" xmlns="http://www.w3.org/2000/svg">
               <path v-if="alreadyHappened(programItem)" class="fill-base-content"
@@ -76,7 +76,7 @@
 
     <div class="form-control">
       <div class="flex flex-row gap-2 flex-wrap mb-3">
-        <div v-for="(date, index) in dates" class="flex gap-3">
+        <div v-for="(date, index) in dates" :key="index" class="flex gap-3">
           <div class="card bg-base-200 shadow-xl h-min">
             <div class="flex p-3 flex-row gap-5">
               <p>{{ date }}</p>
@@ -102,20 +102,20 @@
     <div class="form-control flex-row justify-evenly ">
       <label class="label cursor-pointer flex-col gap-2">
         <span class="label-text">Für Alle</span>
-        <input v-model="forAll" type="checkbox" checked="checked" class="checkbox" />
+        <input v-model="forAll" type="checkbox" class="checkbox" />
       </label>
       <label class="label cursor-pointer flex-col gap-2">
         <span class="label-text">Für Junioren</span>
-        <input v-model="forJunior" type="checkbox" checked="checked" class="checkbox" />
+        <input v-model="forJunior" type="checkbox" class="checkbox" />
       </label>
       <label class="label cursor-pointer flex-col gap-2">
         <span class="label-text">Für Jugendgruppe</span>
-        <input v-model="forJugendGroup" type="checkbox" checked="checked" class="checkbox" />
+        <input v-model="forJugendGroup" type="checkbox" class="checkbox" />
       </label>
     </div>
 
     <div class="form-control">
-      <p class="text-error">{{ error }}</p>
+      <p class="text-error">{{ errorRef }}</p>
     </div>
 
 
@@ -133,6 +133,7 @@ import { supabase } from '../supabase';
 
 let programs: Ref<Array<Tables<'Program'>>> = ref([])
 let currentList: Ref<Array<Tables<'Program'>>> = ref([])
+let selectionSelect: Ref<HTMLInputElement | undefined> = ref(undefined)
 
 /* Add and Edit */
 let formVisible = ref(false)
@@ -141,7 +142,7 @@ let isEditing = ref(false)
 let editProgram: Ref<Tables<'Program'> | null> = ref(null)
 const dateElement: Ref<HTMLInputElement | undefined> = ref(undefined)
 
-let error = ref('')
+let errorRef = ref('')
 
 /* Values */
 let dates: Ref<Array<string>> = ref([])
@@ -177,18 +178,18 @@ function startEditMode(program: Tables<'Program'>) {
   confirmButtonText.value = 'Speichern'
   isEditing.value = true
   name.value = program.name
-  description.value = program.description
-  dates.value = program.dates
-  forAll.value = program.forAll
-  forJunior.value = program.forJunior
-  forJugendGroup.value = program.forJugendGroup
+  description.value = program.description || ''
+  dates.value = program.dates ? [...program.dates] : []
+  forAll.value = program.forAll || false
+  forJunior.value = program.forJunior || false
+  forJugendGroup.value = program.forJugendGroup || false
 }
 
 async function formSubmit() {
 
   if (isEditing.value) {
     if (editProgram.value == null) {
-      error.value = 'Program not found'
+      errorRef.value = 'Program not found'
       return
     }
     const { data, error } = await supabase
@@ -204,10 +205,10 @@ async function formSubmit() {
       .eq('id', editProgram.value.id)
       .select()
     if (error) {
-      error.value = error.message
+      errorRef.value = error.message
       return
     }
-    const index = programs.value.findIndex((i) => i.id === editProgram.value.id)
+    const index = programs.value.findIndex((i) => i.id === editProgram.value?.id)
     programs.value[index] = data[0]
 
   } else {
@@ -225,10 +226,11 @@ async function formSubmit() {
       ])
       .select()
     if (error) {
-      error.value = error.message
+      errorRef.value = error.message
       return
     }
     programs.value.push(data[0])
+    updateVisibleProgramsToInputField()
   }
   resetForm()
 }
@@ -248,9 +250,9 @@ onMounted(() => {
     .select('*').order(
       'dates',
       { ascending: true, nullsFirst: true }
-    ).then(({ data, error }) => {
+    ).then(({ data }) => {
       programs.value = data || [];
-      currentList.value = programs.value
+      currentList.value = [...programs.value]
     })
 })
 
@@ -262,8 +264,8 @@ function alreadyHappened(programItem: any): boolean {
 function formatDate(date: string): string {
   return new Date(date).toLocaleDateString('ch-DE')
 }
-function selectionChanged(event: Event) {
-  switch ((event.target as HTMLInputElement).value) {
+function updateVisibleProgramsToInputField() {
+  switch (selectionSelect.value?.value) {
     case 'junioren':
       currentList.value = programs.value.filter((i) => i.forJunior)
       break
