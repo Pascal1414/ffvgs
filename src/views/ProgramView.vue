@@ -114,6 +114,9 @@
       </label>
     </div>
 
+    <div class="form-control">
+      <p class="text-error">{{ error }}</p>
+    </div>
 
 
     <div class="form-control mt-6">
