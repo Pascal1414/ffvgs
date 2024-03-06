@@ -43,7 +43,7 @@
       </tbody>
     </table>
   </div>
-  <div class="alert alert-info shadow-lg mt-4">
+  <div class="alert alert-info shadow-lg mt-4" v-if="!editMode">
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
         class="stroke-current flex-shrink-0 w-6 h-6">
@@ -54,6 +54,60 @@
         angekündigt.</span>
     </div>
   </div>
+  <form class=" card-body" v-if="editMode">
+    <div class=" form-control">
+      <label class="label">
+        <span class="label-text">Name</span>
+      </label>
+      <input type="text" placeholder="Name" class="input input-bordered" required />
+    </div>
+
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Beschreibung</span>
+      </label>
+      <textarea class="textarea textarea-bordered" placeholder="Beschreibung" required></textarea>
+    </div>
+
+    <div class="form-control">
+      <div class="flex flex-row gap-2 flex-wrap mb-3">
+        <div v-for="(date, index) in dates" class="flex gap-3">
+          <div class="card bg-base-200 shadow-xl h-min">
+            <div class="flex p-3 flex-row gap-5">
+              <p>{{ date }}</p>
+              <button class="btn btn-error btn-xs" @click="onRemoveDate(index)">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form @submit.prevent="onAddDate" class="flex  flex-row gap-2">
+        <input type="date" class="input input-bordered" />
+        <button class="btn btn-primary">Add</button>
+      </form>
+    </div>
+
+    <div class="form-control flex-row justify-evenly ">
+      <label class="label cursor-pointer flex-col gap-2">
+        <span class="label-text">Jugenggruppe</span>
+        <input type="checkbox" checked="checked" class="checkbox" />
+      </label>
+      <label class="label cursor-pointer flex-col gap-2">
+        <span class="label-text">Jugenggruppe</span>
+        <input type="checkbox" checked="checked" class="checkbox" />
+      </label>
+      <label class="label cursor-pointer flex-col gap-2">
+        <span class="label-text">Jugenggruppe</span>
+        <input type="checkbox" checked="checked" class="checkbox" />
+      </label>
+    </div>
+
+
+
+    <div class="form-control mt-6">
+      <button class="btn btn-primary">{{ confirmButtonText }}</button>
+    </div>
+  </form>
 </template>
 
 <script lang="ts" setup>
@@ -64,6 +118,23 @@ import { supabase } from '../supabase';
 
 let programs: Ref<Array<Tables<'Program'>>> = ref([])
 let currentList: Ref<Array<Tables<'Program'>>> = ref([])
+
+/* Add and Edit */
+let editMode = ref(true)
+let confirmButtonText = ref('Hinzufügen')
+/* Values */
+let dates: Ref<Array<string>> = ref([])
+
+function onAddDate() {
+  const dateElement = (document.querySelector('input[type="date"]') as HTMLInputElement)
+  const date = dateElement?.value
+  if (date === '') return
+  dates.value.push(date)
+  dateElement.value = ''
+}
+function onRemoveDate(index: number) {
+  dates.value.splice(index, 1)
+}
 
 
 onMounted(() => {
