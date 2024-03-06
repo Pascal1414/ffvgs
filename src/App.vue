@@ -13,6 +13,7 @@ import NavBar from './components/NavBar.vue'
         <span class="footer-title">Links</span>
         <router-link to="/impressum">Impressum</router-link>
         <router-link to="/dokumente">Dokumente</router-link>
+        <router-link to="/login">Anmelden</router-link>
       </div>
       <div>
         <span class="footer-title">Events</span>
@@ -91,6 +92,7 @@ import NavBar from './components/NavBar.vue'
     </footer>
   </NavBar>
 </template>
+
 <script lang="ts">
 export default {
   data() {
