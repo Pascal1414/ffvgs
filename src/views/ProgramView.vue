@@ -87,7 +87,7 @@
       </div>
 
       <div class="flex  flex-row gap-2">
-        <input type="date" class="input input-bordered" />
+        <input ref="dateElement" type="date" class="input input-bordered" />
         <button class="btn btn-square btn-outline" @click="onAddDate()">
           <div class="rotate-45">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -139,6 +139,8 @@ let formVisible = ref(false)
 let confirmButtonText = ref('')
 let isEditing = ref(false)
 let editProgram: Ref<Tables<'Program'> | null> = ref(null)
+const dateElement: Ref<HTMLInputElement | undefined> = ref(undefined)
+
 let error = ref('')
 
 /* Values */
@@ -150,11 +152,12 @@ let forJunior: Ref<boolean> = ref(false)
 let forJugendGroup: Ref<boolean> = ref(false)
 
 function onAddDate() {
-  const dateElement = (document.querySelector('input[type="date"]') as HTMLInputElement)
-  const date = dateElement?.value
+  if (!dateElement.value)
+    return
+  const date = dateElement?.value?.value
   if (date === '') return
   dates.value.push(date)
-  dateElement.value = ''
+  dateElement.value.value = '';
   return false
 }
 function onRemoveDate(index: number) {
