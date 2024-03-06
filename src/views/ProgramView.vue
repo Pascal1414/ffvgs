@@ -62,7 +62,7 @@ import type { Ref } from 'vue'
 import type { Tables } from '../database/supabase';
 import { supabase } from '../supabase';
 
-let json: Ref<Array<Tables<'Program'>>> = ref([])
+let programs: Ref<Array<Tables<'Program'>>> = ref([])
 let currentList: Ref<Array<Tables<'Program'>>> = ref([])
 
 
@@ -73,8 +73,8 @@ onMounted(() => {
       'dates',
       { ascending: true, nullsFirst: true }
     ).then(({ data, error }) => {
-      json.value = data || [];
-      currentList.value = json.value
+      programs.value = data || [];
+      currentList.value = programs.value
     })
 })
 
@@ -89,17 +89,17 @@ function formatDate(date: string): string {
 function selectionChanged(event: Event) {
   switch ((event.target as HTMLInputElement).value) {
     case 'junioren':
-      currentList.value = json.value.filter((i) => i.forJunior)
+      currentList.value = programs.value.filter((i) => i.forJunior)
       break
     case 'alle':
-      currentList.value = json.value.filter((i) => i.forAll)
+      currentList.value = programs.value.filter((i) => i.forAll)
       break
     case 'jugendgruppe':
-      currentList.value = json.value.filter((i) => i.forJugendGroup)
+      currentList.value = programs.value.filter((i) => i.forJugendGroup)
       break
 
     default:
-      currentList = json
+      currentList.value = programs.value;
       break
   }
 }
