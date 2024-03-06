@@ -13,7 +13,6 @@
     </div>
   </div>
 
-
   <div v-for="(article, index) in  articles ">
     <div class="divider" />
     <HeroImage v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images">
@@ -21,7 +20,7 @@
     </HeroImage>
     <div v-else>
       <div class="sm:hero min-h-[400px]">
-        <div class="hero-content place-items-start w-full flex-col" v-html="marked(article.text)" />
+        <div class="hero-content place-items-start w-full flex-col marked" v-html="marked(article.text)" />
       </div>
     </div>
   </div>
@@ -51,7 +50,27 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.marked>>>h1 {
-  color: red;
+.marked:deep(h1) {
+  @apply text-4xl font-bold;
+}
+
+.marked:deep(h2) {
+  @apply text-3xl font-bold;
+}
+
+.marked:deep(h3) {
+  @apply text-2xl font-bold;
+}
+
+.marked:deep(h4) {
+  @apply text-xl font-bold;
+}
+
+.marked:deep(p) {
+  @apply py-6
+}
+
+.marked:deep(a) {
+  @apply link link-primary
 }
 </style>
