@@ -15,9 +15,9 @@
 
   <div v-for="(article, index) in  articles ">
     <div class="divider" />
-    <HeroImage v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images">
+    <ImageHero v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images">
       <div class="marked" v-html="marked(article.text)" />
-    </HeroImage>
+    </ImageHero>
     <div v-else>
       <div class="sm:hero min-h-[400px]">
         <div class="hero-content place-items-start w-full flex-col marked" v-html="marked(article.text)" />
@@ -32,7 +32,7 @@ import type { Ref } from 'vue';
 import { marked } from 'marked';
 import { supabase } from '../supabase';
 import type { Tables } from '@/database/supabase';
-import HeroImage from '@/components/HeroImage.vue';
+import ImageHero from '@/components/ImageHero.vue';
 
 
 let articles: Ref<Array<Tables<'HomeArticles'>>> = ref([])
