@@ -188,7 +188,7 @@ function startEditMode(program: Tables<'Program'>) {
 async function formSubmit() {
 
   if (isEditing.value) {
-    if (editProgram.value == null) {
+    if (!editProgram.value) {
       errorRef.value = 'Program not found'
       return
     }
@@ -208,8 +208,13 @@ async function formSubmit() {
       errorRef.value = error.message
       return
     }
-    const index = programs.value.findIndex((i) => i.id === editProgram.value?.id)
-    programs.value[index] = data[0]
+
+    // Update the program in the list
+    const updatedElement = data[0]
+    const index = programs.value.findIndex((i: Tables<'Program'>) => i.id === updatedElement.id)
+    programs.value[index] = updatedElement
+    updateVisibleProgramsToInputField()
+
 
   } else {
     const { data, error } = await supabase
