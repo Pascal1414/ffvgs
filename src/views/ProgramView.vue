@@ -43,7 +43,7 @@
       </tbody>
     </table>
   </div>
-  <div class="alert alert-info shadow-lg mt-4" v-if="!editMode">
+  <div class="alert alert-info shadow-lg mt-4" v-if="!formVisible">
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
         class="stroke-current flex-shrink-0 w-6 h-6">
@@ -54,19 +54,19 @@
         angekündigt.</span>
     </div>
   </div>
-  <form class=" card-body" v-if="editMode">
+  <form class=" card-body" v-if="formVisible" @submit.prevent="formSubmit">
     <div class=" form-control">
       <label class="label">
         <span class="label-text">Name</span>
       </label>
-      <input type="text" placeholder="Name" class="input input-bordered" required />
+      <input v-model="name" type="text" placeholder="Name" class="input input-bordered" required />
     </div>
 
     <div class="form-control">
       <label class="label">
         <span class="label-text">Beschreibung</span>
       </label>
-      <textarea class="textarea textarea-bordered" placeholder="Beschreibung" required></textarea>
+      <textarea v-model="description" class="textarea textarea-bordered" placeholder="Beschreibung" required></textarea>
     </div>
 
     <div class="form-control">
@@ -89,16 +89,16 @@
 
     <div class="form-control flex-row justify-evenly ">
       <label class="label cursor-pointer flex-col gap-2">
-        <span class="label-text">Jugenggruppe</span>
-        <input type="checkbox" checked="checked" class="checkbox" />
+        <span class="label-text">Für Alle</span>
+        <input v-model="forAll" type="checkbox" checked="checked" class="checkbox" />
       </label>
       <label class="label cursor-pointer flex-col gap-2">
-        <span class="label-text">Jugenggruppe</span>
-        <input type="checkbox" checked="checked" class="checkbox" />
+        <span class="label-text">Für Junioren</span>
+        <input v-model="forJunior" type="checkbox" checked="checked" class="checkbox" />
       </label>
       <label class="label cursor-pointer flex-col gap-2">
-        <span class="label-text">Jugenggruppe</span>
-        <input type="checkbox" checked="checked" class="checkbox" />
+        <span class="label-text">Für Jugendgruppe</span>
+        <input v-model="forJugendGroup" type="checkbox" checked="checked" class="checkbox" />
       </label>
     </div>
 
@@ -120,10 +120,18 @@ let programs: Ref<Array<Tables<'Program'>>> = ref([])
 let currentList: Ref<Array<Tables<'Program'>>> = ref([])
 
 /* Add and Edit */
-let editMode = ref(true)
+let formVisible = ref(true)
 let confirmButtonText = ref('Hinzufügen')
+let isEditing = ref(false)
+let error = ref('')
+
 /* Values */
 let dates: Ref<Array<string>> = ref([])
+let name: Ref<string> = ref('')
+let description: Ref<string> = ref('')
+let forAll: Ref<boolean> = ref(false)
+let forJunior: Ref<boolean> = ref(false)
+let forJugendGroup: Ref<boolean> = ref(false)
 
 function onAddDate() {
   const dateElement = (document.querySelector('input[type="date"]') as HTMLInputElement)
@@ -134,6 +142,39 @@ function onAddDate() {
 }
 function onRemoveDate(index: number) {
   dates.value.splice(index, 1)
+}
+async function formSubmit() {
+  if (isEditing.value) {
+
+  } else {
+    const { data, error } = await supabase
+      .from('Program')
+      .insert([
+        {
+          name: name.value,
+          description: description.value,
+          dates: dates.value,
+          forAll: forAll.value,
+          forJunior: forJunior.value,
+          forJugendGroup: forJugendGroup.value
+        },
+      ])
+      .select()
+    if (error) {
+      error.value = error.message
+      return
+    }
+  }
+
+  resetForm()
+}
+function resetForm() {
+  name.value = ''
+  description.value = ''
+  dates.value = []
+  forAll.value = false
+  forJunior.value = false
+  forJugendGroup.value = false
 }
 
 
