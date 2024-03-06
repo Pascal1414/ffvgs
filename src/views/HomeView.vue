@@ -16,17 +16,16 @@
   <div class="divider">
   </div>
 
-  <div v-for="(article, index) in articles">
-    <HeroImage v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images"
-      v-html="marked(article.text)" />
+  <div v-for="(article, index) in  articles ">
+    <HeroImage v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images">
+      <div v-html="marked(article.text)" />
+    </HeroImage>
     <div v-else>
-      <div class="sm:hero min-h-[400px] bg-base-100">
+      <div class="sm:hero min-h-[400px]">
         <div class="hero-content place-items-start w-full flex-col" v-html="marked(article.text)" />
       </div>
     </div>
-
-    <div class="divider">
-    </div>
+    <div class="divider" />
   </div>
 </template>
 
@@ -50,7 +49,6 @@ onMounted(() => {
       articles.value = data || []
     });
 });
-
 
 </script>
 
