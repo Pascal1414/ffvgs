@@ -13,10 +13,9 @@
     </div>
   </div>
 
-  <div class="divider">
-  </div>
 
   <div v-for="(article, index) in  articles ">
+    <div class="divider" />
     <HeroImage v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images">
       <div v-html="marked(article.text)" />
     </HeroImage>
@@ -25,7 +24,6 @@
         <div class="hero-content place-items-start w-full flex-col" v-html="marked(article.text)" />
       </div>
     </div>
-    <div class="divider" />
   </div>
 </template>
 
