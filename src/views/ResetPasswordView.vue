@@ -19,7 +19,7 @@
                         <p class="text-error">{{ error }}</p>
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Login</button>
+                        <button class="btn btn-primary">Reset Password</button>
                     </div>
                 </form>
             </div>
