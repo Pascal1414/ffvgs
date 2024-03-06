@@ -13,6 +13,7 @@ import Documents from '../views/DocumentsView.vue'
 import Somemrnachtsfest from '../views/event/SommernachtsfestView.vue'
 import Jungfischerkurs from '../views/event/JungfischerkursView.vue'
 import Login from '../views/LoginView.vue'
+import ResetPassword from '../views/ResetPasswordView.vue'
 import NotFound from '../views/NotFoundView.vue'
 
 const router = createRouter({
@@ -83,6 +84,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/reset-password',
+      name: 'ResetPassword',
+      component: ResetPassword
     },
     {
       path: '/:pathMatch(.*)*',

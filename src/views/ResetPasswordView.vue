@@ -2,8 +2,9 @@
     <div class="hero min-h-[700px]">
         <div class="hero-content flex-col lg:flex-row-reverse gap-12">
             <div class="text-center lg:text-left">
-                <h1 class="text-5xl font-bold">Login</h1>
-                <p class="py-6">Das Login ermöglicht es einem Administrator änderungen an der Webseite durchzuführen.
+                <h1 class="text-5xl font-bold">Reset Password</h1>
+                <p class="py-6">Wenn du dein Password vergessen hast kannst du es hier zurücksetzen. Es wird ein Email
+                    mit einem Link gesendet worüber das Passwort zurückgesetzt werden kann.
                 </p>
             </div>
             <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -13,16 +14,6 @@
                             <span class="label-text">Email</span>
                         </label>
                         <input type="email" placeholder="email" class="input input-bordered" required />
-                    </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Password</span>
-                        </label>
-                        <input type="password" placeholder="password" class="input input-bordered" required />
-                        <label class="label">
-                            <router-link to="reset-password" class="label-text-alt link link-hover">Forgot
-                                password?</router-link>
-                        </label>
                     </div>
                     <div class="form-control">
                         <p class="text-error">{{ error }}</p>
@@ -37,33 +28,30 @@
 </template>
 
 <script lang="ts" setup>
+
 import { ref } from 'vue';
 import { supabase } from '@/supabase';
 import router from '@/router';
 
+
 let error = ref('');
+
 
 function submitForm() {
     error.value = ""
 
-    const email = document.querySelector('input[type="email"]').value;
-    const password = document.querySelector('input[type="password"]').value;
+    const email = (document.querySelector('input[type="email"]') as HTMLInputElement).value;
 
-    supabase.auth.signInWithPassword({
-        email: email,
-        password: password
-    }).then((data, resError) => {
+    supabase.auth.resetPasswordForEmail(email).then((data) => {
         console.log("Error", data);
 
         if (data.error) {
             error.value = data.error.message;
             return;
-        } else {
-            // navigate to index page
-            console.log("Login success");
-            router.push('/');
-
         }
+
+        // Redirect to login
+        router.push('Login');
     });
 }
 </script>
