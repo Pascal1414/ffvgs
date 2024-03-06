@@ -17,7 +17,7 @@
   <div v-for="(article, index) in  articles ">
     <div class="divider" />
     <HeroImage v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images">
-      <div v-html="marked(article.text)" />
+      <div class="marked" v-html="marked(article.text)" />
     </HeroImage>
     <div v-else>
       <div class="sm:hero min-h-[400px]">
@@ -51,7 +51,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-h1 {
+.marked>>>h1 {
   color: red;
 }
 </style>
