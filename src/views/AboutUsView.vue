@@ -27,6 +27,49 @@
             </div>
           </div>
         </div>
+        <!-- Form to create Board Person -->
+        <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form @submit.prevent="submitBoardForm" class="card-body">
+            <div class="text-center lg:text-left">
+              <h1 class="text-5xl font-bold">Eintrag Hinzufügen</h1>
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Name</span>
+              </label>
+              <input type="text" v-model="name" placeholder="Name" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Function</span>
+              </label>
+              <input type="text" v-model="functionRef" placeholder="Function" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Email</span>
+              </label>
+              <input type="email" v-model="email" placeholder="email" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Tel</span>
+              </label>
+              <input type="tel" v-model="tel" name="phone" class="input input-bordered w-full max-w-xs"
+                placeholder="078 000 00 00" pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" required>
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">File Path</span>
+              </label>
+              <input ref="fileInput" accept="image/png, image/gif, image/jpeg" type="file"
+                @change="handleFileInputChange" class="file-input file-input-bordered w-full max-w-xs" />
+            </div>
+            <div class="form-control mt-6">
+              <button class="btn btn-primary">Hinzufügen</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -57,6 +100,30 @@ import { supabase } from '../supabase';
 
 const boardPersons: Ref<Array<Tables<'BoardPersons'>>> = ref([]);
 const vips: Ref<Array<Tables<'Vips'>>> = ref([]);
+
+/* Form bindings */
+let name = ref('');
+let functionRef = ref('');
+let email = ref('');
+let tel = ref('');
+let imageSrc = ref('');
+
+const fileInput: Ref<HTMLInputElement | undefined> = ref(undefined)
+
+function handleFileInputChange(event: Event) {
+  imageSrc.value = fileInput.value?.files?.[0].name || '';
+};
+
+function submitBoardForm() {
+  console.log({
+    name: name.value,
+    functionRef: functionRef.value,
+    email: email.value,
+    tel: tel.value,
+    imageSrc: imageSrc.value
+  });
+
+}
 
 onMounted(() => {
   supabase
