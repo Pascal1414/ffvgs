@@ -101,6 +101,9 @@ import { supabase } from '../supabase';
 const boardPersons: Ref<Array<Tables<'BoardPersons'>>> = ref([]);
 const vips: Ref<Array<Tables<'Vips'>>> = ref([]);
 
+/* HTMLElement bindings */
+const fileInput: Ref<HTMLInputElement | undefined> = ref(undefined)
+
 /* Form bindings */
 let name = ref('');
 let functionRef = ref('');
@@ -108,7 +111,6 @@ let email = ref('');
 let tel = ref('');
 let imageSrc = ref('');
 
-const fileInput: Ref<HTMLInputElement | undefined> = ref(undefined)
 
 function handleFileInputChange(event: Event) {
   imageSrc.value = fileInput.value?.files?.[0].name || '';
