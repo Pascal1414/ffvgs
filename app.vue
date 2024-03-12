@@ -73,17 +73,35 @@
             </svg>
           </label>
         </div>
-        <!-- <select class="opacity-0" @change="updateTheme($event)">
-          <option>light</option>
-          <option>dark</option>
-          <option>synthwave</option>
-          <option>retro</option>
-          <option>cyberpunk</option>
-                                <option>aqua</option>
-                                <option>wireframe</option>
-                                <option>luxury</option>
-                              </select> -->
       </div>
     </footer>
   </NavBar>
 </template>
+<script lang="ts" setup>
+
+let themeCheckbox = ref(true)
+
+onMounted(() => {
+  const theme = localStorage.getItem('theme')
+  console.log('theme', theme)
+  if (theme === 'light') {
+    updateTheme(false)
+  } else {
+    updateTheme(true)
+  }
+})
+
+function updateTheme(isDarkMode: boolean) {
+  console.log('updateTheme', isDarkMode)
+
+  if (isDarkMode) {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    localStorage.setItem('theme', 'dark')
+    themeCheckbox.value = false
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light')
+    localStorage.setItem('theme', 'light')
+    themeCheckbox.value = true
+  }
+}
+</script>
