@@ -51,7 +51,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, type Ref } from 'vue';
+let boardPersons = ref([])
+let vips = ref([])
 
 onMounted(() => {
 });
