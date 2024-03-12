@@ -83,7 +83,6 @@ let themeCheckbox = ref(true)
 
 onMounted(() => {
   const theme = localStorage.getItem('theme')
-  console.log('theme', theme)
   if (theme === 'light') {
     updateTheme(false)
   } else {
@@ -92,8 +91,6 @@ onMounted(() => {
 })
 
 function updateTheme(isDarkMode: boolean) {
-  console.log('updateTheme', isDarkMode)
-
   if (isDarkMode) {
     document.documentElement.setAttribute('data-theme', 'dark')
     localStorage.setItem('theme', 'dark')
