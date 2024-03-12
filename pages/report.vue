@@ -29,4 +29,6 @@ onMounted(() => {
 }
 </style>
 
-<style scoped src="../css/marked.css"></style>
+<style scoped>
+@import url(assets/css/marked.css);
+</style>
