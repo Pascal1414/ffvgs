@@ -36,25 +36,12 @@ import type { HomeArticle } from '~/types/home-article';
 
 let articles: Ref<Array<HomeArticle>> = ref([])
 
-
-onMounted(async () => {
-  const { data, pending, error, refresh } = await useFetch('https://ffvgs-backend.onrender.com/api/home-articles', {
-    query: { "populate": '*' },
-    pick: ['data'],
-    onResponse({ request, response, options }) {
-      console.log(articles);
-      articles.value = response._data.data;
-    },
-    onRequestError({ request, options, error }) {
-      console.log("Req Error");
-
-    },
-    onResponseError({ request, response, options }) {
-      console.log("Res Error");
-    }
-  })
-
-});
+await useFetch('https://ffvgs-backend.onrender.com/api/home-articles', {
+  query: { "populate": '*' },
+  onResponse({ request, response, options }) {
+    articles.value = response._data.data;
+  }
+})
 
 </script>
 
