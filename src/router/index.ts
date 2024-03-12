@@ -12,9 +12,6 @@ import Imprint from '../views/ImprintView.vue'
 import Documents from '../views/DocumentsView.vue'
 import Somemrnachtsfest from '../views/event/SommernachtsfestView.vue'
 import Jungfischerkurs from '../views/event/JungfischerkursView.vue'
-import Login from '../views/LoginView.vue'
-import ResetPassword from '../views/ResetPasswordView.vue'
-import SetPassword from '../views/SetPasswordView.vue'
 import NotFound from '../views/NotFoundView.vue'
 
 const router = createRouter({
@@ -80,21 +77,6 @@ const router = createRouter({
       path: '/dokumente',
       name: 'documents',
       component: Documents
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/reset-password',
-      name: 'ResetPassword',
-      component: ResetPassword
-    },
-    {
-      path: '/set-password',
-      name: 'SetPassword',
-      component: SetPassword
     },
     {
       path: '/:pathMatch(.*)*',

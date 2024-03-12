@@ -11,19 +11,13 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue';
-import { supabase } from '../supabase';
-import type { Tables } from '@/database/supabase';
 import { marked } from 'marked';
 
 
-const reports: Ref<Array<Tables<'Reports'>>> = ref([])
+const reports = ref([])
 
 onMounted(() => {
-  supabase
-    .from('Reports')
-    .select('*').then(response => {
-      reports.value = response.data || [];
-    });
+
 })
 </script>
 

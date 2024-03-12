@@ -52,22 +52,8 @@
 
 <script setup lang="ts">
 import { onMounted, ref, type Ref } from 'vue';
-import type { Tables } from '../database/supabase';
-import { supabase } from '../supabase';
-
-const boardPersons: Ref<Array<Tables<'BoardPersons'>>> = ref([]);
-const vips: Ref<Array<Tables<'Vips'>>> = ref([]);
 
 onMounted(() => {
-  supabase
-    .from('BoardPersons')
-    .select('*').then(response => {
-      boardPersons.value = response.data || [];
-    });
-
-  supabase.from('Vips').select('*').then(response => {
-    vips.value = response.data || [];
-  });
 });
 
 </script>

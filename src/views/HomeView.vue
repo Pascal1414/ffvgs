@@ -30,21 +30,13 @@
 import { ref, onMounted } from 'vue';
 import type { Ref } from 'vue';
 import { marked } from 'marked';
-import { supabase } from '../supabase';
-import type { Tables } from '@/database/supabase';
 import ImageHero from '@/components/ImageHero.vue';
 
 
-let articles: Ref<Array<Tables<'HomeArticles'>>> = ref([])
+let articles = ref([])
 
 
 onMounted(() => {
-  supabase
-    .from('HomeArticles')
-    .select('*')
-    .then(({ data, error }) => {
-      articles.value = data || []
-    });
 });
 
 </script>

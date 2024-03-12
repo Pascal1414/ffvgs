@@ -13,7 +13,6 @@
         <option value="jugendgruppe">Jugendgruppe</option>
       </select>
     </div>
-    <button class="btn btn-primary" @click="startCreateMode">Neues Programm</button>
   </div>
 
   <div class="overflow-x-auto">
@@ -24,7 +23,6 @@
           <th>Done</th>
           <th>Name</th>
           <th>Date</th>
-          <th>Controll</th>
         </tr>
       </thead>
       <tbody>
@@ -41,14 +39,11 @@
               <div v-for="(date, index) in programItem.dates" :key="index">{{ formatDate(date) }}</div>
             </div>
           </td>
-          <td>
-            <button class="btn btn-neutral" @click="startEditMode(programItem)">Edit</button>
-          </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="alert alert-info shadow-lg mt-4" v-if="!formVisible">
+  <div class="alert alert-info shadow-lg mt-4">
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
         class="stroke-current flex-shrink-0 w-6 h-6">
@@ -59,206 +54,17 @@
         angekündigt.</span>
     </div>
   </div>
-  <form class=" card-body" v-if="formVisible" @submit.prevent="formSubmit">
-    <div class=" form-control">
-      <label class="label">
-        <span class="label-text">Name</span>
-      </label>
-      <input v-model="name" type="text" placeholder="Name" class="input input-bordered" required />
-    </div>
-
-    <div class="form-control">
-      <label class="label">
-        <span class="label-text">Beschreibung</span>
-      </label>
-      <textarea v-model="description" class="textarea textarea-bordered" placeholder="Beschreibung"></textarea>
-    </div>
-
-    <div class="form-control">
-      <div class="flex flex-row gap-2 flex-wrap mb-3">
-        <div v-for="(date, index) in dates" :key="index" class="flex gap-3">
-          <div class="card bg-base-200 shadow-xl h-min">
-            <div class="flex p-3 flex-row gap-5">
-              <p>{{ date }}</p>
-              <button type="button" class="btn btn-error btn-xs" @click="onRemoveDate(index)">Remove</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex  flex-row gap-2">
-        <input ref="dateElement" type="date" class="input input-bordered" />
-        <button type="button" class="btn btn-square btn-outline" @click="onAddDate()">
-          <div class="rotate-45">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-
-    <div class="form-control flex-row justify-evenly ">
-      <label class="label cursor-pointer flex-col gap-2">
-        <span class="label-text">Für Alle</span>
-        <input v-model="forAll" type="checkbox" class="checkbox" />
-      </label>
-      <label class="label cursor-pointer flex-col gap-2">
-        <span class="label-text">Für Junioren</span>
-        <input v-model="forJunior" type="checkbox" class="checkbox" />
-      </label>
-      <label class="label cursor-pointer flex-col gap-2">
-        <span class="label-text">Für Jugendgruppe</span>
-        <input v-model="forJugendGroup" type="checkbox" class="checkbox" />
-      </label>
-    </div>
-
-    <div class="form-control">
-      <p class="text-error">{{ errorRef }}</p>
-    </div>
-
-
-    <div class="form-control mt-6">
-      <button type="submit" class="btn btn-primary">{{ confirmButtonText }}</button>
-    </div>
-  </form>
 </template>
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
-import type { Tables } from '../database/supabase';
-import { supabase } from '../supabase';
 
-let programs: Ref<Array<Tables<'Program'>>> = ref([])
-let currentList: Ref<Array<Tables<'Program'>>> = ref([])
-let selectionSelect: Ref<HTMLInputElement | undefined> = ref(undefined)
-
-/* Add and Edit */
-let formVisible = ref(false)
-let confirmButtonText = ref('')
-let isEditing = ref(false)
-let editProgram: Ref<Tables<'Program'> | null> = ref(null)
-const dateElement: Ref<HTMLInputElement | undefined> = ref(undefined)
-
-let errorRef = ref('')
-
-/* Values */
-let dates: Ref<Array<string>> = ref([])
-let name: Ref<string> = ref('')
-let description: Ref<string> = ref('')
-let forAll: Ref<boolean> = ref(false)
-let forJunior: Ref<boolean> = ref(false)
-let forJugendGroup: Ref<boolean> = ref(false)
-
-function onAddDate() {
-  if (!dateElement.value)
-    return
-  const date = dateElement?.value?.value
-  if (date === '') return
-  dates.value.push(date)
-  dateElement.value.value = '';
-  return false
-}
-function onRemoveDate(index: number) {
-  dates.value.splice(index, 1)
-}
-
-function startCreateMode() {
-  formVisible.value = true
-  confirmButtonText.value = 'Hinzufügen'
-  isEditing.value = false
-  resetForm()
-}
-
-function startEditMode(program: Tables<'Program'>) {
-  editProgram.value = program
-  formVisible.value = true
-  confirmButtonText.value = 'Speichern'
-  isEditing.value = true
-  name.value = program.name
-  description.value = program.description || ''
-  dates.value = program.dates ? [...program.dates] : []
-  forAll.value = program.forAll || false
-  forJunior.value = program.forJunior || false
-  forJugendGroup.value = program.forJugendGroup || false
-}
-
-async function formSubmit() {
-
-  if (isEditing.value) {
-    if (!editProgram.value) {
-      errorRef.value = 'Program not found'
-      return
-    }
-    const { data, error } = await supabase
-      .from('Program')
-      .update({
-        name: name.value,
-        description: description.value,
-        dates: dates.value,
-        forAll: forAll.value,
-        forJunior: forJunior.value,
-        forJugendGroup: forJugendGroup.value
-      })
-      .eq('id', editProgram.value.id)
-      .select()
-    if (error) {
-      errorRef.value = error.message
-      return
-    }
-
-    // Update the program in the list
-    const updatedElement = data[0]
-    const index = programs.value.findIndex((i: Tables<'Program'>) => i.id === updatedElement.id)
-    programs.value[index] = updatedElement
-    updateVisibleProgramsToInputField()
-
-
-  } else {
-    const { data, error } = await supabase
-      .from('Program')
-      .insert([
-        {
-          name: name.value,
-          description: description.value,
-          dates: dates.value,
-          forAll: forAll.value,
-          forJunior: forJunior.value,
-          forJugendGroup: forJugendGroup.value
-        },
-      ])
-      .select()
-    if (error) {
-      errorRef.value = error.message
-      return
-    }
-    programs.value.push(data[0])
-    updateVisibleProgramsToInputField()
-  }
-  resetForm()
-}
-function resetForm() {
-  name.value = ''
-  description.value = ''
-  dates.value = []
-  forAll.value = false
-  forJunior.value = false
-  forJugendGroup.value = false
-}
-
+let programs = ref([])
+let currentList = ref([])
+let selectionSelect = ref(undefined)
 
 onMounted(() => {
-  supabase
-    .from('Program')
-    .select('*').order(
-      'dates',
-      { ascending: true, nullsFirst: true }
-    ).then(({ data }) => {
-      programs.value = data || [];
-      currentList.value = [...programs.value]
-    })
 })
 
 function alreadyHappened(programItem: any): boolean {
