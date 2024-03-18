@@ -16,7 +16,7 @@
   <div v-for="(article, index) in  articles ">
     <div class="divider" />
     <ImageHero v-if="article.Images?.length" :reversed="index % 2 == 0"
-      :images="article.Images.map(({ formats }) => formats?.medium?.url)">
+      :images="article.Images.map(({ formats }) => (`https://ffvgs-backend.onrender.com${formats?.medium?.url}`))">
       <div class="marked" v-html="marked(article.Text)" />
     </ImageHero>
     <div v-else>
