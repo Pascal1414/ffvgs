@@ -57,8 +57,6 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
-import type { Ref } from 'vue'
 import type { Program } from '~/types/program';
 
 let programs: Ref<Program[]> = ref([])
