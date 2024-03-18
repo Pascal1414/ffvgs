@@ -3,7 +3,7 @@
   <div class="divider"></div>
   <div class="mb-4 grid gap-4 grid-cols-2">
     <div v-for="(report, index) in reports" :key="index" class="card bg-base-200 shadow-xl">
-      <div class="card-body marked" v-html="marked(report.text)" />
+      <div class="card-body marked" v-html="marked(report.Text)" />
     </div>
   </div>
 </template>
@@ -14,11 +14,17 @@ import type { Ref } from 'vue';
 import { marked } from 'marked';
 
 
-const reports = ref([])
+const reports: Ref<Report[]> = ref([])
 
-onMounted(() => {
+await useFetch('https://ffvgs-backend.onrender.com/api/reports', {
+  onResponse({ request, response, options }) {
+    const sanitizedResponse = sanitizeApiResponse(response._data) as Report[];
+    console.log(sanitizedResponse);
 
+    reports.value = sanitizedResponse;
+  }
 })
+
 </script>
 
 <style scoped>
