@@ -33,10 +33,10 @@
                 d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z" />
             </svg>
           </th>
-          <td>{{ programItem.name }}</td>
+          <td>{{ programItem.Name }}</td>
           <td>
             <div class="dates">
-              <div v-for="(date, index) in programItem.dates" :key="index">{{ formatDate(date) }}</div>
+              <div v-for="(date, index) in programItem.Dates" :key="index">{{ formatDate(date) }}</div>
             </div>
           </td>
         </tr>
@@ -59,24 +59,32 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
+import type { Program } from '~/types/program';
 
-let programs = ref([])
-let currentList = ref([])
-let selectionSelect = ref(undefined)
+let programs: Ref<Program[]> = ref([])
+let currentList: Ref<Program[]> = ref([])
+let selectionSelect: Ref<string> = ref('');
 
-onMounted(() => {
+await useFetch('https://ffvgs-backend.onrender.com/api/programs', {
+  onResponse({ request, response, options }) {
+    const sanitizedResponse = sanitizeApiResponse(response._data) as Program[];
+    console.log(sanitizedResponse);
+
+    programs.value = sanitizedResponse;
+    updateVisibleProgramsToInputField()
+  }
 })
 
-function alreadyHappened(programItem: any): boolean {
-  if (programItem.dates === null || programItem.dates.length === 0) return false
-  for (let date of programItem.dates) if (new Date(date) > new Date()) return false
+function alreadyHappened(programItem: Program): boolean {
+  if (programItem.Dates === null || programItem.Dates.length === 0) return false
+  for (let date of programItem.Dates) if (new Date(date) > new Date()) return false
   return true
 }
 function formatDate(date: string): string {
   return new Date(date).toLocaleDateString('ch-DE')
 }
 function updateVisibleProgramsToInputField() {
-  switch (selectionSelect.value?.value) {
+  switch (selectionSelect.value) {
     case 'junioren':
       currentList.value = programs.value.filter((i) => i.forJunior)
       break
@@ -84,7 +92,7 @@ function updateVisibleProgramsToInputField() {
       currentList.value = programs.value.filter((i) => i.forAll)
       break
     case 'jugendgruppe':
-      currentList.value = programs.value.filter((i) => i.forJugendGroup)
+      currentList.value = programs.value.filter((i) => i.forJugend)
       break
 
     default:

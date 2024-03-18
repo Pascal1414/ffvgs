@@ -41,6 +41,8 @@ await useFetch('https://ffvgs-backend.onrender.com/api/home-articles', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as HomeArticle[];
+    console.log(sanitizedResponse);
+
     articles.value = sanitizedResponse;
   }
 })
