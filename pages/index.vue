@@ -15,13 +15,13 @@
 
   <div v-for="(article, index) in  articles ">
     <div class="divider" />
-    <ImageHero v-if="article.attributes.Images?.length" :reversed="index % 2 == 0"
-      :images="article.attributes.Images.map(({ formats }) => formats?.medium?.url)">
-      <div class="marked" v-html="marked(article.attributes.Text)" />
+    <ImageHero v-if="article.Images?.length" :reversed="index % 2 == 0"
+      :images="article.Images.map(({ formats }) => formats?.medium?.url)">
+      <div class="marked" v-html="marked(article.Text)" />
     </ImageHero>
     <div v-else>
       <div class="sm:hero min-h-[400px]">
-        <div class="hero-content place-items-start w-full flex-col marked" v-html="marked(article.attributes.Text)" />
+        <div class="hero-content place-items-start w-full flex-col marked" v-html="marked(article.Text)" />
       </div>
     </div>
   </div>
@@ -33,16 +33,17 @@ import type { Ref } from 'vue';
 import { marked } from 'marked';
 import ImageHero from '@/components/ImageHero.vue';
 import type { HomeArticle } from '~/types/home-article';
+import { sanitizeApiResponse } from '~/utils/SanitizeApiResponse';
 
-let articles: Ref<Array<HomeArticle>> = ref([])
+const articles: Ref<HomeArticle[]> = ref([])
 
 await useFetch('https://ffvgs-backend.onrender.com/api/home-articles', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
-    articles.value = response._data.data;
+    const sanitizedResponse = sanitizeApiResponse(response._data) as HomeArticle[];
+    articles.value = sanitizedResponse;
   }
 })
-
 </script>
 
 <style scoped>
