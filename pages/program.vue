@@ -68,7 +68,6 @@ let selectionSelect: Ref<string> = ref('');
 await useFetch('https://ffvgs-backend.onrender.com/api/programs', {
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as Program[];
-    console.log(sanitizedResponse);
 
     programs.value = sanitizedResponse;
     updateVisibleProgramsToInputField()
