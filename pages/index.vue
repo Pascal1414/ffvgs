@@ -37,7 +37,7 @@ import { sanitizeApiResponse } from '~/utils/SanitizeApiResponse';
 
 const articles: Ref<HomeArticle[]> = ref([])
 
-await useFetch('https://ffvgs-backend.onrender.com/api/home-articles', {
+await useLazyFetch('https://ffvgs-backend.onrender.com/api/home-articles', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as HomeArticle[];

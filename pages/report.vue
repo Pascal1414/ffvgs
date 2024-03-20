@@ -15,7 +15,7 @@ import type { Report } from '~/types/report';
 
 const reports: Ref<Report[]> = ref([])
 
-await useFetch('https://ffvgs-backend.onrender.com/api/reports', {
+await useLazyFetch('https://ffvgs-backend.onrender.com/api/reports', {
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as Report[];
     console.log(sanitizedResponse);
