@@ -9,9 +9,8 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
-import type { Ref } from 'vue';
 import { marked } from 'marked';
+import type { Report } from '~/types/report';
 
 
 const reports: Ref<Report[]> = ref([])
