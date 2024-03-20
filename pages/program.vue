@@ -5,7 +5,7 @@
       <label for="role" class="label">
         <span class="label-text">Program nach Mitgliedschaft anzeigen:</span>
       </label>
-      <select ref="selectionSelect" class="select select-bordered max-w-xs mb-4" name="mitgliedschaft" id="role"
+      <select v-model="selectionSelect" class="select select-bordered max-w-xs mb-4" name="mitgliedschaft" id="role"
         @change="updateVisibleProgramsToInputField()">
         <option value="none" selected>Alles anzeigen</option>
         <option value="alle">Alle Mitglieder</option>
