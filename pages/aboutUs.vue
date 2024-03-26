@@ -38,11 +38,11 @@
       <div class="board flex flex-wrap justify-around gap-[25px]">
         <div v-for="(vip, index) in vips" :key="index" class="card w-96 card-side bg-base-100 shadow-xl">
           <figure class="">
-            <img :src="vip.imageSrc" alt="Shoes" class="rounded-xl" />
+            <img :src="vip.Image" alt="Shoes" class="rounded-xl" />
           </figure>
           <div class="card-body">
-            <h2 class="card-title">{{ vip.name }}</h2>
-            <p>{{ vip.function }}</p>
+            <h2 class="card-title">{{ vip.Name }}</h2>
+            <p>{{ vip.Function }}</p>
           </div>
         </div>
       </div>
@@ -52,15 +52,24 @@
 
 <script setup lang="ts">
 import type { BoardPerson } from '~/types/board-person';
+import type { Vip } from '~/types/vip';
 
 let boardPersons: Ref<BoardPerson[]> = ref([])
-let vips = ref([])
+let vips: Ref<Vip[]> = ref([])
 
 useLazyFetch('https://ffvgs-backend.onrender.com/api/board-people', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as BoardPerson[];
     boardPersons.value = sanitizedResponse;
+  }
+})
+
+useLazyFetch('https://ffvgs-backend.onrender.com/api/vips', {
+  query: { "populate": '*' },
+  onResponse({ request, response, options }) {
+    const sanitizedResponse = sanitizeApiResponse(response._data) as Vip[];
+    vips.value = sanitizedResponse;
   }
 })
 
