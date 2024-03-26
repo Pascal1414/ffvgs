@@ -1,7 +1,11 @@
 <template>
   <h2 class="text-4xl font-bold mb-4 flex justify-center">Berichte</h2>
   <div class="divider"></div>
-  <div class="mb-4 grid gap-4 grid-cols-2">
+  <div v-if="!isFetched" class="w-full flex justify-center">
+    <span class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
+  </div>
+  <div v-if="isFetched" class="mb-4 grid gap-4 grid-cols-2">
+
     <div v-for="(report, index) in reports" :key="index" class="card bg-base-200 shadow-xl">
       <div class="card-body marked" v-html="marked(report.Text)" />
     </div>
@@ -14,11 +18,12 @@ import type { Report } from '~/types/report';
 
 
 const reports: Ref<Report[]> = ref([])
+const isFetched = ref(false)
 
-await useLazyFetch('https://ffvgs-backend.onrender.com/api/reports', {
+useLazyFetch('https://ffvgs-backend.onrender.com/api/reports', {
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as Report[];
-    console.log(sanitizedResponse);
+    isFetched.value = true
 
     reports.value = sanitizedResponse;
   }
