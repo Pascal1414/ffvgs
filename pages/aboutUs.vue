@@ -5,19 +5,19 @@
       <div class="board flex flex-wrap justify-around gap-[25px]">
         <div v-for="(person, index) in boardPersons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
-            <img class="h-[100%] w-[100%]" :src="person.imageSrc" alt="Album" />
+            <img class="h-[100%] w-[100%]" :src="'https://ffvgs-backend.onrender.com' + person.Image" alt="Image" />
           </figure>
           <div class="card-body w-[260px]">
-            <h2 class="card-title">{{ person.name }}</h2>
-            <p>{{ person.function }}</p>
+            <h2 class="card-title">{{ person.Name }}</h2>
+            <p>{{ person.Function }}</p>
             <div class="card-actions">
-              <a :href="'tel:' + person.tel">
+              <a :href="'tel:' + person.Tel">
                 <svg class="fill-current" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M11.748 5.773S11.418 5 10.914 5c-.496 0-.754.229-.926.387S6.938 7.91 6.938 7.91s-.837.731-.773 2.106c.054 1.375.323 3.332 1.719 6.058 1.386 2.72 4.855 6.876 7.047 8.337 0 0 2.031 1.558 3.921 2.191.549.173 1.647.398 1.903.398.26 0 .719 0 1.246-.385.536-.389 3.543-2.807 3.543-2.807s.736-.665-.119-1.438c-.859-.773-3.467-2.492-4.025-2.944-.559-.459-1.355-.257-1.699.054-.343.313-.956.828-1.031.893-.112.086-.419.365-.763.226-.438-.173-2.234-1.148-3.899-3.426-1.655-2.276-1.837-3.02-2.084-3.824a.56.56 0 0 1 .225-.657c.248-.172 1.161-.933 1.161-.933s.591-.583.344-1.27-1.906-4.716-1.906-4.716z" />
                 </svg>
               </a>
-              <a :href="'mailto:' + person.email">
+              <a :href="'mailto:' + person.Email">
                 <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960"
                   width="24">
                   <path
@@ -51,11 +51,18 @@
 </template>
 
 <script setup lang="ts">
-let boardPersons = ref([])
+import type { BoardPerson } from '~/types/board-person';
+
+let boardPersons: Ref<BoardPerson[]> = ref([])
 let vips = ref([])
 
-onMounted(() => {
-});
+useLazyFetch('https://ffvgs-backend.onrender.com/api/board-people', {
+  query: { "populate": '*' },
+  onResponse({ request, response, options }) {
+    const sanitizedResponse = sanitizeApiResponse(response._data) as BoardPerson[];
+    boardPersons.value = sanitizedResponse;
+  }
+})
 
 </script>
 
