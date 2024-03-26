@@ -13,7 +13,11 @@
     </div>
   </div>
 
-  <div v-for="(article, index) in  articles ">
+  <div v-if="!isFetched" class="w-full flex justify-center">
+    <span class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
+  </div>
+
+  <div v-if="isFetched" v-for="(article, index) in  articles ">
     <div class="divider" />
     <ImageHero v-if="article.Images?.length" :reversed="index % 2 == 0"
       :images="article.Images.map(({ formats }) => (`https://ffvgs-backend.onrender.com${formats?.medium?.url}`))">
@@ -28,19 +32,18 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-import type { Ref } from 'vue';
 import { marked } from 'marked';
-import ImageHero from '@/components/ImageHero.vue';
 import type { HomeArticle } from '~/types/home-article';
-import { sanitizeApiResponse } from '~/utils/SanitizeApiResponse';
 
 const articles: Ref<HomeArticle[]> = ref([])
+const isFetched = ref(false)
+
 
 useLazyFetch('https://ffvgs-backend.onrender.com/api/home-articles', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as HomeArticle[];
+    isFetched.value = true
 
     articles.value = sanitizedResponse;
   }
