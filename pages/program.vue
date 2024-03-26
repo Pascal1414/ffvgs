@@ -66,7 +66,7 @@ const selectionSelect: Ref<string> = ref('');
 
 const isFetched = ref(false)
 
-await useLazyFetch('https://ffvgs-backend.onrender.com/api/programs', {
+useLazyFetch('https://ffvgs-backend.onrender.com/api/programs', {
   onResponse({ request, response, options }) {
     isFetched.value = true
     const sanitizedResponse = sanitizeApiResponse(response._data) as Program[];
