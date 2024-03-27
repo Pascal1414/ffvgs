@@ -6,7 +6,7 @@
 
             <span v-if="!isFetched" class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
 
-            <div v-if="isFetched && program.description == undefined" role="alert" class="alert alert-info my-5">
+            <div v-if="isFetched && program?.description == undefined" role="alert" class="alert alert-info my-5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -42,13 +42,16 @@ const route = useRoute()
 
 const isFetched = ref(false)
 
-const program: Ref<Program> = ref(undefined)
+const program: Ref<Program | undefined> = ref(undefined)
 
 useLazyFetch(`${config.public.apiUrl}/programs/${route.params.id}`, {
     onResponse({ request, response, options }) {
         const sanitizedResponse = sanitizeApiResponse(response._data) as Program;
         isFetched.value = true
         program.value = sanitizedResponse;
+    },
+    onResponseError({ request, response, options }) {
+        showError({ statusCode: response.status, statusMessage: 'Page Not Found' })
     }
 })
 </script>
