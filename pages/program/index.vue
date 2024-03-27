@@ -117,4 +117,8 @@ function updateVisibleProgramsToInputField() {
     padding: 0;
     list-style: none;
 }
+
+.hover {
+    cursor: pointer;
+}
 </style>
