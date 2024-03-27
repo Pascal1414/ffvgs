@@ -45,7 +45,7 @@
 <script lang="ts" setup>
 const navItems = [
   { name: 'Programm', link: '/program' },
-  { name: 'Organe', link: '/aboutUs' },
+  { name: 'Über uns', link: '/aboutUs' },
   { name: 'Jugend', link: '/young' },
   { name: 'Berichte', link: '/report' },
   { name: 'Galerie', link: '/gallery' },
