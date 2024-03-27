@@ -19,13 +19,13 @@
 
   <div v-if="isFetched" v-for="(article, index) in  articles ">
     <div class="divider" />
-    <ImageHero v-if="article.Images?.length" :reversed="index % 2 == 0"
-      :images="article.Images.map(({ formats }) => (config.public.backendUrl + formats?.medium?.url))">
-      <div class="marked" v-html="marked(article.Text)" />
+    <ImageHero v-if="article.images?.length" :reversed="index % 2 == 0"
+      :images="article.images.map(({ formats }) => (config.public.backendUrl + formats?.medium?.url))">
+      <div class="marked" v-html="marked(article.text)" />
     </ImageHero>
     <div v-else>
       <div class="sm:hero min-h-[400px]">
-        <div class="hero-content place-items-start w-full flex-col marked" v-html="marked(article.Text)" />
+        <div class="hero-content place-items-start w-full flex-col marked" v-html="marked(article.text)" />
       </div>
     </div>
   </div>

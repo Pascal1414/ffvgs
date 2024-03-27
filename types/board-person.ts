@@ -2,12 +2,12 @@ import type { ResImage } from "./image";
 
 export type BoardPerson = {
   id: number;
-  Name: string;
-  Email: string;
-  Function: string;
-  Tel: string;
+  name: string;
+  email: string;
+  function: string;
+  tel: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  Image: ResImage;
+  image: ResImage;
 };

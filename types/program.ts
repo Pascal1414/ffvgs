@@ -1,11 +1,11 @@
 export type Program = {
   id: number;
-  Name: string;
-  Description: string;
+  name: string;
+  description: string;
   forAll: boolean;
   forJugend: boolean;
   forJunior: boolean;
-  Dates: string[];
+  dates: string[];
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

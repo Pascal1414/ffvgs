@@ -9,9 +9,9 @@ export const sanitizeApiResponse = (response: any) => {
       const item = {
         id: curr.id,
         ...curr.attributes,
-        Image: sanitizeApiResponse(curr.attributes.image),
-        Images: Object.values({
-          ...(sanitizeApiResponse(curr.attributes.Images) as ResImage[]),
+        image: sanitizeApiResponse(curr.attributes.image),
+        images: Object.values({
+          ...(sanitizeApiResponse(curr.attributes.images) as ResImage[]),
         }),
       };
       acc.push(item);

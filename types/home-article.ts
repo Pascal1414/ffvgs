@@ -2,9 +2,9 @@ import type { ResImage } from "./image";
 
 export type HomeArticle = {
   id: number;
-  Text: string;
+  text: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  Images: ResImage[];
+  images: ResImage[];
 };

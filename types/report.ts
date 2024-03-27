@@ -1,4 +1,4 @@
 export type Report = {
   id: number;
-  Text: string;
+  text: string;
 };
