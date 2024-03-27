@@ -5,7 +5,7 @@
 Add the following variables to the .env file.
 
 ```
-BACKEND_URL=
+STRAPI_API_URL=<https://example.com>
 ```
 
 ## Nuxt 3 Minimal Starter
