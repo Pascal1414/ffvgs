@@ -60,13 +60,15 @@
 <script lang="ts" setup>
 import type { Program } from '~/types/program';
 
+const config = useRuntimeConfig()
+
 const programs: Ref<Program[]> = ref([])
 const currentList: Ref<Program[]> = ref([])
 const selectionSelect: Ref<string> = ref('');
 
 const isFetched = ref(false)
 
-useLazyFetch('https://ffvgs-backend.onrender.com/api/programs', {
+useLazyFetch(config.public.apiUrl + '/programs', {
   onResponse({ request, response, options }) {
     isFetched.value = true
     const sanitizedResponse = sanitizeApiResponse(response._data) as Program[];

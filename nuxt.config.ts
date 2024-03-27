@@ -3,4 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss"],
   plugins: [{ src: "~/plugins/after-each-navigation.ts", mode: "client" }],
+  runtimeConfig: {
+    public: {
+      backendUrl: process.env.STRAPI_API_URL,
+      apiUrl: process.env.STRAPI_API_URL + "/api",
+      uploadsUrl: process.env.STRAPI_API_URL + "/uploads",
+    },
+  },
 });

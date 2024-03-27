@@ -16,11 +16,12 @@
 import { marked } from 'marked';
 import type { Report } from '~/types/report';
 
+const config = useRuntimeConfig()
 
 const reports: Ref<Report[]> = ref([])
 const isFetched = ref(false)
 
-useLazyFetch('https://ffvgs-backend.onrender.com/api/reports', {
+useLazyFetch(config.public.apiUrl + '/reports', {
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as Report[];
     isFetched.value = true

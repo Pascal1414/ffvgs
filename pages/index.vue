@@ -20,7 +20,7 @@
   <div v-if="isFetched" v-for="(article, index) in  articles ">
     <div class="divider" />
     <ImageHero v-if="article.Images?.length" :reversed="index % 2 == 0"
-      :images="article.Images.map(({ formats }) => (`https://ffvgs-backend.onrender.com${formats?.medium?.url}`))">
+      :images="article.Images.map(({ formats }) => (config.public.backendUrl + formats?.medium?.url))">
       <div class="marked" v-html="marked(article.Text)" />
     </ImageHero>
     <div v-else>
@@ -35,11 +35,13 @@
 import { marked } from 'marked';
 import type { HomeArticle } from '~/types/home-article';
 
+const config = useRuntimeConfig()
+
 const articles: Ref<HomeArticle[]> = ref([])
 const isFetched = ref(false)
 
 
-useLazyFetch('https://ffvgs-backend.onrender.com/api/home-articles', {
+useLazyFetch(config.public.apiUrl + '/home-articles', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as HomeArticle[];

@@ -5,7 +5,7 @@
       <div class="board flex flex-wrap justify-around gap-[25px]">
         <div v-for="(person, index) in boardPersons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
-            <img class="h-[100%] w-[100%]" :src="'https://ffvgs-backend.onrender.com' + person.Image" alt="Image" />
+            <img class="h-[100%] w-[100%]" :src="config.public.backendUrl + person.Image" alt="Image" />
           </figure>
           <div class="card-body w-[260px]">
             <h2 class="card-title">{{ person.Name }}</h2>
@@ -54,10 +54,12 @@
 import type { BoardPerson } from '~/types/board-person';
 import type { Vip } from '~/types/vip';
 
+const config = useRuntimeConfig()
+
 let boardPersons: Ref<BoardPerson[]> = ref([])
 let vips: Ref<Vip[]> = ref([])
 
-useLazyFetch('https://ffvgs-backend.onrender.com/api/board-people', {
+useLazyFetch(config.public.apiUrl + '/board-people', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as BoardPerson[];
@@ -65,7 +67,7 @@ useLazyFetch('https://ffvgs-backend.onrender.com/api/board-people', {
   }
 })
 
-useLazyFetch('https://ffvgs-backend.onrender.com/api/vips', {
+useLazyFetch(config.public.apiUrl + '/vips', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as Vip[];
