@@ -14,9 +14,24 @@
 
       <p>Eine angefragte Buchung gilt als gültige Reservation, auch ohne Bestätigung.</p>
     </div>
+
+    <div role="alert" class="alert alert-info">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span>Unser Vereinsboot, hat über den Winter
+        einige Schäden erlitten. Derzeit sind Abklärungen im Gang, ob eine Reparatur möglich ist. Deshalb ist die Miete
+        und Benutzung des Bootes vorläufig nur auf eigene Gefahr möglich. Mit der Miete des Bootes bestätigt der Mieter
+        die Übernahme aller Risiken. Der Verein Freie Fischervereinigung lehnt jede Haftung ab.
+      </span>
+    </div>
+
+
     <div class="alert shadow-lg">
       <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          class="stroke-info flex-shrink-0 w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
