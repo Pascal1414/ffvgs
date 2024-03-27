@@ -34,10 +34,10 @@
                 d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z" />
             </svg>
           </th>
-          <td>{{ programItem.Name }}</td>
+          <td>{{ programItem.name }}</td>
           <td>
             <div class="dates">
-              <div v-for="(date, index) in programItem.Dates" :key="index">{{ formatDate(date) }}</div>
+              <div v-for="(date, index) in programItem.dates" :key="index">{{ formatDate(date) }}</div>
             </div>
           </td>
         </tr>
@@ -79,8 +79,8 @@ useLazyFetch(config.public.apiUrl + '/programs', {
 })
 
 function alreadyHappened(programItem: Program): boolean {
-  if (programItem.Dates === null || programItem.Dates.length === 0) return false
-  for (let date of programItem.Dates) if (new Date(date) > new Date()) return false
+  if (programItem.dates === null || programItem.dates.length === 0) return false
+  for (let date of programItem.dates) if (new Date(date) > new Date()) return false
   return true
 }
 function formatDate(date: string): string {
