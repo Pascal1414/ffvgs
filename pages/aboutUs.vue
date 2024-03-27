@@ -7,8 +7,7 @@
         <div v-if="boardPersonsIsFetched" v-for="(person, index) in boardPersons" :key="index"
           class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
-            <img class="h-[100%] w-[100%]" :src="config.public.backendUrl + person.image.formats?.medium?.url"
-              alt="Image" />
+            <img class="h-[100%] w-[100%]" :src="person.image.formats?.medium?.url" alt="Image" />
           </figure>
           <div class="card-body w-[260px]">
             <h2 class="card-title">{{ person.name }}</h2>
@@ -43,7 +42,7 @@
         <div v-if="vipsIsFetched" v-for="(vip, index) in vips" :key="index"
           class="card w-96 card-side bg-base-100 shadow-xl">
           <figure class="">
-            <img :src="config.public.backendUrl + vip.image.formats?.medium?.url" alt="Profile" class="rounded-xl" />
+            <img :src="vip.image.formats?.medium?.url" alt="Profile" class="rounded-xl" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">{{ vip.name }}</h2>

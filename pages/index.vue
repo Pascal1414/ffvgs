@@ -20,7 +20,7 @@
   <div v-if="isFetched" v-for="(article, index) in  articles ">
     <div class="divider" />
     <ImageHero v-if="article.images?.length" :reversed="index % 2 == 0"
-      :images="article.images.map(({ formats }) => (config.public.backendUrl + formats?.medium?.url))">
+      :images="article.images.map(({ formats }) => formats?.medium?.url)">
       <div class="marked" v-html="marked(article.text)" />
     </ImageHero>
     <div v-else>
