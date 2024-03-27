@@ -7,7 +7,7 @@
   <div v-if="isFetched" class="mb-4 grid gap-4 grid-cols-2">
 
     <div v-for="(report, index) in reports" :key="index" class="card bg-base-200 shadow-xl">
-      <div class="card-body marked" v-html="marked(report.Text)" />
+      <div class="card-body marked" v-html="marked(report.text)" />
     </div>
   </div>
 </template>
