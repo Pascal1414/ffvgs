@@ -1,17 +1,17 @@
 <template>
-  <footer class="footer p-10 bg-base-300 text-base-content">
-    <div>
-      <span class="footer-title">Links</span>
-      <router-link to="/imprint">Impressum</router-link>
-      <router-link to="/documents">Dokumente</router-link>
-    </div>
-    <div>
-      <span class="footer-title">Events</span>
-      <router-link to="/event/jungfischerkurs">Jungfischerkurs</router-link>
-      <router-link to="/event/sommernachtsfest">Sommernachtsfest</router-link>
-    </div>
-    <div>
-      <span class="footer-title">Social</span>
+  <footer class="footer p-10 bg-base-200 text-base-content">
+    <nav>
+      <h6 class="footer-title">Links</h6>
+      <router-link to="/imprint" class="link link-hover">Impressum</router-link>
+      <router-link to="/documents" class="link link-hover">Dokumente</router-link>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Events</h6>
+      <router-link to="/event/jungfischerkurs" class="link link-hover">Jungfischerkurs</router-link>
+      <router-link to="/event/sommernachtsfest" class="link link-hover">Sommernachtsfest</router-link>
+    </nav>
+    <nav>
+      <h6 class="footer-title">Social</h6>
       <div class="grid grid-cols-2 gap-4">
         <a href="https://www.facebook.com/FFVGS/">
           <client-only>
@@ -75,7 +75,7 @@
           </client-only>
         </label>
       </div>
-    </div>
+    </nav>
   </footer>
 </template>
 
