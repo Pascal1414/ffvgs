@@ -7,7 +7,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
           </svg>
         </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <!-- Mobile Nav Items -->
+        <ul tabindex="0" class="menu  dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-52">
           <li v-for="(navItem, index) in navItems" :key="index">
             <router-link :to="navItem.link">{{ navItem.name }}</router-link>
           </li>
