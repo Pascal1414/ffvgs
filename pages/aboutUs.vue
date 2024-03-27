@@ -7,7 +7,8 @@
         <div v-if="boardPersonsIsFetched" v-for="(person, index) in boardPersons" :key="index"
           class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
-            <img class="h-[100%] w-[100%]" :src="config.public.backendUrl + person.Image" alt="Image" />
+            <img class="h-[100%] w-[100%]" :src="config.public.backendUrl + person.Image.formats?.medium?.url"
+              alt="Image" />
           </figure>
           <div class="card-body w-[260px]">
             <h2 class="card-title">{{ person.Name }}</h2>
