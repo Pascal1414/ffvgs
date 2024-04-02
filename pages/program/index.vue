@@ -13,10 +13,11 @@
                 <option value="jugendgruppe">Jugendgruppe</option>
             </select>
         </div>
+        <span v-if="!isFetched" class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
     </div>
 
     <div class="overflow-x-auto">
-        <table class="table table-zebra w-full">
+        <table v-if="isFetched" class="table table-zebra w-full">
             <!-- head -->
             <thead>
                 <tr>
@@ -69,7 +70,7 @@ const selectionSelect: Ref<string> = ref('');
 
 const isFetched = ref(false)
 
-useFetch(config.public.apiUrl + '/programs', {
+useLazyFetch(config.public.apiUrl + '/programs', {
     onResponse({ request, response, options }) {
         isFetched.value = true
         const sanitizedResponse = sanitizeApiResponse(response._data) as Program[];

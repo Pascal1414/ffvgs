@@ -3,7 +3,9 @@
     <div class="card-body">
       <h1 class="text-4xl font-bold mb-4 flex justify-center">Vorstand</h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
-        <div v-for="(person, index) in boardPersons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
+        <span v-if="!boardPersonsIsFetched" class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
+        <div v-if="boardPersonsIsFetched" v-for="(person, index) in boardPersons" :key="index"
+          class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
             <img class="h-[100%] w-[100%]" :src="person.image.formats?.medium?.url" alt="Image" />
           </figure>
@@ -36,8 +38,9 @@
         VIPs – Funktionäre und Ehrenmitglieder
       </h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
-        <span class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
-        <div v-for="(vip, index) in vips" :key="index" class="card w-96 card-side bg-base-100 shadow-xl">
+        <span v-if="!vipsIsFetched" class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
+        <div v-if="vipsIsFetched" v-for="(vip, index) in vips" :key="index"
+          class="card w-96 card-side bg-base-100 shadow-xl">
           <figure class="h-[132px] w-[99px]">
             <img :src="vip.image.formats?.medium?.url" alt="Profile" class="rounded-xl" />
           </figure>
@@ -62,7 +65,7 @@ const boardPersonsIsFetched = ref(false)
 const vips: Ref<Vip[]> = ref([])
 const vipsIsFetched = ref(false)
 
-useFetch(config.public.apiUrl + '/board-people', {
+useLazyFetch(config.public.apiUrl + '/board-people', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as BoardPerson[];
@@ -71,7 +74,7 @@ useFetch(config.public.apiUrl + '/board-people', {
   }
 })
 
-useFetch(config.public.apiUrl + '/vips', {
+useLazyFetch(config.public.apiUrl + '/vips', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as Vip[];
