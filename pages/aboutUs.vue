@@ -41,7 +41,7 @@
         <span v-if="!vipsIsFetched" class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
         <div v-if="vipsIsFetched" v-for="(vip, index) in vips" :key="index"
           class="card w-96 card-side bg-base-100 shadow-xl">
-          <figure class="">
+          <figure class="h-[132px] w-[99px]">
             <img :src="vip.image.formats?.medium?.url" alt="Profile" class="rounded-xl" />
           </figure>
           <div class="card-body">
