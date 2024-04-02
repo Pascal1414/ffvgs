@@ -109,7 +109,9 @@ function updateVisibleProgramsToInputField() {
             break
     }
 }
-
+onMounted(() => {
+    document.cookie = "SameSite=None; Secure";
+})
 </script>
 
 <style scoped>
