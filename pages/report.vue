@@ -1,11 +1,7 @@
 <template>
   <h2 class="text-4xl font-bold mb-4 flex justify-center">Berichte</h2>
   <div class="divider"></div>
-  <div v-if="!isFetched" class="w-full flex justify-center">
-    <span class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
-  </div>
-  <div v-if="isFetched" class="mb-4 grid gap-4 grid-cols-2">
-
+  <div class="mb-4 grid gap-4 grid-cols-2">
     <div v-for="(report, index) in reports" :key="index" class="card bg-base-200 shadow-xl">
       <div class="card-body marked" v-html="marked(report.text)" />
     </div>
@@ -15,18 +11,14 @@
 <script lang="ts" setup>
 import { marked } from 'marked';
 import type { Report } from '~/types/report';
+import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig()
 
-const reports: Ref<Report[]> = ref([])
-const isFetched = ref(false)
-
-useLazyFetch(config.public.apiUrl + '/reports', {
-  onResponse({ request, response, options }) {
-    const sanitizedResponse = sanitizeApiResponse(response._data) as Report[];
-    isFetched.value = true
-
-    reports.value = sanitizedResponse;
+const { data: reports } = await useLazyFetch(config.public.apiUrl + '/reports', {
+  query: { "populate": '*' },
+  transform: (_reports: AsyncData<any, any>) => {
+    return sanitizeApiResponse(_reports) as Report[];
   }
 })
 
