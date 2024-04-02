@@ -41,6 +41,23 @@
                         </div>
                     </td>
                 </tr>
+
+                <tr v-if="pending && programs === null" v-for="n in 5" :key="n">
+                    <th>
+                        <div class="skeleton w-[27px] h-[27px] rounded-full shrink-0"></div>
+                    </th>
+                    <td>
+                        <div class="skeleton h-4 w-60"></div>
+                    </td>
+                    <td>
+                        <div class="flex flex-col gap-4 w-52">
+                            <div class="skeleton h-4 w-28"></div>
+                            <div v-if="n % 3 === 0" class="skeleton h-4 w-28"></div>
+                        </div>
+                    </td>
+                </tr>
+
+
             </tbody>
         </table>
     </div>
@@ -67,7 +84,7 @@ const router = useRouter()
 const currentList: Ref<Program[]> = ref([])
 const selectionSelect: Ref<string> = ref('');
 
-const { data: programs } = await useLazyFetch(config.public.apiUrl + '/programs', {
+const { data: programs, pending } = await useLazyFetch(config.public.apiUrl + '/programs', {
     query: { "populate": '*' },
     transform: (_programs: AsyncData<any, any>) => {
         return sanitizeApiResponse(_programs) as Program[];
