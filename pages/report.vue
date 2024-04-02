@@ -5,6 +5,7 @@
     <div v-for="(report, index) in reports" :key="index" class="card bg-base-200 shadow-xl">
       <div class="card-body marked" v-html="marked(report.text)" />
     </div>
+    <div v-if="pending && reports === null" v-for="n in 5" class="skeleton w-full h-[600px] bg-base-200"></div>
   </div>
 </template>
 
@@ -15,7 +16,7 @@ import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig()
 
-const { data: reports } = await useLazyFetch(config.public.apiUrl + '/reports', {
+const { data: reports, pending } = await useLazyFetch(config.public.apiUrl + '/reports', {
   query: { "populate": '*' },
   transform: (_reports: AsyncData<any, any>) => {
     return sanitizeApiResponse(_reports) as Report[];
