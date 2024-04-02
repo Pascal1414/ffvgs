@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer p-10 bg-base-200 text-base-content">
+  <footer class="footer flex justify-around p-10 bg-base-200 text-base-content">
     <nav>
       <h6 class="footer-title">Links</h6>
       <router-link to="/imprint" class="link link-hover">Impressum</router-link>
