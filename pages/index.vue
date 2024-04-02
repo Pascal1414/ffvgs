@@ -13,11 +13,8 @@
     </div>
   </div>
 
-  <div v-if="!isFetched" class="w-full flex justify-center">
-    <span class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
-  </div>
 
-  <div v-if="isFetched" v-for="(article, index) in  articles ">
+  <div v-for="(article, index) in  articles ">
     <div class="divider" />
     <ImageHero v-if="article.images?.length" :reversed="index % 2 == 0"
       :images="article.images.map(({ formats }) => formats?.medium?.url)">
@@ -25,29 +22,24 @@
     </ImageHero>
     <div v-else>
       <div class="sm:hero min-h-[400px]">
-        <div class="hero-content place-items-start w-full flex-col marked" v-html="marked(article.text)" />
+        <div class="hero-content place-items-start w-full flex-col marked" v-html="marked(article.text || '')" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import type { AsyncData } from '#app';
+
 import { marked } from 'marked';
 import type { HomeArticle } from '~/types/home-article';
 
 const config = useRuntimeConfig()
 
-const articles: Ref<HomeArticle[]> = ref([])
-const isFetched = ref(false)
-
-
-useLazyFetch(config.public.apiUrl + '/home-articles', {
+const { data: articles } = await useFetch(config.public.apiUrl + '/home-articles', {
   query: { "populate": '*' },
-  onResponse({ request, response, options }) {
-    const sanitizedResponse = sanitizeApiResponse(response._data) as HomeArticle[];
-    isFetched.value = true
-
-    articles.value = sanitizedResponse;
+  transform: (_articles: AsyncData<any, any>) => {
+    return sanitizeApiResponse(_articles) as HomeArticle[];
   }
 })
 </script>
