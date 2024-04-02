@@ -13,11 +13,7 @@
     </div>
   </div>
 
-  <div v-if="!isFetched" class="w-full flex justify-center">
-    <span class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
-  </div>
-
-  <div v-if="isFetched" v-for="(article, index) in  articles ">
+  <div v-for="(article, index) in  articles ">
     <div class="divider" />
     <ImageHero v-if="article.images?.length" :reversed="index % 2 == 0"
       :images="article.images.map(({ formats }) => formats?.medium?.url)">
@@ -41,7 +37,7 @@ const articles: Ref<HomeArticle[]> = ref([])
 const isFetched = ref(false)
 
 
-useLazyFetch(config.public.apiUrl + '/home-articles', {
+useFetch(config.public.apiUrl + '/home-articles', {
   query: { "populate": '*' },
   onResponse({ request, response, options }) {
     const sanitizedResponse = sanitizeApiResponse(response._data) as HomeArticle[];
