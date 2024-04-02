@@ -69,8 +69,8 @@ const selectionSelect: Ref<string> = ref('');
 
 const { data: programs } = await useLazyFetch(config.public.apiUrl + '/programs', {
     query: { "populate": '*' },
-    transform: (_articles: AsyncData<any, any>) => {
-        return sanitizeApiResponse(_articles) as Program[];
+    transform: (_programs: AsyncData<any, any>) => {
+        return sanitizeApiResponse(_programs) as Program[];
     }
 })
 updateVisibleProgramsToInputField()
