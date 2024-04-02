@@ -36,7 +36,7 @@ import type { HomeArticle } from '~/types/home-article';
 
 const config = useRuntimeConfig()
 
-const { data: articles } = await useFetch(config.public.apiUrl + '/home-articles', {
+const { data: articles } = await useLazyFetch(config.public.apiUrl + '/home-articles', {
   query: { "populate": '*' },
   transform: (_articles: AsyncData<any, any>) => {
     return sanitizeApiResponse(_articles) as HomeArticle[];
