@@ -3,9 +3,7 @@
     <div class="card-body">
       <h1 class="text-4xl font-bold mb-4 flex justify-center">Vorstand</h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
-        <span v-if="!boardPersonsIsFetched" class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
-        <div v-if="boardPersonsIsFetched" v-for="(person, index) in boardPersons" :key="index"
-          class="card lg:card-side bg-base-100 shadow-xl">
+        <div v-for="(person, index) in boardPersons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
             <img class="h-[100%] w-[100%]" :src="person.image.formats?.medium?.url" alt="Image" />
           </figure>
@@ -38,9 +36,7 @@
         VIPs – Funktionäre und Ehrenmitglieder
       </h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
-        <span v-if="!vipsIsFetched" class="loading loading-spinner loading-lg mt-[50px] mb-[50px]"></span>
-        <div v-if="vipsIsFetched" v-for="(vip, index) in vips" :key="index"
-          class="card w-96 card-side bg-base-100 shadow-xl">
+        <div v-for="(vip, index) in vips" :key="index" class="card w-96 card-side bg-base-100 shadow-xl">
           <figure class="h-[132px] w-[99px]">
             <img :src="vip.image.formats?.medium?.url" alt="Profile" class="rounded-xl" />
           </figure>
@@ -57,29 +53,21 @@
 <script setup lang="ts">
 import type { BoardPerson } from '~/types/board-person';
 import type { Vip } from '~/types/vip';
+import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig()
 
-const boardPersons: Ref<BoardPerson[]> = ref([])
-const boardPersonsIsFetched = ref(false)
-const vips: Ref<Vip[]> = ref([])
-const vipsIsFetched = ref(false)
-
-useLazyFetch(config.public.apiUrl + '/board-people', {
+const { data: boardPersons } = await useLazyFetch(config.public.apiUrl + '/board-people', {
   query: { "populate": '*' },
-  onResponse({ request, response, options }) {
-    const sanitizedResponse = sanitizeApiResponse(response._data) as BoardPerson[];
-    boardPersonsIsFetched.value = true
-    boardPersons.value = sanitizedResponse;
+  transform: (_boardpeople: AsyncData<any, any>) => {
+    return sanitizeApiResponse(_boardpeople) as BoardPerson[];
   }
 })
 
-useLazyFetch(config.public.apiUrl + '/vips', {
+const { data: vips } = await useLazyFetch(config.public.apiUrl + '/vips', {
   query: { "populate": '*' },
-  onResponse({ request, response, options }) {
-    const sanitizedResponse = sanitizeApiResponse(response._data) as Vip[];
-    vipsIsFetched.value = true
-    vips.value = sanitizedResponse;
+  transform: (_vips: AsyncData<any, any>) => {
+    return sanitizeApiResponse(_vips) as Vip[];
   }
 })
 
