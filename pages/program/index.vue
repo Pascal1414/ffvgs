@@ -87,11 +87,19 @@ const selectionSelect: Ref<string> = ref('');
 const { data: programs, pending } = await useLazyFetch(config.public.apiUrl + '/programs', {
     query: { "populate": '*' },
     transform: (_programs: AsyncData<any, any>) => {
-        return sanitizeApiResponse(_programs) as Program[];
+        const sanitizedResponse = sanitizeApiResponse(_programs) as Program[];
+        return oderByDate(sanitizedResponse)
     }
 })
 updateVisibleProgramsToInputField()
 
+function oderByDate(programms: Program[]): Program[] {
+    return programms.sort((a, b) => {
+        if (a.dates === null || a.dates.length === 0) return 1
+        if (b.dates === null || b.dates.length === 0) return -1
+        return new Date(a.dates[0]) > new Date(b.dates[0]) ? 1 : -1
+    })
+}
 
 function onItemClick(item: Program) {
     router.push(`/program/${item.id}`)
