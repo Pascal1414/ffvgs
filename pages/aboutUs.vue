@@ -3,6 +3,9 @@
     <div class="card-body">
       <h1 class="text-4xl font-bold mb-4 flex justify-center">Vorstand</h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
+
+        <div v-if="boardPending && boardPersons === null" v-for="n in 10" class="skeleton  h-[240px] w-[440px]"></div>
+
         <div v-for="(person, index) in boardPersons" :key="index" class="card lg:card-side bg-base-100 shadow-xl">
           <figure class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto">
             <img class="h-[100%] w-[100%]" :src="person.image.url" alt="Image" />
@@ -36,6 +39,9 @@
         VIPs – Funktionäre und Ehrenmitglieder
       </h1>
       <div class="board flex flex-wrap justify-around gap-[25px]">
+
+        <div v-if="vipsPending && vips === null" v-for="n in 10" class="skeleton  h-[132px] w-[384px]"></div>
+
         <div v-for="(vip, index) in vips" :key="index" class="card w-96 card-side bg-base-100 shadow-xl">
           <figure class="h-[132px] w-[99px]">
             <img :src="vip.image.url" alt="Profile" class="rounded-xl" />
@@ -57,14 +63,14 @@ import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig()
 
-const { data: boardPersons } = await useLazyFetch(config.public.apiUrl + '/board-people', {
+const { data: boardPersons, pending: boardPending } = await useLazyFetch(config.public.apiUrl + '/board-people', {
   query: { "populate": '*' },
   transform: (_boardpeople: AsyncData<any, any>) => {
     return sanitizeApiResponse(_boardpeople) as BoardPerson[];
   }
 })
 
-const { data: vips } = await useLazyFetch(config.public.apiUrl + '/vips', {
+const { data: vips, pending: vipsPending } = await useLazyFetch(config.public.apiUrl + '/vips', {
   query: { "populate": '*' },
   transform: (_vips: AsyncData<any, any>) => {
     return sanitizeApiResponse(_vips) as Vip[];
