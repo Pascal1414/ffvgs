@@ -97,7 +97,10 @@ function oderByDate(programms: Program[]): Program[] {
     return programms.sort((a, b) => {
         if (a.dates === null || a.dates.length === 0) return 1
         if (b.dates === null || b.dates.length === 0) return -1
-        return new Date(a.dates[0]) > new Date(b.dates[0]) ? 1 : -1
+        const dateA = new Date(a.dates[0]);
+        const dateB = new Date(b.dates[0]);
+        if (dateA === dateB) return 0;
+        return dateA > dateB ? 1 : -1;
     })
 }
 
