@@ -6,9 +6,6 @@ Add the following variables to the .env file.
 
 ```
 STRAPI_API_URL=<https://example.com>
-CLOUDINARY_CLOUD_NAME=<cloud_name>
-CLOUDINARY_API_KEY=<api_key>
-CLOUDINARY_API_SECRET=<api_secret>
 ```
 
 ## Nuxt 3 Minimal Starter

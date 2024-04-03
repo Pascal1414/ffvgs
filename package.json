@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "cloudinary": "^2.1.0",
     "marked": "^12.0.1",
     "nuxt": "^3.11.1",
     "vue": "^3.4.21",
