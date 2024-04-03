@@ -3,6 +3,7 @@
     <div class="card w-full bg-base-200 shadow-xl">
         <div class="card-body">
             <h2 class="card-title"> {{ program?.name }}</h2>
+            <div v-if="pending && program === null" class="skeleton h-[26px] w-[200px]"></div>
 
             <div v-if="program && program?.description == undefined" role="alert" class="alert alert-info my-5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -14,6 +15,10 @@
             </div>
 
             <div v-else class="marked" v-html="marked(program?.description || '')" />
+            <div v-if="pending && program === null" class="skeleton h-[30px] w-[80%]"></div>
+            <div v-if="pending && program === null" class="skeleton h-4 w-[30%]"></div>
+            <div v-if="pending && program === null" class="skeleton h-4 w-[35%]"></div>
+            <div v-if="pending && program === null" class="skeleton h-4 w-[25%] mb-6"></div>
 
 
             <div class="card-actions">
@@ -39,7 +44,7 @@ import type { AsyncData } from '#app';
 const config = useRuntimeConfig()
 const route = useRoute()
 
-const { data: program, error } = await useLazyFetch(`${config.public.apiUrl}/programs/${route.params.id}`, {
+const { data: program, error, pending } = await useLazyFetch(`${config.public.apiUrl}/programs/${route.params.id}`, {
     query: { "populate": '*' },
     transform: (_program: AsyncData<any, any>) => {
         return sanitizeApiResponse(_program) as Program;
