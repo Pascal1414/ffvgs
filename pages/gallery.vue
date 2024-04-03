@@ -1,4 +1,8 @@
 <template>
+  <div class="flex flex-col gap-4">
+    <div v-for="n in 5" v-if="pending && galeryItems === null" class="skeleton w-[698px] h-[413px]"></div>
+
+  </div>
   <div v-for="(galeryItem, index) in galeryItems" :key="index">
     <div class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4">
       <div class="card-body">
@@ -12,8 +16,8 @@
       })
     })
     previewImageIndex = index*/
-  }
-    ">
+    }
+      ">
             <img class="md:rounded-md" :src="image.url" :alt="image.caption" />
           </label>
         </div>
@@ -59,7 +63,7 @@ import type { Galery } from '~/types/galery'
 
 const config = useRuntimeConfig()
 
-const { data: galeryItems } = await useLazyFetch(config.public.apiUrl + '/galeries', {
+const { data: galeryItems, pending } = await useLazyFetch(config.public.apiUrl + '/galeries', {
   query: { "populate": '*' },
   transform: (_galeryItems: AsyncData<any, any>) => {
     return sanitizeApiResponse(_galeryItems) as Galery[];
