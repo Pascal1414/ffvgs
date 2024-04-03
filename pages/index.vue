@@ -13,6 +13,15 @@
     </div>
   </div>
 
+  <div class="flex flex-col gap-1 mb-10" v-if="pending && articles === null" v-for="n in 5">
+    <div class="divider" />
+
+    <div class="skeleton h-[40px] w-[90%] mb-4"></div>
+    <div class="skeleton h-4 w-[77%]"></div>
+    <div class="skeleton h-4 w-[75%]"></div>
+    <div class="skeleton h-4 w-[80%]"></div>
+    <div class="skeleton h-4 w-[72%]"></div>
+  </div>
 
   <div v-for="(article, index) in  articles ">
     <div class="divider" />
@@ -35,7 +44,7 @@ import type { HomeArticle } from '~/types/home-article';
 
 const config = useRuntimeConfig()
 
-const { data: articles } = await useLazyFetch(config.public.apiUrl + '/home-articles', {
+const { data: articles, pending } = await useLazyFetch(config.public.apiUrl + '/home-articles', {
   query: { "populate": '*' },
   transform: (_articles: AsyncData<any, any>) => {
     return sanitizeApiResponse(_articles) as HomeArticle[];
