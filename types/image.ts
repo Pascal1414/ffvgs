@@ -10,6 +10,19 @@ export type ResImage = {
     medium: Format;
     small: Format;
   };
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl: null;
+  provider: string;
+  provider_metadata: {
+    public_id: string;
+    resource_type: string;
+  };
+  created_at: string;
+  updated_at: string;
 };
 type Format = {
   url: string;
