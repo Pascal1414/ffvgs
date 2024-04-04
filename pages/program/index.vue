@@ -6,11 +6,9 @@
                 <span class="label-text">Program nach Mitgliedschaft anzeigen:</span>
             </label>
             <select v-model="selectionSelect" class="select select-bordered max-w-xs mb-4" name="mitgliedschaft"
-                id="role" @change="updateVisibleProgramsToInputField()">
-                <option value="none" selected>Alles anzeigen</option>
-                <option value="alle">Alle Mitglieder</option>
-                <option value="junioren">Junioren</option>
-                <option value="jugendgruppe">Jugendgruppe</option>
+                id="role">
+                <option v-for="option in selectionOptions" :key="option.value" :value="option.value">
+                    {{ option.text }}</option>
             </select>
         </div>
     </div>
@@ -26,18 +24,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="programItem in currentList" :key="programItem.id" class="hover"
+                <tr v-for="programItem in programs" :key="programItem.id" class="hover"
                     @click="onItemClick(programItem)">
-                    <th>
+                    <th v-if="shouldShowProgram(programItem)">
                         <svg width="27px" height="27px" viewBox="0 0 32 32" class="" xmlns="http://www.w3.org/2000/svg">
                             <path v-if="alreadyHappened(programItem)" class="fill-base-content"
                                 d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z" />
                         </svg>
                     </th>
-                    <td>{{ programItem.name }}</td>
-                    <td>
+                    <td v-if="shouldShowProgram(programItem)">{{ programItem.name }}</td>
+                    <td v-if="shouldShowProgram(programItem)">
                         <div class="dates">
-                            <div v-for="(date, index) in programItem.dates" :key="index">{{ formatDate(date) }}</div>
+                            <div v-for="(date, index) in programItem.dates" :key="index">{{ formatDate(date) }}
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -81,8 +80,14 @@ import type { AsyncData } from '#app';
 const config = useRuntimeConfig()
 const router = useRouter()
 
-const currentList: Ref<Program[]> = ref([])
-const selectionSelect: Ref<string> = ref('');
+const selectionOptions = ref([
+    { value: 'none', text: 'Alles anzeigen' },
+    { value: 'alle', text: 'Alle Mitglieder' },
+    { value: 'junioren', text: 'Junioren' },
+    { value: 'jugendgruppe', text: 'Jugendgruppe' }
+])
+
+const selectionSelect: Ref<string> = ref(selectionOptions.value[0].value);
 
 const { data: programs, pending } = await useLazyFetch(config.public.apiUrl + '/programs', {
     query: { "populate": '*' },
@@ -91,7 +96,6 @@ const { data: programs, pending } = await useLazyFetch(config.public.apiUrl + '/
         return oderByDate(sanitizedResponse)
     }
 })
-updateVisibleProgramsToInputField()
 
 function oderByDate(programms: Program[]): Program[] {
     return programms.sort((a, b) => {
@@ -102,6 +106,20 @@ function oderByDate(programms: Program[]): Program[] {
         if (dateA === dateB) return 0;
         return dateA > dateB ? 1 : -1;
     })
+}
+
+
+function shouldShowProgram(program: Program): boolean {
+    switch (selectionSelect.value) {
+        case 'junioren':
+            return program.forJunior
+        case 'alle':
+            return program.forAll
+        case 'jugendgruppe':
+            return program.forJugend
+        default:
+            return true
+    }
 }
 
 function onItemClick(item: Program) {
@@ -116,26 +134,6 @@ function alreadyHappened(programItem: Program): boolean {
 function formatDate(date: string): string {
     return new Date(date).toLocaleDateString('ch-DE')
 }
-function updateVisibleProgramsToInputField() {
-    switch (selectionSelect.value) {
-        case 'junioren':
-            currentList.value = programs.value.filter((i) => i.forJunior)
-            break
-        case 'alle':
-            currentList.value = programs.value.filter((i) => i.forAll)
-            break
-        case 'jugendgruppe':
-            currentList.value = programs.value.filter((i) => i.forJugend)
-            break
-
-        default:
-            currentList.value = programs.value;
-            break
-    }
-}
-onMounted(() => {
-    document.cookie = "SameSite=None; Secure";
-})
 </script>
 
 <style scoped>
