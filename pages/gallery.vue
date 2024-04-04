@@ -10,7 +10,9 @@
         <div class="grid grid-cols-3 gap-4">
           <div v-for="(image, index) in galeryItem.images" :key="index"
             @click="openPreviewModal(galeryItem.images, index)">
-            <img class="md:rounded-md" :src="image.url" :alt="image.caption" />
+            <CldImage class="md:rounded-md w-full" :src="image.url" :alt="image.caption"
+              :width="calculateImageSize(image.width, image.height).width"
+              :height="calculateImageSize(image.width, image.height).height" />
           </div>
         </div>
       </div>
@@ -32,9 +34,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import type { AsyncData } from '#app'
-import type { Ref } from 'vue'
 import type { Galery } from '~/types/galery'
 import type { ResImage } from '~/types/image';
 
@@ -47,6 +47,13 @@ const { data: galeryItems, pending } = await useLazyFetch(config.public.apiUrl +
     return sanitizeApiResponse(_galeryItems) as Galery[];
   }
 })
+
+function calculateImageSize(width: number, height: number) {
+  const aspectRatio = width / height
+  const newWidth = 600
+  const newHeight = newWidth / aspectRatio
+  return { width: newWidth, height: newHeight }
+}
 
 /* Image Preview */
 const preview_modal = ref<HTMLDialogElement | null>(null)
