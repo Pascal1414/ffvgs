@@ -21,7 +21,8 @@
 
   <dialog ref="preview_modal" class="modal">
     <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative">
-      <img class="object-contain w-full h-full " :src="previewImages[previewImageIndex]?.url" alt="img" />
+      <CldImage class="object-contain w-full h-full " :src="previewImages[previewImageIndex]?.url" alt="img"
+        :width="previewImages[previewImageIndex].height" :height="previewImages[previewImageIndex].height" />
       <button class="btn absolute top-[50%] left-2" @click="previous()">
         <ClientOnly>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
@@ -43,7 +44,7 @@
         </ClientOnly>
       </button>
 
-      <form method="dialog ">
+      <form @click.prevent="closePreviewModal()">
         <button class="btn absolute top-4 right-4">
           <ClientOnly>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
@@ -90,6 +91,9 @@ function openPreviewModal(images: ResImage[], currentIndex: number) {
   previewImageIndex.value = currentIndex
   previewImages.value = images
   preview_modal.value?.showModal()
+}
+function closePreviewModal() {
+  preview_modal.value?.close()
 }
 
 function next() {
