@@ -20,15 +20,33 @@
   </div>
 
   <dialog ref="preview_modal" class="modal">
-    <div class="modal-box max-h-none max-w-none w-[90%] h-[80%]">
-      <img class="md:rounded-md" :src="previewImages[previewImageIndex]?.url"
+    <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative">
+      <img class="object-contain w-full h-full " :src="previewImages[previewImageIndex]?.url"
         :alt="previewImages[previewImageIndex]?.caption" />
-      <div class="modal-action">
-        <form method="dialog">
-          <!-- if there is a button in form, it will close the modal -->
-          <button class="btn">Close</button>
-        </form>
-      </div>
+      <button class="btn">
+        <ClientOnly>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
+            </path>
+          </svg>
+        </ClientOnly>
+      </button>
+      <button class="btn">
+        <ClientOnly>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+            </path>
+          </svg>
+        </ClientOnly>
+      </button>
+
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
     </div>
   </dialog>
 </template>
