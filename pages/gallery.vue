@@ -23,7 +23,7 @@
     <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative">
       <img class="object-contain w-full h-full " :src="previewImages[previewImageIndex]?.url"
         :alt="previewImages[previewImageIndex]?.caption" />
-      <button class="btn">
+      <button class="btn" @click="previous()">
         <ClientOnly>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
             viewBox="0 0 16 16">
@@ -33,7 +33,7 @@
           </svg>
         </ClientOnly>
       </button>
-      <button class="btn">
+      <button class="btn" @click="next()">
         <ClientOnly>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
             viewBox="0 0 16 16">
@@ -82,6 +82,13 @@ function openPreviewModal(images: ResImage[], currentIndex: number) {
   previewImageIndex.value = currentIndex
   previewImages.value = images
   preview_modal.value?.showModal()
+}
+
+function next() {
+  previewImageIndex.value = (previewImageIndex.value + 1) % previewImages.value.length
+}
+function previous() {
+  previewImageIndex.value = (previewImageIndex.value - 1 + previewImages.value.length) % previewImages.value.length
 }
 
 
