@@ -10,7 +10,7 @@
         <div class="grid grid-cols-3 gap-4">
           <div v-for="(image, index) in galeryItem.images" :key="index"
             @click="openPreviewModal(galeryItem.images, index)">
-            <CldImage class="md:rounded-md w-full" :src="image.url" :alt="image.caption"
+            <CldImage class="md:rounded-md w-full" :src="image.url" alt="img"
               :width="calculateImageSize(image.width, image.height).width"
               :height="calculateImageSize(image.width, image.height).height" />
           </div>
@@ -21,9 +21,8 @@
 
   <dialog ref="preview_modal" class="modal">
     <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative">
-      <img class="object-contain w-full h-full " :src="previewImages[previewImageIndex]?.url"
-        :alt="previewImages[previewImageIndex]?.caption" />
-      <button class="btn" @click="previous()">
+      <img class="object-contain w-full h-full " :src="previewImages[previewImageIndex]?.url" alt="img" />
+      <button class="btn absolute top-[50%] left-2" @click="previous()">
         <ClientOnly>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
             viewBox="0 0 16 16">
@@ -33,7 +32,7 @@
           </svg>
         </ClientOnly>
       </button>
-      <button class="btn" @click="next()">
+      <button class="btn absolute top-[50%] right-2" @click="next()">
         <ClientOnly>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
             viewBox="0 0 16 16">
@@ -44,8 +43,8 @@
         </ClientOnly>
       </button>
 
-      <form method="dialog">
-        <button class="btn">
+      <form method="dialog ">
+        <button class="btn absolute top-4 right-4">
           <ClientOnly>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
               viewBox="0 0 16 16">
