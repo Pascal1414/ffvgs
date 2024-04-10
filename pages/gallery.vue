@@ -21,8 +21,9 @@
 
   <dialog ref="preview_modal" class="modal">
     <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative">
-      <CldImage class="object-contain w-full h-full " :src="previewImages[previewImageIndex]?.url" alt="img"
-        :width="previewImages[previewImageIndex].height" :height="previewImages[previewImageIndex].height" />
+      <CldImage v-if="previewImages[previewImageIndex]" class="object-contain w-full h-full "
+        :src="previewImages[previewImageIndex].url" alt="img" :width="previewImages[previewImageIndex].height"
+        :height="previewImages[previewImageIndex].height" />
       <button class="btn absolute top-[50%] left-2" @click="previous()">
         <ClientOnly>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
