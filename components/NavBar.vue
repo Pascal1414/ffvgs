@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar justify-between bg-base-300">
+  <nav class="navbar justify-between bg-base-300 !rounded-none">
     <div class="navbar-start w-auto">
       <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -14,7 +14,7 @@
           </li>
         </ul>
       </div>
-      <router-link to="/" class="btn  text-xl">
+      <router-link to="/" class="btn btn-ghost text-xl">
         <img src="/favicon.ico" alt="Logo" class="w-10 h-10" />
         <h1>FFVGS</h1>
       </router-link>
