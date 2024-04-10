@@ -35,7 +35,8 @@
                     <td v-if="shouldShowProgram(programItem)">{{ programItem.name }}</td>
                     <td v-if="shouldShowProgram(programItem)">
                         <div class="dates">
-                            <div v-for="(date, index) in programItem.dates" :key="index">{{ formatDate(date) }}
+                            <div v-for="(date, index) in programItem.dates" :key="index">{{ toFormattedString(new
+                                Date(date)) }}
                             </div>
                         </div>
                     </td>
@@ -131,9 +132,7 @@ function alreadyHappened(programItem: Program): boolean {
     for (let date of programItem.dates) if (new Date(date) > new Date()) return false
     return true
 }
-function formatDate(date: string): string {
-    return new Date(date).toLocaleDateString('ch-DE')
-}
+
 </script>
 
 <style scoped>
