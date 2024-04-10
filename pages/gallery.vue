@@ -1,12 +1,25 @@
 <template>
+  <div class="flex flex-col items-center">
+
+    <div class="form-control">
+      <label for="role" class="label">
+        <span class="label-text">Bilder aus folgendem Jahr anzeigen:</span>
+      </label>
+      <select v-model="year" class="select select-bordered max-w-xs mb-4" name="mitgliedschaft" id="role">
+        <option v-for="year in getYearOptions()" :key="year" :value="year">
+          {{ year }}</option>
+      </select>
+    </div>
+  </div>
+
   <div class="flex flex-col gap-4">
     <div v-for="n in 5" v-if="pending && galeryItems === null" class="skeleton w-[698px] h-[413px]"></div>
-
   </div>
   <div v-for="(galeryItem, index) in galeryItems" :key="index">
-    <div class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4">
+    <div v-if="shouldShowGalery(galeryItem)" class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4">
       <div class="card-body">
-        <h1 class="text-2xl font-bold mb-2">{{ galeryItem.name }} ({{ galeryItem.date }})</h1>
+        <h1 class="text-2xl font-bold mb-2">{{ galeryItem.name }} ({{ toFormattedString(new
+          Date(galeryItem.date)) }})</h1>
         <div class="grid grid-cols-3 gap-4">
           <div v-for="(image, index) in galeryItem.images" :key="index"
             @click="openPreviewModal(galeryItem.images, index)">
@@ -68,13 +81,23 @@ import type { ResImage } from '~/types/image';
 
 const config = useRuntimeConfig()
 
+const year = ref(new Date().getFullYear())
 
 const { data: galeryItems, pending } = await useLazyFetch(config.public.apiUrl + '/galeries', {
   query: { "populate": '*' },
   transform: (_galeryItems: AsyncData<any, any>) => {
     return sanitizeApiResponse(_galeryItems) as Galery[];
-  }
+  },
 })
+
+function shouldShowGalery(galery: Galery): boolean {
+  return year.value === new Date(galery.date).getFullYear()
+}
+
+function getYearOptions() {
+  const years = galeryItems.value?.map(galery => new Date(galery.date).getFullYear());
+  return Array.from(new Set(years)).sort((a, b) => b - a)
+}
 
 function calculateImageSize(width: number, height: number) {
   const aspectRatio = width / height
