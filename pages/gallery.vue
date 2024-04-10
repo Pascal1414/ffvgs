@@ -102,7 +102,7 @@ function getYearOptions() {
 
 function calculateImageSize(width: number, height: number) {
   const aspectRatio = width / height
-  const newWidth = 600
+  const newWidth = 400
   const newHeight = newWidth / aspectRatio
   return { width: newWidth, height: newHeight }
 }
