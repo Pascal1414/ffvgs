@@ -23,7 +23,7 @@
     <div class="skeleton h-4 w-[72%]"></div>
   </div>
 
-  <div v-for="(article, index) in  articles ">
+  <div v-for="(article, index) in articles ">
     <div class="divider" />
     <ImageHero v-if="article.images?.length" :reversed="index % 2 == 0" :images="article.images.map(i => i.url)">
       <div class="marked" v-html="marked(article.text)" />
@@ -47,7 +47,8 @@ const config = useRuntimeConfig()
 const { data: articles, pending } = await useLazyFetch(config.public.apiUrl + '/home-articles', {
   query: { "populate": '*' },
   transform: (_articles: AsyncData<any, any>) => {
-    return sanitizeApiResponse(_articles) as HomeArticle[];
+    const articles = sanitizeApiResponse(_articles) as HomeArticle[];
+    return articles.sort((a: any, b: any) => a.priority - b.priority);
   }
 })
 </script>

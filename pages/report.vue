@@ -19,7 +19,8 @@ const config = useRuntimeConfig()
 const { data: reports, pending } = await useLazyFetch(config.public.apiUrl + '/reports', {
   query: { "populate": '*' },
   transform: (_reports: AsyncData<any, any>) => {
-    return sanitizeApiResponse(_reports) as Report[];
+    const reports = sanitizeApiResponse(_reports) as Report[];
+    return reports.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   }
 })
 

@@ -5,6 +5,7 @@ export type Vip = {
   name: string;
   function: string;
   image: ResImage;
+  priority: number;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

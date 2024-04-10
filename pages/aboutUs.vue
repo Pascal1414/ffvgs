@@ -66,14 +66,16 @@ const config = useRuntimeConfig()
 const { data: boardPersons, pending: boardPending } = await useLazyFetch(config.public.apiUrl + '/board-people', {
   query: { "populate": '*' },
   transform: (_boardpeople: AsyncData<any, any>) => {
-    return sanitizeApiResponse(_boardpeople) as BoardPerson[];
+    const boardPeople = sanitizeApiResponse(_boardpeople) as BoardPerson[];
+    return boardPeople.sort((a: any, b: any) => a.priority - b.priority);
   }
 })
 
 const { data: vips, pending: vipsPending } = await useLazyFetch(config.public.apiUrl + '/vips', {
   query: { "populate": '*' },
   transform: (_vips: AsyncData<any, any>) => {
-    return sanitizeApiResponse(_vips) as Vip[];
+    const vips = sanitizeApiResponse(_vips) as Vip[];
+    return vips.sort((a: any, b: any) => a.priority - b.priority);
   }
 })
 

@@ -6,6 +6,7 @@ export type BoardPerson = {
   email: string;
   function: string;
   tel: string;
+  priority: number;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
