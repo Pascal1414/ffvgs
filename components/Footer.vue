@@ -4,6 +4,8 @@
       <h6 class="footer-title">Links</h6>
       <router-link to="/imprint" class="link link-hover">Impressum</router-link>
       <router-link to="/documents" class="link link-hover">Dokumente</router-link>
+      <a href="https://ffvgs-backend.onrender.com/admin" class="link link-hover">Admin Login</a>
+
     </nav>
     <nav>
       <h6 class="footer-title">Events</h6>
