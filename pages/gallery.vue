@@ -33,10 +33,11 @@
   </div>
 
   <dialog ref="preview_modal" class="modal">
-    <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative">
+    <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative flex flex-col items-center">
       <CldImage v-if="previewImages[previewImageIndex]" class="object-contain w-full h-full "
-        :src="previewImages[previewImageIndex].url" alt="img" :width="previewImages[previewImageIndex].height"
-        :height="previewImages[previewImageIndex].height" />
+        :src="previewImages[previewImageIndex].url" alt="img"
+        :width="calculateLargeImageSize(previewImages[previewImageIndex].width, previewImages[previewImageIndex].height).width"
+        :height="calculateLargeImageSize(previewImages[previewImageIndex].width, previewImages[previewImageIndex].height).height" />
       <button class="btn absolute top-[50%] left-2" @click="previous()">
         <ClientOnly>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
@@ -106,6 +107,13 @@ function calculateImageSize(width: number, height: number) {
   return { width: newWidth, height: newHeight }
 }
 
+function calculateLargeImageSize(width: number, height: number) {
+  const aspectRatio = width / height
+  const newWidth = 1200
+  const newHeight = newWidth / aspectRatio
+  return { width: newWidth, height: newHeight }
+}
+
 /* Image Preview */
 const preview_modal = ref<HTMLDialogElement | null>(null)
 const previewImages = ref<ResImage[]>([])
@@ -117,6 +125,9 @@ function openPreviewModal(images: ResImage[], currentIndex: number) {
   preview_modal.value?.showModal()
 }
 function closePreviewModal() {
+  previewImageIndex.value = 0;
+  previewImages.value = []
+
   preview_modal.value?.close()
 }
 
