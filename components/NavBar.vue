@@ -26,9 +26,9 @@
         </li>
       </ul>
     </div>
-    <!-- Invisible button for removing focus from the dropdown -->
-    <button ref="ghostBtn" />
   </nav>
+  <!-- Invisible button for removing focus from the dropdown -->
+  <button ref="ghostBtn" />
 </template>
 <script lang="ts" setup>
 const navItems = [
