@@ -13,7 +13,7 @@
   </div>
 
   <div class="flex flex-col gap-4">
-    <div v-for="n in 5" v-if="pending && galeryItems === null" class="skeleton w-[698px] h-[413px]"></div>
+    <div v-for="n in 5" v-if="pending && galeryItems === null" class="skeleton w-full h-[413px]"></div>
   </div>
   <div v-for="(galeryItem, index) in galeryItems" :key="index">
     <div v-if="shouldShowGalery(galeryItem)" class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4">
