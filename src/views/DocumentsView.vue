@@ -22,7 +22,7 @@
       <span>Vereinsfischen</span>
     </li>
     <li>
-      <a id="vereisfischen" class="link no-underline" href="documents/Vereinsfischen-2023.pdf">Informationen
+      <a id="vereisfischen" class="link no-underline" href="documents/Information-Vereinsmeisterschaft-2024.pdf">Informationen
         Vereinsfischen</a>
     </li>
     <li class="menu-title">
