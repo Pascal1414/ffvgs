@@ -69,7 +69,10 @@
         </template>
       </div>
 
-      <button class="btn absolute top-[50%] left-2" @click="previous()">
+      <button
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] left-[50%] md:left-2"
+        @click="previous()"
+      >
         <ClientOnly>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +89,10 @@
           </svg>
         </ClientOnly>
       </button>
-      <button class="btn absolute top-[50%] right-2" @click="next()">
+      <button
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] right-[50%] md:right-2"
+        @click="next()"
+      >
         <ClientOnly>
           <svg
             xmlns="http://www.w3.org/2000/svg"
