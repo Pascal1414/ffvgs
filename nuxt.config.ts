@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/cloudinary"],
-  plugins: [{ src: "~/plugins/after-each-navigation.ts", mode: "client" }],
   runtimeConfig: {
     public: {
       backendUrl: process.env.STRAPI_API_URL,

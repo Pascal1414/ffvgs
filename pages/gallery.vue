@@ -169,20 +169,6 @@ function calculateImageSize(width: number, height: number) {
   return { width: newWidth, height: newHeight };
 }
 
-function calculateLargeImageSize(width: number, height: number) {
-  const aspectRatio = width / height;
-  const maxSide = 2000;
-  let newWidth, newHeight;
-  if (width > height) {
-    newWidth = maxSide;
-    newHeight = newWidth / aspectRatio;
-  } else {
-    newHeight = maxSide;
-    newWidth = newHeight * aspectRatio;
-  }
-  return { width: newWidth, height: newHeight };
-}
-
 /* Image Preview */
 const preview_modal = ref<HTMLDialogElement | null>(null);
 const previewImages = ref<ResImage[]>([]);
