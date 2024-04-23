@@ -70,7 +70,7 @@
       </div>
 
       <button
-        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] left-[50%] md:left-2"
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] left-2"
         @click="previous()"
       >
         <ClientOnly>
@@ -90,7 +90,7 @@
         </ClientOnly>
       </button>
       <button
-        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] right-[50%] md:right-2"
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] right-2"
         @click="next()"
       >
         <ClientOnly>
