@@ -6,15 +6,15 @@ export type ResImage = {
   width: number;
   height: number;
   formats: {
-    thumbnail: Format;
-    medium: Format;
-    small: Format;
+    thumbnail?: Format;
+    medium?: Format;
+    small?: Format;
   };
   hash: string;
   ext: string;
   mime: string;
   size: number;
-  url: string;
+  url?: string;
   previewUrl: null;
   provider: string;
   provider_metadata: {
