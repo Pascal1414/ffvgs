@@ -1,13 +1,13 @@
 <template>
   <div class="flex flex-col items-center">
-
     <div class="form-control">
       <label for="role" class="label">
         <span class="label-text">Bilder aus folgendem Jahr anzeigen:</span>
       </label>
       <select v-model="year" class="select select-bordered max-w-xs mb-4" name="mitgliedschaft" id="role">
         <option v-for="year in getYearOptions()" :key="year" :value="year">
-          {{ year }}</option>
+          {{ year }}
+        </option>
       </select>
     </div>
   </div>
@@ -18,8 +18,11 @@
   <div v-for="(galeryItem, index) in galeryItems" :key="index">
     <div v-if="shouldShowGalery(galeryItem)" class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4">
       <div class="card-body">
-        <h1 class="text-2xl font-bold mb-2">{{ galeryItem.name }} ({{ toFormattedString(new
-          Date(galeryItem.date)) }})</h1>
+        <h1 class="text-2xl font-bold mb-2">
+          {{ galeryItem.name }} ({{
+            toFormattedString(new Date(galeryItem.date))
+          }})
+        </h1>
         <div class="grid grid-cols-3 gap-4">
           <div v-for="(image, index) in galeryItem.images" :key="index"
             @click="openPreviewModal(galeryItem.images, index)">
@@ -34,10 +37,10 @@
 
   <dialog ref="preview_modal" class="modal">
     <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative flex flex-col items-center">
-      <CldImage v-if="previewImages[previewImageIndex]" class="object-contain w-full h-full "
-        :src="previewImages[previewImageIndex].url" alt="img"
-        :width="calculateLargeImageSize(previewImages[previewImageIndex].width, previewImages[previewImageIndex].height).width"
-        :height="calculateLargeImageSize(previewImages[previewImageIndex].width, previewImages[previewImageIndex].height).height" />
+      <div v-for="(image, index) in previewImages" class="w-full h-full">
+        <img v-if="index === previewImageIndex" class="object-contain w-full h-full" :src="image.url" alt="img" />
+      </div>
+
       <button class="btn absolute top-[50%] left-2" @click="previous()">
         <ClientOnly>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
@@ -76,69 +79,82 @@
 </template>
 
 <script lang="ts" setup>
-import type { AsyncData } from '#app'
-import type { Galery } from '~/types/galery'
-import type { ResImage } from '~/types/image';
+import type { AsyncData } from "#app";
+import type { Galery } from "~/types/galery";
+import type { ResImage } from "~/types/image";
 
-const config = useRuntimeConfig()
+const config = useRuntimeConfig();
 
-const year = ref(new Date().getFullYear())
+const year = ref(new Date().getFullYear());
 
-const { data: galeryItems, pending } = await useLazyFetch(config.public.apiUrl + '/galeries', {
-  query: { "populate": '*' },
-  transform: (_galeryItems: AsyncData<any, any>) => {
-    return sanitizeApiResponse(_galeryItems) as Galery[];
-  },
-})
+const { data: galeryItems, pending } = await useLazyFetch(
+  config.public.apiUrl + "/galeries",
+  {
+    query: { populate: "*" },
+    transform: (_galeryItems: AsyncData<any, any>) => {
+      return sanitizeApiResponse(_galeryItems) as Galery[];
+    },
+  }
+);
 
 function shouldShowGalery(galery: Galery): boolean {
-  return year.value === new Date(galery.date).getFullYear()
+  return year.value === new Date(galery.date).getFullYear();
 }
 
 function getYearOptions() {
-  const years = galeryItems.value?.map(galery => new Date(galery.date).getFullYear());
-  return Array.from(new Set(years)).sort((a, b) => b - a)
+  const years = galeryItems.value?.map((galery) =>
+    new Date(galery.date).getFullYear()
+  );
+  return Array.from(new Set(years)).sort((a, b) => b - a);
 }
 
 function calculateImageSize(width: number, height: number) {
-  const aspectRatio = width / height
-  const newWidth = 400
-  const newHeight = newWidth / aspectRatio
-  return { width: newWidth, height: newHeight }
+  const aspectRatio = width / height;
+  const newWidth = 400;
+  const newHeight = newWidth / aspectRatio;
+  return { width: newWidth, height: newHeight };
 }
 
 function calculateLargeImageSize(width: number, height: number) {
-  const aspectRatio = width / height
-  const newWidth = 1200
-  const newHeight = newWidth / aspectRatio
-  return { width: newWidth, height: newHeight }
+  const aspectRatio = width / height;
+  const maxSide = 2000;
+  let newWidth, newHeight;
+  if (width > height) {
+    newWidth = maxSide;
+    newHeight = newWidth / aspectRatio;
+  } else {
+    newHeight = maxSide;
+    newWidth = newHeight * aspectRatio;
+  }
+  return { width: newWidth, height: newHeight };
 }
 
 /* Image Preview */
-const preview_modal = ref<HTMLDialogElement | null>(null)
-const previewImages = ref<ResImage[]>([])
-const previewImageIndex = ref<number>(0)
+const preview_modal = ref<HTMLDialogElement | null>(null);
+const previewImages = ref<ResImage[]>([]);
+const previewImageIndex = ref<number>(0);
 
 function openPreviewModal(images: ResImage[], currentIndex: number) {
-  previewImageIndex.value = currentIndex
-  previewImages.value = images
-  preview_modal.value?.showModal()
+  previewImageIndex.value = currentIndex;
+  previewImages.value = images;
+  preview_modal.value?.showModal();
 }
 function closePreviewModal() {
   previewImageIndex.value = 0;
-  previewImages.value = []
+  previewImages.value = [];
 
-  preview_modal.value?.close()
+  preview_modal.value?.close();
 }
 
 function next() {
-  previewImageIndex.value = (previewImageIndex.value + 1) % previewImages.value.length
+  previewImageIndex.value =
+    (previewImageIndex.value + 1) % previewImages.value.length;
 }
 function previous() {
-  previewImageIndex.value = (previewImageIndex.value - 1 + previewImages.value.length) % previewImages.value.length
+  previewImageIndex.value =
+    (previewImageIndex.value - 1 + previewImages.value.length) %
+    previewImages.value.length;
 }
-
-
 </script>
 
 <style scoped></style>
