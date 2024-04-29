@@ -9,7 +9,9 @@
       <span>Vereinsboot</span>
     </li>
     <li>
-      <a class="link no-underline" href="BenutzungsordnungVereinsboot.pdf"
+      <a
+        class="link no-underline"
+        href="/Documents/BenutzungsordnungVereinsboot.pdf"
         >Benutzungsordnung Vereinsboot</a
       >
     </li>
@@ -18,7 +20,7 @@
       <span>Statuten</span>
     </li>
     <li>
-      <a class="link no-underline" href="FFV_Statuten_5_A5.pdf"
+      <a class="link no-underline" href="/Documents/FFV_Statuten_5_A5.pdf"
         >FFV Statuten 5 A5</a
       >
     </li>
@@ -29,7 +31,7 @@
       <a
         id="vereisfischen"
         class="link no-underline"
-        href="Information-Vereinsmeisterschaft-2024.pdf"
+        href="/Documents/Information-Vereinsmeisterschaft-2024.pdf"
         >Informationen Vereinsfischen</a
       >
     </li>
@@ -37,7 +39,7 @@
       <span>Gv Protokoll</span>
     </li>
     <li>
-      <a class="link no-underline" href="GV-Protokoll-2024.pdf"
+      <a class="link no-underline" href="/Documents/GV-Protokoll-2024.pdf"
         >Gv Protokoll 2024</a
       >
     </li>
