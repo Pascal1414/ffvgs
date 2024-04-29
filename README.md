@@ -1,5 +1,7 @@
 # FFVGS Frontend
+
 The App uses the [FFVGS-Backend](https://github.com/Pascal1414/ffvgs-backend).
+
 ## `.env`
 
 Add the following variables to the .env file.
@@ -8,6 +10,10 @@ Add the following variables to the .env file.
 STRAPI_API_URL=<https://example.com>
 CLOUDINARY_CLOUD_NAME=<CLOUDINARY_CLOUD_NAME>
 ```
+
+## Documents
+
+The documents are mapped from the 'public/documents' directory. Name the documents with a combination of Pascal and Kebab case, for example 'My-Document.pdf'.
 
 ## Nuxt 3 Minimal Starter
 
