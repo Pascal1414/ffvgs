@@ -6,25 +6,45 @@
   </ul>
   <ul class="menu bg-base-200 w-56 p-2 rounded-box">
     <li class="menu-title">
-      <span>PDF's</span>
+      <span>Vereinsboot</span>
     </li>
-    <li v-for="item in docs">
-      <a class="link no-underline" :href="item" :key="item">{{
-        getFormattedName(item)
-      }}</a>
+    <li>
+      <a class="link no-underline" href="BenutzungsordnungVereinsboot.pdf"
+        >Benutzungsordnung Vereinsboot</a
+      >
+    </li>
+
+    <li class="menu-title">
+      <span>Statuten</span>
+    </li>
+    <li>
+      <a class="link no-underline" href="FFV_Statuten_5_A5.pdf"
+        >FFV Statuten 5 A5</a
+      >
+    </li>
+    <li class="menu-title">
+      <span>Vereinsfischen</span>
+    </li>
+    <li>
+      <a
+        id="vereisfischen"
+        class="link no-underline"
+        href="Information-Vereinsmeisterschaft-2024.pdf"
+        >Informationen Vereinsfischen</a
+      >
+    </li>
+    <li class="menu-title">
+      <span>Gv Protokoll</span>
+    </li>
+    <li>
+      <a class="link no-underline" href="GV-Protokoll-2024.pdf"
+        >Gv Protokoll 2024</a
+      >
     </li>
   </ul>
 </template>
 
-<script lang="ts" setup>
-import useDocuments from "~/composable/useDocuments";
-
-const docs = useDocuments();
-
-function getFormattedName(filename: string) {
-  return filename.replace(/-/g, " ").replace(".pdf", "");
-}
-</script>
+<script lang="ts" setup></script>
 
 <style scoped>
 div {
