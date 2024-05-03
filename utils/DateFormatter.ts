@@ -1,3 +1,5 @@
 export const toFormattedString = (date: Date) => {
-  return date.toLocaleDateString("ch-DE");
+  return date.toLocaleDateString("ch-DE", {
+    dateStyle: "medium",
+  });
 };
