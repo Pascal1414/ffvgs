@@ -38,8 +38,8 @@
                 <input type="radio" name="membership" class="radio checked:bg-red-500" required
                   :value="membership.name" />
                 <span class="label-text ml-4">{{
-              membership.name + ' (' + membership.price + ') ' + membership.age
-            }}</span>
+                  membership.name + ' (' + membership.price + ') ' + membership.age
+                  }}</span>
               </label>
             </div>
           </div>
