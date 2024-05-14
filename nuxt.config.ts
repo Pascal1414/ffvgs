@@ -11,5 +11,9 @@ export default defineNuxtConfig({
     cloudinary: {
       cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     },
+    formspree: {
+      contactFormUrl: process.env.CONTACT_FORM_URL,
+      joinFormUrl: process.env.JOIN_FORM_URL,
+    },
   },
 });

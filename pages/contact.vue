@@ -2,9 +2,7 @@
   <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
     <div class="card-body">
       <h1 class="text-2xl font-bold">Kontakt</h1>
-      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify
-        action="./success.html">
-        <input type="hidden" name="form-name" value="contact" />
+      <form name="contact" method="POST" :action="config.formspree.contactFormUrl">
         <div class="form-control w-full">
           <label class="label" for="contact-email">
             <span class="label-text">Email</span>
@@ -28,8 +26,7 @@
     <div class="card-body">
       <h1 class="text-2xl font-bold">Beitrittserklärung</h1>
       <p>Sehr gerne möchten wir Sie in unseren Verein aufnehmen.</p>
-      <form name="join-association" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify>
-        <input type="hidden" name="form-name" value="join-association" />
+      <form name="join-association" method="POST" :action="config.formspree.joinFormUrl">
         <input type="hidden" name="bot-field" />
         <div class="card w-[100%] bg-base-300 shadow-xl">
           <div class="card-body gap-0">
@@ -97,8 +94,8 @@
           <label class="label" for="join-message">
             <span class="label-text">Nachricht</span>
           </label>
-          <textarea id="join-message" name="message" class="textarea textarea-bordered w-full" placeholder="Nachricht">
-          </textarea>
+          <textarea id="join-message" name="message" class="textarea textarea-bordered w-full"
+            placeholder="Nachricht"></textarea>
         </div>
         <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
       </form>
@@ -108,6 +105,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+
+const config = useRuntimeConfig();
 
 const memberships = ref([
   {
