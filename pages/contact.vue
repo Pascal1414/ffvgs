@@ -2,7 +2,8 @@
   <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
     <div class="card-body">
       <h1 class="text-2xl font-bold">Kontakt</h1>
-      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify>
+      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify
+        action="./success.html">
         <input type="hidden" name="form-name" value="contact" />
         <div class="form-control w-full">
           <label class="label" for="contact-email">
