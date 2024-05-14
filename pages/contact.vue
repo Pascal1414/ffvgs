@@ -2,7 +2,7 @@
   <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
     <div class="card-body">
       <h1 class="text-2xl font-bold">Kontakt</h1>
-      <form name="contact" method="POST" :action="config.formspree.contactFormUrl">
+      <form name="contact" method="POST" :action="config.public.formspree.contactFormUrl">
         <div class="form-control w-full">
           <label class="label" for="contact-email">
             <span class="label-text">Email</span>
@@ -26,7 +26,7 @@
     <div class="card-body">
       <h1 class="text-2xl font-bold">Beitrittserklärung</h1>
       <p>Sehr gerne möchten wir Sie in unseren Verein aufnehmen.</p>
-      <form name="join-association" method="POST" :action="config.formspree.joinFormUrl">
+      <form name="join-association" method="POST" :action="config.public.formspree.joinFormUrl">
         <div class="card w-[100%] bg-base-300 shadow-xl">
           <div class="card-body gap-0">
             <p class="mb-2">Ich wünsche eine Aufnahme als:</p>
