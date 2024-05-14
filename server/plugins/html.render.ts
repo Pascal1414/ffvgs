@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html {{ HTML_ATTRS }}>
-
-<head {{ HEAD_ATTRS }}> {{ HEAD }} </head>
-
-<body {{ BODY_ATTRS }}>
-    <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify hidden>
+export default defineNitroPlugin((nitroApp) => {
+  nitroApp.hooks.hook("render:html", (html, { event }) => {
+    html.body.push(
+      `<form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify hidden>
         <input id="contact-email" name="email" type="email" />
         <textarea id="contact-message" name="message"></textarea>
     </form>
@@ -19,9 +16,7 @@
         <input id="join-place" name="place" type="text" />
         <input id="join-email" name="email" type="email" />
         <textarea id="join-message" name="message"></textarea>
-    </form>
-
-    {{ APP }}
-</body>
-
-</html>
+    </form>`
+    );
+  });
+});

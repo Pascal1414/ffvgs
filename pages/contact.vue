@@ -3,7 +3,7 @@
     <div class="card-body">
       <h1 class="text-2xl font-bold">Kontakt</h1>
       <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify>
-        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
         <div class="form-control w-full">
           <label class="label" for="contact-email">
             <span class="label-text">Email</span>
@@ -28,6 +28,7 @@
       <h1 class="text-2xl font-bold">Beitrittserklärung</h1>
       <p>Sehr gerne möchten wir Sie in unseren Verein aufnehmen.</p>
       <form name="join-association" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify>
+        <input type="hidden" name="form-name" value="join-association" />
         <input type="hidden" name="bot-field" />
         <div class="card w-[100%] bg-base-300 shadow-xl">
           <div class="card-body gap-0">
