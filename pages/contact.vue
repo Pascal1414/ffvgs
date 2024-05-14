@@ -27,7 +27,6 @@
       <h1 class="text-2xl font-bold">Beitrittserklärung</h1>
       <p>Sehr gerne möchten wir Sie in unseren Verein aufnehmen.</p>
       <form name="join-association" method="POST" :action="config.formspree.joinFormUrl">
-        <input type="hidden" name="bot-field" />
         <div class="card w-[100%] bg-base-300 shadow-xl">
           <div class="card-body gap-0">
             <p class="mb-2">Ich wünsche eine Aufnahme als:</p>
