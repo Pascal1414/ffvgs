@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/cloudinary"],
+
   runtimeConfig: {
     public: {
       backendUrl: process.env.STRAPI_API_URL,
@@ -17,4 +18,6 @@ export default defineNuxtConfig({
       cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     },
   },
+
+  compatibilityDate: "2024-08-20",
 });
