@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class="card w-[100%] bg-base-200 shadow-xl">
+  <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
     <div class="card-body">
       <h1 class="text-2xl font-bold">Beitrittserklärung</h1>
       <p>Sehr gerne möchten wir Sie in unseren Verein aufnehmen.</p>
@@ -100,6 +100,53 @@
       </form>
     </div>
   </div>
+
+  <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
+    <div class="card-body">
+      <h1 class="text-2xl font-bold">Anmeldung Lungerersee</h1>
+
+      <form name="event-registration" method="POST" :action="config.public.formspree.eventRegistration"
+        id="registration-lungerersee">
+        <div class="form-control w-full">
+          <label class="label" for="er-firstname">
+            <span class="label-text">Vorname *</span>
+          </label>
+          <input id="er-firstname" name="firstname" type="text" placeholder="Vorname"
+            class="input input-bordered w-full" required />
+
+          <label class="label" for="er-lastname">
+            <span class="label-text">Nachname *</span>
+          </label>
+          <input id="er-lastname" name="lastname" type="text" placeholder="Nachname" class="input input-bordered w-full"
+            required />
+
+          <label class="label" for="er-email">
+            <span class="label-text">Email *</span>
+          </label>
+          <input id="er-email" name="email" type="email" placeholder="Email" class="input input-bordered w-full"
+            required>
+
+          <label class="label" for="er-notes">
+            <span class="label-text">Anmerkungen</span>
+          </label>
+          <textarea id="er-notes" name="notes" class="textarea textarea-bordered mb-2"
+            placeholder="Anmerkungen"></textarea>
+          <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <form name="event-registration" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify hidden>
+    <input id="er-firstname" name="firstname" type="text" />
+    <input id="er-lastname" name="lastname" type="text" />
+    <input id="er-email" name="email" type="email">
+    <textarea id="er-notes" name="notes"></textarea>
+  </form>
+
 </template>
 
 <script lang="ts" setup>
