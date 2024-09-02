@@ -107,6 +107,7 @@
 
       <form name="event-registration" method="POST" :action="config.public.formspree.eventRegistration"
         id="registration-lungerersee">
+        <input type="text" name="_gotcha" class="hidden" />
         <div class="form-control w-full">
           <label class="label" for="er-firstname">
             <span class="label-text">Vorname *</span>
@@ -137,16 +138,6 @@
       </form>
     </div>
   </div>
-
-
-
-  <form name="event-registration" method="POST" netlify-honeypot="bot-field" data-netlify="true" netlify hidden>
-    <input id="er-firstname" name="firstname" type="text" />
-    <input id="er-lastname" name="lastname" type="text" />
-    <input id="er-email" name="email" type="email">
-    <textarea id="er-notes" name="notes"></textarea>
-  </form>
-
 </template>
 
 <script lang="ts" setup>
