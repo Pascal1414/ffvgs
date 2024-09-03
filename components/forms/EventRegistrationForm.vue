@@ -1,7 +1,7 @@
 <template>
   <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
     <div class="card-body">
-      <h1 class="text-2xl font-bold">Anmeldung Lungerersee</h1>
+      <h1 class="text-2xl font-bold">Anmeldung Plauschfischen</h1>
 
       <form method="POST" :action="config.public.formspree.eventRegistration" class="form-control w-full">
         <input type="text" name="_gotcha" class="hidden" />
@@ -24,6 +24,13 @@
             Email *
           </div>
           <input name="email" type="email" placeholder="Email" class="input input-bordered w-full" required>
+        </label>
+
+        <label>
+          <div class="label">
+            Geburtsdatum (Für Patent) *
+          </div>
+          <input name="birthdate" type="date" placeholder="Geburtsdatum" class="input input-bordered w-full" required>
         </label>
 
         <label>
