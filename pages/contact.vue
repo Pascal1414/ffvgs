@@ -105,7 +105,7 @@
 </template>
 
 <script lang="ts" setup>
-import EventRegistration from '~/components/forms/EventRegistration.vue';
+import EventRegistration from '~/components/forms/EventRegistrationForm.vue';
 import { ref } from 'vue';
 
 const config = useRuntimeConfig();
