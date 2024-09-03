@@ -1,26 +1,6 @@
 <template>
-  <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
-    <div class="card-body">
-      <h1 class="text-2xl font-bold">Kontakt</h1>
-      <form name="contact" method="POST" :action="config.public.formspree.contactFormUrl">
-        <div class="form-control w-full">
-          <label class="label" for="contact-email">
-            <span class="label-text">Email</span>
-          </label>
-          <input id="contact-email" name="email" type="email" placeholder="Email" class="input input-bordered w-full"
-            required />
 
-          <label class="label" for="contact-message">
-            <span class="label-text">Nachricht</span>
-          </label>
-          <textarea id="contact-message" name="message" class="textarea textarea-bordered mb-2" placeholder="Nachricht"
-            required></textarea>
-
-          <button type="submit" class="btn btn-primary mt-3 max-w-xs">Absenden</button>
-        </div>
-      </form>
-    </div>
-  </div>
+  <ContactForm id="contact" />
 
   <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
     <div class="card-body">
@@ -101,11 +81,12 @@
     </div>
   </div>
 
-  <EventRegistration id="registration-lungerersee" />
+  <EventRegistrationForm id="registration-lungerersee" />
 </template>
 
 <script lang="ts" setup>
-import EventRegistration from '~/components/forms/EventRegistrationForm.vue';
+import EventRegistrationForm from '~/components/forms/EventRegistrationForm.vue';
+import ContactForm from '~/components/forms/ContactForm.vue';
 import { ref } from 'vue';
 
 const config = useRuntimeConfig();
