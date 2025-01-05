@@ -23,7 +23,7 @@
     </li>
     <li>
       <a id="vereisfischen" class="link no-underline"
-        href="/documents/Information-Vereinsmeisterschaft-2024.pdf">Informationen Vereinsfischen</a>
+        href="/documents/Information-Vereinsmeisterschaft-2025.pdf">Informationen Vereinsfischen</a>
     </li>
     <li class="menu-title">
       <span>Gv Protokoll</span>
