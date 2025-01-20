@@ -29,13 +29,13 @@
       <span>Gv Protokoll</span>
     </li>
     <li>
-      <a class="link no-underline" href="/documents/GV-Protokoll-2024.pdf">Gv Protokoll 2024</a>
+      <a class="link no-underline" href="/documents/GV-Protokoll-2024.pdf">GV Protokoll 2024</a>
     </li>
     <li class="menu-title">
       <span>Änderungsentwurf für Statuen</span>
     </li>
     <li>
-      <a class="link no-underline" href="/documents/Statuen_Änderungsentwurf_für_GV2025.pdf">Statuen Änderungsentwurf
+      <a class="link no-underline" href="/documents/Statuen_Änderungsentwurf_für_GV2025.pdf">Statuten Änderungsentwurf
         für GV 2025</a>
     </li>
   </ul>
