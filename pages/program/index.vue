@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col items-center">
-        <h1 class="text-4xl font-bold mb-4">Program</h1>
+        <h1 class="text-4xl font-bold mb-4">Programm</h1>
         <div class="form-control">
             <label for="role" class="label">
                 <span class="label-text">Program nach Mitgliedschaft anzeigen:</span>
