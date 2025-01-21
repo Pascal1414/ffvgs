@@ -44,6 +44,33 @@
         Einladung für GV 2025
       </a>
     </li>
+
+    <li class="menu-title">
+      <span>Boot Einwassern</span>
+    </li>
+    <li>
+      <a class="link no-underline" href="/documents/Merkblatt_Umsetzung_nautischer_Anlass_Veranstalter.pdf">Merkblatt
+        Umsetzung nautischer Anlass Veranstalter</a>
+    </li>
+    <li>
+      <a class="link no-underline" href="/documents/Merkblatt_Umsetzung_nautischer_Anlass_Teilnehmende.pdf">Merkblatt
+        Umsetzung nautischer Anlass Teilnehmende</a>
+    </li>
+    <li>
+      <a class="link no-underline"
+        href="/documents/BD-Verfügung-Temporäres_Einwasserungsverbot_inklusive_Deklaration_des_Heimgewässers.pdf">BD-Verfügung
+        - Temporäres Einwasserungsverbot inklusive
+        Deklaration des Heimgewässers</a>
+    </li>
+    <li>
+      <a class="link no-underline" href="/documents/MM_Deklaration-Heimgewässer_MIT_SPERRFRIST.pdf">MM
+        Deklaration-Heimgewässer MIT SPERRFRIST</a>
+    </li>
+    <li>
+      <a class="link no-underline"
+        href="/documents/Selbstdeklaration_und_Kontrolle_nautischer_Anlass.pdf">Selbstdeklaration und Kontrolle
+        nautischer Anlass</a>
+    </li>
   </ul>
 </template>
 
