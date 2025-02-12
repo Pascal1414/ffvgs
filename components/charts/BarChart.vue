@@ -5,7 +5,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
 
-var option = ref({
+var option = ref<ECOption>({
   title: {
     text: "Fischereifänge im Greifensee",
     subtext:
