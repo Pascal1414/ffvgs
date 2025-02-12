@@ -3,7 +3,7 @@
   <p v-if="mounted">Mounted!</p>
   <p v-if="!mounted">Not Mounted!</p>
 
-  <VChart :option="option" />
+  <VChart ref="chartRef" :option="option" style="width: 100%; height: 400px" />
 </template>
 
 <script lang="ts" setup>
@@ -29,9 +29,13 @@ const option = ref<ECOption>({
 console.log("Component loading. Options:", option);
 
 const mounted = ref(false);
+const chartRef = ref();
 
 onMounted(() => {
   console.log("Component mounted, chart should be visible.");
   mounted.value = true;
+  nextTick(() => {
+    chartRef.value?.resize();
+  });
 });
 </script>
