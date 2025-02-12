@@ -56,7 +56,6 @@ var option = ref<ECOption>({
   yAxis: [
     {
       type: "value",
-      name: "Fangmenge",
     },
   ],
   series: [
