@@ -3,9 +3,7 @@
   <p v-if="mounted">Mounted!</p>
   <p v-if="!mounted">Not Mounted!</p>
 
-  <ClientOnly>
-    <VChart :option="option" />
-  </ClientOnly>
+  <VChart :option="option" />
 </template>
 
 <script lang="ts" setup>
