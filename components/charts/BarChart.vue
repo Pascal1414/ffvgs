@@ -6,11 +6,6 @@
 import { ref, onMounted } from "vue";
 
 var option = ref<ECOption>({
-  title: {
-    text: "Fischereifänge im Greifensee",
-    subtext:
-      "Fischereifänge der Berufs- und Angelfischerei im Greifensee in Kilogramm in den letzten 10 Jahren.",
-  },
   tooltip: {
     trigger: "axis",
     axisPointer: {

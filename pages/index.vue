@@ -32,6 +32,11 @@
   <article>
     <div class="divider" />
 
+    <h3 class="text-2xl font-bold">Fischereifänge im Greifensee</h3>
+    <p>
+      Fischereifänge der Berufs- und Angelfischerei im Greifensee in Kilogramm
+      in den letzten 10 Jahren.
+    </p>
     <BarChart />
     <div class="hero">
       <div class="hero-content text-center">
