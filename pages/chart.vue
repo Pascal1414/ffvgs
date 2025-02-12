@@ -26,7 +26,7 @@ const option = ref<ECOption>({
   yAxis: {},
   series: [{ type: "bar" }],
 });
-console.log("Component loading.");
+console.log("Component loading. Options:", option);
 
 const mounted = ref(false);
 
