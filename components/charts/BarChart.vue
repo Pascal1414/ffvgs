@@ -36,6 +36,7 @@ var option = ref({
       ],
     },
   ],
+  itemStyle: { borderRadius: 3 },
   yAxis: [
     {
       type: "value",
