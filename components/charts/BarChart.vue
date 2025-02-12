@@ -6,13 +6,29 @@
 import { ref, onMounted } from "vue";
 
 var option = ref({
+  title: {
+    text: "Fischereifänge im Greifensee",
+    subtext:
+      "Fischereifänge der Berufs- und Angelfischerei im Greifensee in Kilogramm in den letzten 10 Jahren.",
+  },
   tooltip: {
     trigger: "axis",
     axisPointer: {
       type: "shadow",
     },
   },
-  legend: {},
+  legend: {
+    data: [
+      "Felchen",
+      "Hecht",
+      "Egli",
+      "Wels",
+      "Rotauge",
+      "Karpfen",
+      "Übrige",
+      "Total",
+    ],
+  },
   grid: {
     left: "3%",
     right: "4%",
