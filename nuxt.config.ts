@@ -21,7 +21,12 @@ export default defineNuxtConfig({
   },
   echarts: {
     charts: ["BarChart"],
-    components: ["DatasetComponent", "GridComponent", "TooltipComponent"],
+    components: [
+      "TitleComponent",
+      "TooltipComponent",
+      "GridComponent",
+      "LegendComponent",
+    ],
   },
   compatibilityDate: "2024-08-20",
 });
