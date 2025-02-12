@@ -1,39 +1,89 @@
 <template>
-  <h1>Chart</h1>
-  <p v-if="mounted">Mounted!</p>
-  <p v-if="!mounted">Not Mounted!</p>
-
   <VChart ref="chartRef" :option="option" style="width: 100%; height: 400px" />
 </template>
 
 <script lang="ts" setup>
-import { ClientOnly } from "#components";
 import { ref, onMounted } from "vue";
 
-const option = ref<ECOption>({
-  dataset: {
-    dimensions: ["Product", "2015", "2016", "2017"],
-    source: [
-      {
-        Product: "Matcha Latte",
-        2015: 54,
-        2016: 42,
-        2017: 23,
-      },
+var option = ref<ECOption>({
+  title: {
+    text: "Fischfangstatistik (2014-2023)",
+  },
+  tooltip: {
+    trigger: "axis",
+  },
+  legend: {
+    data: [
+      "Felchen",
+      "Hecht",
+      "Egli",
+      "Wels",
+      "Rotauge",
+      "Karpfen",
+      "Übrige",
+      "Total",
     ],
   },
-  xAxis: { type: "category" },
-  yAxis: {},
-  series: [{ type: "bar" }],
+  xAxis: {
+    type: "category",
+    data: [
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+    ],
+  },
+  yAxis: {
+    type: "value",
+    name: "Fangmenge",
+  },
+  series: [
+    {
+      name: "Felchen",
+      data: [5975, 4845, 2943, 3949, 3208, 6250, 9086, 3680, 5033, 2616],
+    },
+    {
+      name: "Hecht",
+      data: [2106, 2500, 2398, 2604, 2461, 2584, 3301, 2990, 3027, 3446],
+    },
+    {
+      name: "Egli",
+      data: [4341, 6585, 6980, 5845, 4868, 6118, 6247, 4728, 4228, 4957],
+    },
+    {
+      name: "Wels",
+      data: [562, 478, 642, 558, 1036, 701, 746, 739, 968, 895],
+    },
+    {
+      name: "Rotauge",
+      data: [958, 533, 994, 654, 451, 467, 551, 434, 471, 369],
+    },
+    {
+      name: "Karpfen",
+      data: [878, 635, 364, 392, 397, 201, 208, 295, 209, 151],
+    },
+    {
+      name: "Übrige",
+      data: [1764, 1542, 1141, 1118, 1149, 922, 657, 476, 632, 658],
+    },
+    {
+      name: "Total",
+      data: [
+        16584, 17118, 98975, 15120, 13570, 17243, 20796, 13342, 14568, 13092,
+      ],
+    },
+  ],
 });
-console.log("Component loading. Options:", option);
 
-const mounted = ref(false);
 const chartRef = ref();
 
 onMounted(() => {
-  console.log("Component mounted, chart should be visible.");
-  mounted.value = true;
   nextTick(() => {
     chartRef.value?.resize();
   });
