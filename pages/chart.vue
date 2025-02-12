@@ -3,10 +3,13 @@
   <p v-if="mounted">Mounted!</p>
   <p v-if="!mounted">Not Mounted!</p>
 
-  <VChart :option="option" />
+  <ClientOnly>
+    <VChart :option="option" />
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>
+import { ClientOnly } from "#components";
 import { ref, onMounted } from "vue";
 
 const option = ref<ECOption>({
