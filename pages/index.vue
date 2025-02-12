@@ -40,15 +40,15 @@
           <p class="py-6">
             Im Jahr 2023 betrug der Gesamtfang im Greifensee 13,1 t. Dies
             entspricht einem Rückgang von ca. 10 % gegenüber dem Vorjahr und
-            rund 17 % im Vergleich zum zehnjährigen Durchschnitt (Tab. 2).
-            Besonders auffällig war der starke Rückgang bei den Felchenfängen
-            (-48 %). Im Gegensatz dazu konnten bei Egli (17 %) und Hecht (14 %)
-            höhere Erträge verzeichnet werden. Im Vergleich mit dem langjährigen
-            Mittel war das Jahr 2023 mit einer Steigerung von 26 % ein
-            erfolgreiches Jahr für den Hechtfang. Seit 2009 wird auf den
-            Hechtbesatz im Greifensee verzichtet. Die hohen stabilen Fangzahlen
-            sind ein klares Indiz, dass die Naturverlaichung der Hechte im
-            Greifensee gut funktioniert.
+            rund 17 % im Vergleich zum zehnjährigen Durchschnitt. Besonders
+            auffällig war der starke Rückgang bei den Felchenfängen (-48 %). Im
+            Gegensatz dazu konnten bei Egli (17 %) und Hecht (14 %) höhere
+            Erträge verzeichnet werden. Im Vergleich mit dem langjährigen Mittel
+            war das Jahr 2023 mit einer Steigerung von 26 % ein erfolgreiches
+            Jahr für den Hechtfang. Seit 2009 wird auf den Hechtbesatz im
+            Greifensee verzichtet. Die hohen stabilen Fangzahlen sind ein klares
+            Indiz, dass die Naturverlaichung der Hechte im Greifensee gut
+            funktioniert.
           </p>
           <p class="py-2">
             Die Fangerträge im Greifensee 2023 waren die niedrigsten seit den
