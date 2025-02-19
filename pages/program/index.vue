@@ -101,8 +101,8 @@
         ></path>
       </svg>
       <span
-        >Zudem können spontane Anlässe dazukommen. Diese werden per Mail oder im
-        Internet angekündigt.</span
+        >Zudem können spontane Anlässe dazukommen. Diese werden per WhatsApp
+        oder im Internet angekündigt.</span
       >
     </div>
   </div>
