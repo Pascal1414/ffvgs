@@ -64,7 +64,11 @@
           </td>
         </tr>
 
-        <tr v-if="pending && programs === null" v-for="n in 5" :key="n">
+        <tr
+          v-if="status === 'pending' && programs === null"
+          v-for="n in 5"
+          :key="n"
+        >
           <th>
             <div class="skeleton w-[27px] h-[27px] rounded-full shrink-0"></div>
           </th>
@@ -115,12 +119,11 @@ const selectionOptions = ref([
   { value: "none", text: "Alles anzeigen" },
   { value: "alle", text: "Alle Mitglieder" },
   { value: "junioren", text: "Junioren" },
-  { value: "jugendgruppe", text: "Jugendgruppe" },
 ]);
 
 const selectionSelect: Ref<string> = ref(selectionOptions.value[0].value);
 
-const { data: programs, pending } = await useLazyFetch(
+const { data: programs, status } = await useLazyFetch(
   config.public.apiUrl + "/programs",
   {
     query: { populate: "*" },
