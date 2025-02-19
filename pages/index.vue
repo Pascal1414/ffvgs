@@ -29,7 +29,6 @@
     <div class="skeleton h-4 w-[72%]"></div>
   </div>
 
-
   <article>
     <div class="divider" />
 
@@ -111,7 +110,7 @@ import BarChart from "~/components/charts/BarChart.vue";
 
 const config = useRuntimeConfig();
 
-const { data: articles, pending } = await useLazyFetch(
+const { data: articles, status } = await useLazyFetch(
   config.public.apiUrl + "/home-articles",
   {
     query: { populate: "*", "pagination[limit]": -1 },
