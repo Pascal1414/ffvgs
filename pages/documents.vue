@@ -1,10 +1,7 @@
 <template>
   <h1 class="text-4xl font-bold mb-4">Downloads</h1>
-  <ul class="">
-    <li></li>
-    <li></li>
-  </ul>
-  <ul class="menu bg-base-200 w-56 p-2 rounded-box">
+
+  <ul class="menu bg-base-200 p-2 rounded-box">
     <li class="menu-title">
       <span>Vereinsboot</span>
     </li>
