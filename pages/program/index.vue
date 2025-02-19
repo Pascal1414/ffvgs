@@ -151,8 +151,6 @@ function shouldShowProgram(program: Program): boolean {
       return program.forJunior;
     case "alle":
       return program.forAll;
-    case "jugendgruppe":
-      return program.forJugend;
     default:
       return true;
   }
