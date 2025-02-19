@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       formspree: {
         contactFormUrl: process.env.CONTACT_FORM_URL,
         joinFormUrl: process.env.JOIN_FORM_URL,
-        eventRegistration: process.env.EVENT_REGISTRATION_FORM_URL 
+        eventRegistration: process.env.EVENT_REGISTRATION_FORM_URL,
       },
     },
 
