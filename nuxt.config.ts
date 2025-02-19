@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/cloudinary"],
-
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/cloudinary", "nuxt-echarts"],
+  components: true,
   runtimeConfig: {
     public: {
       backendUrl: process.env.STRAPI_API_URL,
@@ -19,6 +19,14 @@ export default defineNuxtConfig({
       cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     },
   },
-
+  echarts: {
+    charts: ["BarChart"],
+    components: [
+      "TitleComponent",
+      "TooltipComponent",
+      "GridComponent",
+      "LegendComponent",
+    ],
+  },
   compatibilityDate: "2024-08-20",
 });
