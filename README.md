@@ -1,5 +1,7 @@
 # FFVGS Frontend
+
 The App uses the [FFVGS-Backend](https://github.com/Pascal1414/ffvgs-backend).
+
 ## `.env`
 
 Add the following variables to the .env file.

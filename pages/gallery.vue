@@ -4,7 +4,12 @@
       <label for="role" class="label">
         <span class="label-text">Bilder aus folgendem Jahr anzeigen:</span>
       </label>
-      <select v-model="year" class="select select-bordered max-w-xs mb-4" name="mitgliedschaft" id="role">
+      <select
+        v-model="year"
+        class="select select-bordered max-w-xs mb-4"
+        name="mitgliedschaft"
+        id="role"
+      >
         <option v-for="year in getYearOptions()" :key="year" :value="year">
           {{ year }}
         </option>
@@ -13,10 +18,17 @@
   </div>
 
   <div class="flex flex-col gap-4">
-    <div v-for="n in 5" v-if="pending && galeryItems === null" class="skeleton w-full h-[413px]"></div>
+    <div
+      v-for="n in 5"
+      v-if="status === 'pending' && galeryItems === null"
+      class="skeleton w-full h-[413px]"
+    ></div>
   </div>
   <div v-for="(galeryItem, index) in galeryItems" :key="index">
-    <div v-if="shouldShowGalery(galeryItem)" class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4">
+    <div
+      v-if="shouldShowGalery(galeryItem)"
+      class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4"
+    >
       <div class="card-body">
         <h1 class="text-2xl font-bold mb-2">
           {{ galeryItem.name }} ({{
@@ -24,11 +36,18 @@
           }})
         </h1>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
-          <div v-for="(image, index) in galeryItem.images" :key="index"
-            @click="openPreviewModal(galeryItem.images, index)">
-            <CldImage class="rounded-md w-full" :src="image.url ?? ''" alt="img"
+          <div
+            v-for="(image, index) in galeryItem.images"
+            :key="index"
+            @click="openPreviewModal(galeryItem.images, index)"
+          >
+            <CldImage
+              class="rounded-md w-full"
+              :src="image.url ?? ''"
+              alt="img"
               :width="calculateImageSize(image.width, image.height).width"
-              :height="calculateImageSize(image.width, image.height).height" />
+              :height="calculateImageSize(image.width, image.height).height"
+            />
           </div>
         </div>
       </div>
@@ -36,30 +55,57 @@
   </div>
 
   <dialog ref="preview_modal" class="modal">
-    <div class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative flex flex-col items-center">
+    <div
+      class="modal-box max-h-none max-w-none w-[90%] h-[80%] relative flex flex-col items-center"
+    >
       <div class="w-full h-full">
         <template v-for="(image, index) in previewImages">
-          <img v-if="index === previewImageIndex" class="object-contain w-full h-full" :src="image.url" alt="" />
+          <img
+            v-if="index === previewImageIndex"
+            class="object-contain w-full h-full"
+            :src="image.url"
+            alt=""
+          />
         </template>
       </div>
 
-      <button class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] left-2" @click="previous()">
+      <button
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] left-2"
+        @click="previous()"
+      >
         <ClientOnly>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left"
-            viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z">
-            </path>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chevron-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            ></path>
           </svg>
         </ClientOnly>
       </button>
-      <button class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] right-2" @click="next()">
+      <button
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] right-2"
+        @click="next()"
+      >
         <ClientOnly>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
-            viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-            </path>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chevron-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            ></path>
           </svg>
         </ClientOnly>
       </button>
@@ -67,11 +113,17 @@
       <form @click.prevent="closePreviewModal()">
         <button class="btn absolute top-4 right-4">
           <ClientOnly>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
-              viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
               <path
-                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z">
-              </path>
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              ></path>
             </svg>
           </ClientOnly>
         </button>
@@ -89,10 +141,10 @@ const config = useRuntimeConfig();
 
 const year = ref(new Date().getFullYear());
 
-const { data: galeryItems, pending } = await useLazyFetch(
+const { data: galeryItems, status } = await useLazyFetch(
   config.public.apiUrl + "/galeries",
   {
-    query: { populate: "*" },
+    query: { populate: "*", "pagination[limit]": -1 },
     transform: (_galeryItems: AsyncData<any, any>) => {
       return sanitizeApiResponse(_galeryItems) as Galery[];
     },

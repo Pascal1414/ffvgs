@@ -17,7 +17,7 @@
 
   <div
     class="flex flex-col gap-1 mb-10"
-    v-if="pending && articles === null"
+    v-if="status === 'pending' && articles === null"
     v-for="n in 5"
   >
     <div class="divider" />
@@ -28,6 +28,7 @@
     <div class="skeleton h-4 w-[80%]"></div>
     <div class="skeleton h-4 w-[72%]"></div>
   </div>
+
 
   <article>
     <div class="divider" />
@@ -79,6 +80,7 @@
 
   <article v-for="(article, index) in articles">
     <div class="divider" />
+
     <ImageHero
       v-if="article.images?.length"
       :reversed="index % 2 == 0"
@@ -102,7 +104,6 @@
 
 <script lang="ts" setup>
 import type { AsyncData } from "#app";
-
 import { marked } from "marked";
 import type { HomeArticle } from "~/types/home-article";
 
@@ -113,7 +114,8 @@ const config = useRuntimeConfig();
 const { data: articles, pending } = await useLazyFetch(
   config.public.apiUrl + "/home-articles",
   {
-    query: { populate: "*" },
+    query: { populate: "*", "pagination[limit]": -1 },
+
     transform: (_articles: AsyncData<any, any>) => {
       const articles = sanitizeApiResponse(_articles) as HomeArticle[];
       return articles.sort((a: any, b: any) => a.priority - b.priority);

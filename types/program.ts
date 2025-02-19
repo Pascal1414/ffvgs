@@ -3,7 +3,6 @@ export type Program = {
   name: string;
   description: string;
   forAll: boolean;
-  forJugend: boolean;
   forJunior: boolean;
   dates: string[];
   createdAt: string;
