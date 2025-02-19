@@ -126,7 +126,7 @@ const selectionSelect: Ref<string> = ref(selectionOptions.value[0].value);
 const { data: programs, status } = await useLazyFetch(
   config.public.apiUrl + "/programs",
   {
-    query: { populate: "*" },
+    query: { populate: "*", "pagination[limit]": -1 },
     transform: (_programs: AsyncData<any, any>) => {
       const sanitizedResponse = sanitizeApiResponse(_programs) as Program[];
       return oderByDate(sanitizedResponse);

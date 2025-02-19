@@ -144,7 +144,7 @@ const year = ref(new Date().getFullYear());
 const { data: galeryItems, status } = await useLazyFetch(
   config.public.apiUrl + "/galeries",
   {
-    query: { populate: "*" },
+    query: { populate: "*", "pagination[limit]": -1 },
     transform: (_galeryItems: AsyncData<any, any>) => {
       return sanitizeApiResponse(_galeryItems) as Galery[];
     },

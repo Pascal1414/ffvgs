@@ -63,7 +63,7 @@ const config = useRuntimeConfig();
 const { data: articles, status } = await useLazyFetch(
   config.public.apiUrl + "/home-articles",
   {
-    query: { populate: "*" },
+    query: { populate: "*", "pagination[limit]": -1 },
     transform: (_articles: AsyncData<any, any>) => {
       const articles = sanitizeApiResponse(_articles) as HomeArticle[];
       return articles.sort((a: any, b: any) => a.priority - b.priority);

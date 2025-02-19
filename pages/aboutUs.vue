@@ -99,7 +99,7 @@ const config = useRuntimeConfig();
 const { data: boardPersons, status: boardStatus } = await useLazyFetch(
   config.public.apiUrl + "/board-people",
   {
-    query: { populate: "*" },
+    query: { populate: "*", "pagination[limit]": -1 },
     transform: (_boardpeople: AsyncData<any, any>) => {
       const boardPeople = sanitizeApiResponse(_boardpeople) as BoardPerson[];
       return boardPeople.sort((a: any, b: any) => a.priority - b.priority);
@@ -110,7 +110,7 @@ const { data: boardPersons, status: boardStatus } = await useLazyFetch(
 const { data: vips, status: vipsStatus } = await useLazyFetch(
   config.public.apiUrl + "/vips",
   {
-    query: { populate: "*" },
+    query: { populate: "*", "pagination[limit]": -1 },
     transform: (_vips: AsyncData<any, any>) => {
       const vips = sanitizeApiResponse(_vips) as Vip[];
       return vips.sort((a: any, b: any) => a.priority - b.priority);
