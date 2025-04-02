@@ -140,7 +140,7 @@ const memberships = ref([
   {
     name: "Junior",
     price: "100.00",
-    age: "ab 14 Jahren",
+    age: "",
   },
   {
     name: "Aktivmitglied",
