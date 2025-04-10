@@ -1,41 +1,6 @@
 <template>
   <h1 class="text-4xl font-bold mb-4">Jungfischerkurs</h1>
 
-  <div
-    class="grid flex-grow mb-8 card bg-base-200 rounded-box place-items-center"
-  >
-    <div class="card p-10">
-      <h1 class="text-3xl font-bold mb-2" style="overflow-wrap: anywhere">
-        2024 wird ein Jahr ohne Jungfischerkurs
-      </h1>
-      <h2 class="card-title">
-        Der lokale Fischerverein verzichtet dieses Jahr auf die Durchführung des
-        Jungfischerkurses am Muttertags-Wochenende.
-      </h2>
-      <p class="py-6">
-        Unser Grossanlässe wie der Jungfischerkurs und das Sommernachtsfest
-        erfreuen sich sehr grosser Beliebtheit bei den Besuchern, besonders
-        natürlich bei guter Witterung. Trotzdem wird es immer schwieriger für
-        den Verein, die beiden Anlässe zu stemmen. Die Gründe dafür sind ähnlich
-        gelagert bei anderen Vereinen: Helfer-Mangel, immer striktere Auflagen
-        durch Kanton und Gemeinde verbunden mit einem enormen administrativen
-        Aufwand und Verantwortung sowie ein erhebliches finanzielles Risiko.
-        Allein die Zeltkosten am Sommernachtsfest belasten die Rechnung jährlich
-        mit rund 15‘000 Franken. Zusätzlich besteht aktuell ein Mangel an
-        Vorstandsmitgliedern. So kann ein Jahresprogramm nicht in gewohntem
-        Rahmen durchgeführt und gestaltet werden. Die Generalversammlung vom 9.
-        Februar hat deshalb dem Antrag des Vorstands auf eine Pause und damit
-        Zeit zur Reorganisation zugestimmt.
-      </p>
-      <p class="py-6">
-        Wir sind sehr optimistisch gestimmt, dass auch ein grosser Verein wie
-        der lokale Fischerverein nichts von seiner Attraktivität und
-        Flexibilität verlieren muss, wenn die Weichen zur richtigen Zeit optimal
-        gestellt werden!
-      </p>
-    </div>
-  </div>
-
   <div class="flex flex-col mb-4 w-full lg:flex-row">
     <div class="lg:w-[50%] p-4 card bg-base-200 rounded-box">
       <!-- <p>
@@ -54,14 +19,8 @@
         den Umgang mit dem Lebewesen «Fisch», der Natur und diverses
         Angeltechniken. Das theoretisch Erlernte wird am Sonntag mit erfahrenen
         Fischern am Wasser getestet, mit anschliessender Rangverkündigung.
-        Während beiden Tagen läuft auch unsere Fischküche auf der Schlosswiese
-        auf Hochtouren. Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill
-        steht auf der Menükarte. <br />
-        Am Sonntag morgen spielt die beliebte Dorfmusig Gryfesee ein Konzert
-        auf.» Wir freuen uns auf viele Besucher! Petri Heil, Eure FFVGS
       </p>
-
-      <div class="card card-compact bg-base-100 shadow-xl mb-4">
+      <div class="card card-compact bg-base-100 shadow-xl mt-4 mb-6">
         <div class="card-body">
           <h2 class="card-title">Ablauf</h2>
           <ul>
@@ -78,26 +37,7 @@
           </ul>
         </div>
       </div>
-      <div class="alert alert-info shadow-lg">
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="stroke-current flex-shrink-0 h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-            />
-          </svg>
-          <span
-            >Das Anmeldeformular wird einige Zeit vor dem Event Aufgeschaltet.
-          </span>
-        </div>
-      </div>
+      <p class="mb-2">Petri Heil, Eure FFVGS</p>
     </div>
     <div class="divider lg:divider-horizontal"></div>
     <div
