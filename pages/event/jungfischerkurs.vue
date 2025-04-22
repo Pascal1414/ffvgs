@@ -76,7 +76,10 @@
   <div class="card w-full bg-base-200 shadow-xl">
     <div class="card-body">
       <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
-      <form name="registration-jungfischerkurs">
+      <form   
+        action="https://formspree.io/f/mzzrbplj"
+        method="POST"
+      >
         <div class="flex flex-col w-full lg:flex-row">
           <div class="card lg:w-[50%]">
             <h2 class="card-title">Jugendliche oder Jugendlicher</h2>
@@ -120,21 +123,22 @@
               <label for="course-registration-city" class="label">
                 <span class="label-text">Ort</span>
               </label>
-              <label class="input-group">
+              <label class="join">
                 <input
                   type="text"
                   id="course-registration-city"
                   name="participant-city"
                   placeholder="Ort"
-                  class="input input-bordered w-[70%]"
+                  class="join-item input input-bordered w-[70%]"
                   required
                 />
+
                 <input
                   id="course-registration-zip"
                   name="participant-zip"
                   type="text"
                   placeholder="PLZ"
-                  class="input input-bordered w-[30%]"
+                  class="join-item input input-bordered w-[30%]"
                   required
                 />
               </label>
