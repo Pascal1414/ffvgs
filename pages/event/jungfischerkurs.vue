@@ -14,13 +14,16 @@
                 ab. </p> -->
 
       <p class="mb-2">
-        Jedes Jahr findet wärend dem Muttertagswochenende unser beliebtes
-        Jugendfischen am Greifensee statt. Wir zeigen den Kindern in der Theorie
-        den Umgang mit dem Lebewesen «Fisch», der Natur und diverses
-        Angeltechniken. Das theoretisch Erlernte wird am Sonntag mit erfahrenen
-        Fischern am Wasser getestet, mit anschliessender Rangverkündigung.
+        Jährlich findet nach Möglichkeit unser beliebtes Jugendfischen am
+        Greifensee statt. Wir zeigen den Kindern in der Theorie den Umgang mit
+        dem Lebewesen «Fisch», der Natur und diverses Angeltechniken. Das
+        theoretisch Erlernte wird am Sonntag mit erfahrenen Fischern am Wasser
+        getestet, mit anschliessender Rangverkündigung. Die Anmeldemöglichkeit
+        wird jeweils zu gegebenem Zeitpunkt auf unserer Homepage aufgeschaltet
+        und enthält die wichtigen Informationen.
       </p>
-      <div class="card card-compact bg-base-100 shadow-xl mt-4 mb-6">
+
+      <div class="card card-compact bg-base-100 shadow-xl mt-6 mb-4">
         <div class="card-body">
           <h2 class="card-title">Ablauf</h2>
           <ul>
@@ -36,6 +39,29 @@
             </li>
           </ul>
         </div>
+      </div>
+
+      <div role="alert" class="alert alert-info mb-4">
+        <client-only>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="h-6 w-6 shrink-0 stroke-current"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+        </client-only>
+        <span>
+          Wichtig: es findet an diesen zwei Tagen kein Fischbacken statt und
+          keine Gastwirtschaft, da es sich nicht um einen öffentlichen Anlass
+          handelt.
+        </span>
       </div>
       <p class="mb-2">Petri Heil, Eure FFVGS</p>
     </div>
