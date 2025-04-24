@@ -1,41 +1,6 @@
 <template>
   <h1 class="text-4xl font-bold mb-4">Jungfischerkurs</h1>
 
-  <div
-    class="grid flex-grow mb-8 card bg-base-200 rounded-box place-items-center"
-  >
-    <div class="card p-10">
-      <h1 class="text-3xl font-bold mb-2" style="overflow-wrap: anywhere">
-        2024 wird ein Jahr ohne Jungfischerkurs
-      </h1>
-      <h2 class="card-title">
-        Der lokale Fischerverein verzichtet dieses Jahr auf die Durchführung des
-        Jungfischerkurses am Muttertags-Wochenende.
-      </h2>
-      <p class="py-6">
-        Unser Grossanlässe wie der Jungfischerkurs und das Sommernachtsfest
-        erfreuen sich sehr grosser Beliebtheit bei den Besuchern, besonders
-        natürlich bei guter Witterung. Trotzdem wird es immer schwieriger für
-        den Verein, die beiden Anlässe zu stemmen. Die Gründe dafür sind ähnlich
-        gelagert bei anderen Vereinen: Helfer-Mangel, immer striktere Auflagen
-        durch Kanton und Gemeinde verbunden mit einem enormen administrativen
-        Aufwand und Verantwortung sowie ein erhebliches finanzielles Risiko.
-        Allein die Zeltkosten am Sommernachtsfest belasten die Rechnung jährlich
-        mit rund 15‘000 Franken. Zusätzlich besteht aktuell ein Mangel an
-        Vorstandsmitgliedern. So kann ein Jahresprogramm nicht in gewohntem
-        Rahmen durchgeführt und gestaltet werden. Die Generalversammlung vom 9.
-        Februar hat deshalb dem Antrag des Vorstands auf eine Pause und damit
-        Zeit zur Reorganisation zugestimmt.
-      </p>
-      <p class="py-6">
-        Wir sind sehr optimistisch gestimmt, dass auch ein grosser Verein wie
-        der lokale Fischerverein nichts von seiner Attraktivität und
-        Flexibilität verlieren muss, wenn die Weichen zur richtigen Zeit optimal
-        gestellt werden!
-      </p>
-    </div>
-  </div>
-
   <div class="flex flex-col mb-4 w-full lg:flex-row">
     <div class="lg:w-[50%] p-4 card bg-base-200 rounded-box">
       <!-- <p>
@@ -49,19 +14,16 @@
                 ab. </p> -->
 
       <p class="mb-2">
-        Jedes Jahr findet wärend dem Muttertagswochenende unser beliebtes
-        Jugendfischen am Greifensee statt. Wir zeigen den Kindern in der Theorie
-        den Umgang mit dem Lebewesen «Fisch», der Natur und diverses
-        Angeltechniken. Das theoretisch Erlernte wird am Sonntag mit erfahrenen
-        Fischern am Wasser getestet, mit anschliessender Rangverkündigung.
-        Während beiden Tagen läuft auch unsere Fischküche auf der Schlosswiese
-        auf Hochtouren. Zanderfilets-«Chnusperli», aber auch Allerlei vom Grill
-        steht auf der Menükarte. <br />
-        Am Sonntag morgen spielt die beliebte Dorfmusig Gryfesee ein Konzert
-        auf.» Wir freuen uns auf viele Besucher! Petri Heil, Eure FFVGS
+        Jährlich findet nach Möglichkeit unser beliebtes Jugendfischen am
+        Greifensee statt. Wir zeigen den Kindern in der Theorie den Umgang mit
+        dem Lebewesen «Fisch», der Natur und diverses Angeltechniken. Das
+        theoretisch Erlernte wird am Sonntag mit erfahrenen Fischern am Wasser
+        getestet, mit anschliessender Rangverkündigung. Die Anmeldemöglichkeit
+        wird jeweils zu gegebenem Zeitpunkt auf unserer Homepage aufgeschaltet
+        und enthält die wichtigen Informationen.
       </p>
 
-      <div class="card card-compact bg-base-100 shadow-xl mb-4">
+      <div class="card card-compact bg-base-100 shadow-xl mt-6 mb-4">
         <div class="card-body">
           <h2 class="card-title">Ablauf</h2>
           <ul>
@@ -78,26 +40,30 @@
           </ul>
         </div>
       </div>
-      <div class="alert alert-info shadow-lg">
-        <div>
+
+      <div role="alert" class="alert alert-info mb-4">
+        <client-only>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="stroke-current flex-shrink-0 h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
+            class="h-6 w-6 shrink-0 stroke-current"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-            />
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
           </svg>
-          <span
-            >Das Anmeldeformular wird einige Zeit vor dem Event Aufgeschaltet.
-          </span>
-        </div>
+        </client-only>
+        <span>
+          Wichtig: es findet an diesen zwei Tagen kein Fischbacken statt und
+          keine Gastwirtschaft, da es sich nicht um einen öffentlichen Anlass
+          handelt.
+        </span>
       </div>
+      <p class="mb-2">Petri Heil, Eure FFVGS</p>
     </div>
     <div class="divider lg:divider-horizontal"></div>
     <div
@@ -107,96 +73,163 @@
     </div>
   </div>
 
-  <!--div class="card w-full bg-base-200 shadow-xl">
-        <div class="card-body">
-            <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
-            <form name="registration-jungfischerkurs" method="POST" netlify>
-                <input type="hidden" name="form-name" value="registration-jungfischerkurs" />
+  <div class="card w-full bg-base-200 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
+      <form   
+        action="https://formspree.io/f/mzzrbplj"
+        method="POST"
+      >
+        <div class="flex flex-col w-full lg:flex-row">
+          <div class="card lg:w-[50%]">
+            <h2 class="card-title">Jugendliche oder Jugendlicher</h2>
+            <label class="label" for="course-registration-firstname">
+              <span class="label-text">Vorname</span>
+            </label>
+            <input
+              id="course-registration-firstname"
+              name="participant-firstname"
+              type="text"
+              placeholder="Vorname"
+              class="input input-bordered w-full"
+              required
+            />
 
-                <div class="flex flex-col w-full lg:flex-row">
-                    <div class="card lg:w-[50%]">
-                        <h2 class="card-title">Jugendliche oder Jugendlicher</h2>
-                        <label class="label" for="course-registration-firstname">
-                            <span class="label-text">Vorname</span>
-                        </label>
-                        <input id="course-registration-firstname" name="participant-firstname" type="text"
-                            placeholder="Vorname" class="input input-bordered w-full" required />
+            <label class="label" for="course-registration-lastname">
+              <span class="label-text">Nachname</span>
+            </label>
+            <input
+              id="course-registration-lastname"
+              name="participant-lastname"
+              type="text"
+              placeholder="Nachname"
+              class="input input-bordered w-full"
+              required
+            />
 
-                        <label class="label" for="course-registration-lastname">
-                            <span class="label-text">Nachname</span>
-                        </label>
-                        <input id="course-registration-lastname" name="participant-lastname" type="text"
-                            placeholder="Nachname" class="input input-bordered w-full" required />
+            <label class="label" for="course-registration-address">
+              <span class="label-text">Adresse</span>
+            </label>
+            <input
+              id="course-registration-address"
+              name="participant-address"
+              type="text"
+              placeholder="Adresse"
+              class="input input-bordered w-full"
+              required
+            />
 
-                        <label class="label" for="course-registration-address">
-                            <span class="label-text">Adresse</span>
-                        </label>
-                        <input id="course-registration-address" name="participant-address" type="text" placeholder="Adresse"
-                            class="input input-bordered w-full " required />
+            <div class="form-control">
+              <label for="course-registration-city" class="label">
+                <span class="label-text">Ort</span>
+              </label>
+              <label class="join">
+                <input
+                  type="text"
+                  id="course-registration-city"
+                  name="participant-city"
+                  placeholder="Ort"
+                  class="join-item input input-bordered w-[70%]"
+                  required
+                />
 
-                        <div class="form-control">
-                            <label for="course-registration-city" class="label">
-                                <span class="label-text">Ort</span>
-                            </label>
-                            <label class="input-group">
-                                <input type="text" id="course-registration-city" name="participant-city" placeholder="Ort"
-                                    class="input input-bordered w-[70%]" required />
-                                <input id="course-registration-zip" name="participant-zip" type="text" placeholder="PLZ"
-                                    class="input input-bordered w-[30%]" required />
-                            </label>
-                        </div>
+                <input
+                  id="course-registration-zip"
+                  name="participant-zip"
+                  type="text"
+                  placeholder="PLZ"
+                  class="join-item input input-bordered w-[30%]"
+                  required
+                />
+              </label>
+            </div>
 
-                        <label class="label" for="course-registration-birthdate">
-                            <span class="label-text">Geburtsdatum</span>
-                        </label>
-                        <input id="course-registration-birthdate" name="participant-birthdate" type="date"
-                            placeholder="Geburtsdatum" class="input input-bordered w-full " required />
+            <label class="label" for="course-registration-birthdate">
+              <span class="label-text">Geburtsdatum</span>
+            </label>
+            <input
+              id="course-registration-birthdate"
+              name="participant-birthdate"
+              type="date"
+              placeholder="Geburtsdatum"
+              class="input input-bordered w-full"
+              required
+            />
 
-                        <label class="label" for="course-registration-already-fished">
-                            <span class="label-text">Schon einmal gefischt?</span>
-                        </label>
-                        <select id="course-registration-already-fished" name="participant-already-fished"
-                            class="select select-bordered w-full" required>
-                            <option disabled selected hidden value="">Schon einmal gefischt?</option>
-                            <option>ja</option>
-                            <option>nein</option>
-                        </select>
+            <label class="label" for="course-registration-already-fished">
+              <span class="label-text">Schon einmal gefischt?</span>
+            </label>
+            <select
+              id="course-registration-already-fished"
+              name="participant-already-fished"
+              class="select select-bordered w-full"
+              required
+            >
+              <option disabled selected hidden value="">
+                Schon einmal gefischt?
+              </option>
+              <option>ja</option>
+              <option>nein</option>
+            </select>
+          </div>
+          <div class="divider lg:divider-horizontal"></div>
+          <div class="card lg:w-[50%] flex column justify-between">
+            <div>
+              <h2 class="card-title">Erziehungsberechtigte Person</h2>
+              <label class="label" for="course-registration-parent-firstname">
+                <span class="label-text">Vorname</span>
+              </label>
+              <input
+                id="course-registration-parent-firstname"
+                name="parent-firstname"
+                type="text"
+                placeholder="Vorname"
+                class="input input-bordered w-full"
+                required
+              />
 
-                    </div>
-                    <div class="divider lg:divider-horizontal"></div>
-                    <div class="card lg:w-[50%] flex column justify-between">
-                        <div>
-                            <h2 class="card-title">Erziehungsberechtigte Person</h2>
-                            <label class="label" for="course-registration-parent-firstname">
-                                <span class="label-text">Vorname</span>
-                            </label>
-                            <input id="course-registration-parent-firstname" name="parent-firstname" type="text"
-                                placeholder="Vorname" class="input input-bordered w-full" required />
+              <label class="label" for="course-registration-parent-lastname">
+                <span class="label-text">Nachname</span>
+              </label>
+              <input
+                id="course-registration-parent-lastname"
+                name="parent-lastname"
+                type="text"
+                placeholder="Nachname"
+                class="input input-bordered w-full"
+                required
+              />
 
-                            <label class="label" for="course-registration-parent-lastname">
-                                <span class="label-text">Nachname</span>
-                            </label>
-                            <input id="course-registration-parent-lastname" name="parent-lastname" type="text"
-                                placeholder="Nachname" class="input input-bordered w-full" required />
+              <label class="label" for="course-registration-parent-tel">
+                <span class="label-text">Telefonnummer</span>
+              </label>
+              <input
+                id="course-registration-parent-tel"
+                name="parent-tel"
+                type="tel"
+                placeholder="Telefonnummer"
+                class="input input-bordered w-full"
+                required
+              />
 
-                            <label class="label" for="course-registration-parent-tel">
-                                <span class="label-text">Telefonnummer</span>
-                            </label>
-                            <input id="course-registration-parent-tel" name="parent-tel" type="tel"
-                                placeholder="Telefonnummer" class="input input-bordered w-full" required />
-
-                            <label class="label" for="course-registration-parent-email">
-                                <span class="label-text">E-Mail</span>
-                            </label>
-                            <input id="course-registration-parent-email" name="parent-email" type="email"
-                                placeholder="E-Mail" class="input input-bordered w-full" required />
-                        </div>
-                        <button class="btn btn-primary mt-4">Anmelden</button>
-                    </div>
-                </div>
-            </form>
+              <label class="label" for="course-registration-parent-email">
+                <span class="label-text">E-Mail</span>
+              </label>
+              <input
+                id="course-registration-parent-email"
+                name="parent-email"
+                type="email"
+                placeholder="E-Mail"
+                class="input input-bordered w-full"
+                required
+              />
+            </div>
+            <button class="btn btn-primary mt-4">Anmelden</button>
+          </div>
         </div>
-    </div-->
+      </form>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>

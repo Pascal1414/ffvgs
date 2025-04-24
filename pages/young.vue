@@ -4,7 +4,7 @@
     <p class="double-item w-[50%] flex items-center">
       Die FFVGS legt grossen Wert auf die Jugendförderung und die professionelle
       Schulung durch erfahrene Fischer und den Umgang in und mit der Natur.<br />
-      Jedes Jahr im Mai führen wir einen Jungfischerkurs und ein Jugendfischen
+      Jedes Jahr führen wir einen Jungfischerkurs und ein Jugendfischen
       durch. An diesem zweitägigen Kurs werden die Kinder von erfahrenen
       Instruktoren in die Fischerei eingeführt.<br />
       Im Jungfischerkurs lernen die Kinder in der Theorie alles über
