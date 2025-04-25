@@ -25,7 +25,7 @@
 
       <div class="card card-compact bg-base-100 shadow-xl mt-6 mb-4">
         <div class="card-body">
-          <h2 class="card-title">Ablauf</h2>
+          <h2 class="card-title">Ablauf (27. & 28.09.2025)</h2>
           <ul>
             <li>
               <p>
