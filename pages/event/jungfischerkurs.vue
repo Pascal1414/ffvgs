@@ -18,9 +18,7 @@
         Greifensee statt. Wir zeigen den Kindern in der Theorie den Umgang mit
         dem Lebewesen «Fisch», der Natur und diverses Angeltechniken. Das
         theoretisch Erlernte wird am Sonntag mit erfahrenen Fischern am Wasser
-        getestet, mit anschliessender Rangverkündigung. Die Anmeldemöglichkeit
-        wird jeweils zu gegebenem Zeitpunkt auf unserer Homepage aufgeschaltet
-        und enthält die wichtigen Informationen.
+        getestet, mit anschliessender Rangverkündigung. Teilnehmen können Kinder ab 7 Jahren.
       </p>
 
       <div class="card card-compact bg-base-100 shadow-xl mt-6 mb-4">
