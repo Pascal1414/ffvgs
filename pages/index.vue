@@ -29,6 +29,29 @@
     <div class="skeleton h-4 w-[72%]"></div>
   </div>
 
+  <article v-for="(article, index) in articles">
+    <div class="divider" />
+
+    <ImageHero
+      v-if="article.images?.length"
+      :reversed="index % 2 == 0"
+      :images="article.images.map((i) => i.url)"
+    >
+      <div
+        class="flex flex-col gap-[1rem] marked"
+        v-html="marked(article.text)"
+      />
+    </ImageHero>
+    <div v-else>
+      <div class="sm:hero min-h-[400px]">
+        <div
+          class="hero-content place-items-start w-full flex-col marked"
+          v-html="marked(article.text || '')"
+        />
+      </div>
+    </div>
+  </article>
+
   <article>
     <div class="divider" />
 
@@ -73,29 +96,6 @@
             Quelle Jahresbericht Fischerei 2023 - Amt für Landschaft und Natur
           </a>
         </div>
-      </div>
-    </div>
-  </article>
-
-  <article v-for="(article, index) in articles">
-    <div class="divider" />
-
-    <ImageHero
-      v-if="article.images?.length"
-      :reversed="index % 2 == 0"
-      :images="article.images.map((i) => i.url)"
-    >
-      <div
-        class="flex flex-col gap-[1rem] marked"
-        v-html="marked(article.text)"
-      />
-    </ImageHero>
-    <div v-else>
-      <div class="sm:hero min-h-[400px]">
-        <div
-          class="hero-content place-items-start w-full flex-col marked"
-          v-html="marked(article.text || '')"
-        />
       </div>
     </div>
   </article>
