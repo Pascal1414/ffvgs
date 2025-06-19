@@ -11,5 +11,17 @@
   </div>
 </div>
 </template>
-<script lang="ts">
+<script lang="ts" setup>
+const router = useRouter()
+const route = useRoute()
+
+const requiredKey = '2039457820394' 
+
+onMounted(() => {
+  const accessKey = route.query.accessKey
+  route.query.accessKey = ''  
+  if (accessKey !== requiredKey) {
+    router.replace('/')
+  }
+})
 </script>
