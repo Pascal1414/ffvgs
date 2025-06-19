@@ -22,6 +22,8 @@ onMounted(() => {
   route.query.accessKey = ''  
   if (accessKey !== requiredKey) {
     router.replace('/')
+  } else {
+    router.replace({ path: route.path, query: {} })
   }
 })
 </script>
