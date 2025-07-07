@@ -22,7 +22,11 @@
     <nav>
       <h6 class="footer-title">Social</h6>
       <div class="grid grid-cols-2 gap-4">
-        <a href="https://www.instagram.com/ffv.g.s/profilecard/">
+        <a
+          href="https://www.instagram.com/ffv.g.s/profilecard/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <client-only>
             <svg
               class="w-6 h-6 text-gray-800 dark:text-white"
@@ -43,7 +47,11 @@
           </client-only>
         </a>
 
-        <a href="https://www.facebook.com/FFVGS/">
+        <a
+          href="https://www.facebook.com/FFVGS/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <client-only>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +66,11 @@
             </svg>
           </client-only>
         </a>
-        <a href="https://github.com/Pascal1414/ffvgs">
+        <a
+          href="https://github.com/Pascal1414/ffvgs"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <client-only>
             <svg
               width="20"
