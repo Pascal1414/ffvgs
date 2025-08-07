@@ -35,7 +35,9 @@
             toFormattedString(new Date(galeryItem.date))
           }})
         </h1>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-4"
+        >
           <div
             v-for="(image, index) in galeryItem.images"
             :key="index"
