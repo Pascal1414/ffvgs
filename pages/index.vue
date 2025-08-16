@@ -99,18 +99,18 @@
 </template>
 
 <script lang="ts" setup>
-import type { AsyncData } from "#app";
-import { marked } from "marked";
-import type { HomeArticle } from "~/types/home-article";
+import type { AsyncData } from '#app';
+import { marked } from 'marked';
+import type { HomeArticle } from '~/types/home-article';
 
-import BarChart from "~/components/charts/BarChart.vue";
+import BarChart from '~/components/charts/BarChart.vue';
 
 const config = useRuntimeConfig();
 
 const { data: articles, status } = await useLazyFetch(
-  config.public.apiUrl + "/home-articles",
+  config.public.apiUrl + '/home-articles',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
 
     transform: (_articles: AsyncData<any, any>) => {
       const articles = sanitizeApiResponse(_articles) as HomeArticle[];

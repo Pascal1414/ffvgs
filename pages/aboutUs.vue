@@ -86,16 +86,16 @@
 </template>
 
 <script setup lang="ts">
-import type { BoardPerson } from "~/types/board-person";
-import type { Vip } from "~/types/vip";
-import type { AsyncData } from "#app";
+import type { BoardPerson } from '~/types/board-person';
+import type { Vip } from '~/types/vip';
+import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 
 const { data: boardPersons, status: boardStatus } = await useLazyFetch(
-  config.public.apiUrl + "/board-people",
+  config.public.apiUrl + '/board-people',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_boardpeople: AsyncData<any, any>) => {
       const boardPeople = sanitizeApiResponse(_boardpeople) as BoardPerson[];
       return boardPeople.sort((a: any, b: any) => a.priority - b.priority);
@@ -104,9 +104,9 @@ const { data: boardPersons, status: boardStatus } = await useLazyFetch(
 );
 
 const { data: vips, status: vipsStatus } = await useLazyFetch(
-  config.public.apiUrl + "/vips",
+  config.public.apiUrl + '/vips',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_vips: AsyncData<any, any>) => {
       const vips = sanitizeApiResponse(_vips) as Vip[];
       return vips.sort((a: any, b: any) => a.priority - b.priority);

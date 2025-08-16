@@ -26,9 +26,9 @@
               />
               <span class="label-text">{{
                 membership.name +
-                " (" +
+                ' (' +
                 membership.price +
-                ") " +
+                ') ' +
                 membership.age
               }}</span>
             </label>
@@ -138,30 +138,30 @@
 const config = useRuntimeConfig();
 const memberships = ref([
   {
-    name: "Junior",
-    price: "100.00",
-    age: "",
+    name: 'Junior',
+    price: '100.00',
+    age: '',
   },
   {
-    name: "Aktivmitglied",
-    price: "175.00",
-    age: "",
+    name: 'Aktivmitglied',
+    price: '175.00',
+    age: '',
   },
   {
-    name: "Passivmitglied",
-    price: "50.00",
-    age: "",
+    name: 'Passivmitglied',
+    price: '50.00',
+    age: '',
   },
   {
-    name: "Veteran",
-    price: "100.00",
-    age: "Aktivmitglied ab 65 Jahren",
+    name: 'Veteran',
+    price: '100.00',
+    age: 'Aktivmitglied ab 65 Jahren',
   },
 ]);
 </script>
 
 <style scoped>
-@reference "~/assets/css/main.css";
+@reference '~/assets/css/main.css';
 
 .form-label {
   @apply label;

@@ -160,22 +160,22 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
-import type { Ref } from "vue";
+import { ref, onMounted } from 'vue';
+import type { Ref } from 'vue';
 
-const startTime: Ref<String> = ref("");
-const endTime: Ref<String> = ref("");
+const startTime: Ref<String> = ref('');
+const endTime: Ref<String> = ref('');
 const price: Ref<Number> = ref(0);
 
 onMounted(() => {
-  const script = document.createElement("script");
-  script.src = "https://app.calendarapp.de/loadcal.php";
+  const script = document.createElement('script');
+  script.src = 'https://app.calendarapp.de/loadcal.php';
   script.async = true;
   document.body.appendChild(script);
 });
 
 function calculatePrice() {
-  console.log("calculating price");
+  console.log('calculating price');
 
   // Calculate duration of rental period in hours
   const start = new Date(`2000-01-01T${startTime.value}`);
@@ -197,7 +197,7 @@ function calculatePrice() {
       tmpPrice += 1;
     }
   }
-  console.log("price", price);
+  console.log('price', price);
 
   price.value = tmpPrice;
 }

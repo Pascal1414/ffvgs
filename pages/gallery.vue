@@ -135,18 +135,18 @@
 </template>
 
 <script lang="ts" setup>
-import type { AsyncData } from "#app";
-import type { Galery } from "~/types/galery";
-import type { ResImage } from "~/types/image";
+import type { AsyncData } from '#app';
+import type { Galery } from '~/types/galery';
+import type { ResImage } from '~/types/image';
 
 const config = useRuntimeConfig();
 
 const year = ref(new Date().getFullYear());
 
 const { data: galeryItems, status } = await useLazyFetch(
-  config.public.apiUrl + "/galeries",
+  config.public.apiUrl + '/galeries',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_galeryItems: AsyncData<any, any>) => {
       return sanitizeApiResponse(_galeryItems) as Galery[];
     },

@@ -185,8 +185,8 @@
 let themeCheckbox = ref(true);
 
 onMounted(() => {
-  const theme = localStorage.getItem("theme");
-  if (theme === "light") {
+  const theme = localStorage.getItem('theme');
+  if (theme === 'light') {
     updateTheme(false);
   } else {
     updateTheme(true);
@@ -195,12 +195,12 @@ onMounted(() => {
 
 function updateTheme(isDarkMode: boolean) {
   if (isDarkMode) {
-    document.documentElement.setAttribute("data-theme", "night");
-    localStorage.setItem("theme", "night");
+    document.documentElement.setAttribute('data-theme', 'night');
+    localStorage.setItem('theme', 'night');
     themeCheckbox.value = false;
   } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
     themeCheckbox.value = true;
   }
 }

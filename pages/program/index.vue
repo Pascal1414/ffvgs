@@ -109,24 +109,24 @@
 </template>
 
 <script lang="ts" setup>
-import type { Program } from "~/types/program";
-import type { AsyncData } from "#app";
+import type { Program } from '~/types/program';
+import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 const router = useRouter();
 
 const selectionOptions = ref([
-  { value: "none", text: "Alles anzeigen" },
-  { value: "alle", text: "Alle Mitglieder" },
-  { value: "junioren", text: "Junioren" },
+  { value: 'none', text: 'Alles anzeigen' },
+  { value: 'alle', text: 'Alle Mitglieder' },
+  { value: 'junioren', text: 'Junioren' },
 ]);
 
 const selectionSelect: Ref<string> = ref(selectionOptions.value[0].value);
 
 const { data: programs, status } = await useLazyFetch(
-  config.public.apiUrl + "/programs",
+  config.public.apiUrl + '/programs',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_programs: AsyncData<any, any>) => {
       const sanitizedResponse = sanitizeApiResponse(_programs) as Program[];
       return oderByDate(sanitizedResponse);
@@ -147,9 +147,9 @@ function oderByDate(programms: Program[]): Program[] {
 
 function shouldShowProgram(program: Program): boolean {
   switch (selectionSelect.value) {
-    case "junioren":
+    case 'junioren':
       return program.forJunior;
-    case "alle":
+    case 'alle':
       return program.forAll;
     default:
       return true;

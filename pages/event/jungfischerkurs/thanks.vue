@@ -19,13 +19,13 @@
 const router = useRouter();
 const route = useRoute();
 
-const requiredKey = "2039457820394";
+const requiredKey = '2039457820394';
 
 onMounted(() => {
   const key = route.query.key;
-  route.query.key = "";
+  route.query.key = '';
   if (key !== requiredKey) {
-    router.replace("/");
+    router.replace('/');
   } else {
     router.replace({ path: route.path, query: {} });
   }

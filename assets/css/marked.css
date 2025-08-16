@@ -1,4 +1,4 @@
-@reference "~/assets/css/main.css";
+@reference '~/assets/css/main.css';
 
 .marked h1 {
   @apply text-4xl font-bold;

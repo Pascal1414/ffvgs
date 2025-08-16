@@ -68,9 +68,9 @@
   </div>
 </template>
 <script lang="ts" setup>
-import type { Program } from "~/types/program";
-import { marked } from "marked";
-import type { AsyncData } from "#app";
+import type { Program } from '~/types/program';
+import { marked } from 'marked';
+import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 const route = useRoute();
@@ -80,7 +80,7 @@ const {
   error,
   status,
 } = await useLazyFetch(`${config.public.apiUrl}/programs/${route.params.id}`, {
-  query: { populate: "*" },
+  query: { populate: '*' },
   transform: (_program: AsyncData<any, any>) => {
     return sanitizeApiResponse(_program) as Program;
   },

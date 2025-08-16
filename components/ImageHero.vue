@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import Slideshow from "./Slideshow.vue";
+import Slideshow from './Slideshow.vue';
 
 const props = defineProps({
   images: {
@@ -42,7 +42,7 @@ function getImagesForSlideshow() {
   return props.images.map((image: string) => {
     return {
       src: image,
-      alt: "Hero image",
+      alt: 'Hero image',
     };
   });
 }

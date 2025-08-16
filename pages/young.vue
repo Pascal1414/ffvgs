@@ -19,21 +19,21 @@
 </template>
 
 <script lang="ts" setup>
-import Slideshow from "@/components/Slideshow.vue";
-import { ref } from "vue";
+import Slideshow from '@/components/Slideshow.vue';
+import { ref } from 'vue';
 
 const images = ref([
   {
-    src: "/images/young/jugendfischen.jpg",
-    alt: "Image 1",
+    src: '/images/young/jugendfischen.jpg',
+    alt: 'Image 1',
   },
   {
-    src: "/images/young/jugendfischensteg.jpg",
-    alt: "Image 2",
+    src: '/images/young/jugendfischensteg.jpg',
+    alt: 'Image 2',
   },
   {
-    src: "/images/young/jugenfischenknoten.jpg",
-    alt: "Image 3",
+    src: '/images/young/jugenfischenknoten.jpg',
+    alt: 'Image 3',
   },
 ]);
 </script>

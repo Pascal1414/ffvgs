@@ -55,13 +55,13 @@
 </template>
 <script lang="ts" setup>
 const navItems = [
-  { name: "Programm", link: "/program" },
-  { name: "Über uns", link: "/aboutUs" },
-  { name: "Jugend", link: "/young" },
-  { name: "Berichte", link: "/report" },
-  { name: "Galerie", link: "/gallery" },
-  { name: "Kontakt", link: "/contact" },
-  { name: "Boot", link: "/boat" },
+  { name: 'Programm', link: '/program' },
+  { name: 'Über uns', link: '/aboutUs' },
+  { name: 'Jugend', link: '/young' },
+  { name: 'Berichte', link: '/report' },
+  { name: 'Galerie', link: '/gallery' },
+  { name: 'Kontakt', link: '/contact' },
+  { name: 'Boot', link: '/boat' },
 ];
 
 const ghostBtn = ref<HTMLElement | null>(null);

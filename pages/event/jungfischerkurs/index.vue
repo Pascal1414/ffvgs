@@ -229,19 +229,19 @@
 </template>
 
 <script lang="ts" setup>
-import Slideshow from "@/components/Slideshow.vue";
-import { ref } from "vue";
+import Slideshow from '@/components/Slideshow.vue';
+import { ref } from 'vue';
 
 const images = ref([
-  { src: "/images/event/jungfischerkurs/festzelt.jpg", alt: "Festzelt" },
-  { src: "/images/event/jungfischerkurs/fischen.jpg", alt: "Fischen" },
-  { src: "/images/event/jungfischerkurs/fischen2.jpg", alt: "Fischen" },
-  { src: "/images/event/jungfischerkurs/fischen3.jpg", alt: "Fischen" },
-  { src: "/images/event/jungfischerkurs/schiff.jpg", alt: "Schiff" },
-  { src: "/images/event/jungfischerkurs/schiff-close.jpg", alt: "Schiff" },
+  { src: '/images/event/jungfischerkurs/festzelt.jpg', alt: 'Festzelt' },
+  { src: '/images/event/jungfischerkurs/fischen.jpg', alt: 'Fischen' },
+  { src: '/images/event/jungfischerkurs/fischen2.jpg', alt: 'Fischen' },
+  { src: '/images/event/jungfischerkurs/fischen3.jpg', alt: 'Fischen' },
+  { src: '/images/event/jungfischerkurs/schiff.jpg', alt: 'Schiff' },
+  { src: '/images/event/jungfischerkurs/schiff-close.jpg', alt: 'Schiff' },
   {
-    src: "/images/event/jungfischerkurs/zielschiessen.jpg",
-    alt: "Zielschiessen",
+    src: '/images/event/jungfischerkurs/zielschiessen.jpg',
+    alt: 'Zielschiessen',
   },
 ]);
 </script>
