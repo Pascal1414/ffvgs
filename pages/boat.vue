@@ -75,7 +75,7 @@
       </span>
     </div>
 
-    <div class="grid flex-grow card bg-base-200 rounded-box p-4 w-[100%]">
+    <div class="grid grow card bg-base-200 rounded-box p-4 w-full">
       <div class="flex row justify-between mb-4">
         <h2 class="text-2xl font-bold mb-2">Tarife:</h2>
         <label for="my-modal-6" class="btn btn-primary">Preisrechner</label>
@@ -83,21 +83,21 @@
 
       <div class="flex flex-col w-full lg:flex-row">
         <div
-          class="grid flex-grow h-25 card bg-base-300 rounded-box place-items-center p-4"
+          class="grid grow h-25 card bg-base-300 rounded-box place-items-center p-4"
         >
           <h3 class="text-1xl font-bold">Tagestarif (05:00 - 19:00 Uhr)</h3>
           <p>CHF 2.00 pro Stunde</p>
         </div>
         <div class="divider lg:divider-horizontal"></div>
         <div
-          class="grid flex-grow h-25 card bg-base-300 rounded-box place-items-center p-4"
+          class="grid grow h-25 card bg-base-300 rounded-box place-items-center p-4"
         >
           <h3 class="text-1xl font-bold">Nachttarif (19:00 - 05:00 Uhr)</h3>
           <p>CHF 1.00 pro Stunde</p>
         </div>
       </div>
     </div>
-    <div class="card card-compact w-[100%] bg-base-200 shadow-xl">
+    <div class="card card-compact w-full bg-base-200 shadow-xl">
       <figure></figure>
       <div class="card-body">
         <h2 class="text-2xl font-bold mb-2">Kalender:</h2>

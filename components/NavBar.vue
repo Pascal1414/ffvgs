@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar justify-between bg-base-300 !rounded-none">
+  <nav class="navbar justify-between bg-base-300 rounded-none!">
     <div class="navbar-start w-auto">
       <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" ref="navButton">
@@ -8,7 +8,7 @@
           </svg>
         </div>
         <!-- Mobile Nav Items -->
-        <ul tabindex="0" class="menu  dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-52">
+        <ul tabindex="0" class="menu  dropdown-content mt-3 z-1 p-2 shadow bg-base-300 rounded-box w-52">
           <li v-for="(navItem, index) in navItems" :key="index" @click="closeNav()">
             <router-link :to="navItem.link">{{ navItem.name }}</router-link>
           </li>

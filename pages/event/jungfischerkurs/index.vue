@@ -65,7 +65,7 @@
     </div>
     <div class="divider lg:divider-horizontal"></div>
     <div
-      class="grid flex-grow lg:w-[50%] p-4 card bg-base-200 rounded-box place-items-center"
+      class="grid grow lg:w-[50%] p-4 card bg-base-200 rounded-box place-items-center"
     >
       <slideshow class="double-item" :images="images" />
     </div>

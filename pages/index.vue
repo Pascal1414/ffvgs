@@ -38,7 +38,7 @@
       :images="article.images.map((i) => i.url)"
     >
       <div
-        class="flex flex-col gap-[1rem] marked"
+        class="flex flex-col gap-4 marked"
         v-html="marked(article.text)"
       />
     </ImageHero>

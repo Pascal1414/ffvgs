@@ -18,7 +18,7 @@
             class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto"
           >
             <img
-              class="h-[100%] w-[100%]"
+              class="h-full w-full"
               :src="person.image?.url"
               alt="Image"
             />

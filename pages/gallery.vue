@@ -27,7 +27,7 @@
   <div v-for="(galeryItem, index) in galeryItems" :key="index">
     <div
       v-if="shouldShowGalery(galeryItem)"
-      class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4"
+      class="card card-compact w-full bg-base-200 shadow-xl mb-4"
     >
       <div class="card-body">
         <h1 class="text-2xl font-bold mb-2">
@@ -72,7 +72,7 @@
       </div>
 
       <button
-        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] left-2"
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:translate-y-[-50%]! left-2"
         @click="previous()"
       >
         <ClientOnly>
@@ -92,7 +92,7 @@
         </ClientOnly>
       </button>
       <button
-        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] right-2"
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:translate-y-[-50%]! right-2"
         @click="next()"
       >
         <ClientOnly>

@@ -1,5 +1,5 @@
 <template>
-  <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
+  <div class="card w-full bg-base-200 shadow-xl mb-4">
     <div class="card-body">
       <h1 class="text-2xl font-bold">Anmeldung Plauschfischen</h1>
 
