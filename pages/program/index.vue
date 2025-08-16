@@ -131,7 +131,7 @@ const { data: programs, status } = await useLazyFetch(
       const sanitizedResponse = sanitizeApiResponse(_programs) as Program[];
       return oderByDate(sanitizedResponse);
     },
-  }
+  },
 );
 
 function oderByDate(programms: Program[]): Program[] {

@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/cloudinary", "nuxt-echarts"],
@@ -28,5 +30,9 @@ export default defineNuxtConfig({
       "LegendComponent",
     ],
   },
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  css: ["~/assets/css/main.css", "~/assets/css/marked.css"],
   compatibilityDate: "2024-08-20",
 });

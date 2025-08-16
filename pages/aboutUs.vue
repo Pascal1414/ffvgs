@@ -17,11 +17,7 @@
           <figure
             class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto"
           >
-            <img
-              class="h-full w-full"
-              :src="person.image?.url"
-              alt="Image"
-            />
+            <img class="h-full w-full" :src="person.image?.url" alt="Image" />
           </figure>
           <div class="card-body w-[260px]">
             <h2 class="card-title">{{ person.name }}</h2>
@@ -104,7 +100,7 @@ const { data: boardPersons, status: boardStatus } = await useLazyFetch(
       const boardPeople = sanitizeApiResponse(_boardpeople) as BoardPerson[];
       return boardPeople.sort((a: any, b: any) => a.priority - b.priority);
     },
-  }
+  },
 );
 
 const { data: vips, status: vipsStatus } = await useLazyFetch(
@@ -115,7 +111,7 @@ const { data: vips, status: vipsStatus } = await useLazyFetch(
       const vips = sanitizeApiResponse(_vips) as Vip[];
       return vips.sort((a: any, b: any) => a.priority - b.priority);
     },
-  }
+  },
 );
 </script>
 

@@ -93,5 +93,5 @@ if (error.value) {
 }
 </script>
 <style scoped>
-@import url(assets/css/marked.css);
+@reference '~/assets/css/marked.css';
 </style>

@@ -1,9 +1,7 @@
 <template>
   <h1 class="text-4xl font-bold mb-4">Sommernachtsfest</h1>
 
-  <div
-    class="grid grow mb-8 card bg-base-200 rounded-box place-items-center"
-  >
+  <div class="grid grow mb-8 card bg-base-200 rounded-box place-items-center">
     <div class="card p-10">
       <h1 class="text-3xl font-bold mb-2" style="overflow-wrap: anywhere">
         2024 wird ein Jahr ohne Sommernachtsfest

@@ -150,7 +150,7 @@ const { data: galeryItems, status } = await useLazyFetch(
     transform: (_galeryItems: AsyncData<any, any>) => {
       return sanitizeApiResponse(_galeryItems) as Galery[];
     },
-  }
+  },
 );
 
 function shouldShowGalery(galery: Galery): boolean {
@@ -159,7 +159,7 @@ function shouldShowGalery(galery: Galery): boolean {
 
 function getYearOptions() {
   const years = galeryItems.value?.map((galery) =>
-    new Date(galery.date).getFullYear()
+    new Date(galery.date).getFullYear(),
   );
   return Array.from(new Set(years)).sort((a, b) => b - a);
 }

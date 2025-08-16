@@ -37,10 +37,7 @@
       :reversed="index % 2 == 0"
       :images="article.images.map((i) => i.url)"
     >
-      <div
-        class="flex flex-col gap-4 marked"
-        v-html="marked(article.text)"
-      />
+      <div class="flex flex-col gap-4 marked" v-html="marked(article.text)" />
     </ImageHero>
     <div v-else>
       <div class="sm:hero min-h-[400px]">
@@ -119,7 +116,7 @@ const { data: articles, status } = await useLazyFetch(
       const articles = sanitizeApiResponse(_articles) as HomeArticle[];
       return articles.sort((a: any, b: any) => a.priority - b.priority);
     },
-  }
+  },
 );
 </script>
 

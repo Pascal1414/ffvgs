@@ -161,6 +161,8 @@ const memberships = ref([
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
+
 .form-label {
   @apply label;
   @apply flex;

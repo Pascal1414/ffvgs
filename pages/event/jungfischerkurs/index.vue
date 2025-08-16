@@ -18,7 +18,8 @@
         Greifensee statt. Wir zeigen den Kindern in der Theorie den Umgang mit
         dem Lebewesen «Fisch», der Natur und diverses Angeltechniken. Das
         theoretisch Erlernte wird am Sonntag mit erfahrenen Fischern am Wasser
-        getestet, mit anschliessender Rangverkündigung. Teilnehmen können Kinder ab 7 Jahren.
+        getestet, mit anschliessender Rangverkündigung. Teilnehmen können Kinder
+        ab 7 Jahren.
       </p>
 
       <div class="card card-compact bg-base-100 shadow-xl mt-6 mb-4">
@@ -74,10 +75,7 @@
   <div class="card w-full bg-base-200 shadow-xl">
     <div class="card-body">
       <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
-      <form   
-        action="https://formspree.io/f/mzzrbplj"
-        method="POST"
-      >
+      <form action="https://formspree.io/f/mzzrbplj" method="POST">
         <div class="flex flex-col w-full lg:flex-row">
           <div class="card lg:w-[50%]">
             <h2 class="card-title">Jugendliche oder Jugendlicher</h2>
