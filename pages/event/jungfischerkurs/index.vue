@@ -159,7 +159,7 @@
               <select
                 id="course-registration-already-fished"
                 name="participant-already-fished"
-                class="select select-bordered w-full"
+                class="select w-full"
                 required
               >
                 <option disabled selected hidden value="">

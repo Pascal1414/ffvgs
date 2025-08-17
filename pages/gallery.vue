@@ -1,19 +1,14 @@
 <template>
   <div class="flex flex-col items-center">
     <div class="form-control">
-      <label for="role" class="label">
-        <span class="label-text">Bilder aus folgendem Jahr anzeigen:</span>
+      <label class="floating-label mb-4 w-[260px]">
+        <span>Bilder aus folgendem Jahr anzeigen:</span>
+        <select v-model="year" class="select" name="mitgliedschaft" id="role">
+          <option v-for="year in getYearOptions()" :key="year" :value="year">
+            {{ year }}
+          </option>
+        </select>
       </label>
-      <select
-        v-model="year"
-        class="select select-bordered max-w-xs mb-4"
-        name="mitgliedschaft"
-        id="role"
-      >
-        <option v-for="year in getYearOptions()" :key="year" :value="year">
-          {{ year }}
-        </option>
-      </select>
     </div>
   </div>
 

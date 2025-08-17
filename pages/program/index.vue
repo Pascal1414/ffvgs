@@ -2,23 +2,23 @@
   <div class="flex flex-col items-center">
     <h1 class="text-4xl font-bold mb-4">Programm</h1>
     <div class="form-control">
-      <label for="role" class="label">
-        <span class="label-text">Program nach Mitgliedschaft anzeigen:</span>
-      </label>
-      <select
-        v-model="selectionSelect"
-        class="select select-bordered max-w-xs mb-4"
-        name="mitgliedschaft"
-        id="role"
-      >
-        <option
-          v-for="option in selectionOptions"
-          :key="option.value"
-          :value="option.value"
+      <label class="floating-label w-[250px]">
+        <span>Nach Mitgliedschaft filtern:</span>
+        <select
+          v-model="selectionSelect"
+          class="select max-w-xs mb-4"
+          name="mitgliedschaft"
+          id="role"
         >
-          {{ option.text }}
-        </option>
-      </select>
+          <option
+            v-for="option in selectionOptions"
+            :key="option.value"
+            :value="option.value"
+          >
+            {{ option.text }}
+          </option>
+        </select>
+      </label>
     </div>
   </div>
 
@@ -131,7 +131,7 @@ const { data: programs, status } = await useLazyFetch(
       const sanitizedResponse = sanitizeApiResponse(_programs) as Program[];
       return oderByDate(sanitizedResponse);
     },
-  },
+  }
 );
 
 function oderByDate(programms: Program[]): Program[] {
