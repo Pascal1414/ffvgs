@@ -8,7 +8,7 @@
         name="join-association"
         method="POST"
         :action="config.public.formspree.joinFormUrl"
-        class="form-control w-full"
+        class="form-control w-full flex flex-col gap-3"
       >
         <div class="card w-full bg-base-300 shadow-xl">
           <div class="card-body gap-0">
@@ -36,9 +36,9 @@
         </div>
 
         <div class="split-cols grid grid-cols-2 gap-[15px] mb-0 mt-3">
-          <div>
-            <label>
-              <div class="form-label">Vorname</div>
+          <div class="flex flex-col gap-3 mb-3">
+            <label class="floating-label">
+              <span>Vorname</span>
               <input
                 name="firstname"
                 type="text"
@@ -48,8 +48,8 @@
               />
             </label>
 
-            <label>
-              <div class="form-label">Lastname</div>
+            <label class="floating-label">
+              <span>Lastname</span>
               <input
                 name="lastname"
                 type="text"
@@ -59,8 +59,8 @@
               />
             </label>
 
-            <label>
-              <div class="form-label">Geburtsdatum</div>
+            <label class="floating-label">
+              <span>Geburtsdatum</span>
               <input
                 name="birthdate"
                 type="date"
@@ -70,9 +70,9 @@
               />
             </label>
           </div>
-          <div>
-            <label>
-              <div class="form-label">Strasse und Nummer</div>
+          <div class="flex flex-col gap-3">
+            <label class="floating-label">
+              <span>Strasse und Nummer</span>
               <input
                 name="street"
                 type="text"
@@ -82,8 +82,8 @@
               />
             </label>
 
-            <label>
-              <div class="form-label">PLZ</div>
+            <label class="floating-label">
+              <span>PLZ</span>
               <input
                 type="text"
                 name="zip"
@@ -93,8 +93,8 @@
               />
             </label>
 
-            <label>
-              <div class="form-label">Ort</div>
+            <label class="floating-label">
+              <span>Ort</span>
               <input
                 name="place"
                 type="text"
@@ -105,9 +105,9 @@
             </label>
           </div>
         </div>
-        <div class="mb-2">
-          <label>
-            <div class="form-label">Email</div>
+        <div class="flex flex-col gap-3">
+          <label class="floating-label">
+            <span>Email</span>
             <input
               name="email"
               type="email"
@@ -117,8 +117,8 @@
             />
           </label>
 
-          <label>
-            <div class="form-label">Nachricht</div>
+          <label class="floating-label">
+            <span>Nachricht</span>
             <textarea
               name="message"
               class="textarea textarea-bordered w-full"
@@ -126,9 +126,7 @@
             ></textarea>
           </label>
         </div>
-        <button type="submit" class="btn btn-primary mt-3 max-w-xs">
-          Absenden
-        </button>
+        <button type="submit" class="btn btn-primary mt-2">Absenden</button>
       </form>
     </div>
   </div>
@@ -162,14 +160,6 @@ const memberships = ref([
 
 <style scoped>
 @reference '~/assets/css/main.css';
-
-.form-label {
-  @apply label;
-  @apply flex;
-  @apply flex-col;
-  @apply items-start;
-  @apply label-text;
-}
 
 @media (max-width: 600px) {
   .split-cols {
