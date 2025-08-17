@@ -120,34 +120,23 @@
         nochmals überprüfen.
       </p>
 
-      <form @submit.prevent="calculatePrice()">
-        <div class="form-control w-full max-w-xs">
-          <label class="label">
-            <span class="label-text">Startzeit</span>
-          </label>
+      <form @submit.prevent="calculatePrice()" class="flex flex-col gap-3 mt-4">
+        <label class="input w-full">
+          <span class="label">Startzeit</span>
           <input
             type="time"
             v-model="startTime"
             placeholder="Startzeit"
-            class="input"
             required
           />
-        </div>
+        </label>
 
-        <div class="form-control w-full max-w-xs">
-          <label class="label">
-            <span class="label-text">Endzeit</span>
-          </label>
-          <input
-            type="time"
-            v-model="endTime"
-            placeholder="Endzeit"
-            class="input"
-            required
-          />
-        </div>
+        <label class="input w-full">
+          <span class="label">Endzeit</span>
+          <input type="time" v-model="endTime" placeholder="Endzeit" required />
+        </label>
 
-        <button class="btn btn-primary mt-4">Berechnen</button>
+        <button class="btn btn-primary mt-2">Berechnen</button>
 
         <div v-if="price">Preis: {{ price }} CHF</div>
       </form>
