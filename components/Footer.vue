@@ -1,5 +1,7 @@
 <template>
-  <footer class="footer flex justify-around p-10 bg-base-200 text-base-content">
+  <footer
+    class="footer sm:footer-horizontal bg-base-300 text-base-content p-10"
+  >
     <nav>
       <h6 class="footer-title">Links</h6>
       <router-link to="/imprint" class="link link-hover">Impressum</router-link>
@@ -21,7 +23,7 @@
     </nav>
     <nav>
       <h6 class="footer-title">Social</h6>
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-flow-col gap-4 mb-4">
         <a
           href="https://www.instagram.com/ffv.g.s/profilecard/"
           target="_blank"
@@ -81,6 +83,9 @@
             </svg>
           </client-only>
         </a>
+      </div>
+      <div>
+        <h6 class="footer-title">Actions</h6>
         <label class="swap" id="theme-toggle">
           <!-- this hidden checkbox controls the state -->
           <input
