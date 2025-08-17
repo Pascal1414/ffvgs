@@ -14,7 +14,7 @@
             name="email"
             type="email"
             placeholder="Email"
-            class="input input-bordered w-full"
+            class="input w-full"
             required
           />
         </label>

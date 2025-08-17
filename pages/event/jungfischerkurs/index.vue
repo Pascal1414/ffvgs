@@ -87,7 +87,7 @@
               name="participant-firstname"
               type="text"
               placeholder="Vorname"
-              class="input input-bordered w-full"
+              class="input w-full"
               required
             />
 
@@ -99,7 +99,7 @@
               name="participant-lastname"
               type="text"
               placeholder="Nachname"
-              class="input input-bordered w-full"
+              class="input w-full"
               required
             />
 
@@ -111,7 +111,7 @@
               name="participant-address"
               type="text"
               placeholder="Adresse"
-              class="input input-bordered w-full"
+              class="input w-full"
               required
             />
 
@@ -125,7 +125,7 @@
                   id="course-registration-city"
                   name="participant-city"
                   placeholder="Ort"
-                  class="join-item input input-bordered w-[70%]"
+                  class="join-item input w-[70%]"
                   required
                 />
 
@@ -134,7 +134,7 @@
                   name="participant-zip"
                   type="text"
                   placeholder="PLZ"
-                  class="join-item input input-bordered w-[30%]"
+                  class="join-item input w-[30%]"
                   required
                 />
               </label>
@@ -148,7 +148,7 @@
               name="participant-birthdate"
               type="date"
               placeholder="Geburtsdatum"
-              class="input input-bordered w-full"
+              class="input w-full"
               required
             />
 
@@ -180,7 +180,7 @@
                 name="parent-firstname"
                 type="text"
                 placeholder="Vorname"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
 
@@ -192,7 +192,7 @@
                 name="parent-lastname"
                 type="text"
                 placeholder="Nachname"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
 
@@ -204,7 +204,7 @@
                 name="parent-tel"
                 type="tel"
                 placeholder="Telefonnummer"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
 
@@ -216,7 +216,7 @@
                 name="parent-email"
                 type="email"
                 placeholder="E-Mail"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </div>

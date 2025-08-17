@@ -129,7 +129,7 @@
             type="time"
             v-model="startTime"
             placeholder="Startzeit"
-            class="input input-bordered w-full max-w-xs"
+            class="input"
             required
           />
         </div>
@@ -142,7 +142,7 @@
             type="time"
             v-model="endTime"
             placeholder="Endzeit"
-            class="input input-bordered w-full max-w-xs"
+            class="input"
             required
           />
         </div>

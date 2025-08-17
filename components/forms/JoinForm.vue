@@ -43,7 +43,7 @@
                 name="firstname"
                 type="text"
                 placeholder="Vorname"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
@@ -54,7 +54,7 @@
                 name="lastname"
                 type="text"
                 placeholder="Nachname"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
@@ -65,7 +65,7 @@
                 name="birthdate"
                 type="date"
                 placeholder="Geburtsdatum"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
@@ -77,7 +77,7 @@
                 name="street"
                 type="text"
                 placeholder="Strasse und Nummer"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
@@ -88,7 +88,7 @@
                 type="text"
                 name="zip"
                 placeholder="PLZ"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
@@ -99,7 +99,7 @@
                 name="place"
                 type="text"
                 placeholder="Ort"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
@@ -112,7 +112,7 @@
               name="email"
               type="email"
               placeholder="Email"
-              class="input input-bordered w-full"
+              class="input w-full"
               required
             />
           </label>
