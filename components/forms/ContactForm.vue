@@ -6,32 +6,24 @@
       <form
         method="POST"
         :action="config.public.formspree.contactFormUrl"
-        class="form-control w-full"
+        class="w-full flex flex-col gap-3"
       >
-        <label>
-          <div class="label">Email</div>
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            class="input w-full"
-            required
-          />
+        <label class="floating-label">
+          <span>Email</span>
+          <input name="email" type="email" class="input w-full" required />
         </label>
 
-        <label>
-          <div class="label">Nachricht</div>
+        <label class="floating-label">
+          <span>Nachricht</span>
           <textarea
             name="message"
-            class="textarea textarea-bordered mb-2 w-full"
+            class="textarea w-full"
             placeholder="Nachricht"
             required
           ></textarea>
         </label>
 
-        <button type="submit" class="btn btn-primary mt-3 max-w-xs">
-          Absenden
-        </button>
+        <button type="submit" class="btn btn-primary">Absenden</button>
       </form>
     </div>
   </div>
@@ -41,13 +33,4 @@
 const config = useRuntimeConfig();
 </script>
 
-<style scoped>
-@reference '~/assets/css/main.css';
-
-label {
-  @apply flex;
-  @apply flex-col;
-  @apply items-start;
-  @apply label-text;
-}
-</style>
+<style scoped></style>
