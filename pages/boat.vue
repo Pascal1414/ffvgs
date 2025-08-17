@@ -97,7 +97,7 @@
         </div>
       </div>
     </div>
-    <div class="card card-compact w-full bg-base-200 shadow-xl">
+    <div class="card card-sm w-full bg-base-200 shadow-xl">
       <figure></figure>
       <div class="card-body">
         <h2 class="text-2xl font-bold mb-2">Kalender:</h2>
