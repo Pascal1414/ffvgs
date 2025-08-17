@@ -11,6 +11,10 @@
         <input type="text" name="_gotcha" class="hidden" />
         <label>
           <div class="label">Vorname *</div>
+        </label>
+
+        <label class="floating-label">
+          <span>Vorname *</span>
           <input
             name="firstname"
             type="text"
@@ -20,8 +24,8 @@
           />
         </label>
 
-        <label>
-          <div class="label">Nachname *</div>
+        <label class="floating-label">
+          <span>Nachname *</span>
           <input
             name="lastname"
             type="text"
@@ -31,8 +35,8 @@
           />
         </label>
 
-        <label>
-          <div class="label">Email *</div>
+        <label class="floating-label">
+          <span>Email *</span>
           <input
             name="email"
             type="email"
@@ -43,7 +47,7 @@
         </label>
 
         <label>
-          <div class="label">Geburtsdatum (Für Patent) *</div>
+          <div class="floating-label">Geburtsdatum (Für Patent) *</div>
           <input
             name="birthdate"
             type="date"
@@ -54,7 +58,7 @@
         </label>
 
         <label>
-          <div class="label">Anmerkungen</div>
+          <div class="floating-label">Anmerkungen</div>
           <textarea
             name="notes"
             class="textarea textarea-bordered mb-2 w-full"
@@ -74,13 +78,4 @@
 const config = useRuntimeConfig();
 </script>
 
-<style scoped>
-@reference '~/assets/css/main.css';
-
-label {
-  @apply flex;
-  @apply flex-col;
-  @apply items-start;
-  @apply label-text;
-}
-</style>
+<style scoped></style>
