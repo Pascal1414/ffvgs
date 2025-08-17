@@ -8,7 +8,7 @@
         name="join-association"
         method="POST"
         :action="config.public.formspree.joinFormUrl"
-        class="form-control w-full flex flex-col gap-3"
+        class="fieldset"
       >
         <div class="card w-full bg-base-300 shadow-xl">
           <div class="card-body gap-0">

@@ -6,7 +6,7 @@
       <form
         method="POST"
         :action="config.public.formspree.eventRegistration"
-        class="form-control w-full"
+        class="fieldset"
       >
         <input type="text" name="_gotcha" class="hidden" />
         <label>
