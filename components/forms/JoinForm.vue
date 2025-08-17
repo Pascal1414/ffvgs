@@ -121,7 +121,7 @@
             <span>Nachricht</span>
             <textarea
               name="message"
-              class="textarea textarea-bordered w-full"
+              class="textarea w-full"
               placeholder="Nachricht"
             ></textarea>
           </label>

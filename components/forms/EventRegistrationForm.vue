@@ -61,7 +61,7 @@
           <div class="floating-label">Anmerkungen</div>
           <textarea
             name="notes"
-            class="textarea textarea-bordered mb-2 w-full"
+            class="textarea mb-2 w-full"
             placeholder="Anmerkungen"
           ></textarea>
         </label>
