@@ -36,75 +36,75 @@
 </template>
 
 <script lang="ts" setup>
-import type { DocumentList } from "~/types/document-list";
+import type { DocumentList } from '~/types/document-list';
 const documentList = ref<DocumentList[]>([
   {
-    name: "Vereinsboot",
+    name: 'Vereinsboot',
     documents: [
       {
-        name: "Benutzungsordnung Vereinsboot",
-        url: "/documents/BenutzungsordnungVereinsboot.pdf",
+        name: 'Benutzungsordnung Vereinsboot',
+        url: '/documents/BenutzungsordnungVereinsboot.pdf',
       },
     ],
   },
   {
-    name: "Statuten",
+    name: 'Statuten',
     documents: [
       {
-        name: "FFV Statuten 5 A5",
-        url: "/documents/FFV_Statuten_5_A5.pdf",
+        name: 'FFV Statuten 5 A5',
+        url: '/documents/FFV_Statuten_5_A5.pdf',
       },
     ],
   },
   {
-    name: "Vereinsfischen",
+    name: 'Vereinsfischen',
     documents: [
       {
-        name: "Informationen Vereinsfischen",
-        url: "/documents/Information-Vereinsmeisterschaft-2025.pdf",
+        name: 'Informationen Vereinsfischen',
+        url: '/documents/Information-Vereinsmeisterschaft-2025.pdf',
       },
     ],
   },
   {
-    name: "Gv 2024",
+    name: 'Gv 2024',
     documents: [
       {
-        name: "GV Protokoll",
-        url: "/documents/GV-Protokoll-2024.pdf",
+        name: 'GV Protokoll',
+        url: '/documents/GV-Protokoll-2024.pdf',
       },
     ],
   },
   {
-    name: "Gv 2025",
+    name: 'Gv 2025',
     documents: [
       {
-        name: "GV Protokoll",
-        url: "/documents/GV-Protokoll-2025.pdf",
+        name: 'GV Protokoll',
+        url: '/documents/GV-Protokoll-2025.pdf',
       },
     ],
   },
   {
-    name: "Boot Einwassern",
+    name: 'Boot Einwassern',
     documents: [
       {
-        name: "Merkblatt Umsetzung nautischer Anlass Veranstalter",
-        url: "/documents/Merkblatt_Umsetzung_nautischer_Anlass_Veranstalter.pdf",
+        name: 'Merkblatt Umsetzung nautischer Anlass Veranstalter',
+        url: '/documents/Merkblatt_Umsetzung_nautischer_Anlass_Veranstalter.pdf',
       },
       {
-        name: "Merkblatt Umsetzung nautischer Anlass Teilnehmende",
-        url: "/documents/Merkblatt_Umsetzung_nautischer_Anlass_Teilnehmende.pdf",
+        name: 'Merkblatt Umsetzung nautischer Anlass Teilnehmende',
+        url: '/documents/Merkblatt_Umsetzung_nautischer_Anlass_Teilnehmende.pdf',
       },
       {
-        name: "BD-Verfügung - Temporäres Einwasserungsverbot inklusive Deklaration des Heimgewässers",
-        url: "/documents/BD-Verfügung-Temporäres_Einwasserungsverbot_inklusive_Deklaration_des_Heimgewässers.pdf",
+        name: 'BD-Verfügung - Temporäres Einwasserungsverbot inklusive Deklaration des Heimgewässers',
+        url: '/documents/BD-Verfügung-Temporäres_Einwasserungsverbot_inklusive_Deklaration_des_Heimgewässers.pdf',
       },
       {
-        name: "MM Deklaration-Heimgewässer MIT SPERRFRIST",
-        url: "/documents/MM_Deklaration-Heimgewässer_MIT_SPERRFRIST.pdf",
+        name: 'MM Deklaration-Heimgewässer MIT SPERRFRIST',
+        url: '/documents/MM_Deklaration-Heimgewässer_MIT_SPERRFRIST.pdf',
       },
       {
-        name: "Selbstdeklaration und Kontrolle nautischer Anlass",
-        url: "/documents/Selbstdeklaration_und_Kontrolle_nautischer_Anlass.pdf",
+        name: 'Selbstdeklaration und Kontrolle nautischer Anlass',
+        url: '/documents/Selbstdeklaration_und_Kontrolle_nautischer_Anlass.pdf',
       },
     ],
   },

@@ -8,7 +8,7 @@
         name="join-association"
         method="POST"
         :action="config.public.formspree.joinFormUrl"
-        class="form-control w-full"
+        class="fieldset"
       >
         <div class="card w-full bg-base-300 shadow-xl">
           <div class="card-body gap-0">
@@ -26,9 +26,9 @@
               />
               <span class="label-text">{{
                 membership.name +
-                " (" +
+                ' (' +
                 membership.price +
-                ") " +
+                ') ' +
                 membership.age
               }}</span>
             </label>
@@ -36,99 +36,97 @@
         </div>
 
         <div class="split-cols grid grid-cols-2 gap-[15px] mb-0 mt-3">
-          <div>
-            <label>
-              <div class="form-label">Vorname</div>
+          <div class="flex flex-col gap-3 mb-3">
+            <label class="floating-label">
+              <span>Vorname</span>
               <input
                 name="firstname"
                 type="text"
                 placeholder="Vorname"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
 
-            <label>
-              <div class="form-label">Lastname</div>
+            <label class="floating-label">
+              <span>Lastname</span>
               <input
                 name="lastname"
                 type="text"
                 placeholder="Nachname"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
 
-            <label>
-              <div class="form-label">Geburtsdatum</div>
+            <label class="floating-label">
+              <span>Geburtsdatum</span>
               <input
                 name="birthdate"
                 type="date"
                 placeholder="Geburtsdatum"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
           </div>
-          <div>
-            <label>
-              <div class="form-label">Strasse und Nummer</div>
+          <div class="flex flex-col gap-3">
+            <label class="floating-label">
+              <span>Strasse und Nummer</span>
               <input
                 name="street"
                 type="text"
                 placeholder="Strasse und Nummer"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
 
-            <label>
-              <div class="form-label">PLZ</div>
+            <label class="floating-label">
+              <span>PLZ</span>
               <input
                 type="text"
                 name="zip"
                 placeholder="PLZ"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
 
-            <label>
-              <div class="form-label">Ort</div>
+            <label class="floating-label">
+              <span>Ort</span>
               <input
                 name="place"
                 type="text"
                 placeholder="Ort"
-                class="input input-bordered w-full"
+                class="input w-full"
                 required
               />
             </label>
           </div>
         </div>
-        <div class="mb-2">
-          <label>
-            <div class="form-label">Email</div>
+        <div class="flex flex-col gap-3">
+          <label class="floating-label">
+            <span>Email</span>
             <input
               name="email"
               type="email"
               placeholder="Email"
-              class="input input-bordered w-full"
+              class="input w-full"
               required
             />
           </label>
 
-          <label>
-            <div class="form-label">Nachricht</div>
+          <label class="floating-label">
+            <span>Nachricht</span>
             <textarea
               name="message"
-              class="textarea textarea-bordered w-full"
+              class="textarea w-full"
               placeholder="Nachricht"
             ></textarea>
           </label>
         </div>
-        <button type="submit" class="btn btn-primary mt-3 max-w-xs">
-          Absenden
-        </button>
+        <button type="submit" class="btn btn-primary mt-2">Absenden</button>
       </form>
     </div>
   </div>
@@ -138,36 +136,30 @@
 const config = useRuntimeConfig();
 const memberships = ref([
   {
-    name: "Junior",
-    price: "100.00",
-    age: "",
+    name: 'Junior',
+    price: '100.00',
+    age: '',
   },
   {
-    name: "Aktivmitglied",
-    price: "175.00",
-    age: "",
+    name: 'Aktivmitglied',
+    price: '175.00',
+    age: '',
   },
   {
-    name: "Passivmitglied",
-    price: "50.00",
-    age: "",
+    name: 'Passivmitglied',
+    price: '50.00',
+    age: '',
   },
   {
-    name: "Veteran",
-    price: "100.00",
-    age: "Aktivmitglied ab 65 Jahren",
+    name: 'Veteran',
+    price: '100.00',
+    age: 'Aktivmitglied ab 65 Jahren',
   },
 ]);
 </script>
 
 <style scoped>
-.form-label {
-  @apply label;
-  @apply flex;
-  @apply flex-col;
-  @apply items-start;
-  @apply label-text;
-}
+@reference '~/assets/css/main.css';
 
 @media (max-width: 600px) {
   .split-cols {

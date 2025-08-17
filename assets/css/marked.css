@@ -1,19 +1,21 @@
-.marked:deep(h1) {
+@reference '~/assets/css/main.css';
+
+.marked h1 {
   @apply text-4xl font-bold;
 }
 
-.marked:deep(h2) {
+.marked h2 {
   @apply text-3xl font-bold;
 }
 
-.marked:deep(h3) {
+.marked h3 {
   @apply text-2xl font-bold;
 }
 
-.marked:deep(h4) {
+.marked h4 {
   @apply text-xl font-bold;
 }
 
-.marked:deep(a) {
+.marked a {
   @apply link link-primary;
 }

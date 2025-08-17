@@ -17,11 +17,7 @@
           <figure
             class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto"
           >
-            <img
-              class="h-[100%] w-[100%]"
-              :src="person.image?.url"
-              alt="Image"
-            />
+            <img class="h-full w-full" :src="person.image?.url" alt="Image" />
           </figure>
           <div class="card-body w-[260px]">
             <h2 class="card-title">{{ person.name }}</h2>
@@ -90,32 +86,32 @@
 </template>
 
 <script setup lang="ts">
-import type { BoardPerson } from "~/types/board-person";
-import type { Vip } from "~/types/vip";
-import type { AsyncData } from "#app";
+import type { BoardPerson } from '~/types/board-person';
+import type { Vip } from '~/types/vip';
+import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 
 const { data: boardPersons, status: boardStatus } = await useLazyFetch(
-  config.public.apiUrl + "/board-people",
+  config.public.apiUrl + '/board-people',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_boardpeople: AsyncData<any, any>) => {
       const boardPeople = sanitizeApiResponse(_boardpeople) as BoardPerson[];
       return boardPeople.sort((a: any, b: any) => a.priority - b.priority);
     },
-  }
+  },
 );
 
 const { data: vips, status: vipsStatus } = await useLazyFetch(
-  config.public.apiUrl + "/vips",
+  config.public.apiUrl + '/vips',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_vips: AsyncData<any, any>) => {
       const vips = sanitizeApiResponse(_vips) as Vip[];
       return vips.sort((a: any, b: any) => a.priority - b.priority);
     },
-  }
+  },
 );
 </script>
 

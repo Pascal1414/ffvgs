@@ -1,13 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/cloudinary", "nuxt-echarts"],
+  modules: ['@nuxtjs/cloudinary', 'nuxt-echarts'],
   components: true,
   runtimeConfig: {
     public: {
       backendUrl: process.env.STRAPI_API_URL,
-      apiUrl: process.env.STRAPI_API_URL + "/api",
-      uploadsUrl: process.env.STRAPI_API_URL + "/uploads",
+      apiUrl: process.env.STRAPI_API_URL + '/api',
+      uploadsUrl: process.env.STRAPI_API_URL + '/uploads',
       formspree: {
         contactFormUrl: process.env.CONTACT_FORM_URL,
         joinFormUrl: process.env.JOIN_FORM_URL,
@@ -20,13 +22,17 @@ export default defineNuxtConfig({
     },
   },
   echarts: {
-    charts: ["BarChart"],
+    charts: ['BarChart'],
     components: [
-      "TitleComponent",
-      "TooltipComponent",
-      "GridComponent",
-      "LegendComponent",
+      'TitleComponent',
+      'TooltipComponent',
+      'GridComponent',
+      'LegendComponent',
     ],
   },
-  compatibilityDate: "2024-08-20",
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  css: ['~/assets/css/main.css', '~/assets/css/marked.css'],
+  compatibilityDate: '2024-08-20',
 });

@@ -1,5 +1,5 @@
-import type { ResImage } from "~/types/image";
-import type { AsyncData } from "#app";
+import type { ResImage } from '~/types/image';
+import type { AsyncData } from '#app';
 
 export const sanitizeApiResponse = (response: AsyncData<any, any>) => {
   if (!response || !response.data) {

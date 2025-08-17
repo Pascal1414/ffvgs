@@ -2,23 +2,23 @@
   <div class="flex flex-col items-center">
     <h1 class="text-4xl font-bold mb-4">Programm</h1>
     <div class="form-control">
-      <label for="role" class="label">
-        <span class="label-text">Program nach Mitgliedschaft anzeigen:</span>
-      </label>
-      <select
-        v-model="selectionSelect"
-        class="select select-bordered max-w-xs mb-4"
-        name="mitgliedschaft"
-        id="role"
-      >
-        <option
-          v-for="option in selectionOptions"
-          :key="option.value"
-          :value="option.value"
+      <label class="floating-label w-[250px]">
+        <span>Nach Mitgliedschaft filtern:</span>
+        <select
+          v-model="selectionSelect"
+          class="select max-w-xs mb-4"
+          name="mitgliedschaft"
+          id="role"
         >
-          {{ option.text }}
-        </option>
-      </select>
+          <option
+            v-for="option in selectionOptions"
+            :key="option.value"
+            :value="option.value"
+          >
+            {{ option.text }}
+          </option>
+        </select>
+      </label>
     </div>
   </div>
 
@@ -91,7 +91,7 @@
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        class="stroke-current flex-shrink-0 w-6 h-6"
+        class="stroke-current shrink-0 w-6 h-6"
       >
         <path
           stroke-linecap="round"
@@ -109,24 +109,24 @@
 </template>
 
 <script lang="ts" setup>
-import type { Program } from "~/types/program";
-import type { AsyncData } from "#app";
+import type { Program } from '~/types/program';
+import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 const router = useRouter();
 
 const selectionOptions = ref([
-  { value: "none", text: "Alles anzeigen" },
-  { value: "alle", text: "Alle Mitglieder" },
-  { value: "junioren", text: "Junioren" },
+  { value: 'none', text: 'Alles anzeigen' },
+  { value: 'alle', text: 'Alle Mitglieder' },
+  { value: 'junioren', text: 'Junioren' },
 ]);
 
 const selectionSelect: Ref<string> = ref(selectionOptions.value[0].value);
 
 const { data: programs, status } = await useLazyFetch(
-  config.public.apiUrl + "/programs",
+  config.public.apiUrl + '/programs',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_programs: AsyncData<any, any>) => {
       const sanitizedResponse = sanitizeApiResponse(_programs) as Program[];
       return oderByDate(sanitizedResponse);
@@ -147,9 +147,9 @@ function oderByDate(programms: Program[]): Program[] {
 
 function shouldShowProgram(program: Program): boolean {
   switch (selectionSelect.value) {
-    case "junioren":
+    case 'junioren':
       return program.forJunior;
-    case "alle":
+    case 'alle':
       return program.forAll;
     default:
       return true;

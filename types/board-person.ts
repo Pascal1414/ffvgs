@@ -1,4 +1,4 @@
-import type { ResImage } from "./image";
+import type { ResImage } from './image';
 
 export type BoardPerson = {
   id: number;

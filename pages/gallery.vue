@@ -1,19 +1,14 @@
 <template>
   <div class="flex flex-col items-center">
     <div class="form-control">
-      <label for="role" class="label">
-        <span class="label-text">Bilder aus folgendem Jahr anzeigen:</span>
+      <label class="floating-label mb-4 w-[260px]">
+        <span>Bilder aus folgendem Jahr anzeigen:</span>
+        <select v-model="year" class="select" name="mitgliedschaft" id="role">
+          <option v-for="year in getYearOptions()" :key="year" :value="year">
+            {{ year }}
+          </option>
+        </select>
       </label>
-      <select
-        v-model="year"
-        class="select select-bordered max-w-xs mb-4"
-        name="mitgliedschaft"
-        id="role"
-      >
-        <option v-for="year in getYearOptions()" :key="year" :value="year">
-          {{ year }}
-        </option>
-      </select>
     </div>
   </div>
 
@@ -27,7 +22,7 @@
   <div v-for="(galeryItem, index) in galeryItems" :key="index">
     <div
       v-if="shouldShowGalery(galeryItem)"
-      class="card card-compact w-[100%] bg-base-200 shadow-xl mb-4"
+      class="card card-sm w-full bg-base-200 shadow-xl mb-4"
     >
       <div class="card-body">
         <h1 class="text-2xl font-bold mb-2">
@@ -72,7 +67,7 @@
       </div>
 
       <button
-        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] left-2"
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:translate-y-[-50%]! left-2"
         @click="previous()"
       >
         <ClientOnly>
@@ -92,7 +87,7 @@
         </ClientOnly>
       </button>
       <button
-        class="btn btn-primary absolute bottom-2 md:top-[50%] md:!translate-y-[-50%] right-2"
+        class="btn btn-primary absolute bottom-2 md:top-[50%] md:translate-y-[-50%]! right-2"
         @click="next()"
       >
         <ClientOnly>
@@ -135,18 +130,18 @@
 </template>
 
 <script lang="ts" setup>
-import type { AsyncData } from "#app";
-import type { Galery } from "~/types/galery";
-import type { ResImage } from "~/types/image";
+import type { AsyncData } from '#app';
+import type { Galery } from '~/types/galery';
+import type { ResImage } from '~/types/image';
 
 const config = useRuntimeConfig();
 
 const year = ref(new Date().getFullYear());
 
 const { data: galeryItems, status } = await useLazyFetch(
-  config.public.apiUrl + "/galeries",
+  config.public.apiUrl + '/galeries',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_galeryItems: AsyncData<any, any>) => {
       return sanitizeApiResponse(_galeryItems) as Galery[];
     },

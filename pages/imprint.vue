@@ -1,7 +1,7 @@
 <template>
   <h1 class="text-4xl font-bold mb-4">Impressum</h1>
 
-  <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
+  <div class="card w-full bg-base-200 shadow-xl mb-4">
     <div class="card-body">
       <h2 class="card-title">Urheberrechte</h2>
       <p>
@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
+  <div class="card w-full bg-base-200 shadow-xl mb-4">
     <div class="card-body">
       <h2 class="card-title">Allgemeiner Haftungsausschluss</h2>
       <p>
@@ -48,7 +48,7 @@
     </div>
   </div>
 
-  <div class="card w-[100%] bg-base-200 shadow-xl mb-4">
+  <div class="card w-full bg-base-200 shadow-xl mb-4">
     <div class="card-body">
       <h2 class="card-title">Änderungen</h2>
       <p>

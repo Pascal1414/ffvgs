@@ -75,7 +75,7 @@
       </span>
     </div>
 
-    <div class="grid flex-grow card bg-base-200 rounded-box p-4 w-[100%]">
+    <div class="grid grow card bg-base-200 rounded-box p-4 w-full">
       <div class="flex row justify-between mb-4">
         <h2 class="text-2xl font-bold mb-2">Tarife:</h2>
         <label for="my-modal-6" class="btn btn-primary">Preisrechner</label>
@@ -83,21 +83,21 @@
 
       <div class="flex flex-col w-full lg:flex-row">
         <div
-          class="grid flex-grow h-25 card bg-base-300 rounded-box place-items-center p-4"
+          class="grid grow h-25 card bg-base-300 rounded-box place-items-center p-4"
         >
           <h3 class="text-1xl font-bold">Tagestarif (05:00 - 19:00 Uhr)</h3>
           <p>CHF 2.00 pro Stunde</p>
         </div>
         <div class="divider lg:divider-horizontal"></div>
         <div
-          class="grid flex-grow h-25 card bg-base-300 rounded-box place-items-center p-4"
+          class="grid grow h-25 card bg-base-300 rounded-box place-items-center p-4"
         >
           <h3 class="text-1xl font-bold">Nachttarif (19:00 - 05:00 Uhr)</h3>
           <p>CHF 1.00 pro Stunde</p>
         </div>
       </div>
     </div>
-    <div class="card card-compact w-[100%] bg-base-200 shadow-xl">
+    <div class="card card-sm w-full bg-base-200 shadow-xl">
       <figure></figure>
       <div class="card-body">
         <h2 class="text-2xl font-bold mb-2">Kalender:</h2>
@@ -120,34 +120,23 @@
         nochmals überprüfen.
       </p>
 
-      <form @submit.prevent="calculatePrice()">
-        <div class="form-control w-full max-w-xs">
-          <label class="label">
-            <span class="label-text">Startzeit</span>
-          </label>
+      <form @submit.prevent="calculatePrice()" class="flex flex-col gap-3 mt-4">
+        <label class="input w-full">
+          <span class="label">Startzeit</span>
           <input
             type="time"
             v-model="startTime"
             placeholder="Startzeit"
-            class="input input-bordered w-full max-w-xs"
             required
           />
-        </div>
+        </label>
 
-        <div class="form-control w-full max-w-xs">
-          <label class="label">
-            <span class="label-text">Endzeit</span>
-          </label>
-          <input
-            type="time"
-            v-model="endTime"
-            placeholder="Endzeit"
-            class="input input-bordered w-full max-w-xs"
-            required
-          />
-        </div>
+        <label class="input w-full">
+          <span class="label">Endzeit</span>
+          <input type="time" v-model="endTime" placeholder="Endzeit" required />
+        </label>
 
-        <button class="btn btn-primary mt-4">Berechnen</button>
+        <button class="btn btn-primary mt-2">Berechnen</button>
 
         <div v-if="price">Preis: {{ price }} CHF</div>
       </form>
@@ -160,22 +149,22 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
-import type { Ref } from "vue";
+import { ref, onMounted } from 'vue';
+import type { Ref } from 'vue';
 
-const startTime: Ref<String> = ref("");
-const endTime: Ref<String> = ref("");
+const startTime: Ref<String> = ref('');
+const endTime: Ref<String> = ref('');
 const price: Ref<Number> = ref(0);
 
 onMounted(() => {
-  const script = document.createElement("script");
-  script.src = "https://app.calendarapp.de/loadcal.php";
+  const script = document.createElement('script');
+  script.src = 'https://app.calendarapp.de/loadcal.php';
   script.async = true;
   document.body.appendChild(script);
 });
 
 function calculatePrice() {
-  console.log("calculating price");
+  console.log('calculating price');
 
   // Calculate duration of rental period in hours
   const start = new Date(`2000-01-01T${startTime.value}`);
@@ -197,7 +186,7 @@ function calculatePrice() {
       tmpPrice += 1;
     }
   }
-  console.log("price", price);
+  console.log('price', price);
 
   price.value = tmpPrice;
 }

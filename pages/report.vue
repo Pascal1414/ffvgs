@@ -18,35 +18,34 @@
 </template>
 
 <script lang="ts" setup>
-import { marked } from "marked";
-import type { Report } from "~/types/report";
-import type { AsyncData } from "#app";
+import { marked } from 'marked';
+import type { Report } from '~/types/report';
+import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 
 const { data: reports, status } = await useLazyFetch(
-  config.public.apiUrl + "/reports",
+  config.public.apiUrl + '/reports',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
     transform: (_reports: AsyncData<any, any>) => {
       const reports = sanitizeApiResponse(_reports) as Report[];
       return reports.sort(
         (a: any, b: any) =>
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
       );
     },
-  }
+  },
 );
 </script>
 
 <style scoped>
+@reference '~/assets/css/main.css';
+@reference '~/assets/css/marked.css';
+
 @media (max-width: 1300px) {
   .grid {
     @apply grid-cols-1;
   }
 }
-</style>
-
-<style scoped>
-@import url(assets/css/marked.css);
 </style>

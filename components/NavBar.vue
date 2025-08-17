@@ -1,15 +1,38 @@
 <template>
-  <nav class="navbar justify-between bg-base-300 !rounded-none">
+  <nav class="navbar justify-between bg-base-300 rounded-none!">
     <div class="navbar-start w-auto">
       <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" ref="navButton">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        <div
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost lg:hidden"
+          ref="navButton"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
           </svg>
         </div>
         <!-- Mobile Nav Items -->
-        <ul tabindex="0" class="menu  dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-52">
-          <li v-for="(navItem, index) in navItems" :key="index" @click="closeNav()">
+        <ul
+          tabindex="0"
+          class="menu dropdown-content mt-3 z-1 p-2 shadow bg-base-300 rounded-box w-52"
+        >
+          <li
+            v-for="(navItem, index) in navItems"
+            :key="index"
+            @click="closeNav()"
+          >
             <router-link :to="navItem.link">{{ navItem.name }}</router-link>
           </li>
         </ul>
@@ -38,20 +61,13 @@ const navItems = [
   { name: 'Berichte', link: '/report' },
   { name: 'Galerie', link: '/gallery' },
   { name: 'Kontakt', link: '/contact' },
-  { name: 'Boot', link: '/boat' }
-]
+  { name: 'Boot', link: '/boat' },
+];
 
-const ghostBtn = ref<HTMLElement | null>(null)
+const ghostBtn = ref<HTMLElement | null>(null);
 
 function closeNav() {
-  ghostBtn.value?.focus()
+  ghostBtn.value?.focus();
 }
-
 </script>
-<style scoped>
-@media (min-width: 1024px) {
-  .navbar {
-    @apply rounded-box;
-  }
-}
-</style>
+<style scoped></style>

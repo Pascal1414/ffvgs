@@ -37,10 +37,7 @@
       :reversed="index % 2 == 0"
       :images="article.images.map((i) => i.url)"
     >
-      <div
-        class="flex flex-col gap-[1rem] marked"
-        v-html="marked(article.text)"
-      />
+      <div class="flex flex-col gap-4 marked" v-html="marked(article.text)" />
     </ImageHero>
     <div v-else>
       <div class="sm:hero min-h-[400px]">
@@ -102,24 +99,24 @@
 </template>
 
 <script lang="ts" setup>
-import type { AsyncData } from "#app";
-import { marked } from "marked";
-import type { HomeArticle } from "~/types/home-article";
+import type { AsyncData } from '#app';
+import { marked } from 'marked';
+import type { HomeArticle } from '~/types/home-article';
 
-import BarChart from "~/components/charts/BarChart.vue";
+import BarChart from '~/components/charts/BarChart.vue';
 
 const config = useRuntimeConfig();
 
 const { data: articles, status } = await useLazyFetch(
-  config.public.apiUrl + "/home-articles",
+  config.public.apiUrl + '/home-articles',
   {
-    query: { populate: "*", "pagination[limit]": -1 },
+    query: { populate: '*', 'pagination[limit]': -1 },
 
     transform: (_articles: AsyncData<any, any>) => {
       const articles = sanitizeApiResponse(_articles) as HomeArticle[];
       return articles.sort((a: any, b: any) => a.priority - b.priority);
     },
-  }
+  },
 );
 </script>
 
