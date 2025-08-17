@@ -77,104 +77,105 @@
       <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
       <form action="https://formspree.io/f/mzzrbplj" method="POST">
         <div class="flex flex-col w-full lg:flex-row">
-          <div class="card lg:w-[50%]">
+          <div class="card lg:w-[50%] flex flex-col gap-3">
             <h2 class="card-title">Jugendliche oder Jugendlicher</h2>
-            <label class="label" for="course-registration-firstname">
-              <span class="label-text">Vorname</span>
-            </label>
-            <input
-              id="course-registration-firstname"
-              name="participant-firstname"
-              type="text"
-              placeholder="Vorname"
-              class="input w-full"
-              required
-            />
 
-            <label class="label" for="course-registration-lastname">
-              <span class="label-text">Nachname</span>
+            <label class="floating-label">
+              <span>Vorname</span>
+              <input
+                id="course-registration-firstname"
+                name="participant-firstname"
+                type="text"
+                placeholder="Vorname"
+                class="input w-full"
+                required
+              />
             </label>
-            <input
-              id="course-registration-lastname"
-              name="participant-lastname"
-              type="text"
-              placeholder="Nachname"
-              class="input w-full"
-              required
-            />
 
-            <label class="label" for="course-registration-address">
-              <span class="label-text">Adresse</span>
+            <label class="floating-label">
+              <span>Nachname</span>
+              <input
+                id="course-registration-lastname"
+                name="participant-lastname"
+                type="text"
+                placeholder="Nachname"
+                class="input w-full"
+                required
+              />
             </label>
-            <input
-              id="course-registration-address"
-              name="participant-address"
-              type="text"
-              placeholder="Adresse"
-              class="input w-full"
-              required
-            />
 
-            <div class="form-control">
-              <label for="course-registration-city" class="label">
-                <span class="label-text">Ort</span>
-              </label>
-              <label class="join">
+            <label class="floating-label">
+              <span>Adresse</span>
+              <input
+                id="course-registration-address"
+                name="participant-address"
+                type="text"
+                placeholder="Adresse"
+                class="input w-full"
+                required
+              />
+            </label>
+
+            <div class="join w-full">
+              <label class="floating-label w-[70%] join-item">
+                <span>Ort</span>
                 <input
                   type="text"
                   id="course-registration-city"
                   name="participant-city"
                   placeholder="Ort"
-                  class="join-item input w-[70%]"
+                  class="input join-item w-full"
                   required
                 />
+              </label>
 
+              <label class="floating-label w-[30%] join-item">
+                <span>PLZ</span>
                 <input
                   id="course-registration-zip"
                   name="participant-zip"
                   type="text"
                   placeholder="PLZ"
-                  class="join-item input w-[30%]"
+                  class="input join-item w-full"
                   required
                 />
               </label>
             </div>
 
-            <label class="label" for="course-registration-birthdate">
-              <span class="label-text">Geburtsdatum</span>
+            <label class="input w-full">
+              <span class="label">Geburtsdatum</span>
+              <input
+                id="course-registration-birthdate"
+                name="participant-birthdate"
+                type="date"
+                placeholder="Geburtsdatum"
+                class="w-full"
+                required
+              />
             </label>
-            <input
-              id="course-registration-birthdate"
-              name="participant-birthdate"
-              type="date"
-              placeholder="Geburtsdatum"
-              class="input w-full"
-              required
-            />
 
-            <label class="label" for="course-registration-already-fished">
-              <span class="label-text">Schon einmal gefischt?</span>
+            <label class="floating-label">
+              <span>Schon einmal gefischt?</span>
+              <select
+                id="course-registration-already-fished"
+                name="participant-already-fished"
+                class="select select-bordered w-full"
+                required
+              >
+                <option disabled selected hidden value="">
+                  Bitte auswählen
+                </option>
+                <option>ja</option>
+                <option>nein</option>
+              </select>
             </label>
-            <select
-              id="course-registration-already-fished"
-              name="participant-already-fished"
-              class="select select-bordered w-full"
-              required
-            >
-              <option disabled selected hidden value="">
-                Schon einmal gefischt?
-              </option>
-              <option>ja</option>
-              <option>nein</option>
-            </select>
           </div>
           <div class="divider lg:divider-horizontal"></div>
-          <div class="card lg:w-[50%] flex column justify-between">
-            <div>
-              <h2 class="card-title">Erziehungsberechtigte Person</h2>
-              <label class="label" for="course-registration-parent-firstname">
-                <span class="label-text">Vorname</span>
-              </label>
+          <div class="card lg:w-[50%] flex flex-col gap-3">
+            <h2 class="card-title">Erziehungsberechtigte Person</h2>
+
+            <label class="floating-label">
+              <span>Vorname</span>
               <input
                 id="course-registration-parent-firstname"
                 name="parent-firstname"
@@ -183,10 +184,10 @@
                 class="input w-full"
                 required
               />
+            </label>
 
-              <label class="label" for="course-registration-parent-lastname">
-                <span class="label-text">Nachname</span>
-              </label>
+            <label class="floating-label">
+              <span>Nachname</span>
               <input
                 id="course-registration-parent-lastname"
                 name="parent-lastname"
@@ -195,10 +196,10 @@
                 class="input w-full"
                 required
               />
+            </label>
 
-              <label class="label" for="course-registration-parent-tel">
-                <span class="label-text">Telefonnummer</span>
-              </label>
+            <label class="floating-label">
+              <span>Telefonnummer</span>
               <input
                 id="course-registration-parent-tel"
                 name="parent-tel"
@@ -207,10 +208,10 @@
                 class="input w-full"
                 required
               />
+            </label>
 
-              <label class="label" for="course-registration-parent-email">
-                <span class="label-text">E-Mail</span>
-              </label>
+            <label class="floating-label">
+              <span>E-Mail</span>
               <input
                 id="course-registration-parent-email"
                 name="parent-email"
@@ -219,8 +220,8 @@
                 class="input w-full"
                 required
               />
-            </div>
-            <button class="btn btn-primary mt-4">Anmelden</button>
+            </label>
+            <button class="btn btn-primary mt-2">Anmelden</button>
           </div>
         </div>
       </form>
