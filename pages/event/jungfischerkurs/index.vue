@@ -76,13 +76,13 @@
     <div class="card-body">
       <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
 
-      <div role="alert" class="alert alert-info">
+      <div role="alert" class="alert alert-info mb-4">
         <client-only>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="stroke-info h-6 w-6 shrink-0"
+            class="h-6 w-6 shrink-0 stroke-current"
           >
             <path
               stroke-linecap="round"
