@@ -75,7 +75,30 @@
   <div class="card w-full bg-base-200 shadow-xl">
     <div class="card-body">
       <h2 class="card-title">Anmeldung Jungfischerkurs</h2>
-      <form action="https://formspree.io/f/mzzrbplj" method="POST">
+
+      <div role="alert" class="alert alert-info">
+        <client-only>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="stroke-info h-6 w-6 shrink-0"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+        </client-only>
+        <span>
+          Der Jungfischerkurs ist ausgebucht! Vielen Dank für die ganzen
+          Anmeldungen.
+        </span>
+      </div>
+
+      <!-- <form action="https://formspree.io/f/mzzrbplj" method="POST">
         <div class="flex flex-col w-full lg:flex-row">
           <div class="card lg:w-[50%] flex flex-col gap-3">
             <h2 class="card-title">Jugendliche oder Jugendlicher</h2>
@@ -224,25 +247,25 @@
             <button class="btn btn-primary mt-2">Anmelden</button>
           </div>
         </div>
-      </form>
+      </form> -->
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Slideshow from '@/components/Slideshow.vue';
-import { ref } from 'vue';
+import Slideshow from "@/components/Slideshow.vue";
+import { ref } from "vue";
 
 const images = ref([
-  { src: '/images/event/jungfischerkurs/festzelt.jpg', alt: 'Festzelt' },
-  { src: '/images/event/jungfischerkurs/fischen.jpg', alt: 'Fischen' },
-  { src: '/images/event/jungfischerkurs/fischen2.jpg', alt: 'Fischen' },
-  { src: '/images/event/jungfischerkurs/fischen3.jpg', alt: 'Fischen' },
-  { src: '/images/event/jungfischerkurs/schiff.jpg', alt: 'Schiff' },
-  { src: '/images/event/jungfischerkurs/schiff-close.jpg', alt: 'Schiff' },
+  { src: "/images/event/jungfischerkurs/festzelt.jpg", alt: "Festzelt" },
+  { src: "/images/event/jungfischerkurs/fischen.jpg", alt: "Fischen" },
+  { src: "/images/event/jungfischerkurs/fischen2.jpg", alt: "Fischen" },
+  { src: "/images/event/jungfischerkurs/fischen3.jpg", alt: "Fischen" },
+  { src: "/images/event/jungfischerkurs/schiff.jpg", alt: "Schiff" },
+  { src: "/images/event/jungfischerkurs/schiff-close.jpg", alt: "Schiff" },
   {
-    src: '/images/event/jungfischerkurs/zielschiessen.jpg',
-    alt: 'Zielschiessen',
+    src: "/images/event/jungfischerkurs/zielschiessen.jpg",
+    alt: "Zielschiessen",
   },
 ]);
 </script>
