@@ -42,6 +42,10 @@ const documentList = ref<DocumentList[]>([
     name: 'GV-Protokoll',
     documents: [
        {
+        name: 'GV Protokoll 2026',
+        url: '/documents/GV-Protokoll-2026.pdf',
+      },
+       {
         name: 'GV Protokoll 2025',
         url: '/documents/GV-Protokoll-2025.pdf',
       },
