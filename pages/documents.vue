@@ -38,7 +38,19 @@
 <script lang="ts" setup>
 import type { DocumentList } from '~/types/document-list';
 const documentList = ref<DocumentList[]>([
-  {
+    {
+    name: 'GV-Protokoll',
+    documents: [
+       {
+        name: 'GV Protokoll 2025',
+        url: '/documents/GV-Protokoll-2025.pdf',
+      },
+      {
+        name: 'GV Protokoll 2024',
+        url: '/documents/GV-Protokoll-2024.pdf',
+      },
+    ],
+  },{
     name: 'Vereinsboot',
     documents: [
       {
@@ -62,24 +74,6 @@ const documentList = ref<DocumentList[]>([
       {
         name: 'Informationen Vereinsfischen',
         url: '/documents/Information-Vereinsmeisterschaft-2025.pdf',
-      },
-    ],
-  },
-  {
-    name: 'Gv 2024',
-    documents: [
-      {
-        name: 'GV Protokoll',
-        url: '/documents/GV-Protokoll-2024.pdf',
-      },
-    ],
-  },
-  {
-    name: 'Gv 2025',
-    documents: [
-      {
-        name: 'GV Protokoll',
-        url: '/documents/GV-Protokoll-2025.pdf',
       },
     ],
   },
