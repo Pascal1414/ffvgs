@@ -67,8 +67,8 @@ const documentList = ref<DocumentList[]>([
     name: 'Statuten',
     documents: [
       {
-        name: 'FFV Statuten 5 A5',
-        url: '/documents/FFV_Statuten_5_A5.pdf',
+        name: 'FFV Statuten 5. Auflage',
+        url: '/documents/FFVGS-Statuten-v5.pdf',
       },
     ],
   },
