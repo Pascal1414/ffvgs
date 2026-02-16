@@ -50,6 +50,28 @@
   </article>
 
   <article>
+    <div class="divider"></div>
+
+    <div class="hero min-h-120">
+      <div
+        class="hero-content text-center lg:text-start lg:gap-12 flex-col lg:flex-row lg:justify-between"
+      >
+        <div class="md:w-[80%] lg:w-2/5">
+          <div class="flex flex-col gap-4 marked">
+            <h1>Unsere Sponsoren</h1>
+            <p>
+              Ein herzliches Dankeschön an all unsere Sponsoren! Wir schätzen
+              eure Hilfe sehr und freuen uns, gemeinsam unsere Leidenschaft für
+              das Angeln zu fördern.
+            </p>
+          </div>
+        </div>
+        <Sponsors class="md:w-[80%] lg:w-3/5 mt-10 lg:mt-0" />
+      </div>
+    </div>
+  </article>
+
+  <article>
     <div class="divider" />
 
     <h3 class="text-2xl font-bold">Fischereifänge im Greifensee</h3>
