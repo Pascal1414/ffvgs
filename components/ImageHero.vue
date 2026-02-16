@@ -1,7 +1,7 @@
 <template>
   <div class="hero min-h-120">
     <div
-      class="hero-content flex-col w-full text-center lg:text-start lg:gap-12"
+      class="hero-content flex-col text-center lg:text-start lg:gap-12"
       :class="{
         'lg:flex-row-reverse': reversed,
         'lg:flex-row': !reversed,
@@ -12,12 +12,12 @@
       <img
         v-if="props.images?.length == 1"
         :src="props.images?.[0]"
-        class="w-full max-w-sm rounded-lg shadow-2xl"
+        class="md:w-[80%] lg:w-1/2 rounded-lg shadow-2xl"
       />
-      <div v-else>
+      <div v-else class="md:w-[80%] lg:w-1/2">
         <Slideshow :images="getImagesForSlideshow()" class="slideshow" />
       </div>
-      <div>
+      <div class="md:w-[80%] lg:w-1/2">
         <slot />
       </div>
     </div>
