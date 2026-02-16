@@ -57,6 +57,8 @@
 const navItems = [
   { name: 'Programm', link: '/program' },
   { name: 'Über uns', link: '/aboutUs' },
+  { name: 'Fischerei', link: '/greifensee' },
+
   { name: 'Jugend', link: '/young' },
   { name: 'Berichte', link: '/report' },
   { name: 'Galerie', link: '/gallery' },
