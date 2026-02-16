@@ -1,6 +1,6 @@
 <template>
   <NavBar />
-  <main class="mx-auto w-[90%] lg:w-[65%] mt-4 mb-4">
+  <main class="mx-auto w-[90%] lg:w-[80%] mt-4 mb-4">
     <slot />
   </main>
   <Footer />
