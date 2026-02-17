@@ -22,88 +22,36 @@
     </div>
   </div>
 
-  <div class="overflow-x-auto">
-    <table class="table table-zebra w-full">
-      <!-- head -->
-      <thead>
-        <tr>
-          <th>Done</th>
-          <th>Name</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="programItem in programs"
-          :key="programItem.id"
-          class="hover"
-          @click="onItemClick(programItem)"
-        >
-          <th v-if="shouldShowProgram(programItem)">
-            <svg
-              width="27px"
-              height="27px"
-              viewBox="0 0 32 32"
-              class=""
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                v-if="alreadyHappened(programItem)"
-                class="fill-base-content"
-                d="M5 16.577l2.194-2.195 5.486 5.484L24.804 7.743 27 9.937l-14.32 14.32z"
-              />
-            </svg>
-          </th>
-          <td v-if="shouldShowProgram(programItem)">{{ programItem.name }}</td>
-          <td v-if="shouldShowProgram(programItem)">
-            <div class="dates">
-              <div v-for="(date, index) in programItem.dates" :key="index">
-                {{ toFormattedString(new Date(date)) }}
-              </div>
-            </div>
-          </td>
-        </tr>
+  <div
+    v-for="programItem in programs"
+    :key="programItem.id"
+    class="card bg-base-200 shadow-sm mb-4"
+  >
+    <div class="card-body">
+      <div class="flex gap-2">
+        <div v-if="programItem.forAll" class="badge badge-soft badge-primary">
+          Für alle
+        </div>
 
-        <tr
-          v-if="status === 'pending' && programs === null"
-          v-for="n in 5"
-          :key="n"
+        <div
+          v-if="programItem.forJunior"
+          class="badge badge-soft badge-success"
         >
-          <th>
-            <div class="skeleton w-[27px] h-[27px] rounded-full shrink-0"></div>
-          </th>
-          <td>
-            <div class="skeleton h-4 w-60"></div>
-          </td>
-          <td>
-            <div class="flex flex-col gap-4 w-52">
-              <div class="skeleton h-4 w-28"></div>
-              <div v-if="n % 3 === 0" class="skeleton h-4 w-28"></div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="alert alert-info shadow-lg mt-4">
-    <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        class="stroke-current shrink-0 w-6 h-6"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        ></path>
-      </svg>
-      <span
-        >Zudem können spontane Anlässe dazukommen. Diese werden per WhatsApp
-        oder im Internet angekündigt.</span
-      >
+          Für Junioren
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold">{{ programItem.name }}</h2>
+      <ul class="flex flex-col gap-1 text-xs">
+        <li v-for="date in programItem.dates" :key="date">
+          <span>{{ toFormattedString(new Date(date)) }}</span>
+        </li>
+      </ul>
+      <div class="w-full flex justify-end mt-6" v-if="programItem.description">
+        <button @click="onItemClick(programItem)" class="btn btn-primary">
+          Details
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -131,8 +79,17 @@ const { data: programs, status } = await useLazyFetch(
       const sanitizedResponse = sanitizeApiResponse(_programs) as Program[];
       return oderByDate(sanitizedResponse);
     },
-  }
+  },
 );
+
+function removePastEvents(programms: Program[]): Program[] {
+  return programms.filter((program) => {
+    if (program.dates === null || program.dates.length === 0) return true;
+    if (program.dates.every((date) => new Date(date) < new Date()))
+      return false;
+    return true;
+  });
+}
 
 function oderByDate(programms: Program[]): Program[] {
   return programms.sort((a, b) => {
