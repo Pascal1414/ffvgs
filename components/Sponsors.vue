@@ -1,14 +1,15 @@
 <template>
   <article class="w-full flex justify-around gap-5 flex-wrap">
+    <Sponsor name="Fischertreff" image="/sponsor/fischertreff.png" />
+
+    <Sponsor name="Toyota" image="/sponsor/garage-bamert.png" />
+
+    <Sponsor name="Palermo" image="/sponsor/garage-palermo.png" />
+
     <Sponsor name="Alberts Backstube" image="/sponsor/alberts-backstube.png" />
 
-    <Sponsor name="Toyota" image="/sponsor/toyota.jpg" />
+    <Sponsor name="Hotz" image="/sponsor/metzgerei-hotz.png" />
 
-    <Sponsor name="Palermo" image="/sponsor/palermo.jpg" />
-
-    <Sponsor name="Hotz" image="/sponsor/hotz.jpg" />
-
-    <Sponsor name="Fischertreff" image="/sponsor/fischertreff.png" />
   </article>
 </template>
 
