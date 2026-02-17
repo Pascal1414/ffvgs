@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center mb-10">
     <h1 class="text-4xl font-bold mb-4">Programm</h1>
-    <div class="flex items-center justify-center gap-5">
-      <label class="floating-label w-[250px]">
-        <span>Nach Mitgliedschaft filtern:</span>
+    <div class="flex flex-col sm:flex-row">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Nach Mitgliedschaft filtern:</legend>
         <select
+          class="select w-50"
           v-model="selectionSelect"
-          class="select max-w-xs mb-4"
           name="mitgliedschaft"
           id="role"
         >
@@ -18,10 +18,10 @@
             {{ option.text }}
           </option>
         </select>
-      </label>
-
+      </fieldset>
+      <div class="divider sm:divider-horizontal"></div>
       <fieldset class="fieldset">
-        Show past events
+        <legend class="fieldset-legend">Vergangene Events anzeigen:</legend>
 
         <label class="toggle text-base-content">
           <input type="checkbox" v-model="showPastEvents" />
