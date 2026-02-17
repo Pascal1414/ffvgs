@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center">
     <h1 class="text-4xl font-bold mb-4">Programm</h1>
-    <div class="form-control">
+    <div class="flex items-center justify-center gap-5">
       <label class="floating-label w-[250px]">
         <span>Nach Mitgliedschaft filtern:</span>
         <select
@@ -19,38 +19,78 @@
           </option>
         </select>
       </label>
+
+      <fieldset class="fieldset">
+        Show past events
+
+        <label class="toggle text-base-content">
+          <input type="checkbox" v-model="showPastEvents" />
+          <svg
+            aria-label="enabled"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <g
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="4"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </g>
+          </svg>
+          <svg
+            aria-label="disabled"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+        </label>
+      </fieldset>
     </div>
   </div>
 
-  <div
-    v-for="programItem in programs"
-    :key="programItem.id"
-    class="card bg-base-200 shadow-sm mb-4"
-  >
-    <div class="card-body">
-      <div class="flex gap-2">
-        <div v-if="programItem.forAll" class="badge badge-soft badge-primary">
-          Für alle
+  <div v-for="programItem in programs" :key="programItem.id">
+    <div
+      class="card bg-base-200 shadow-sm mb-4"
+      v-if="showPastEvents || !alreadyHappened(programItem)"
+    >
+      <div class="card-body">
+        <div class="flex gap-2">
+          <div v-if="programItem.forAll" class="badge badge-soft badge-primary">
+            Für alle
+          </div>
+
+          <div
+            v-if="programItem.forJunior"
+            class="badge badge-soft badge-success"
+          >
+            Für Junioren
+          </div>
         </div>
 
+        <h2 class="text-2xl font-bold">{{ programItem.name }}</h2>
+        <ul class="flex flex-col gap-1 text-xs">
+          <li v-for="date in programItem.dates" :key="date">
+            <span>{{ toFormattedString(new Date(date)) }}</span>
+          </li>
+        </ul>
         <div
-          v-if="programItem.forJunior"
-          class="badge badge-soft badge-success"
+          class="w-full flex justify-end mt-6"
+          v-if="programItem.description"
         >
-          Für Junioren
+          <button @click="onItemClick(programItem)" class="btn btn-primary">
+            Details
+          </button>
         </div>
-      </div>
-
-      <h2 class="text-2xl font-bold">{{ programItem.name }}</h2>
-      <ul class="flex flex-col gap-1 text-xs">
-        <li v-for="date in programItem.dates" :key="date">
-          <span>{{ toFormattedString(new Date(date)) }}</span>
-        </li>
-      </ul>
-      <div class="w-full flex justify-end mt-6" v-if="programItem.description">
-        <button @click="onItemClick(programItem)" class="btn btn-primary">
-          Details
-        </button>
       </div>
     </div>
   </div>
@@ -62,6 +102,8 @@ import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 const router = useRouter();
+
+const showPastEvents = ref(false);
 
 const selectionOptions = ref([
   { value: 'none', text: 'Alles anzeigen' },
@@ -118,11 +160,11 @@ function onItemClick(item: Program) {
 }
 
 function alreadyHappened(programItem: Program): boolean {
-  if (programItem.dates === null || programItem.dates.length === 0)
-    return false;
-  for (let date of programItem.dates)
-    if (new Date(date) > new Date()) return false;
-  return true;
+  if (!programItem.dates?.length) return false;
+
+  const now = new Date();
+
+  return programItem.dates.every((date) => new Date(date) < now);
 }
 </script>
 
