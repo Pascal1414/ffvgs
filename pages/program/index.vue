@@ -58,6 +58,13 @@
     </div>
   </div>
 
+  <div
+    v-for="i in 10"
+    :key="i"
+    v-if="status === 'pending'"
+    class="skeleton h-[136px] w-full mb-4"
+  ></div>
+
   <div v-for="programItem in programs" :key="programItem.id">
     <div
       class="card bg-base-200 shadow-sm mb-4"
