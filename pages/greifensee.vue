@@ -10,7 +10,7 @@
       Fischereifänge der Berufs- und Angelfischerei im Greifensee in Kilogramm
       in den letzten 10 Jahren.
     </p>
-    <BarChart />
+    <ChartsBarChart />
     <div class="hero">
       <div class="hero-content text-center">
         <div class="">

@@ -77,8 +77,6 @@ import type { AsyncData } from '#app';
 import { marked } from 'marked';
 import type { HomeArticle } from '~/types/home-article';
 
-import BarChart from '~/components/charts/BarChart.vue';
-
 const config = useRuntimeConfig();
 
 const { data: articles, status } = await useLazyFetch(
