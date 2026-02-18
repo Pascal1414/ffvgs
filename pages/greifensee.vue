@@ -1,7 +1,5 @@
 <template>
-  <h2 class="text-4xl font-bold mb-4 flex justify-center">
-    Über die Fischerei
-  </h2>
+  <h2 class="text-4xl font-bold mb-4 flex justify-center">Greifensee</h2>
   <div class="divider"></div>
 
   <article>
