@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1 class="text-4xl font-bold mb-7 flex justify-center">Vorstand</h1>
-      <div class="board grid grid-col-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-col-1 md:grid-cols-2 gap-6">
         <div
           v-if="boardStatus === 'pending' && boardPersons === null"
           v-for="n in 5"
