@@ -68,7 +68,10 @@
   <div v-for="programItem in programs" :key="programItem.id">
     <div
       class="card bg-base-200 shadow-sm mb-4"
-      v-if="showPastEvents || !alreadyHappened(programItem)"
+      v-if="
+        shouldShowProgram(programItem) &&
+        (showPastEvents || !alreadyHappened(programItem))
+      "
     >
       <div class="card-body">
         <div class="flex gap-2">
@@ -94,9 +97,9 @@
           class="w-full flex justify-end mt-6"
           v-if="programItem.description"
         >
-          <button @click="onItemClick(programItem)" class="btn btn-primary">
+          <NuxtLink :to="`/program/${programItem.id}`" class="btn btn-primary">
             Details
-          </button>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -131,15 +134,6 @@ const { data: programs, status } = await useLazyFetch(
   },
 );
 
-function removePastEvents(programms: Program[]): Program[] {
-  return programms.filter((program) => {
-    if (program.dates === null || program.dates.length === 0) return true;
-    if (program.dates.every((date) => new Date(date) < new Date()))
-      return false;
-    return true;
-  });
-}
-
 function oderByDate(programms: Program[]): Program[] {
   return programms.sort((a, b) => {
     if (a.dates === null || a.dates.length === 0) return 1;
@@ -160,10 +154,6 @@ function shouldShowProgram(program: Program): boolean {
     default:
       return true;
   }
-}
-
-function onItemClick(item: Program) {
-  router.push(`/program/${item.id}`);
 }
 
 function alreadyHappened(programItem: Program): boolean {
