@@ -1,29 +1,27 @@
 <template>
-  <div class="card w-full bg-base-200 shadow-xl mb-4">
-    <div class="card-body">
-      <h1 class="text-4xl font-bold mb-4 flex justify-center">Vorstand</h1>
-      <div class="board flex flex-wrap justify-around gap-[25px]">
+  <div>
+    <div>
+      <h1 class="text-4xl font-bold mb-7 flex justify-center">Vorstand</h1>
+      <div class="grid grid-col-1 md:grid-cols-2 gap-6">
         <div
           v-if="boardStatus === 'pending' && boardPersons === null"
-          v-for="n in 10"
-          class="skeleton h-[240px] w-[440px]"
+          v-for="n in 5"
+          class="skeleton h-[335px] w-full"
         ></div>
 
         <div
+          class="card card-side bg-base-200"
           v-for="(person, index) in boardPersons"
           :key="index"
-          class="card lg:card-side bg-base-100 shadow-xl"
         >
-          <figure
-            class="h-[240px] w-[180px] mt-[20px] lg:mt-0 rounded object-contain mr-auto ml-auto"
-          >
-            <img class="h-full w-full" :src="person.image?.url" alt="Image" />
+          <figure class="w-1/2">
+            <img :src="person.image?.url" alt="Image" />
           </figure>
-          <div class="card-body w-[260px]">
+          <div class="card-body w-1/2">
             <h2 class="card-title">{{ person.name }}</h2>
             <p>{{ person.function }}</p>
             <div class="card-actions">
-              <a :href="'tel:' + person.tel">
+              <a v-if="person.tel" :href="'tel:' + person.tel">
                 <svg
                   class="fill-current"
                   width="24"
@@ -36,7 +34,7 @@
                   />
                 </svg>
               </a>
-              <a :href="'mailto:' + person.email">
+              <a v-if="person.email" :href="'mailto:' + person.email">
                 <svg
                   class="fill-current"
                   xmlns="http://www.w3.org/2000/svg"
@@ -54,23 +52,20 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="card w-full bg-base-200 shadow-xl">
-    <div class="card-body">
-      <h1 class="text-4xl font-bold mt-4 mb-3 flex justify-center">
+    <div>
+      <h1 class="text-4xl font-bold mt-15 mb-7 flex justify-center">
         VIPs – Funktionäre und Ehrenmitglieder
       </h1>
-      <div class="board flex flex-wrap justify-around gap-[25px]">
+      <div class="grid grid-col-1 md:grid-cols-2 gap-4">
         <div
           v-if="vipsStatus === 'pending' && vips === null"
-          v-for="n in 10"
-          class="skeleton h-[132px] w-[384px]"
+          v-for="n in 6"
+          class="skeleton h-[132px] w-full"
         ></div>
-
         <div
           v-for="(vip, index) in vips"
           :key="index"
-          class="card w-96 card-side bg-base-100 shadow-xl"
+          class="card card-side bg-base-200"
         >
           <figure class="h-[132px] w-[99px]">
             <img :src="vip.image?.url" alt="Profile" class="rounded-xl" />
