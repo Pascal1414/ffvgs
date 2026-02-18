@@ -3,7 +3,7 @@
     <div
       class="text-sm gap-y-6 flex flex-col flex-wrap sm:flex-row justify-around mb-6"
     >
-      <nav class="flex flex-col gap-2 justify-around">
+      <nav class="flex flex-col gap-2">
         <h6 class="footer-title">Links</h6>
         <router-link to="/imprint" class="link link-hover"
           >Impressum</router-link
