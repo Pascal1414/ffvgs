@@ -13,6 +13,8 @@
         >
         <a
           href="https://ffvgs-backend.onrender.com/admin"
+          target="_blank"
+          rel="noopener noreferrer"
           class="link link-hover"
           >Admin Login</a
         >
