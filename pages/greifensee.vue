@@ -56,22 +56,18 @@
           data-v-02281a80=""
           class="hero-content place-items-start w-full flex-col marked"
         >
-          <h1>Boote dürfen wirder eingewassert werden</h1>
+          <h1>Boote eingewassern</h1>
           <p>
-            Seit dem 12. September 2024 gilt im Kanton Zürich für den Greifen-,
-            den Pfäffiker- und den Türlersee ein Einwasserungsverbot.
-          </p>
-          <p>
-            Im Januar 2025 wird diese Sofortmassnahme abgelöst durch eine
-            Regelung, wonach immatrikulierte Schiffe im Greifen-, Pfäffiker-
-            oder Türlersee wieder einwassern dürfen, solange sie nur in diesem
-            einen See verkehren. Dazu muss dieser See zuvor als Heimgewässer
-            deklariert werden. Innerhalb des Heimgewässers ist das Ein- und
-            Auswassern uneingeschränkt erlaubt. Ein Gewässerwechsel in andere
-            Gewässer ist hingegen untersagt. Dies so lange, bis im Kanton Zürich
-            eine Schiffsmelde- und -reinigungspflicht (SMRP) eingeführt ist, die
-            bei jedem Gewässerwechsel zum Zug kommt. (Quelle: Baudirektion
-            Kanton Zürich, Dezember 2024)
+            Seit Januar 2025 gilt die Regelung, wonach immatrikulierte Schiffe
+            im Greifen-, Pfäffiker- oder Türlersee wieder einwassern dürfen,
+            solange sie nur in diesem einen See verkehren. Dazu muss dieser See
+            zuvor als Heimgewässer deklariert werden. Innerhalb des
+            Heimgewässers ist das Ein- und Auswassern uneingeschränkt erlaubt.
+            Ein Gewässerwechsel in andere Gewässer ist hingegen untersagt. Dies
+            so lange, bis im Kanton Zürich eine Schiffsmelde- und
+            -reinigungspflicht (SMRP) eingeführt ist, die bei jedem
+            Gewässerwechsel zum Zug kommt. (Quelle: Baudirektion Kanton Zürich,
+            Dezember 2024)
           </p>
           <p>
             Weitere Informationen befinden sich unter
