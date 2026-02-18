@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="footer sm:footer-horizontal bg-base-300 text-base-content p-10"
+    class="footer flex flex-col sm:flex-row justify-around bg-base-300 text-base-content p-10"
   >
     <nav>
       <h6 class="footer-title">Links</h6>
