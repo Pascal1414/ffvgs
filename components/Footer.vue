@@ -1,35 +1,41 @@
 <template>
-  <footer
-    class="footer sm:footer-horizontal bg-base-300 text-base-content p-10"
-  >
-    <nav>
-      <h6 class="footer-title">Links</h6>
-      <router-link to="/imprint" class="link link-hover">Impressum</router-link>
-      <router-link to="/documents" class="link link-hover"
-        >Dokumente</router-link
-      >
-      <a href="https://ffvgs-backend.onrender.com/admin" class="link link-hover"
-        >Admin Login</a
-      >
-    </nav>
-    <nav>
-      <h6 class="footer-title">Events</h6>
-      <router-link to="/event/jungfischerkurs" class="link link-hover"
-        >Jungfischerkurs</router-link
-      >
-      <router-link to="/event/sommernachtsfest" class="link link-hover"
-        >Sommernachtsfest</router-link
-      >
-    </nav>
-    <nav>
-      <h6 class="footer-title">Social</h6>
-      <div class="grid grid-flow-col gap-4 mb-4">
+  <footer class="bg-base-300 text-base-content p-10">
+    <div
+      class="text-sm gap-y-6 flex flex-col flex-wrap sm:flex-row justify-around mb-6"
+    >
+      <nav class="flex flex-col gap-2">
+        <h6 class="footer-title">Links</h6>
+        <router-link to="/imprint" class="link link-hover"
+          >Impressum</router-link
+        >
+        <router-link to="/documents" class="link link-hover"
+          >Dokumente</router-link
+        >
         <a
-          href="https://www.instagram.com/ffv.g.s/profilecard/"
+          href="https://ffvgs-backend.onrender.com/admin"
           target="_blank"
           rel="noopener noreferrer"
+          class="link link-hover"
+          >Admin Login</a
         >
-          <client-only>
+      </nav>
+      <nav class="flex flex-col gap-2">
+        <h6 class="footer-title">Events</h6>
+        <router-link to="/event/jungfischerkurs" class="link link-hover"
+          >Jungfischerkurs</router-link
+        >
+        <router-link to="/event/sommernachtsfest" class="link link-hover"
+          >Sommernachtsfest</router-link
+        >
+      </nav>
+      <nav class="flex flex-col gap-2">
+        <h6 class="footer-title">Social</h6>
+        <div class="flex gap-4 mb-4">
+          <a
+            href="https://www.instagram.com/ffv.g.s/profilecard/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -42,15 +48,13 @@
                 clip-rule="evenodd"
               />
             </svg>
-          </client-only>
-        </a>
+          </a>
 
-        <a
-          href="https://www.facebook.com/FFVGS/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <client-only>
+          <a
+            href="https://www.facebook.com/FFVGS/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -62,14 +66,12 @@
                 d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
               ></path>
             </svg>
-          </client-only>
-        </a>
-        <a
-          href="https://github.com/Pascal1414/ffvgs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <client-only>
+          </a>
+          <a
+            href="https://github.com/Pascal1414/ffvgs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               width="20"
               height="20"
@@ -81,21 +83,19 @@
                 d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"
               ></path>
             </svg>
-          </client-only>
-        </a>
-      </div>
-      <div>
+          </a>
+        </div>
         <h6 class="footer-title">Actions</h6>
-        <label class="swap" id="theme-toggle">
-          <!-- this hidden checkbox controls the state -->
-          <input
-            type="checkbox"
-            v-model="themeCheckbox"
-            @click="updateTheme(themeCheckbox)"
-          />
+        <div class="flex gap-4 mb-4">
+          <label class="swap" id="theme-toggle">
+            <!-- this hidden checkbox controls the state -->
+            <input
+              type="checkbox"
+              v-model="themeCheckbox"
+              @click="updateTheme(themeCheckbox)"
+            />
 
-          <!-- volume on icon -->
-          <client-only>
+            <!-- volume on icon -->
             <svg
               class="swap-on fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -179,14 +179,17 @@
                 stroke-linejoin="round"
               />
             </svg>
-          </client-only>
-        </label>
-      </div>
-    </nav>
+          </label>
+        </div>
+      </nav>
+    </div>
+    <sponsors />
   </footer>
 </template>
 
 <script lang="ts" setup>
+import Sponsors from './Sponsors.vue';
+
 let themeCheckbox = ref(true);
 
 onMounted(() => {
