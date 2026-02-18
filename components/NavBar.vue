@@ -61,7 +61,6 @@ const navItems = [
   { name: 'Berichte', link: '/report' },
   { name: 'Galerie', link: '/gallery' },
   { name: 'Kontakt', link: '/contact' },
-  { name: 'Boot', link: '/boat' },
 ];
 
 const ghostBtn = ref<HTMLElement | null>(null);
