@@ -17,7 +17,7 @@
 
   <div
     class="flex flex-col gap-1 mb-10"
-    v-if="status === 'pending' && articles === null"
+    v-if="status === 'pending'"
     v-for="n in 5"
   >
     <div class="divider" />
@@ -73,22 +73,21 @@
 </template>
 
 <script lang="ts" setup>
-import type { AsyncData } from '#app';
 import { marked } from 'marked';
 import type { HomeArticle } from '~/types/home-article';
 
 const config = useRuntimeConfig();
 
-const { data: articles, status } = await useLazyFetch(
-  config.public.apiUrl + '/home-articles',
-  {
-    query: { populate: '*', 'pagination[limit]': -1 },
+const { data, status } = await useLazyFetch<{
+  data: HomeArticle[];
+}>(config.public.apiUrl + '/home-articles', {
+  query: { populate: '*' },
+});
 
-    transform: (_articles: AsyncData<any, any>) => {
-      const articles = sanitizeApiResponse(_articles) as HomeArticle[];
-      return articles.sort((a: any, b: any) => a.priority - b.priority);
-    },
-  },
+const articles = computed(() =>
+  data.value
+    ? data.value.data.sort((a: any, b: any) => a.priority - b.priority)
+    : null,
 );
 </script>
 

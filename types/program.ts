@@ -1,7 +1,8 @@
 export type Program = {
   id: number;
+  documentId: string;
   name: string;
-  description: string;
+  description?: string | null;
   forAll: boolean;
   forJunior: boolean;
   dates: string[];

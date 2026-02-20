@@ -10,7 +10,7 @@
       <div class="card-body marked" v-html="marked(report.text)" />
     </div>
     <div
-      v-if="status === 'pending' && reports === null"
+      v-if="status === 'pending'"
       v-for="n in 5"
       class="skeleton w-full h-[600px] bg-base-200"
     ></div>
@@ -20,22 +20,20 @@
 <script lang="ts" setup>
 import { marked } from 'marked';
 import type { Report } from '~/types/report';
-import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 
-const { data: reports, status } = await useLazyFetch(
-  config.public.apiUrl + '/reports',
-  {
-    query: { populate: '*', 'pagination[limit]': -1 },
-    transform: (_reports: AsyncData<any, any>) => {
-      const reports = sanitizeApiResponse(_reports) as Report[];
-      return reports.sort(
+const { data, status } = await useLazyFetch<{
+  data: Report[];
+}>(config.public.apiUrl + '/reports');
+
+const reports = computed(() =>
+  data.value
+    ? data.value.data.sort(
         (a: any, b: any) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-      );
-    },
-  },
+      )
+    : null,
 );
 </script>
 

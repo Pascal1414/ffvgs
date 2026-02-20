@@ -2,10 +2,7 @@
   <div class="card w-full bg-base-200 shadow-xl">
     <div class="card-body">
       <h2 class="card-title">{{ program?.name }}</h2>
-      <div
-        v-if="pending && program === null"
-        class="skeleton h-[26px] w-[200px]"
-      ></div>
+      <div v-if="pending" class="skeleton h-[26px] w-[200px]"></div>
 
       <div
         v-if="program && program?.description == undefined"
@@ -29,22 +26,10 @@
       </div>
 
       <div v-else class="marked" v-html="marked(program?.description || '')" />
-      <div
-        v-if="status === 'pending' && program === null"
-        class="skeleton h-[30px] w-[80%]"
-      ></div>
-      <div
-        v-if="status === 'pending' && program === null"
-        class="skeleton h-4 w-[30%]"
-      ></div>
-      <div
-        v-if="status === 'pending' && program === null"
-        class="skeleton h-4 w-[35%]"
-      ></div>
-      <div
-        v-if="status === 'pending' && program === null"
-        class="skeleton h-4 w-[25%] mb-6"
-      ></div>
+      <div v-if="status === 'pending'" class="skeleton h-[30px] w-[80%]"></div>
+      <div v-if="status === 'pending'" class="skeleton h-4 w-[30%]"></div>
+      <div v-if="status === 'pending'" class="skeleton h-4 w-[35%]"></div>
+      <div v-if="status === 'pending'" class="skeleton h-4 w-[25%] mb-6"></div>
 
       <div class="card-actions">
         <RouterLink to="/program" class="btn btn-primary">
@@ -70,21 +55,15 @@
 <script lang="ts" setup>
 import type { Program } from '~/types/program';
 import { marked } from 'marked';
-import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 const route = useRoute();
 
-const {
-  data: program,
-  error,
-  status,
-} = await useLazyFetch(`${config.public.apiUrl}/programs/${route.params.id}`, {
-  query: { populate: '*' },
-  transform: (_program: AsyncData<any, any>) => {
-    return sanitizeApiResponse(_program) as Program;
-  },
-});
+const { data, error, status, pending } = await useLazyFetch<{ data: Program }>(
+  `${config.public.apiUrl}/programs/${route.params.id}`,
+);
+
+const program = computed(() => (data.value ? data.value.data : null));
 if (error.value) {
   showError({
     statusCode: error.value?.statusCode,

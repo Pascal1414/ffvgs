@@ -97,7 +97,10 @@
           class="w-full flex justify-end mt-6"
           v-if="programItem.description"
         >
-          <NuxtLink :to="`/program/${programItem.id}`" class="btn btn-primary">
+          <NuxtLink
+            :to="`/program/${programItem.documentId}`"
+            class="btn btn-primary"
+          >
             Details
           </NuxtLink>
         </div>
@@ -123,18 +126,15 @@ const selectionOptions = ref([
 
 const selectionSelect: Ref<string> = ref(selectionOptions.value[0].value);
 
-const { data: programs, status } = await useLazyFetch(
-  config.public.apiUrl + '/programs',
-  {
-    query: { populate: '*', 'pagination[limit]': -1 },
-    transform: (_programs: AsyncData<any, any>) => {
-      const sanitizedResponse = sanitizeApiResponse(_programs) as Program[];
-      return oderByDate(sanitizedResponse);
-    },
-  },
+const { data, status } = await useLazyFetch<{ data: Program[] }>(
+  `${config.public.apiUrl}/programs`,
 );
 
-function oderByDate(programms: Program[]): Program[] {
+const programs = computed(() => {
+  return data.value ? orderByDate(data.value.data) : [];
+});
+
+function orderByDate(programms: Program[]): Program[] {
   return programms.sort((a, b) => {
     if (a.dates === null || a.dates.length === 0) return 1;
     if (b.dates === null || b.dates.length === 0) return -1;
