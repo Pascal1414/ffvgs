@@ -70,21 +70,15 @@
 <script lang="ts" setup>
 import type { Program } from '~/types/program';
 import { marked } from 'marked';
-import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 const route = useRoute();
 
-const {
-  data: program,
-  error,
-  status,
-} = await useLazyFetch(`${config.public.apiUrl}/programs/${route.params.id}`, {
-  query: { populate: '*' },
-  transform: (_program: AsyncData<any, any>) => {
-    return sanitizeApiResponse(_program) as Program;
-  },
-});
+const { data, error, status, pending } = await useLazyFetch<{ data: Program }>(
+  `${config.public.apiUrl}/programs/${route.params.id}`,
+);
+
+const program = computed(() => (data.value ? data.value.data : null));
 if (error.value) {
   showError({
     statusCode: error.value?.statusCode,
