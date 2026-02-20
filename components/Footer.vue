@@ -24,9 +24,6 @@
         <router-link to="/event/jungfischerkurs" class="link link-hover"
           >Jungfischerkurs</router-link
         >
-        <router-link to="/event/sommernachtsfest" class="link link-hover"
-          >Sommernachtsfest</router-link
-        >
       </nav>
       <nav class="flex flex-col gap-2">
         <h6 class="footer-title">Social</h6>
