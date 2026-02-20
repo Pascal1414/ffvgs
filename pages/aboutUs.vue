@@ -83,31 +83,32 @@
 <script setup lang="ts">
 import type { BoardPerson } from '~/types/board-person';
 import type { Vip } from '~/types/vip';
-import type { AsyncData } from '#app';
 
 const config = useRuntimeConfig();
 
-const { data: boardPersons, status: boardStatus } = await useLazyFetch(
-  config.public.apiUrl + '/board-people',
-  {
-    query: { populate: '*', 'pagination[limit]': -1 },
-    transform: (_boardpeople: AsyncData<any, any>) => {
-      const boardPeople = sanitizeApiResponse(_boardpeople) as BoardPerson[];
-      return boardPeople.sort((a: any, b: any) => a.priority - b.priority);
-    },
+const { data: boardData, status: boardStatus } = await useLazyFetch<{
+  data: BoardPerson[];
+}>(config.public.apiUrl + '/board-people', {
+  query: {
+    populate: '*',
   },
+});
+
+const boardPersons = computed(() =>
+  boardData.value
+    ? boardData.value.data.sort((a: any, b: any) => a.priority - b.priority)
+    : [],
 );
 
-const { data: vips, status: vipsStatus } = await useLazyFetch(
-  config.public.apiUrl + '/vips',
-  {
-    query: { populate: '*', 'pagination[limit]': -1 },
-    transform: (_vips: AsyncData<any, any>) => {
-      const vips = sanitizeApiResponse(_vips) as Vip[];
-      return vips.sort((a: any, b: any) => a.priority - b.priority);
-    },
+const { data: vipsData, status: vipsStatus } = await useLazyFetch<{
+  data: Vip[];
+}>(config.public.apiUrl + '/vips', {
+  query: {
+    populate: '*',
   },
-);
+});
+
+const vips = computed(() => (vipsData.value ? vipsData.value.data : []));
 </script>
 
 <style scoped></style>

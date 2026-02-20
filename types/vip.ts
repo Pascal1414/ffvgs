@@ -2,6 +2,7 @@ import type { ResImage } from './image';
 
 export type Vip = {
   id: number;
+  documentId: string;
   name: string;
   function: string;
   image: ResImage;

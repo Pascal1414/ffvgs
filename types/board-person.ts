@@ -2,6 +2,7 @@ import type { ResImage } from './image';
 
 export type BoardPerson = {
   id: number;
+  documentId: string;
   name: string;
   email: string;
   function: string;
