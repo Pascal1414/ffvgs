@@ -4,9 +4,7 @@ export type BoardPerson = {
   id: number;
   documentId: string;
   name: string;
-  email: string;
   function: string;
-  tel: string;
   priority: number;
   createdAt: string;
   updatedAt: string;
