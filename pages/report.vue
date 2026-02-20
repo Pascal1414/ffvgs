@@ -10,7 +10,7 @@
       <div class="card-body marked" v-html="marked(report.text)" />
     </div>
     <div
-      v-if="status === 'pending' && reports === null"
+      v-if="status === 'pending'"
       v-for="n in 5"
       class="skeleton w-full h-[600px] bg-base-200"
     ></div>

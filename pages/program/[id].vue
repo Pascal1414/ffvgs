@@ -2,10 +2,7 @@
   <div class="card w-full bg-base-200 shadow-xl">
     <div class="card-body">
       <h2 class="card-title">{{ program?.name }}</h2>
-      <div
-        v-if="pending && program === null"
-        class="skeleton h-[26px] w-[200px]"
-      ></div>
+      <div v-if="pending" class="skeleton h-[26px] w-[200px]"></div>
 
       <div
         v-if="program && program?.description == undefined"
@@ -29,22 +26,10 @@
       </div>
 
       <div v-else class="marked" v-html="marked(program?.description || '')" />
-      <div
-        v-if="status === 'pending' && program === null"
-        class="skeleton h-[30px] w-[80%]"
-      ></div>
-      <div
-        v-if="status === 'pending' && program === null"
-        class="skeleton h-4 w-[30%]"
-      ></div>
-      <div
-        v-if="status === 'pending' && program === null"
-        class="skeleton h-4 w-[35%]"
-      ></div>
-      <div
-        v-if="status === 'pending' && program === null"
-        class="skeleton h-4 w-[25%] mb-6"
-      ></div>
+      <div v-if="status === 'pending'" class="skeleton h-[30px] w-[80%]"></div>
+      <div v-if="status === 'pending'" class="skeleton h-4 w-[30%]"></div>
+      <div v-if="status === 'pending'" class="skeleton h-4 w-[35%]"></div>
+      <div v-if="status === 'pending'" class="skeleton h-4 w-[25%] mb-6"></div>
 
       <div class="card-actions">
         <RouterLink to="/program" class="btn btn-primary">

@@ -17,7 +17,7 @@
 
   <div
     class="flex flex-col gap-1 mb-10"
-    v-if="status === 'pending' && articles === null"
+    v-if="status === 'pending'"
     v-for="n in 5"
   >
     <div class="divider" />

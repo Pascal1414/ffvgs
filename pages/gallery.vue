@@ -15,7 +15,7 @@
   <div class="flex flex-col gap-4">
     <div
       v-for="n in 5"
-      v-if="status === 'pending' && galeryItems === null"
+      v-if="status === 'pending'"
       class="skeleton w-full h-[413px]"
     ></div>
   </div>

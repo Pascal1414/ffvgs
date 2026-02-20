@@ -4,7 +4,7 @@
       <h1 class="text-4xl font-bold mb-7 flex justify-center">Vorstand</h1>
       <div class="grid grid-col-1 md:grid-cols-2 gap-6">
         <div
-          v-if="boardStatus === 'pending' && boardPersons === null"
+          v-if="boardStatus === 'pending'"
           v-for="n in 5"
           class="skeleton h-[335px] w-full"
         ></div>
@@ -58,7 +58,7 @@
       </h1>
       <div class="grid grid-col-1 md:grid-cols-2 gap-4">
         <div
-          v-if="vipsStatus === 'pending' && vips === null"
+          v-if="vipsStatus === 'pending'"
           v-for="n in 6"
           class="skeleton h-[132px] w-full"
         ></div>
