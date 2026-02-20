@@ -152,17 +152,13 @@ const latestYear = computed(() => {
   );
 });
 
-watch(
-  latestYear,
-  (newYear) => {
-    if (newYear && !year.value) {
-      year.value = newYear;
-    } else {
-      year.value = new Date().getFullYear();
-    }
-  },
-  { immediate: true },
-);
+watch(latestYear, (newYear) => {
+  if (newYear && !year.value) {
+    year.value = newYear;
+  } else {
+    year.value = new Date().getFullYear();
+  }
+});
 
 const yearOptions = computed(() => {
   const years = data.value?.data.map((g) => new Date(g.date).getFullYear());
