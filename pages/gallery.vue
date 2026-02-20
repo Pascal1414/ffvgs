@@ -4,7 +4,7 @@
       <label class="floating-label mb-4 w-[260px]">
         <span>Bilder aus folgendem Jahr anzeigen:</span>
         <select v-model="year" class="select" name="mitgliedschaft" id="role">
-          <option v-for="year in getYearOptions()" :key="year" :value="year">
+          <option v-for="year in yearOptions" :key="year" :value="year">
             {{ year }}
           </option>
         </select>
@@ -20,10 +20,7 @@
     ></div>
   </div>
   <div v-for="(galeryItem, index) in galeryItems" :key="index">
-    <div
-      v-if="shouldShowGalery(galeryItem)"
-      class="card card-sm w-full bg-base-200 shadow-xl mb-4"
-    >
+    <div class="card card-sm w-full bg-base-200 shadow-xl mb-4">
       <div class="card-body">
         <h1 class="text-2xl font-bold mb-2">
           {{ galeryItem.name }} ({{
@@ -130,39 +127,47 @@
 </template>
 
 <script lang="ts" setup>
-import type { AsyncData } from '#app';
 import type { Galery } from '~/types/galery';
 import type { ResImage } from '~/types/image';
 
 const config = useRuntimeConfig();
 
-const year = ref(new Date().getFullYear());
+const { data, status } = await useLazyFetch<{
+  data: Galery[];
+}>(config.public.apiUrl + '/galeries', {
+  query: { populate: '*' },
+});
 
-const { data: galeryItems, status } = await useLazyFetch(
-  config.public.apiUrl + '/galeries',
-  {
-    query: { populate: '*', 'pagination[limit]': -1 },
-    transform: (_galeryItems: AsyncData<any, any>) => {
-      const sanitized = sanitizeApiResponse(_galeryItems) as Galery[];
-      year.value =
-        sanitized
-          .map((g) => new Date(g.date).getFullYear())
-          .sort((a, b) => b - a)[0] ?? year.value;
-      return sanitized;
-    },
-  },
+const galeryItems = computed(() =>
+  data.value?.data.filter((g) => year.value === new Date(g.date).getFullYear()),
 );
 
-function shouldShowGalery(galery: Galery): boolean {
-  return year.value === new Date(galery.date).getFullYear();
-}
+const year = ref<number>();
 
-function getYearOptions() {
-  const years = galeryItems.value?.map((galery) =>
-    new Date(galery.date).getFullYear(),
+const latestYear = computed(() => {
+  if (!data.value?.data?.length) return null;
+
+  return Math.max(
+    ...data.value.data.map((g) => new Date(g.date).getFullYear()),
   );
+});
+
+watch(
+  latestYear,
+  (newYear) => {
+    if (newYear && !year.value) {
+      year.value = newYear;
+    } else {
+      year.value = new Date().getFullYear();
+    }
+  },
+  { immediate: true },
+);
+
+const yearOptions = computed(() => {
+  const years = data.value?.data.map((g) => new Date(g.date).getFullYear());
   return Array.from(new Set(years)).sort((a, b) => b - a);
-}
+});
 
 function calculateImageSize(width: number, height: number) {
   const aspectRatio = width / height;
