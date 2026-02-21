@@ -18,6 +18,13 @@
           class="link link-hover"
           >Admin Login</a
         >
+        <a
+          href="https://docs.google.com/spreadsheets/d/18zc4Bm2k2Egm6DubhkFO83XqO3LN4ddWejG1pntl5IE/edit?usp=drivesdk"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link link-hover"
+          >Inventarliste (Vorstand)</a
+        >
       </nav>
       <nav class="flex flex-col gap-2">
         <h6 class="footer-title">Events</h6>
