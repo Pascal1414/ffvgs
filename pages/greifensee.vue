@@ -48,13 +48,12 @@
     </div>
   </article>
 
-  <article data-v-02281a80="">
-    <div data-v-02281a80="" class="divider"></div>
-    <div data-v-02281a80="">
-      <div data-v-02281a80="" class="sm:hero min-h-[400px]">
+  <article >
+    <div  class="divider"></div>
+    <div >
+      <div  class="sm:hero min-h-[400px]">
         <div
-          data-v-02281a80=""
-          class="hero-content place-items-start w-full flex-col marked"
+          class="marked"
         >
           <h1>Boote eingewassern</h1>
           <p>

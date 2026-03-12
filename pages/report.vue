@@ -7,7 +7,7 @@
       :key="index"
       class="card bg-base-200 shadow-xl"
     >
-      <div class="card-body marked" v-html="marked(report.text)" />
+      <div class="p-5 marked" v-html="marked(report.text)" />
     </div>
     <div
       v-if="status === 'pending'"

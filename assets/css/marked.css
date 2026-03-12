@@ -1,19 +1,45 @@
 @reference '~/assets/css/main.css';
 
+
+/* The first child element does not have a margin top set */
+.marked> :first-child {
+  @apply !mt-0
+}
+
 .marked h1 {
-  @apply text-4xl font-bold;
+  @apply text-4xl font-bold mb-4;
 }
 
 .marked h2 {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-bold mb-4;
 }
 
 .marked h3 {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold mb-3;
 }
 
 .marked h4 {
-  @apply text-xl font-bold;
+  @apply text-xl font-bold mb-2;
+}
+
+.marked h5 {
+  @apply text-xl font-bold mb-2;
+}
+
+.marked h6 {
+  @apply text-xl font-bold mb-2;
+}
+
+.marked p {
+  @apply mt-4 mb-4
+}
+
+.marked ul {
+  @apply list list-disc ml-4
+}
+
+.marked ol {
+  @apply list list-decimal ml-4
 }
 
 .marked a {
