@@ -8,7 +8,7 @@
 
     <Sponsor name="Alberts Backstube" image="/sponsor/alberts-backstube.png" />
 
-    <Sponsor name="Hotz" image="/sponsor/metzgerei-hotz.png" />
+    <Sponsor name="Hotz" image="/sponsor/metzgerei-hotz-light.svg" dark-mode-image="/sponsor/metzgerei-hotz-dark.svg" />
 
   </article>
 </template>
