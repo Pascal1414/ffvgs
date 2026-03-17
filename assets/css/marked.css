@@ -3,7 +3,7 @@
 
 /* The first child element does not have a margin top set */
 .marked> :first-child {
-  @apply !mt-0
+  @apply !mt-0;
 }
 
 .marked h1 {
@@ -31,15 +31,15 @@
 }
 
 .marked p {
-  @apply mt-4 mb-4
+  @apply mt-4 mb-4;
 }
 
 .marked ul {
-  @apply list list-disc ml-4
+  @apply list list-disc ml-4;
 }
 
 .marked ol {
-  @apply list list-decimal ml-4
+  @apply list list-decimal ml-4;
 }
 
 .marked a {
