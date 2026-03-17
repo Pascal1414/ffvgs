@@ -2,7 +2,18 @@
   <div class="hover-3d">
     <!-- content -->
     <figure class="h-40 w-60 p-6 rounded-2xl flex  items-center">
-      <img :src="image" :alt="name" class="w-full" />
+      <img
+        :src="image"
+        :alt="name"
+        class="w-full"
+        :class="{ 'dark:hidden': darkModeImage }"
+      />
+      <img
+        v-if="darkModeImage"
+        :src="darkModeImage"
+        :alt="name"
+        class="w-full hidden dark:block"
+      />
     </figure>
     <!-- 8 empty divs needed for the 3D effect -->
     <div></div>
@@ -20,6 +31,7 @@
 defineProps<{
   name: string;
   image: string;
+  darkModeImage?: string ;
 }>();
 </script>
 
