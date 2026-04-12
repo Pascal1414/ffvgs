@@ -4,6 +4,13 @@
       <h1 class="text-2xl font-bold">Beitrittserklärung</h1>
       <p>Sehr gerne möchten wir Sie in unseren Verein aufnehmen.</p>
 
+      <div role="alert" class="alert alert-info alert-soft">
+        <span
+          >Bitte beachten Sie, dass die Bearbeitung Ihrer Anfrage 2–3 Wochen
+          dauern kann.</span
+        >
+      </div>
+
       <form
         name="join-association"
         method="POST"

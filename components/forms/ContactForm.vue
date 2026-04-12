@@ -3,6 +3,13 @@
     <div class="card-body">
       <h1 class="text-2xl font-bold">Kontakt</h1>
 
+      <div role="alert" class="alert alert-info alert-soft mb-2">
+        <span
+          >Bitte beachten Sie, dass die Bearbeitung Ihrer Anfrage 2–3 Wochen
+          dauern kann.</span
+        >
+      </div>
+
       <form
         method="POST"
         :action="config.public.formspree.contactFormUrl"
