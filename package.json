@@ -24,8 +24,5 @@
   "devDependencies": {
     "daisyui": "^5.0.50",
     "typescript": "^5.9.3"
-  },
-  "overrides": {
-    "serialize-javascript": "^7.0.3"
   }
 }
