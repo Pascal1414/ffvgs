@@ -26,7 +26,7 @@
     </div>
     <div>
       <h1 class="text-4xl font-bold mt-15 mb-7 flex justify-center">
-        VIPs – Funktionäre und Ehrenmitglieder
+        VIPs - Funktionäre und Ehrenmitglieder
       </h1>
       <div class="grid grid-col-1 md:grid-cols-2 gap-4">
         <div

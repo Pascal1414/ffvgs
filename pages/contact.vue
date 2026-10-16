@@ -1,15 +1,9 @@
 <template>
-  <ContactForm id="contact" />
+  <FormsContact id="contact" />
 
-  <JoinForm id="join" />
+  <FormsJoinJoung id="join-jugendgruppe" />
 
-  <!--<EventRegistrationForm id="registration-lungerersee" />-->
+  <FormsJoin id="join" />
+
+  <!--<FormsEventRegistration id="registration-lungerersee" />-->
 </template>
-
-<script lang="ts" setup>
-//import EventRegistrationForm from '~/components/forms/EventRegistrationForm.vue';
-import ContactForm from '~/components/forms/ContactForm.vue';
-import JoinForm from '~/components/forms/JoinForm.vue';
-</script>
-
-<style scoped></style>

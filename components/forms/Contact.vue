@@ -5,7 +5,7 @@
 
       <div role="alert" class="alert alert-info alert-soft mb-2">
         <span
-          >Bitte beachten Sie, dass die Bearbeitung Ihrer Anfrage 2–3 Wochen
+          >Bitte beachten Sie, dass die Bearbeitung Ihrer Anfrage 2-3 Wochen
           dauern kann.</span
         >
       </div>

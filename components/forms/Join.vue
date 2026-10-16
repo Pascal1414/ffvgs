@@ -1,12 +1,12 @@
 <template>
   <div class="card w-full bg-base-200 shadow-xl mb-4">
     <div class="card-body">
-      <h1 class="text-2xl font-bold">Beitrittserklärung</h1>
+      <h1 class="text-2xl font-bold">Beitrittserklärung Erwachsene</h1>
       <p>Sehr gerne möchten wir Sie in unseren Verein aufnehmen.</p>
 
       <div role="alert" class="alert alert-info alert-soft">
         <span
-          >Bitte beachten Sie, dass die Bearbeitung Ihrer Anfrage 2–3 Wochen
+          >Bitte beachten Sie, dass die Bearbeitung Ihrer Anfrage 2-3 Wochen
           dauern kann.</span
         >
       </div>
